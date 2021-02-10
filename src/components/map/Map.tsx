@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, MouseEvent } from 'react';
 
+import './Map.css';
 import { Coords, LoadedImage } from './types';
 import isTileAvailable from './isTileAvailable';
 import coordToString from './coordToString';
@@ -87,6 +88,7 @@ const Map = () => {
       ref={canvasRef}
       height={window.innerHeight}
       width={window.innerWidth}
+      className={`Map ${isDragging ? 'isDragging' : ''}`}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
