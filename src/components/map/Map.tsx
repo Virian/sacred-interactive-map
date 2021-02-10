@@ -1,23 +1,10 @@
-
 import React, { useEffect, useRef, useState, MouseEvent } from 'react';
 
-import availableTiles from '../../assets/availableTiles.json';
+import { Coords, LoadedImage } from './types';
+import isTileAvailable from './isTileAvailable';
+import coordToString from './coordToString';
 
 const TILE_SIZE = 256;
-
-type Coords = {
-  x: number;
-  y: number;
-}
-
-type LoadedImage = {
-  img: HTMLImageElement;
-  coords: Coords;
-}
-
-const isTileAvailable = ({ x, y }: Coords) : boolean => availableTiles.some(tile => tile.x === x && tile.y === y);
-
-const coordToString = (coord: number) : string => String(coord).padStart(3, '0');
 
 const Map = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
