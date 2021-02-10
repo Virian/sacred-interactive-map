@@ -1,19 +1,18 @@
-import React, { useEffect, useRef, useState, MouseEvent } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import './Map.css';
 import { Coords, LoadedImage } from './types';
 import isTileAvailable from './isTileAvailable';
 import coordToString from './coordToString';
+import useDrag from './useDrag';
 
 const TILE_SIZE = 256;
 
 const Map = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const [isDragging, setIsDragging] = useState<boolean>(false);
   const [mapOffset, setMapOffset] = useState<Coords>({ x: 27136, y: 8704 });
   const loadedImagesRef = useRef<LoadedImage[]>([]);
-  const [panDelta, setPanDelta] = useState<Coords>({ x: 0, y: 0 });
 
   useEffect(() => {
     const context = canvasRef.current?.getContext('2d');
@@ -60,28 +59,12 @@ const Map = () => {
     }
   }, [mapOffset]);
 
-  const handleMouseDown = (event: MouseEvent) => {
-    setPanDelta({ x: event.clientX, y: event.clientY });
-    setIsDragging(true);
-  }
-
-  const handleMouseMove = (event: MouseEvent) => {
-    if (isDragging) {
-      setMapOffset(currentOffset => {
-        const xDelta = panDelta.x - event.clientX;
-        const yDelta = panDelta.y - event.clientY;
-        setPanDelta({ x: event.clientX, y: event.clientY });
-        return {
-          x: currentOffset.x + xDelta,
-          y: currentOffset.y + yDelta,
-        }
-      })
-    }
-  }
-
-  const handleMouseUp = () =>{
-    setIsDragging(false);
-  }
+  const {
+    isDragging,
+    handleMouseDown,
+    handleMouseMove,
+    handleMouseUp,
+  } = useDrag({ setMapOffset });
 
   return (
     <canvas
