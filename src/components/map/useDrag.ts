@@ -1,6 +1,7 @@
 import { useState, useCallback, MouseEvent, Dispatch, SetStateAction } from 'react';
 
 import { Coords } from './types';
+import { MAP_WIDTH, MAP_HEIGHT } from './constants';
 
 type UseDragParams = {
   setMapOffset: Dispatch<SetStateAction<Coords>>;
@@ -27,10 +28,26 @@ const useDrag = ({ setMapOffset }: UseDragParams): UseDrag => {
       setMapOffset(currentOffset => {
         const xDelta = dragDelta.x - event.clientX;
         const yDelta = dragDelta.y - event.clientY;
+
+        let newXPos = currentOffset.x + xDelta;
+        let newYPos = currentOffset.y + yDelta;
+
+        if (newXPos < 0) {
+          newXPos = 0;
+        } else if (newXPos > MAP_WIDTH - window.innerWidth) {
+          newXPos = MAP_WIDTH - window.innerWidth;
+        }
+
+        if (newYPos < 0) {
+          newYPos = 0;
+        } else if (newYPos > MAP_HEIGHT - window.innerHeight) {
+          newYPos = MAP_HEIGHT - window.innerHeight;
+        }
+
         setDragDelta({ x: event.clientX, y: event.clientY });
         return {
-          x: currentOffset.x + xDelta,
-          y: currentOffset.y + yDelta,
+          x: newXPos,
+          y: newYPos,
         }
       })
     }

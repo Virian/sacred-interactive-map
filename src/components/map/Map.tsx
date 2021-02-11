@@ -36,7 +36,7 @@ const Map = () => {
 
       xCoords.forEach((xCoord, xIndex) => {
         yCoords.forEach((yCoord, yIndex) => {
-          const shouldDraw = xIndex !== 0
+          const shouldDraw = xIndex !== 0 // don't draw tiles outside of the view
             && xIndex !== xCoords.length - 1
             && yIndex !== 0
             && yIndex !== yCoords.length - 1;
