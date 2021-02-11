@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import './Map.css';
 import { Coords, LoadedImage } from './types';
+import { TILE_SIZE } from './constants';
 import isTileAvailable from './isTileAvailable';
 import coordToString from './coordToString';
+import getCoordsForView from './getCoordsForView';
 import useDrag from './useDrag';
-
-const TILE_SIZE = 256;
 
 const Map = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -17,26 +17,36 @@ const Map = () => {
   useEffect(() => {
     const context = canvasRef.current?.getContext('2d');
     if (context) {
+      // adding 3 because 1 is an additional tile to ensure that the whole screen will be coverted
+      // and next 2 to load tiles outside of the screen (on both ends)
+      const numberOfHorizontalTiles = Math.ceil(window.innerWidth / TILE_SIZE) + 3;
+      const numberOfVerticalTiles = Math.ceil(window.innerHeight / TILE_SIZE) + 3;
 
-      const numberOfHorizontalTiles = Math.ceil(window.innerWidth / TILE_SIZE) + 1;
-      const numberOfVerticalTiles = Math.ceil(window.innerHeight / TILE_SIZE) + 1;
-      // console.log({ width: window.innerWidth, height: window.innerHeight, numberOfHorizontalTiles, numberOfVerticalTiles });
       const { x: currentXOffset, y: currentYOffset } = mapOffset;
       const xOverflow = currentXOffset % TILE_SIZE;
       const yOverflow = currentYOffset % TILE_SIZE;
-  
-      for (let i = 0; i < numberOfHorizontalTiles; i += 1) {
-        for (let j = 0; j < numberOfVerticalTiles; j += 1) {
-          const xOffset = currentXOffset + i * TILE_SIZE;
-          const yOffset = currentYOffset + j * TILE_SIZE;
-          const xCoord = Math.floor(xOffset / TILE_SIZE);
-          const yCoord = Math.floor(yOffset / TILE_SIZE);
-  
+
+      const {
+        xCoords,
+        yCoords,
+      } = getCoordsForView(numberOfHorizontalTiles, numberOfVerticalTiles, currentXOffset, currentYOffset);
+
+      xCoords.forEach((xCoord, xIndex) => {
+        yCoords.forEach((yCoord, yIndex) => {
+          const shouldDraw = xIndex !== 0
+            && xIndex !== xCoords.length - 1
+            && yIndex !== 0
+            && yIndex !== yCoords.length - 1;
+          
           if (isTileAvailable({ x: xCoord, y: yCoord })) {
             const loadedImage = loadedImagesRef.current.find(({ coords: { x, y }}) => x === xCoord && y === yCoord);
-            if (loadedImage) {
-              context.drawImage(loadedImage.img, i * TILE_SIZE - xOverflow, j * TILE_SIZE - yOverflow);
+            if (loadedImage && shouldDraw) {
+              context.drawImage(loadedImage.img, (xIndex - 1) * TILE_SIZE - xOverflow, (yIndex - 1) * TILE_SIZE - yOverflow);
             } else {
+              // draw a black tile until the image is loaded
+              context.fillStyle = 'black';
+              context.fillRect((xIndex - 1) * TILE_SIZE - xOverflow, (yIndex - 1) * TILE_SIZE - yOverflow, TILE_SIZE, TILE_SIZE);
+
               const img = new Image();
               img.src = require(`../../assets/tiles/${coordToString(xCoord)}_${coordToString(yCoord)}.png`).default;
               img.onload = () => {
@@ -47,15 +57,17 @@ const Map = () => {
                     y: yCoord,
                   }
                 });
-                context.drawImage(img, i * TILE_SIZE - xOverflow, j * TILE_SIZE - yOverflow);
+                if (shouldDraw) {
+                  context.drawImage(img, (xIndex - 1) * TILE_SIZE - xOverflow, (yIndex - 1) * TILE_SIZE - yOverflow);
+                }
               }
             }
-          } else {
+          } else if (shouldDraw) {
             context.fillStyle = 'black';
-            context.fillRect(i * TILE_SIZE - xOverflow, j * TILE_SIZE - yOverflow, TILE_SIZE, TILE_SIZE);
+            context.fillRect((xIndex - 1) * TILE_SIZE - xOverflow, (yIndex - 1) * TILE_SIZE - yOverflow, TILE_SIZE, TILE_SIZE);
           }
-        }
-      }
+        })
+      })
     }
   }, [mapOffset]);
 
