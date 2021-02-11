@@ -7,7 +7,7 @@ import isTileAvailable from './isTileAvailable';
 import coordToString from './coordToString';
 import getCoordsForView from './getCoordsForView';
 import getInitialLoadedImages from './getInitialLoadedImages';
-import useDrag from './useDrag';
+import useMove from './useMove';
 
 const initialLoadedImages = getInitialLoadedImages();
 
@@ -75,18 +75,18 @@ const Map = () => {
   }, [mapOffset]);
 
   const {
-    isDragging,
+    isMoving,
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
-  } = useDrag({ setMapOffset });
+  } = useMove({ setMapOffset });
 
   return (
     <canvas
       ref={canvasRef}
       height={window.innerHeight}
       width={window.innerWidth}
-      className={`Map ${isDragging ? 'isDragging' : ''}`}
+      className={`Map ${isMoving ? 'isMoving' : ''}`}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}

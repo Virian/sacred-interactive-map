@@ -3,31 +3,31 @@ import { useState, useCallback, MouseEvent, Dispatch, SetStateAction } from 'rea
 import { Coords } from './types';
 import { MAP_WIDTH, MAP_HEIGHT } from './constants';
 
-type UseDragParams = {
+type UseMoveParams = {
   setMapOffset: Dispatch<SetStateAction<Coords>>;
 }
 
-type UseDrag = {
-  isDragging: boolean;
+type UseMove = {
+  isMoving: boolean;
   handleMouseDown: (event: MouseEvent) => void;
   handleMouseMove: (event: MouseEvent) => void;
   handleMouseUp: () => void;
 }
 
-const useDrag = ({ setMapOffset }: UseDragParams): UseDrag => {
-  const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [dragDelta, setDragDelta] = useState<Coords>({ x: 0, y: 0 });
+const useMove = ({ setMapOffset }: UseMoveParams): UseMove => {
+  const [isMoving, setIsMoving] = useState<boolean>(false);
+  const [moveDelta, setMoveDelta] = useState<Coords>({ x: 0, y: 0 });
 
   const handleMouseDown = useCallback((event: MouseEvent) => {
-    setDragDelta({ x: event.clientX, y: event.clientY });
-    setIsDragging(true);
+    setMoveDelta({ x: event.clientX, y: event.clientY });
+    setIsMoving(true);
   }, []);
 
   const handleMouseMove = useCallback((event: MouseEvent) => {
-    if (isDragging) {
+    if (isMoving) {
       setMapOffset(currentOffset => {
-        const xDelta = dragDelta.x - event.clientX;
-        const yDelta = dragDelta.y - event.clientY;
+        const xDelta = moveDelta.x - event.clientX;
+        const yDelta = moveDelta.y - event.clientY;
 
         let newXPos = currentOffset.x + xDelta;
         let newYPos = currentOffset.y + yDelta;
@@ -44,25 +44,25 @@ const useDrag = ({ setMapOffset }: UseDragParams): UseDrag => {
           newYPos = MAP_HEIGHT - window.innerHeight;
         }
 
-        setDragDelta({ x: event.clientX, y: event.clientY });
+        setMoveDelta({ x: event.clientX, y: event.clientY });
         return {
           x: newXPos,
           y: newYPos,
         }
       })
     }
-  }, [setMapOffset, isDragging, dragDelta.x, dragDelta.y]);
+  }, [setMapOffset, isMoving, moveDelta.x, moveDelta.y]);
 
   const handleMouseUp = useCallback(() =>{
-    setIsDragging(false);
+    setIsMoving(false);
   }, []);
 
   return {
-    isDragging,
+    isMoving,
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
   }
 }
 
-export default useDrag;
+export default useMove;
