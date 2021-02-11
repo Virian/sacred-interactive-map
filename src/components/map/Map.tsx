@@ -1,18 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import './Map.css';
-import { Coords, LoadedImage } from './types';
+import { Coords, LoadedImages } from './types';
 import { TILE_SIZE } from './constants';
 import isTileAvailable from './isTileAvailable';
 import coordToString from './coordToString';
 import getCoordsForView from './getCoordsForView';
+import getInitialLoadedImages from './getInitialLoadedImages';
 import useDrag from './useDrag';
+
+const initialLoadedImages = getInitialLoadedImages();
 
 const Map = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [mapOffset, setMapOffset] = useState<Coords>({ x: 27136, y: 8704 });
-  const loadedImagesRef = useRef<LoadedImage[]>([]);
+  const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
 
   useEffect(() => {
     const context = canvasRef.current?.getContext('2d');
@@ -39,7 +42,7 @@ const Map = () => {
             && yIndex !== yCoords.length - 1;
           
           if (isTileAvailable({ x: xCoord, y: yCoord })) {
-            const loadedImage = loadedImagesRef.current.find(({ coords: { x, y }}) => x === xCoord && y === yCoord);
+            const loadedImage = loadedImagesRef.current[`${xCoord}`].find(({ coords: { y }}) => y === yCoord);
             if (loadedImage && shouldDraw) {
               context.drawImage(loadedImage.img, (xIndex - 1) * TILE_SIZE - xOverflow, (yIndex - 1) * TILE_SIZE - yOverflow);
             } else {
@@ -50,7 +53,7 @@ const Map = () => {
               const img = new Image();
               img.src = require(`../../assets/tiles/${coordToString(xCoord)}_${coordToString(yCoord)}.png`).default;
               img.onload = () => {
-                loadedImagesRef.current.push({
+                loadedImagesRef.current[`${xCoord}`].push({
                   img,
                   coords: {
                     x: xCoord,

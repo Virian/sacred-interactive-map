@@ -7,3 +7,7 @@ export type LoadedImage = {
   img: HTMLImageElement;
   coords: Coords;
 }
+
+export type LoadedImages = {
+  [key: string]: LoadedImage[];
+}
