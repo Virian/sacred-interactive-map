@@ -1,4 +1,4 @@
-import { range } from 'lodash-es';
+import range from 'lodash/range';
 
 import { TILE_SIZE } from './constants';
 

@@ -1,4 +1,4 @@
-import { range } from 'lodash-es';
+import range from 'lodash/range';
 
 import { HORIZONTAL_TILES } from './constants';
 import { LoadedImages } from './types';
