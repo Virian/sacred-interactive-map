@@ -5,9 +5,11 @@ import { Coords, LoadedImages } from './types';
 import { TILE_SIZE } from './constants';
 import isTileAvailable from './isTileAvailable';
 import coordToString from './coordToString';
+import translateScreenToCoords from './translateScreenToCoords';
 import getTileCoordsForView from './getTileCoordsForView';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMove from './useMove';
+import useWheel from './useWheel';
 
 const initialLoadedImages = getInitialLoadedImages();
 
@@ -18,11 +20,14 @@ const Map = () => {
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
 
   const {
+    mousePosition,
     isMoving,
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
   } = useMove({ setMapCoordOffset });
+
+  const { currentScaleDivision, handleWheel } = useWheel();
 
   useEffect(() => {
     const context = canvasRef.current?.getContext('2d');
@@ -52,7 +57,7 @@ const Map = () => {
             && tileXCoordIndex !== tileXCoords.length - 1
             && tileYCoordIndex !== 0
             && tileYCoordIndex !== tileYCoords.length - 1;
-          
+
           if (isTileAvailable({ x: tileXCoord, y: tileYCoord })) {
             const loadedImage = loadedImagesRef.current[`${tileXCoord}`].find(({ coords: { y }}) => y === tileYCoord);
             if (loadedImage && shouldDraw) {
@@ -103,10 +108,15 @@ const Map = () => {
               TILE_SIZE,
             );
           }
-        })
-      })
+        });
+      });
+
+      context.fillStyle = 'white';
+      context.font = '18px serif';
+      const cursorCoords = translateScreenToCoords({ screenCoords: mousePosition, mapCoordOffset });
+      context.fillText(`(${cursorCoords.x}, ${cursorCoords.y})`, mousePosition.x, mousePosition.y);
     }
-  }, [mapCoordOffset]);
+  }, [mapCoordOffset, mousePosition]);
 
   return (
     <canvas
@@ -118,6 +128,7 @@ const Map = () => {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
+      onWheel={handleWheel}
     />
   );
 };
