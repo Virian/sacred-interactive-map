@@ -4,7 +4,7 @@ import { Coords } from './types';
 import { MAP_WIDTH, MAP_HEIGHT } from './constants';
 
 type UseMoveParams = {
-  setMapOffset: Dispatch<SetStateAction<Coords>>;
+  setMapCoordOffset: Dispatch<SetStateAction<Coords>>;
 }
 
 type UseMove = {
@@ -14,7 +14,7 @@ type UseMove = {
   handleMouseUp: () => void;
 }
 
-const useMove = ({ setMapOffset }: UseMoveParams): UseMove => {
+const useMove = ({ setMapCoordOffset }: UseMoveParams): UseMove => {
   const [isMoving, setIsMoving] = useState<boolean>(false);
   const [moveDelta, setMoveDelta] = useState<Coords>({ x: 0, y: 0 });
 
@@ -25,7 +25,7 @@ const useMove = ({ setMapOffset }: UseMoveParams): UseMove => {
 
   const handleMouseMove = useCallback((event: MouseEvent) => {
     if (isMoving) {
-      setMapOffset(currentOffset => {
+      setMapCoordOffset(currentOffset => {
         const xDelta = moveDelta.x - event.clientX;
         const yDelta = moveDelta.y - event.clientY;
 
@@ -51,7 +51,7 @@ const useMove = ({ setMapOffset }: UseMoveParams): UseMove => {
         }
       })
     }
-  }, [setMapOffset, isMoving, moveDelta.x, moveDelta.y]);
+  }, [setMapCoordOffset, isMoving, moveDelta.x, moveDelta.y]);
 
   const handleMouseUp = useCallback(() =>{
     setIsMoving(false);

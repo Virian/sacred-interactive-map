@@ -5,7 +5,7 @@ import { Coords, LoadedImages } from './types';
 import { TILE_SIZE } from './constants';
 import isTileAvailable from './isTileAvailable';
 import coordToString from './coordToString';
-import getCoordsForView from './getCoordsForView';
+import getTileCoordsForView from './getTileCoordsForView';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMove from './useMove';
 
@@ -14,8 +14,15 @@ const initialLoadedImages = getInitialLoadedImages();
 const Map = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const [mapOffset, setMapOffset] = useState<Coords>({ x: 27136, y: 8704 });
+  const [mapCoordOffset, setMapCoordOffset] = useState<Coords>({ x: 27136, y: 8704 });
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
+
+  const {
+    isMoving,
+    handleMouseDown,
+    handleMouseMove,
+    handleMouseUp,
+  } = useMove({ setMapCoordOffset });
 
   useEffect(() => {
     const context = canvasRef.current?.getContext('2d');
@@ -25,61 +32,81 @@ const Map = () => {
       const numberOfHorizontalTiles = Math.ceil(window.innerWidth / TILE_SIZE) + 3;
       const numberOfVerticalTiles = Math.ceil(window.innerHeight / TILE_SIZE) + 3;
 
-      const { x: currentXOffset, y: currentYOffset } = mapOffset;
-      const xOverflow = currentXOffset % TILE_SIZE;
-      const yOverflow = currentYOffset % TILE_SIZE;
+      const { x: currentXCoordOffset, y: currentYCoordOffset } = mapCoordOffset;
+      const screenXOverflow = currentXCoordOffset % TILE_SIZE;
+      const screenYOverflow = currentYCoordOffset % TILE_SIZE;
 
       const {
-        xCoords,
-        yCoords,
-      } = getCoordsForView(numberOfHorizontalTiles, numberOfVerticalTiles, currentXOffset, currentYOffset);
+        tileXCoords,
+        tileYCoords,
+      } = getTileCoordsForView(
+        numberOfHorizontalTiles,
+        numberOfVerticalTiles,
+        currentXCoordOffset,
+        currentYCoordOffset,
+      );
 
-      xCoords.forEach((xCoord, xIndex) => {
-        yCoords.forEach((yCoord, yIndex) => {
-          const shouldDraw = xIndex !== 0 // don't draw tiles outside of the view
-            && xIndex !== xCoords.length - 1
-            && yIndex !== 0
-            && yIndex !== yCoords.length - 1;
+      tileXCoords.forEach((tileXCoord, tileXCoordIndex) => {
+        tileYCoords.forEach((tileYCoord, tileYCoordIndex) => {
+          const shouldDraw = tileXCoordIndex !== 0 // don't draw tiles outside of the view
+            && tileXCoordIndex !== tileXCoords.length - 1
+            && tileYCoordIndex !== 0
+            && tileYCoordIndex !== tileYCoords.length - 1;
           
-          if (isTileAvailable({ x: xCoord, y: yCoord })) {
-            const loadedImage = loadedImagesRef.current[`${xCoord}`].find(({ coords: { y }}) => y === yCoord);
+          if (isTileAvailable({ x: tileXCoord, y: tileYCoord })) {
+            const loadedImage = loadedImagesRef.current[`${tileXCoord}`].find(({ coords: { y }}) => y === tileYCoord);
             if (loadedImage && shouldDraw) {
-              context.drawImage(loadedImage.img, (xIndex - 1) * TILE_SIZE - xOverflow, (yIndex - 1) * TILE_SIZE - yOverflow);
+              context.drawImage(
+                loadedImage.img,
+                (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
+                (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
+                TILE_SIZE,
+                TILE_SIZE,
+              );
             } else {
               // draw a black tile until the image is loaded
               context.fillStyle = 'black';
-              context.fillRect((xIndex - 1) * TILE_SIZE - xOverflow, (yIndex - 1) * TILE_SIZE - yOverflow, TILE_SIZE, TILE_SIZE);
+              context.fillRect(
+                (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
+                (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
+                TILE_SIZE,
+                TILE_SIZE,
+              );
 
               const img = new Image();
-              img.src = require(`../../assets/tiles/${coordToString(xCoord)}_${coordToString(yCoord)}.png`).default;
+              img.src = require(`../../assets/tiles/${coordToString(tileXCoord)}_${coordToString(tileYCoord)}.png`).default;
               img.onload = () => {
-                loadedImagesRef.current[`${xCoord}`].push({
+                loadedImagesRef.current[`${tileXCoord}`].push({
                   img,
                   coords: {
-                    x: xCoord,
-                    y: yCoord,
+                    x: tileXCoord,
+                    y: tileYCoord,
                   }
                 });
                 if (shouldDraw) {
-                  context.drawImage(img, (xIndex - 1) * TILE_SIZE - xOverflow, (yIndex - 1) * TILE_SIZE - yOverflow);
+                  context.drawImage(
+                    img,
+                    (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
+                    (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
+                    TILE_SIZE,
+                    TILE_SIZE,
+                  );
                 }
               }
             }
           } else if (shouldDraw) {
             context.fillStyle = 'black';
-            context.fillRect((xIndex - 1) * TILE_SIZE - xOverflow, (yIndex - 1) * TILE_SIZE - yOverflow, TILE_SIZE, TILE_SIZE);
+            context.fillRect(
+              (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
+              (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
+              TILE_SIZE,
+              TILE_SIZE,
+            );
           }
         })
       })
     }
-  }, [mapOffset]);
-
-  const {
-    isMoving,
-    handleMouseDown,
-    handleMouseMove,
-    handleMouseUp,
-  } = useMove({ setMapOffset });
+  }, [mapCoordOffset]);
 
   return (
     <canvas
