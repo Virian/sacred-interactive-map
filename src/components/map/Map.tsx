@@ -16,8 +16,10 @@ const initialLoadedImages = getInitialLoadedImages();
 const Map = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const [mapCoordOffset, setMapCoordOffset] = useState<Coords>({ x: 27136, y: 8704 });
+  const [mapCoordOffset, setMapCoordOffset] = useState<Coords>({ x: 26880, y: 8704 });
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
+
+  const { scaleDivision, handleWheel } = useWheel();
 
   const {
     mousePosition,
@@ -25,21 +27,20 @@ const Map = () => {
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
-  } = useMove({ setMapCoordOffset });
-
-  const { currentScaleDivision, handleWheel } = useWheel();
+  } = useMove({ setMapCoordOffset, scaleDivision });
 
   useEffect(() => {
     const context = canvasRef.current?.getContext('2d');
+    const tileSizeAfterDivision = TILE_SIZE / scaleDivision;
     if (context) {
       // adding 3 because 1 is an additional tile to ensure that the whole screen will be coverted
       // and next 2 to load tiles outside of the screen (on both ends)
-      const numberOfHorizontalTiles = Math.ceil(window.innerWidth / TILE_SIZE) + 3;
-      const numberOfVerticalTiles = Math.ceil(window.innerHeight / TILE_SIZE) + 3;
+      const numberOfHorizontalTiles = Math.ceil(window.innerWidth / tileSizeAfterDivision) + 3;
+      const numberOfVerticalTiles = Math.ceil(window.innerHeight / tileSizeAfterDivision) + 3;
 
       const { x: currentXCoordOffset, y: currentYCoordOffset } = mapCoordOffset;
-      const screenXOverflow = currentXCoordOffset % TILE_SIZE;
-      const screenYOverflow = currentYCoordOffset % TILE_SIZE;
+      const screenXOverflow = (currentXCoordOffset % TILE_SIZE) / scaleDivision;
+      const screenYOverflow = (currentYCoordOffset % TILE_SIZE) / scaleDivision;
 
       const {
         tileXCoords,
@@ -63,19 +64,26 @@ const Map = () => {
             if (loadedImage && shouldDraw) {
               context.drawImage(
                 loadedImage.img,
-                (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-                (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
-                TILE_SIZE,
-                TILE_SIZE,
+                (tileXCoordIndex - 1) * tileSizeAfterDivision - screenXOverflow,
+                (tileYCoordIndex - 1) * tileSizeAfterDivision - screenYOverflow,
+                tileSizeAfterDivision,
+                tileSizeAfterDivision,
+              );
+              context.strokeStyle = 'black';
+              context.strokeRect(
+                (tileXCoordIndex - 1) * tileSizeAfterDivision - screenXOverflow,
+                (tileYCoordIndex - 1) * tileSizeAfterDivision - screenYOverflow,
+                tileSizeAfterDivision,
+                tileSizeAfterDivision,
               );
             } else {
               // draw a black tile until the image is loaded
               context.fillStyle = 'black';
               context.fillRect(
-                (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-                (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
-                TILE_SIZE,
-                TILE_SIZE,
+                (tileXCoordIndex - 1) * tileSizeAfterDivision - screenXOverflow,
+                (tileYCoordIndex - 1) * tileSizeAfterDivision - screenYOverflow,
+                tileSizeAfterDivision,
+                tileSizeAfterDivision,
               );
 
               const img = new Image();
@@ -91,10 +99,17 @@ const Map = () => {
                 if (shouldDraw) {
                   context.drawImage(
                     img,
-                    (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-                    (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
-                    TILE_SIZE,
-                    TILE_SIZE,
+                    (tileXCoordIndex - 1) * tileSizeAfterDivision - screenXOverflow,
+                    (tileYCoordIndex - 1) * tileSizeAfterDivision - screenYOverflow,
+                    tileSizeAfterDivision,
+                    tileSizeAfterDivision,
+                  );
+                  context.strokeStyle = 'black';
+                  context.strokeRect(
+                    (tileXCoordIndex - 1) * tileSizeAfterDivision - screenXOverflow,
+                    (tileYCoordIndex - 1) * tileSizeAfterDivision - screenYOverflow,
+                    tileSizeAfterDivision,
+                    tileSizeAfterDivision,
                   );
                 }
               }
@@ -102,10 +117,10 @@ const Map = () => {
           } else if (shouldDraw) {
             context.fillStyle = 'black';
             context.fillRect(
-              (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-              (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
-              TILE_SIZE,
-              TILE_SIZE,
+              (tileXCoordIndex - 1) * tileSizeAfterDivision - screenXOverflow,
+              (tileYCoordIndex - 1) * tileSizeAfterDivision - screenYOverflow,
+              tileSizeAfterDivision,
+              tileSizeAfterDivision,
             );
           }
         });
@@ -113,10 +128,10 @@ const Map = () => {
 
       context.fillStyle = 'white';
       context.font = '18px serif';
-      const cursorCoords = translateScreenToCoords({ screenCoords: mousePosition, mapCoordOffset });
+      const cursorCoords = translateScreenToCoords({ screenCoords: mousePosition, mapCoordOffset, scaleDivision });
       context.fillText(`(${cursorCoords.x}, ${cursorCoords.y})`, mousePosition.x, mousePosition.y);
     }
-  }, [mapCoordOffset, mousePosition]);
+  }, [mapCoordOffset, mousePosition, scaleDivision]);
 
   return (
     <canvas
