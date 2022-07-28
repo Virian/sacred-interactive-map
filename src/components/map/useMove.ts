@@ -2,25 +2,23 @@ import { useState, useCallback, useMemo, MouseEvent, Dispatch, SetStateAction } 
 import throttle from 'lodash/throttle';
 
 import { Coords } from './types';
-import { MAP_WIDTH, MAP_HEIGHT } from './constants';
+import { MAP_WIDTH, MAP_HEIGHT, MOUSE_MOVE_THROTTLE_TIMEOUT } from './constants';
 
 interface UseMoveParams {
   setMapCoordOffset: Dispatch<SetStateAction<Coords>>;
-  scaleDivision?: number;
+  scale?: number;
 }
 
 interface UseMove {
-  mousePosition: Coords;
   isMoving: boolean;
   handleMouseDown: (event: MouseEvent) => void;
   handleMouseMove: (event: MouseEvent) => void;
   handleMouseUp: () => void;
 }
 
-const useMove = ({ setMapCoordOffset, scaleDivision = 1 }: UseMoveParams): UseMove => {
+const useMove = ({ setMapCoordOffset, scale = 1 }: UseMoveParams): UseMove => {
   const [isMoving, setIsMoving] = useState<boolean>(false);
   const [moveDelta, setMoveDelta] = useState<Coords>({ x: 0, y: 0 });
-  const [mousePosition, setMousePosition] = useState<Coords>({ x: 0, y: 0 });
 
   const handleMouseDown = useCallback((event: MouseEvent) => {
     setMoveDelta({ x: event.clientX, y: event.clientY });
@@ -30,25 +28,24 @@ const useMove = ({ setMapCoordOffset, scaleDivision = 1 }: UseMoveParams): UseMo
   const handleMouseMove = useMemo(
     () => throttle(
       (event: MouseEvent) => {
-        setMousePosition({ x: event.clientX, y: event.clientY })
         if (isMoving) {
           setMapCoordOffset(currentOffset => {
             const xDelta = moveDelta.x - event.clientX;
             const yDelta = moveDelta.y - event.clientY;
 
-            let newXPos = currentOffset.x + (xDelta * scaleDivision);
-            let newYPos = currentOffset.y + (yDelta * scaleDivision);
+            let newXPos = currentOffset.x + (xDelta * scale);
+            let newYPos = currentOffset.y + (yDelta * scale);
 
             if (newXPos < 0) {
               newXPos = 0;
-            } else if (newXPos > MAP_WIDTH - (window.innerWidth * scaleDivision)) {
-              newXPos = MAP_WIDTH - (window.innerWidth * scaleDivision);
+            } else if (newXPos > MAP_WIDTH - (window.innerWidth * scale)) {
+              newXPos = MAP_WIDTH - (window.innerWidth * scale);
             }
 
             if (newYPos < 0) {
               newYPos = 0;
-            } else if (newYPos > MAP_HEIGHT - (window.innerHeight * scaleDivision)) {
-              newYPos = MAP_HEIGHT - (window.innerHeight * scaleDivision);
+            } else if (newYPos > MAP_HEIGHT - (window.innerHeight * scale)) {
+              newYPos = MAP_HEIGHT - (window.innerHeight * scale);
             }
 
             setMoveDelta({ x: event.clientX, y: event.clientY });
@@ -59,9 +56,9 @@ const useMove = ({ setMapCoordOffset, scaleDivision = 1 }: UseMoveParams): UseMo
           })
         }
       },
-      16,
+      MOUSE_MOVE_THROTTLE_TIMEOUT,
     ),
-    [setMapCoordOffset, isMoving, moveDelta.x, moveDelta.y, scaleDivision],
+    [setMapCoordOffset, isMoving, moveDelta.x, moveDelta.y, scale],
   );
 
   const handleMouseUp = useCallback(() =>{
@@ -69,7 +66,6 @@ const useMove = ({ setMapCoordOffset, scaleDivision = 1 }: UseMoveParams): UseMo
   }, []);
 
   return {
-    mousePosition,
     isMoving,
     handleMouseDown,
     handleMouseMove,

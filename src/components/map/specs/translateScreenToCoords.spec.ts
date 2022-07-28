@@ -17,9 +17,9 @@ const cases: [Coords, Coords, number, Coords][] = [
 describe('translateScreenToCoords', () => {
   it.each(cases)(
     'should return correct map coords',
-    (screenCoords, mapCoordOffset, scaleDivision, expectedCoords) => {
+    (screenCoords, mapCoordOffset, scale, expectedCoords) => {
       // when
-      const result = translateScreenToCoords({ screenCoords, mapCoordOffset, scaleDivision });
+      const result = translateScreenToCoords({ screenCoords, mapCoordOffset, scale });
 
       // then
       expect(result).toEqual(expectedCoords);

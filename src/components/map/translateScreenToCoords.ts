@@ -3,12 +3,12 @@ import { Coords } from './types';
 interface TranslateScreenToCoordsParams {
   screenCoords: Coords;
   mapCoordOffset: Coords;
-  scaleDivision?: number;
+  scale?: number;
 }
 
-const translateScreenToCoords = ({ screenCoords, mapCoordOffset, scaleDivision = 1 }: TranslateScreenToCoordsParams): Coords => {
-  const coordX = mapCoordOffset.x + (screenCoords.x * scaleDivision);
-  const coordY = mapCoordOffset.y + (screenCoords.y * scaleDivision);
+const translateScreenToCoords = ({ screenCoords, mapCoordOffset, scale = 1 }: TranslateScreenToCoordsParams): Coords => {
+  const coordX = mapCoordOffset.x + (screenCoords.x * scale);
+  const coordY = mapCoordOffset.y + (screenCoords.y * scale);
 
   return {
     x: coordX >= 0 ? coordX : 0,

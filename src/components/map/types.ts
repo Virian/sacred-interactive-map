@@ -9,5 +9,5 @@ export type LoadedImage = {
 }
 
 export type LoadedImages = {
-  [key: string]: LoadedImage[];
+  [level: string]: Record<string, LoadedImage[]>;
 }
