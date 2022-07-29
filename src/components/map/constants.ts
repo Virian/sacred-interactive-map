@@ -6,6 +6,7 @@ export const MAP_WIDTH = HORIZONTAL_TILES * TILE_SIZE;
 export const MAP_HEIGHT = VERTICAL_TILES * TILE_SIZE;
 
 // some levels were omitted on purpose because they are unnecessary for a smooth UX
+// they are also omitted in gitignore
 export const MAP_SCALE_LEVELS = [
   { level: 12, scale: 1 },
   { level: 11, scale: 3 },

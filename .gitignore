@@ -23,4 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
-src/assets/tiles
+src/assets/tiles/7
+src/assets/tiles/5
+src/assets/tiles/3
+src/assets/tiles/2

@@ -100,7 +100,7 @@ const Map = () => {
               );
 
               const img = new Image();
-              img.src = require(`../../assets/tiles/${scaleLevel.level}/${coordToString(tileXCoord)}_${coordToString(tileYCoord)}.png`).default;
+              img.src = require(`../../assets/tiles/${scaleLevel.level}/${coordToString(tileXCoord)}_${coordToString(tileYCoord)}.webp`).default;
               img.onload = () => {
                 loadedImagesRef.current[`${scaleLevel.level}`][`${tileXCoord}`].push({
                   img,
