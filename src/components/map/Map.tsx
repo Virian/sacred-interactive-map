@@ -100,7 +100,10 @@ const Map = () => {
               );
 
               const img = new Image();
-              img.src = require(`../../assets/tiles/${scaleLevel.level}/${coordToString(tileXCoord)}_${coordToString(tileYCoord)}.webp`).default;
+              // functions can't be used in a string literal with file path
+              const stringTileXCoord = coordToString(tileXCoord);
+              const stringTileYCoord = coordToString(tileYCoord);
+              img.src = require(`../../assets/tiles/${scaleLevel.level}/${stringTileXCoord}_${stringTileYCoord}.webp`).default;
               img.onload = () => {
                 loadedImagesRef.current[`${scaleLevel.level}`][`${tileXCoord}`].push({
                   img,
