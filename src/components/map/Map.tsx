@@ -6,30 +6,27 @@ import React, {
   MouseEvent,
 } from 'react';
 
-import { SHOULD_DRAW_TILE_EDGES, SHOULD_DRAW_COORDS } from '../../config';
-
 import './Map.css';
-import { Coords, LoadedImages } from './types';
-import {
-  TILE_SIZE,
-  MAP_WIDTH,
-  MAP_HEIGHT,
-  INITIAL_SCALE_LEVEL,
-} from './constants';
-import isTileAvailable from './isTileAvailable';
-import coordToString from './coordToString';
-import translateScreenToCoords from './translateScreenToCoords';
-import translateMapCoordsToGameCoords from './translateMapCoordsToGameCoords';
-import getTileCoordsForView from './getTileCoordsForView';
+import { Coords, LoadedImages, LoadedIcons } from './types';
+import { MAP_WIDTH, MAP_HEIGHT, INITIAL_SCALE_LEVEL } from './constants';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMousePosition from './useMousePosition';
 import useMove from './useMove';
 import useWheel from './useWheel';
+import drawMapTiles from './drawMapTiles';
+import drawIcons from './drawIcons';
+import drawMouseCoords from './drawMouseCoords';
+
+interface MapProps {
+  filters: Record<string, boolean>;
+}
 
 const initialLoadedImages = getInitialLoadedImages();
 
-const Map = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+const Map = ({ filters }: MapProps) => {
+  const tilesLayerRef = useRef<HTMLCanvasElement>(null);
+  const iconsLayerRef = useRef<HTMLCanvasElement>(null);
+  const coordsLayerRef = useRef<HTMLCanvasElement>(null);
 
   const [mapCoordOffset, setMapCoordOffset] = useState<Coords>(() => {
     const xOffsetToCenterMap =
@@ -42,6 +39,7 @@ const Map = () => {
     };
   });
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
+  const loadedIconsRef = useRef<LoadedIcons>({ dragons: null, portals: null });
 
   const { mousePosition, handleMouseMove: onMouseMove } = useMousePosition();
 
@@ -66,156 +64,71 @@ const Map = () => {
   );
 
   useEffect(() => {
-    const context = canvasRef.current?.getContext('2d');
+    const tilesContext = tilesLayerRef.current?.getContext('2d');
 
-    if (context) {
-      // adding 3 because 1 is an additional tile to ensure that the whole screen will be covered
-      // and next 2 to load tiles outside of the screen (on both ends)
-      const numberOfHorizontalTiles =
-        Math.ceil(window.innerWidth / TILE_SIZE) + 3;
-      const numberOfVerticalTiles =
-        Math.ceil(window.innerHeight / TILE_SIZE) + 3;
-
-      const { x: currentXCoordOffset, y: currentYCoordOffset } = mapCoordOffset;
-      const screenXOverflow =
-        (currentXCoordOffset % (TILE_SIZE * scaleLevel.scale)) /
-        scaleLevel.scale;
-      const screenYOverflow =
-        (currentYCoordOffset % (TILE_SIZE * scaleLevel.scale)) /
-        scaleLevel.scale;
-
-      const { tileXCoords, tileYCoords } = getTileCoordsForView(
-        numberOfHorizontalTiles,
-        numberOfVerticalTiles,
-        currentXCoordOffset,
-        currentYCoordOffset,
-        scaleLevel.scale
-      );
-
-      tileXCoords.forEach((tileXCoord, tileXCoordIndex) => {
-        tileYCoords.forEach((tileYCoord, tileYCoordIndex) => {
-          const shouldDraw =
-            tileXCoordIndex !== 0 && // don't draw tiles outside of the view
-            tileXCoordIndex !== tileXCoords.length - 1 &&
-            tileYCoordIndex !== 0 &&
-            tileYCoordIndex !== tileYCoords.length - 1;
-
-          if (
-            isTileAvailable({
-              x: tileXCoord,
-              y: tileYCoord,
-              scaleLevel: scaleLevel.level,
-            })
-          ) {
-            const loadedImage = loadedImagesRef.current[`${scaleLevel.level}`][
-              `${tileXCoord}`
-            ].find(({ coords: { y } }) => y === tileYCoord);
-            if (loadedImage && shouldDraw) {
-              context.drawImage(
-                loadedImage.img,
-                (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-                (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
-                TILE_SIZE,
-                TILE_SIZE
-              );
-              if (SHOULD_DRAW_TILE_EDGES) {
-                context.strokeStyle = 'black';
-                context.strokeRect(
-                  (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-                  (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
-                  TILE_SIZE,
-                  TILE_SIZE
-                );
-              }
-            } else {
-              // draw a black tile until the image is loaded
-              context.fillStyle = 'black';
-              context.fillRect(
-                (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-                (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
-                TILE_SIZE,
-                TILE_SIZE
-              );
-
-              const img = new Image();
-              // functions can't be used in a string literal with file path
-              const stringTileXCoord = coordToString(tileXCoord);
-              const stringTileYCoord = coordToString(tileYCoord);
-              img.src =
-                require(`../../assets/tiles/${scaleLevel.level}/${stringTileXCoord}_${stringTileYCoord}.webp`).default;
-              img.onload = () => {
-                loadedImagesRef.current[`${scaleLevel.level}`][
-                  `${tileXCoord}`
-                ].push({
-                  img,
-                  coords: {
-                    x: tileXCoord,
-                    y: tileYCoord,
-                  },
-                });
-                if (shouldDraw) {
-                  context.drawImage(
-                    img,
-                    (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-                    (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
-                    TILE_SIZE,
-                    TILE_SIZE
-                  );
-                  if (SHOULD_DRAW_TILE_EDGES) {
-                    context.strokeStyle = 'black';
-                    context.strokeRect(
-                      (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-                      (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
-                      TILE_SIZE,
-                      TILE_SIZE
-                    );
-                  }
-                }
-              };
-            }
-          } else if (shouldDraw) {
-            context.fillStyle = 'black';
-            context.fillRect(
-              (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-              (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
-              TILE_SIZE,
-              TILE_SIZE
-            );
-          }
-        });
+    if (tilesContext) {
+      drawMapTiles({
+        context: tilesContext,
+        mapCoordOffset,
+        scaleLevel,
+        loadedImagesRef,
       });
+    }
+  }, [mapCoordOffset, scaleLevel]);
 
-      if (SHOULD_DRAW_COORDS) {
-        context.fillStyle = 'white';
-        context.font = '18px serif';
-        const cursorCoords = translateMapCoordsToGameCoords(
-          translateScreenToCoords({
-            screenCoords: mousePosition,
-            mapCoordOffset,
-            scale: scaleLevel.scale,
-          })
-        );
-        context.fillText(
-          `(${cursorCoords.x}, ${cursorCoords.y})`,
-          mousePosition.x,
-          mousePosition.y
-        );
-      }
+  useEffect(() => {
+    const iconsContext = iconsLayerRef.current?.getContext('2d');
+
+    if (iconsContext) {
+      drawIcons({
+        context: iconsContext,
+        mapCoordOffset,
+        scaleLevel,
+        loadedIconsRef,
+        filters,
+      });
+    }
+  }, [mapCoordOffset, scaleLevel, filters]);
+
+  useEffect(() => {
+    const coordsContext = coordsLayerRef.current?.getContext('2d');
+
+    if (coordsContext) {
+      drawMouseCoords({
+        context: coordsContext,
+        mapCoordOffset,
+        scaleLevel,
+        mousePosition,
+      });
     }
   }, [mapCoordOffset, mousePosition, scaleLevel]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      height={window.innerHeight}
-      width={window.innerWidth}
-      className={`Map ${isMoving ? 'isMoving' : ''}`}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
-      onWheel={handleWheel}
-    />
+    <div className="MapContainer">
+      <canvas
+        ref={tilesLayerRef}
+        height={window.innerHeight}
+        width={window.innerWidth}
+        className="Layer"
+      />
+      <canvas
+        ref={iconsLayerRef}
+        height={window.innerHeight}
+        width={window.innerWidth}
+        className="Layer"
+      />
+      <canvas
+        ref={coordsLayerRef}
+        height={window.innerHeight}
+        width={window.innerWidth}
+        className={`Layer ${isMoving ? 'isMoving' : ''}`}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onWheel={handleWheel}
+      />
+    </div>
   );
 };
 

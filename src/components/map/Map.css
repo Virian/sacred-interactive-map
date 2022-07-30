@@ -1,3 +1,13 @@
-.Map.isMoving {
+.MapContainer {
+  position: relative;
+}
+
+.Layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Layer.isMoving {
   cursor: move;
 }
