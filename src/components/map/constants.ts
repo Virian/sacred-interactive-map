@@ -17,5 +17,6 @@ export const MAP_SCALE_LEVELS = [
   { level: 4, scale: 17 },
   { level: 1, scale: 23 },
 ];
+export const INITIAL_SCALE_LEVEL = MAP_SCALE_LEVELS[MAP_SCALE_LEVELS.length - 1];
 
 export const MOUSE_MOVE_THROTTLE_TIMEOUT = 16;

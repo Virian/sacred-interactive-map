@@ -4,7 +4,7 @@ import { SHOULD_DRAW_TILE_EDGES, SHOULD_DRAW_COORDS } from '../../config';
 
 import './Map.css';
 import { Coords, LoadedImages } from './types';
-import { TILE_SIZE } from './constants';
+import { TILE_SIZE, MAP_WIDTH, MAP_HEIGHT, INITIAL_SCALE_LEVEL } from './constants';
 import isTileAvailable from './isTileAvailable';
 import coordToString from './coordToString';
 import translateScreenToCoords from './translateScreenToCoords';
@@ -20,7 +20,11 @@ const initialLoadedImages = getInitialLoadedImages();
 const Map = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const [mapCoordOffset, setMapCoordOffset] = useState<Coords>({ x: 26880, y: 8704 }); // TODO: change initial coords and zoom
+  const [mapCoordOffset, setMapCoordOffset] = useState<Coords>(() => {
+    const xOffsetToCenterMap = MAP_WIDTH / 2 - (window.innerWidth * INITIAL_SCALE_LEVEL.scale) / 2;
+    const yOffsetToCenterMap = MAP_HEIGHT / 2 - (window.innerHeight * INITIAL_SCALE_LEVEL.scale) / 2;
+    return { x: Math.max(0, xOffsetToCenterMap), y: Math.max(0, yOffsetToCenterMap) };
+  });
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
 
   const { mousePosition, handleMouseMove: onMouseMove } = useMousePosition();

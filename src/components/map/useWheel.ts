@@ -2,7 +2,7 @@ import { useState, useMemo, Dispatch, SetStateAction } from 'react';
 import throttle from 'lodash/throttle';
 
 import { Coords } from './types';
-import { MAP_SCALE_LEVELS, MAP_HEIGHT, MAP_WIDTH } from './constants';
+import { MAP_SCALE_LEVELS, INITIAL_SCALE_LEVEL, MAP_HEIGHT, MAP_WIDTH } from './constants';
 
 interface UseWheelParams {
   setMapCoordOffset: Dispatch<SetStateAction<Coords>>;
@@ -10,7 +10,7 @@ interface UseWheelParams {
 }
 
 const useWheel = ({ setMapCoordOffset, mousePosition }: UseWheelParams) => {
-  const [scaleLevel, setScaleLevel] = useState(MAP_SCALE_LEVELS[0]);
+  const [scaleLevel, setScaleLevel] = useState(INITIAL_SCALE_LEVEL);
 
   const handleWheel = useMemo(
     () => throttle(
