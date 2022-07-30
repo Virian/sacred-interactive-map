@@ -6,7 +6,7 @@ import React, {
   MouseEvent,
 } from 'react';
 
-import './Map.css';
+import './Map.scss';
 import { Coords, LoadedImages, LoadedIcons } from './types';
 import { MAP_WIDTH, MAP_HEIGHT, INITIAL_SCALE_LEVEL } from './constants';
 import getInitialLoadedImages from './getInitialLoadedImages';

@@ -1,6 +1,6 @@
 import React, { useState, useCallback, Dispatch, SetStateAction } from 'react';
 
-import './FiltersMenu.css';
+import './FiltersMenu.scss';
 import iconsData from '../../assets/icons.json';
 
 interface FiltersMenuProps {
@@ -39,9 +39,7 @@ const FiltersMenu = ({ filters, setFilters }: FiltersMenuProps) => {
         {Object.entries(iconsData).map(([category, data]) => (
           <div
             key={category}
-            className={`FiltersMenu__Filter ${
-              !filters[category] ? 'FiltersMenu__Filter--Disabled' : ''
-            }`}
+            className={`Filter ${!filters[category] ? 'Filter--Disabled' : ''}`}
             onClick={() => toggleFilter(category)}
           >
             <span className={`Filter__Icon Filter__Icon--${category}`} />

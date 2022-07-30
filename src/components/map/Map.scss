@@ -6,8 +6,8 @@
   position: absolute;
   top: 0;
   left: 0;
-}
 
-.Layer.isMoving {
-  cursor: move;
+  &.isMoving {
+    cursor: move;
+  }
 }

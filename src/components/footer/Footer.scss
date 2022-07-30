@@ -14,15 +14,15 @@
 
 .FooterLink {
   text-decoration: none;
-}
 
-.FooterLink:visited {
-  color: var(--app-font-color);
-}
+  &:visited {
+    color: var(--app-font-color);
+  }
 
-.FooterLink:hover,
-.FooterLink:focus,
-.FooterLink:active {
-  color: var(--link-hover-color);
-  text-decoration: underline;
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+  }
 }

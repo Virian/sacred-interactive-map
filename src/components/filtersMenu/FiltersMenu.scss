@@ -1,0 +1,101 @@
+.FiltersMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  border-bottom-right-radius: 5px;
+  background-color: var(--filter-menu-background);
+  color: var(--filter-menu-color);
+  z-index: 1;
+  transition: transform cubic-bezier(0.215, 0.610, 0.355, 1) .2s;
+
+  &.isHidden {
+    transform: translateX(-100%);
+  }
+
+  &__ArrowContainer {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    left: 100%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: var(--filter-menu-background);
+    cursor: pointer;
+  }
+
+  &__Arrow {
+    width: 32px;
+    height: 32px;
+    background-image: url('../../assets/icons/icon-arrow-left.webp');
+    background-size: cover;
+
+    &.isHidden {
+      background-image: url('../../assets/icons/icon-arrow-right.webp');
+    }
+  }
+
+  &__Container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  &__Logo {
+    align-self: center;
+    width: 256px;
+    height: 64px;
+    background-image: url('../../assets/sacred-logo.webp');
+    background-size: cover;
+  }
+
+  &__Header {
+    align-self: center;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__Separator {
+    margin: 20px 0;
+    border-bottom: 1px solid var(--filter-menu-separator);
+  }
+}
+
+.Filter {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--filter-menu-filter-color-hover);
+  }
+
+  &--Disabled {
+    opacity: 0.4;
+
+    .Filter__Text {
+      text-decoration: line-through;
+    }
+  }
+
+  &__Icon {
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+
+    &--dragons {
+      background-image: url('../../assets/icons/icon-dragons.webp');
+    }
+
+    &--portals {
+      background-image: url('../../assets/icons/icon-portals.webp');
+    }
+  }
+
+  &__Text {
+    flex: 1;
+    text-transform: uppercase;
+  }
+}

@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import Map from './components/map/Map';
 import FiltersMenu from './components/filtersMenu/FiltersMenu';
 import Footer from './components/footer/Footer';
-import './assets/css/variables.css';
-import './App.css';
+import './assets/scss/variables.scss';
+import './App.scss';
 
 const App = () => {
   const [filters, setFilters] = useState<Record<string, boolean>>({});
