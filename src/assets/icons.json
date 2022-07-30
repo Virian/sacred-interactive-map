@@ -38,5 +38,61 @@
       { "x": 29483, "y": 2989, "label": "Hell's Ridge" },
       { "x": 17139, "y": 4790, "label": "Valley of Tears" }
     ]
+  },
+  "chests": {
+    "filterLabel": "Personal Stash",
+    "markers": [
+      { "x": 23990, "y": 2974, "label": "Garema Personal Stash" },
+      { "x": 29063, "y": 3161, "label": "Shaddar-Sub Personal Stash" },
+      { "x": 26140, "y": 4207, "label": "Purgatori Personal Stash" },
+      { "x": 17175, "y": 5342, "label": "Darkwood Personal Stash" },
+      { "x": 27082, "y": 5454, "label": "Fungi Hillock Personal Stash" },
+      { "x": 31920, "y": 5500, "label": "Esotopia Personal Stash" },
+      { "x": 26615, "y": 6518, "label": "Dwarven Ruins Personal Stash" },
+      { "x": 29800, "y": 7090, "label": "Dwarven Ruins Personal Stash" },
+      {
+        "x": 24010,
+        "y": 6329,
+        "label": "Monastery of the Seraphim Personal Stash"
+      },
+      { "x": 16158, "y": 8048, "label": "Tyr-Haddar Personal Stash" },
+      { "x": 20040, "y": 8306, "label": "Timberton Personal Stash" },
+      { "x": 22580, "y": 7523, "label": "Slater's Grave Personal Stash" },
+      { "x": 24359, "y": 7454, "label": "Wolfdale Personal Stash" },
+      { "x": 23130, "y": 8600, "label": "Crow's Rock Personal Stash" },
+      { "x": 17340, "y": 9360, "label": "Tyr-Fasul Personal Stash" },
+      { "x": 19449, "y": 10545, "label": "Mascarell Personal Stash" },
+      { "x": 20845, "y": 9830, "label": "Faeries Crossing Personal Stash" },
+      { "x": 20148, "y": 11213, "label": "Porto Draco Personal Stash" },
+      { "x": 21784, "y": 10741, "label": "Florentina Personal Stash" },
+      { "x": 23560, "y": 11600, "label": "Porto Vallum Personal Stash" },
+      { "x": 24123, "y": 9383, "label": "Shire's Pen Personal Stash" },
+      { "x": 27140, "y": 9287, "label": "Braverock Personal Stash" },
+      { "x": 29684, "y": 9095, "label": "Bravewall Personal Stash" },
+      { "x": 29182, "y": 10571, "label": "Hedgenton Personal Stash" },
+      { "x": 26318, "y": 10721, "label": "Bravesbury Personal Stash" },
+      {
+        "x": 25572,
+        "y": 11548,
+        "label": "Silver Creek Outpost Personal Stash"
+      },
+      { "x": 27270, "y": 11928, "label": "Silver Creek Personal Stash" },
+      { "x": 27155, "y": 12219, "label": "Haven Isle Personal Stash" },
+      { "x": 28997, "y": 12037, "label": "Bellevue Personal Stash" },
+      { "x": 33079, "y": 9988, "label": "Highmarsh Personal Stash" },
+      { "x": 34918, "y": 11004, "label": "Gloomoor Personal Stash" },
+      { "x": 31914, "y": 11987, "label": "Drakenden Personal Stash" },
+      { "x": 34382, "y": 12682, "label": "Moorbrook Personal Stash" },
+      { "x": 31622, "y": 13395, "label": "Mystdale Personal Stash" },
+      { "x": 21210, "y": 12649, "label": "N'Aquali Personal Stash" },
+      { "x": 23763, "y": 12555, "label": "Urkenburgh Personal Stash" },
+      { "x": 26085, "y": 13472, "label": "Oasis of Ahil-Tar Personal Stash" },
+      { "x": 28522, "y": 13544, "label": "Kahari Personal Stash" },
+      { "x": 26928, "y": 14421, "label": "Aish-Jadar Personal Stash" },
+      { "x": 25082, "y": 14222, "label": "Khorad-Nur Personal Stash" },
+      { "x": 22299, "y": 14721, "label": "Nomad-Nur Personal Stash" },
+      { "x": 20489, "y": 15360, "label": "Pirate Island Personal Stash" },
+      { "x": 11425, "y": 12850, "label": "Alkazaba Noc Draco Personal Stash" }
+    ]
   }
 }

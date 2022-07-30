@@ -39,7 +39,11 @@ const Map = ({ filters }: MapProps) => {
     };
   });
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
-  const loadedIconsRef = useRef<LoadedIcons>({ dragons: null, portals: null });
+  const loadedIconsRef = useRef<LoadedIcons>({
+    dragons: null,
+    portals: null,
+    chests: null,
+  });
 
   const { mousePosition, handleMouseMove: onMouseMove } = useMousePosition();
 
