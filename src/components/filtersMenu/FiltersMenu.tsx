@@ -24,6 +24,20 @@ const FiltersMenu = ({ filters, setFilters }: FiltersMenuProps) => {
     [setFilters]
   );
 
+  const setAllFilters = useCallback(
+    (shouldEnable: boolean) => {
+      const newFilters = Object.keys(iconsData).reduce(
+        (acc, category) => ({
+          ...acc,
+          [category]: shouldEnable,
+        }),
+        {}
+      );
+      setFilters(newFilters);
+    },
+    [setFilters]
+  );
+
   return (
     <div className={`FiltersMenu ${isHidden ? 'isHidden' : ''}`}>
       <div
@@ -35,6 +49,21 @@ const FiltersMenu = ({ filters, setFilters }: FiltersMenuProps) => {
       <div className="FiltersMenu__Container">
         <span className="FiltersMenu__Logo" />
         <h1 className="FiltersMenu__Header">Interactive Map</h1>
+        <div className="FiltersMenu__Separator" />
+        <div className="FiltersMenu__Buttons">
+          <button
+            className="FiltersMenu__Button"
+            onClick={() => setAllFilters(true)}
+          >
+            show all
+          </button>
+          <button
+            className="FiltersMenu__Button"
+            onClick={() => setAllFilters(false)}
+          >
+            hide all
+          </button>
+        </div>
         <div className="FiltersMenu__Separator" />
         {Object.entries(iconsData).map(([category, data]) => (
           <div

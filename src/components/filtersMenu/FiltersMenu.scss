@@ -59,6 +59,26 @@
     margin: 20px 0;
     border-bottom: 1px solid var(--filter-menu-separator);
   }
+
+  &__Buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  &__Button {
+    padding: 0.375rem 0.725rem;
+    border: 0;
+    background-color: var(--filter-menu-button-background);
+    color: var(--filter-menu-color);
+    transition: background-color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--filter-menu-button-hover-background);
+    }
+  }
 }
 
 .Filter {
