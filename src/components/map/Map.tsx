@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback, MouseEvent } from 'react';
 
+import { SHOULD_DRAW_TILE_EDGES, SHOULD_DRAW_COORDS } from '../../config';
+
 import './Map.css';
 import { Coords, LoadedImages } from './types';
 import { TILE_SIZE } from './constants';
@@ -14,9 +16,6 @@ import useMove from './useMove';
 import useWheel from './useWheel';
 
 const initialLoadedImages = getInitialLoadedImages();
-
-const SHOULD_DRAW_TILE_EDGES = false;
-const SHOULD_DRAW_COORDS = false;
 
 const Map = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
