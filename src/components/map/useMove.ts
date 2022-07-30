@@ -1,8 +1,19 @@
-import { useState, useCallback, useMemo, MouseEvent, Dispatch, SetStateAction } from 'react';
+import {
+  useState,
+  useCallback,
+  useMemo,
+  MouseEvent,
+  Dispatch,
+  SetStateAction,
+} from 'react';
 import throttle from 'lodash/throttle';
 
 import { Coords } from './types';
-import { MAP_WIDTH, MAP_HEIGHT, MOUSE_MOVE_THROTTLE_TIMEOUT } from './constants';
+import {
+  MAP_WIDTH,
+  MAP_HEIGHT,
+  MOUSE_MOVE_THROTTLE_TIMEOUT,
+} from './constants';
 
 interface UseMoveParams {
   setMapCoordOffset: Dispatch<SetStateAction<Coords>>;
@@ -26,42 +37,40 @@ const useMove = ({ setMapCoordOffset, scale = 1 }: UseMoveParams): UseMove => {
   }, []);
 
   const handleMouseMove = useMemo(
-    () => throttle(
-      (event: MouseEvent) => {
+    () =>
+      throttle((event: MouseEvent) => {
         if (isMoving) {
-          setMapCoordOffset(currentOffset => {
+          setMapCoordOffset((currentOffset) => {
             const xDelta = moveDelta.x - event.clientX;
             const yDelta = moveDelta.y - event.clientY;
 
-            let newXPos = currentOffset.x + (xDelta * scale);
-            let newYPos = currentOffset.y + (yDelta * scale);
+            let newXPos = currentOffset.x + xDelta * scale;
+            let newYPos = currentOffset.y + yDelta * scale;
 
             if (newXPos < 0) {
               newXPos = 0;
-            } else if (newXPos > MAP_WIDTH - (window.innerWidth * scale)) {
-              newXPos = MAP_WIDTH - (window.innerWidth * scale);
+            } else if (newXPos > MAP_WIDTH - window.innerWidth * scale) {
+              newXPos = MAP_WIDTH - window.innerWidth * scale;
             }
 
             if (newYPos < 0) {
               newYPos = 0;
-            } else if (newYPos > MAP_HEIGHT - (window.innerHeight * scale)) {
-              newYPos = MAP_HEIGHT - (window.innerHeight * scale);
+            } else if (newYPos > MAP_HEIGHT - window.innerHeight * scale) {
+              newYPos = MAP_HEIGHT - window.innerHeight * scale;
             }
 
             setMoveDelta({ x: event.clientX, y: event.clientY });
             return {
               x: newXPos,
               y: newYPos,
-            }
-          })
+            };
+          });
         }
-      },
-      MOUSE_MOVE_THROTTLE_TIMEOUT,
-    ),
-    [setMapCoordOffset, isMoving, moveDelta.x, moveDelta.y, scale],
+      }, MOUSE_MOVE_THROTTLE_TIMEOUT),
+    [setMapCoordOffset, isMoving, moveDelta.x, moveDelta.y, scale]
   );
 
-  const handleMouseUp = useCallback(() =>{
+  const handleMouseUp = useCallback(() => {
     setIsMoving(false);
   }, []);
 
@@ -70,7 +79,7 @@ const useMove = ({ setMapCoordOffset, scale = 1 }: UseMoveParams): UseMove => {
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
-  }
-}
+  };
+};
 
 export default useMove;

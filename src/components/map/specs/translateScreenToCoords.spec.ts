@@ -19,10 +19,14 @@ describe('translateScreenToCoords', () => {
     'should return correct map coords',
     (screenCoords, mapCoordOffset, scale, expectedCoords) => {
       // when
-      const result = translateScreenToCoords({ screenCoords, mapCoordOffset, scale });
+      const result = translateScreenToCoords({
+        screenCoords,
+        mapCoordOffset,
+        scale,
+      });
 
       // then
       expect(result).toEqual(expectedCoords);
     }
-  )
+  );
 });

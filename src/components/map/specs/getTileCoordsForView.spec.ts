@@ -1,6 +1,13 @@
 import getTileCoordsForView from '../getTileCoordsForView';
 
-const cases: [number, number, number, number, number, { tileXCoords: number[], tileYCoords: number[] }][] = [
+const cases: [
+  number,
+  number,
+  number,
+  number,
+  number,
+  { tileXCoords: number[]; tileYCoords: number[] }
+][] = [
   [
     6,
     3,
@@ -15,7 +22,10 @@ const cases: [number, number, number, number, number, { tileXCoords: number[], t
     512,
     1024,
     1,
-    { tileXCoords: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], tileYCoords: [3, 4, 5, 6, 7, 8, 9] },
+    {
+      tileXCoords: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      tileYCoords: [3, 4, 5, 6, 7, 8, 9],
+    },
   ],
   [
     8,
@@ -47,7 +57,10 @@ const cases: [number, number, number, number, number, { tileXCoords: number[], t
     512,
     1024,
     3,
-    { tileXCoords: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8], tileYCoords: [0, 1, 2, 3, 4, 5, 6] },
+    {
+      tileXCoords: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8],
+      tileYCoords: [0, 1, 2, 3, 4, 5, 6],
+    },
   ],
   [
     8,
@@ -76,7 +89,7 @@ describe('getTileCoordsForView', () => {
       currentXOffset,
       currentYOffset,
       scale,
-      expectedResult,
+      expectedResult
     ) => {
       // when
       const result = getTileCoordsForView(
@@ -84,11 +97,11 @@ describe('getTileCoordsForView', () => {
         numberOfVerticalTiles,
         currentXOffset,
         currentYOffset,
-        scale,
+        scale
       );
 
       // then
       expect(result).toStrictEqual(expectedResult);
     }
-  )
+  );
 });

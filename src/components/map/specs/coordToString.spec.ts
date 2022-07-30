@@ -21,5 +21,5 @@ describe('coordToString', () => {
       // then
       expect(result).toBe(expectedResult);
     }
-  )
+  );
 });

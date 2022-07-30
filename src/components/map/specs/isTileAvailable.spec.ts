@@ -1,4 +1,4 @@
-import isTileAvailable from '../isTileAvailable'
+import isTileAvailable from '../isTileAvailable';
 import { Coords } from '../types';
 
 jest.mock('../../../assets/availableTiles.json', () => ({
@@ -53,5 +53,5 @@ describe('isTileAvailable', () => {
       // then
       expect(result).toBe(expectedResult);
     }
-  )
+  );
 });

@@ -6,7 +6,13 @@ interface IsTileAvailableParams extends Coords {
   scaleLevel: number;
 }
 
-const isTileAvailable = ({ x, y, scaleLevel }: IsTileAvailableParams) : boolean =>
-  availableTiles[`${scaleLevel}` as keyof typeof availableTiles].some(tile => tile.x === x && tile.y === y);
+const isTileAvailable = ({
+  x,
+  y,
+  scaleLevel,
+}: IsTileAvailableParams): boolean =>
+  availableTiles[`${scaleLevel}` as keyof typeof availableTiles].some(
+    (tile) => tile.x === x && tile.y === y
+  );
 
 export default isTileAvailable;
