@@ -1,5 +1,9 @@
 # Sacred Interactive Map
 
+The map can viewed at https://sacredmap.netlify.app/
+
+## Development notes
+
 Map dimensions are 50944x25600px (199x100 tiles). Each tile has a size of 256x256px.
 
 Coefficients for the function to translate map coords to game coords were calculated assuming 4 corners of the map:
@@ -10,6 +14,14 @@ Coefficients for the function to translate map coords to game coords were calcul
 51216,12672 = 6400,0
 25608,25344 = 6400,6400
 ```
+
+### Environment variables
+
+| Name                               | Default value | Description                                                                                                                                                                                    |
+| ---------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `REACT_APP_SHOULD_DRAW_TILE_EDGES` | `false`       | Draws borders around rendered tiles, resulting in grid-like view.                                                                                                                              |
+| `REACT_APP_SHOULD_DRAW_COORDS`     | `false`       | Draws coords near the cursor.                                                                                                                                                                  |
+| `REACT_APP_SHOULD_USE_GAME_COORDS` | `false`       | When `true`, displayed coords near the cursor are in-game coords. When `false`, displayed coords are map coords. This only has an effect when `REACT_APP_SHOULD_DRAW_COORDS` is set to `true`. |
 
 ## Available Scripts
 
