@@ -1,7 +1,10 @@
 :root {
   --app-background: #000;
+  --app-font-color: #111;
+  --link-hover-color: #002aff;
   --filter-menu-background: #444;
   --filter-menu-color: #e0e0e0;
   --filter-menu-separator: #888;
   --filter-menu-filter-color-hover: #fff;
+  --footer-background: rgba(255, 255, 255, 0.6);
 }
