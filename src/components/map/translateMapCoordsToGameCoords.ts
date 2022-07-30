@@ -1,10 +1,5 @@
 import { Coords } from './types';
 
-// 25333,126 = 0,0
-// 170,12679 = 0,6400
-// 50706,12806 = 6400,0
-// 25608,25344 = 6400,6400
-
 // coefficients calculated by interpolating points to polynomial function in 3d space
 const X_A = 15016550749040/122325855716559;
 const X_B = 938534421815/3783273888141;

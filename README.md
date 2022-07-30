@@ -2,6 +2,14 @@
 
 Map dimensions are 50944x25600px (199x100 tiles). Each tile has a size of 256x256px.
 
+Coefficients for the function to translate map coords to game coords were calculated assuming 4 corners of the map:
+```
+25608,0 = 0,0
+0,12672 = 0,6400
+51216,12672 = 6400,0
+25608,25344 = 6400,6400
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
