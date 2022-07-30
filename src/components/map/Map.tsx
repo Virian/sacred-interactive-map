@@ -6,6 +6,7 @@ import { TILE_SIZE } from './constants';
 import isTileAvailable from './isTileAvailable';
 import coordToString from './coordToString';
 import translateScreenToCoords from './translateScreenToCoords';
+import translateMapCoordsToGameCoords from './translateMapCoordsToGameCoords';
 import getTileCoordsForView from './getTileCoordsForView';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMousePosition from './useMousePosition';
@@ -20,7 +21,7 @@ const SHOULD_DRAW_COORDS = false;
 const Map = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const [mapCoordOffset, setMapCoordOffset] = useState<Coords>({ x: 26880, y: 8704 });
+  const [mapCoordOffset, setMapCoordOffset] = useState<Coords>({ x: 26880, y: 8704 }); // TODO: change initial coords and zoom
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
 
   const { mousePosition, handleMouseMove: onMouseMove } = useMousePosition();
@@ -147,7 +148,13 @@ const Map = () => {
       if (SHOULD_DRAW_COORDS) {
         context.fillStyle = 'white';
         context.font = '18px serif';
-        const cursorCoords = translateScreenToCoords({ screenCoords: mousePosition, mapCoordOffset, scale: scaleLevel.scale });
+        const cursorCoords = translateMapCoordsToGameCoords(
+          translateScreenToCoords(
+            { screenCoords: mousePosition,
+              mapCoordOffset,
+              scale: scaleLevel.scale,
+            })
+        );
         context.fillText(`(${cursorCoords.x}, ${cursorCoords.y})`, mousePosition.x, mousePosition.y);
       }
     }
