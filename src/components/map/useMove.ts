@@ -3,6 +3,7 @@ import {
   useCallback,
   useMemo,
   MouseEvent,
+  TouchEvent,
   Dispatch,
   SetStateAction,
 } from 'react';
@@ -25,60 +26,138 @@ interface UseMove {
   handleMouseDown: (event: MouseEvent) => void;
   handleMouseMove: (event: MouseEvent) => void;
   handleMouseUp: () => void;
+  handleTouchStart: (event: TouchEvent) => void;
+  handleTouchMove: (event: TouchEvent) => void;
+  handleTouchEnd: (event: TouchEvent) => void;
 }
 
 const useMove = ({ setMapCoordOffset, scale = 1 }: UseMoveParams): UseMove => {
   const [isMoving, setIsMoving] = useState<boolean>(false);
   const [moveDelta, setMoveDelta] = useState<Coords>({ x: 0, y: 0 });
+  const [touchIdentifier, setTouchIdentifier] = useState<number | null>(null);
 
-  const handleMouseDown = useCallback((event: MouseEvent) => {
-    setMoveDelta({ x: event.clientX, y: event.clientY });
+  const startMoving = useCallback((startingPosition: Coords) => {
+    setMoveDelta({ x: startingPosition.x, y: startingPosition.y });
     setIsMoving(true);
   }, []);
+
+  const handleTouchStart = useCallback(
+    (event: TouchEvent) => {
+      if (!touchIdentifier) {
+        setTouchIdentifier(event.changedTouches.item(0).identifier);
+        startMoving({
+          x: event.changedTouches[0].clientX,
+          y: event.changedTouches[0].clientY,
+        });
+      }
+    },
+    [startMoving, touchIdentifier]
+  );
+
+  const handleMouseDown = useCallback(
+    (event: MouseEvent) => {
+      startMoving({ x: event.clientX, y: event.clientY });
+    },
+    [startMoving]
+  );
+
+  const moveMap = useCallback(
+    (newTargetPosition: Coords) => {
+      if (isMoving) {
+        setMapCoordOffset((currentOffset) => {
+          const xDelta = moveDelta.x - newTargetPosition.x;
+          const yDelta = moveDelta.y - newTargetPosition.y;
+
+          let newXPos = currentOffset.x + xDelta * scale;
+          let newYPos = currentOffset.y + yDelta * scale;
+
+          if (newXPos < 0) {
+            newXPos = 0;
+          } else if (newXPos > MAP_WIDTH - window.innerWidth * scale) {
+            newXPos = MAP_WIDTH - window.innerWidth * scale;
+          }
+
+          if (newYPos < 0) {
+            newYPos = 0;
+          } else if (newYPos > MAP_HEIGHT - window.innerHeight * scale) {
+            newYPos = MAP_HEIGHT - window.innerHeight * scale;
+          }
+
+          setMoveDelta({ x: newTargetPosition.x, y: newTargetPosition.y });
+          return {
+            x: newXPos,
+            y: newYPos,
+          };
+        });
+      }
+    },
+    [setMapCoordOffset, isMoving, moveDelta.x, moveDelta.y, scale]
+  );
 
   const handleMouseMove = useMemo(
     () =>
       throttle((event: MouseEvent) => {
-        if (isMoving) {
-          setMapCoordOffset((currentOffset) => {
-            const xDelta = moveDelta.x - event.clientX;
-            const yDelta = moveDelta.y - event.clientY;
+        moveMap({ x: event.clientX, y: event.clientY });
+      }, MOUSE_MOVE_THROTTLE_TIMEOUT),
+    [moveMap]
+  );
 
-            let newXPos = currentOffset.x + xDelta * scale;
-            let newYPos = currentOffset.y + yDelta * scale;
+  const handleTouchMove = useMemo(
+    () =>
+      throttle((event: TouchEvent) => {
+        if (typeof touchIdentifier === 'number') {
+          // the logic below can be replaced with `identifiedTouch` method once
+          // it gets implemented and working
+          const changedTouchesCount = event.changedTouches.length;
 
-            if (newXPos < 0) {
-              newXPos = 0;
-            } else if (newXPos > MAP_WIDTH - window.innerWidth * scale) {
-              newXPos = MAP_WIDTH - window.innerWidth * scale;
+          for (let i = 0; i < changedTouchesCount; i++) {
+            const changedTouch = event.changedTouches.item(i);
+            if (changedTouch.identifier === touchIdentifier) {
+              moveMap({ x: changedTouch.clientX, y: changedTouch.clientY });
+              break;
             }
-
-            if (newYPos < 0) {
-              newYPos = 0;
-            } else if (newYPos > MAP_HEIGHT - window.innerHeight * scale) {
-              newYPos = MAP_HEIGHT - window.innerHeight * scale;
-            }
-
-            setMoveDelta({ x: event.clientX, y: event.clientY });
-            return {
-              x: newXPos,
-              y: newYPos,
-            };
-          });
+          }
         }
       }, MOUSE_MOVE_THROTTLE_TIMEOUT),
-    [setMapCoordOffset, isMoving, moveDelta.x, moveDelta.y, scale]
+    [moveMap, touchIdentifier]
+  );
+
+  const stopMoving = useCallback(() => {
+    setIsMoving(false);
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (event: TouchEvent) => {
+      if (typeof touchIdentifier === 'number') {
+        // the logic below can be replaced with `identifiedTouch` method once
+        // it gets implemented and working
+        const changedTouchesCount = event.changedTouches.length;
+
+        for (let i = 0; i < changedTouchesCount; i++) {
+          const changedTouch = event.changedTouches.item(i);
+          if (changedTouch.identifier === touchIdentifier) {
+            setTouchIdentifier(null);
+            stopMoving();
+            break;
+          }
+        }
+      }
+    },
+    [touchIdentifier, stopMoving]
   );
 
   const handleMouseUp = useCallback(() => {
-    setIsMoving(false);
-  }, []);
+    stopMoving();
+  }, [stopMoving]);
 
   return {
     isMoving,
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
+    handleTouchStart,
+    handleTouchMove,
+    handleTouchEnd,
   };
 };
 

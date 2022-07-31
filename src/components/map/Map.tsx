@@ -66,6 +66,9 @@ const Map = ({ filters }: MapProps) => {
     handleMouseDown,
     handleMouseMove: onMapMove,
     handleMouseUp,
+    handleTouchStart,
+    handleTouchMove,
+    handleTouchEnd,
   } = useMove({ setMapCoordOffset, scale: scaleLevel.scale });
 
   const handleMouseMove = useCallback(
@@ -156,6 +159,10 @@ const Map = ({ filters }: MapProps) => {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchEnd}
           onWheel={handleWheel}
         />
       </div>
