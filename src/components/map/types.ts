@@ -12,8 +12,8 @@ export type LoadedImages = {
   [level: string]: Record<string, LoadedImage[]>;
 };
 
-export type IconCategories = 'dragons' | 'portals' | 'chests';
+export type MarkerCategories = 'dragons' | 'portals' | 'chests';
 
-export type LoadedIcons = {
-  [key in IconCategories]: HTMLImageElement | null;
+export type LoadedMarkers = {
+  [key in MarkerCategories]: HTMLImageElement | null;
 };

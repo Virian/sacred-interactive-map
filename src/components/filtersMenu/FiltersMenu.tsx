@@ -1,7 +1,7 @@
 import React, { useState, useCallback, Dispatch, SetStateAction } from 'react';
 
 import './FiltersMenu.scss';
-import iconsData from '../../assets/icons.json';
+import markersData from '../../assets/markers.json';
 
 interface FiltersMenuProps {
   filters: Record<string, boolean>;
@@ -26,7 +26,7 @@ const FiltersMenu = ({ filters, setFilters }: FiltersMenuProps) => {
 
   const setAllFilters = useCallback(
     (shouldEnable: boolean) => {
-      const newFilters = Object.keys(iconsData).reduce(
+      const newFilters = Object.keys(markersData).reduce(
         (acc, category) => ({
           ...acc,
           [category]: shouldEnable,
@@ -65,7 +65,7 @@ const FiltersMenu = ({ filters, setFilters }: FiltersMenuProps) => {
           </button>
         </div>
         <div className="FiltersMenu__Separator" />
-        {Object.entries(iconsData).map(([category, data]) => (
+        {Object.entries(markersData).map(([category, data]) => (
           <div
             key={category}
             className={`Filter ${!filters[category] ? 'Filter--Disabled' : ''}`}

@@ -1,5 +1,5 @@
 export const TILE_SIZE = 256;
-export const ICON_SIZE = 32;
+export const MARKER_SIZE = 32;
 
 export const HORIZONTAL_TILES = 199;
 export const VERTICAL_TILES = 99;

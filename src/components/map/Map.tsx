@@ -7,14 +7,14 @@ import React, {
 } from 'react';
 
 import './Map.scss';
-import { Coords, LoadedImages, LoadedIcons } from './types';
+import { Coords, LoadedImages, LoadedMarkers } from './types';
 import { MAP_WIDTH, MAP_HEIGHT, INITIAL_SCALE_LEVEL } from './constants';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMousePosition from './useMousePosition';
 import useMove from './useMove';
 import useWheel from './useWheel';
 import drawMapTiles from './drawMapTiles';
-import drawIcons from './drawIcons';
+import drawMarkers from './drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
 
 interface MapProps {
@@ -25,7 +25,7 @@ const initialLoadedImages = getInitialLoadedImages();
 
 const Map = ({ filters }: MapProps) => {
   const tilesLayerRef = useRef<HTMLCanvasElement>(null);
-  const iconsLayerRef = useRef<HTMLCanvasElement>(null);
+  const markersLayerRef = useRef<HTMLCanvasElement>(null);
   const coordsLayerRef = useRef<HTMLCanvasElement>(null);
 
   const [mapCoordOffset, setMapCoordOffset] = useState<Coords>(() => {
@@ -39,7 +39,7 @@ const Map = ({ filters }: MapProps) => {
     };
   });
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
-  const loadedIconsRef = useRef<LoadedIcons>({
+  const LoadedMarkersRef = useRef<LoadedMarkers>({
     dragons: null,
     portals: null,
     chests: null,
@@ -81,14 +81,14 @@ const Map = ({ filters }: MapProps) => {
   }, [mapCoordOffset, scaleLevel]);
 
   useEffect(() => {
-    const iconsContext = iconsLayerRef.current?.getContext('2d');
+    const markersContext = markersLayerRef.current?.getContext('2d');
 
-    if (iconsContext) {
-      drawIcons({
-        context: iconsContext,
+    if (markersContext) {
+      drawMarkers({
+        context: markersContext,
         mapCoordOffset,
         scaleLevel,
-        loadedIconsRef,
+        LoadedMarkersRef,
         filters,
       });
     }
@@ -116,7 +116,7 @@ const Map = ({ filters }: MapProps) => {
         className="Layer"
       />
       <canvas
-        ref={iconsLayerRef}
+        ref={markersLayerRef}
         height={window.innerHeight}
         width={window.innerWidth}
         className="Layer"
