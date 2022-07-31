@@ -1,7 +1,4 @@
-export type Coords = {
-  x: number;
-  y: number;
-};
+import { Coords } from '../../types';
 
 export type LoadedImage = {
   img: HTMLImageElement;

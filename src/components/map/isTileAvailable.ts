@@ -1,6 +1,5 @@
 import availableTiles from '../../assets/availableTiles.json';
-
-import { Coords } from './types';
+import { Coords } from '../../types';
 
 interface IsTileAvailableParams extends Coords {
   zoomLevelNumber: number;

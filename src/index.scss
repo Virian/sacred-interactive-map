@@ -11,6 +11,12 @@
   --footer-background: rgba(255, 255, 255, 0.6);
   --tooltip-background: var(--filter-menu-background);
   --tooltip-color: var(--filter-menu-color);
+  --tooltip-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+  --zoom-buttons-background: var(--filter-menu-background);
+  --zoom-buttons-color: var(--filter-menu-color);
+  --zoom-buttons-shadow: var(--tooltip-shadow);
+  --zoom-buttons-separator: var(--filter-menu-separator);
+  --zoom-buttons-hover-background: #333;
 }
 
 body {

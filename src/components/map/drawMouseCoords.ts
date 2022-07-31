@@ -1,13 +1,13 @@
 import { SHOULD_DRAW_COORDS, SHOULD_USE_GAME_COORDS } from '../../config';
+import { Coords, ZoomLevel } from '../../types';
 
-import { Coords } from './types';
 import translateScreenToCoords from './translateScreenToCoords';
 import translateMapCoordsToGameCoords from './translateMapCoordsToGameCoords';
 
 interface DrawMouseCoordsParams {
   context: CanvasRenderingContext2D;
   mapCoordOffset: Coords;
-  zoomLevel: { scale: number; levelNumber: number };
+  zoomLevel: ZoomLevel;
   mousePosition: Coords;
 }
 

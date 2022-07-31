@@ -1,9 +1,10 @@
 import { MutableRefObject } from 'react';
 
 import { SHOULD_DRAW_TILE_EDGES } from '../../config';
+import { Coords, ZoomLevel } from '../../types';
+import { TILE_SIZE } from '../../constants';
 
-import { Coords, LoadedImages } from './types';
-import { TILE_SIZE } from './constants';
+import { LoadedImages } from './types';
 import getTileCoordsForView from './getTileCoordsForView';
 import isTileAvailable from './isTileAvailable';
 import coordToString from './coordToString';
@@ -11,7 +12,7 @@ import coordToString from './coordToString';
 interface DrawMapTilesParams {
   context: CanvasRenderingContext2D;
   mapCoordOffset: Coords;
-  zoomLevel: { scale: number; levelNumber: number };
+  zoomLevel: ZoomLevel;
   loadedImagesRef: MutableRefObject<LoadedImages>;
 }
 

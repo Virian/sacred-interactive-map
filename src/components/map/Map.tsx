@@ -3,17 +3,17 @@ import React, {
   useRef,
   useState,
   useCallback,
+  useContext,
   MouseEvent,
 } from 'react';
 
+import ZoomContext from '../../context/ZoomContext';
+import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
+import FiltersContext from '../../context/FiltersContext';
+
 import './Map.scss';
-import { Coords, LoadedImages, LoadedMarkers, Marker } from './types';
-import {
-  MAP_WIDTH,
-  MAP_HEIGHT,
-  INITIAL_SCALE_LEVEL,
-  MARKER_SIZE,
-} from './constants';
+import { LoadedImages, LoadedMarkers, Marker } from './types';
+import { MARKER_SIZE } from './constants';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMousePosition from './useMousePosition';
 import useMove from './useMove';
@@ -22,27 +22,16 @@ import drawMapTiles from './drawMapTiles';
 import drawMarkers from './drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
 
-interface MapProps {
-  filters: Record<string, boolean>;
-}
-
 const initialLoadedImages = getInitialLoadedImages();
 
-const Map = ({ filters }: MapProps) => {
+const Map = () => {
+  const { zoomLevel } = useContext(ZoomContext);
+  const { mapCoordOffset } = useContext(MapCoordOffsetContext);
+  const { filters } = useContext(FiltersContext);
+
   const tilesLayerRef = useRef<HTMLCanvasElement>(null);
   const markersLayerRef = useRef<HTMLCanvasElement>(null);
   const coordsLayerRef = useRef<HTMLCanvasElement>(null);
-
-  const [mapCoordOffset, setMapCoordOffset] = useState<Coords>(() => {
-    const xOffsetToCenterMap =
-      MAP_WIDTH / 2 - (window.innerWidth * INITIAL_SCALE_LEVEL.scale) / 2;
-    const yOffsetToCenterMap =
-      MAP_HEIGHT / 2 - (window.innerHeight * INITIAL_SCALE_LEVEL.scale) / 2;
-    return {
-      x: Math.max(0, xOffsetToCenterMap),
-      y: Math.max(0, yOffsetToCenterMap),
-    };
-  });
 
   const [hoveredMarker, setHoveredMarker] = useState<Marker | null>(null);
 
@@ -56,10 +45,7 @@ const Map = ({ filters }: MapProps) => {
 
   const { mousePosition, handleMouseMove: onMouseMove } = useMousePosition();
 
-  const { zoomLevel, handleWheel } = useWheel({
-    setMapCoordOffset,
-    mousePosition,
-  });
+  const { handleWheel } = useWheel({ mousePosition });
 
   const {
     isMoving,
@@ -69,7 +55,7 @@ const Map = ({ filters }: MapProps) => {
     handleTouchStart,
     handleTouchMove,
     handleTouchEnd,
-  } = useMove({ setMapCoordOffset, scale: zoomLevel.scale });
+  } = useMove();
 
   const handleMouseMove = useCallback(
     (event: MouseEvent) => {

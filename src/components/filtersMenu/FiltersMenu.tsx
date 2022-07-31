@@ -1,14 +1,13 @@
-import React, { useState, useCallback, Dispatch, SetStateAction } from 'react';
+import React, { useState, useCallback, useContext } from 'react';
+
+import markersData from '../../assets/markers.json';
+import FiltersContext from '../../context/FiltersContext';
 
 import './FiltersMenu.scss';
-import markersData from '../../assets/markers.json';
 
-interface FiltersMenuProps {
-  filters: Record<string, boolean>;
-  setFilters: Dispatch<SetStateAction<Record<string, boolean>>>;
-}
+const FiltersMenu = () => {
+  const { filters, setFilters } = useContext(FiltersContext);
 
-const FiltersMenu = ({ filters, setFilters }: FiltersMenuProps) => {
   const [isHidden, setIsHidden] = useState(false);
 
   const toggleMenu = useCallback(() => {

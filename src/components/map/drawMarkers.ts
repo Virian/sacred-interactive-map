@@ -2,8 +2,9 @@ import { MutableRefObject } from 'react';
 import sortBy from 'lodash/sortBy';
 
 import markersData from '../../assets/markers.json';
+import { Coords, ZoomLevel } from '../../types';
 
-import { Coords, Marker, LoadedMarkers, MarkerCategories } from './types';
+import { Marker, LoadedMarkers, MarkerCategories } from './types';
 import { MARKER_SIZE } from './constants';
 
 // markers that are lower on the screen will be layered on top of those being
@@ -18,7 +19,7 @@ const sortedMarkersData = sortBy(
 interface DrawMarkersParams {
   context: CanvasRenderingContext2D;
   mapCoordOffset: Coords;
-  zoomLevel: { scale: number; levelNumber: number };
+  zoomLevel: ZoomLevel;
   LoadedMarkersRef: MutableRefObject<LoadedMarkers>;
   filters: Record<string, boolean>;
 }

@@ -1,7 +1,8 @@
 import { useState, useMemo, MouseEvent } from 'react';
 import throttle from 'lodash/throttle';
 
-import { Coords } from './types';
+import { Coords } from '../../types';
+
 import { MOUSE_MOVE_THROTTLE_TIMEOUT } from './constants';
 
 const useMousePosition = () => {

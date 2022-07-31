@@ -1,4 +1,4 @@
-import { Coords } from './types';
+import { Coords } from '../../types';
 
 // coefficients calculated by interpolating points to polynomial function in 3d space
 const X_A = 15016550749040 / 122325855716559;

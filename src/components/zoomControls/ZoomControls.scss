@@ -1,0 +1,38 @@
+.ZoomControls {
+  position: fixed;
+  right: 10px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: var(--zoom-buttons-shadow);
+  z-index: 1;
+
+  &__Button {
+    width: 3rem;
+    height: 3rem;
+    margin: 0;
+    border: 0;
+    background-color: var(--zoom-buttons-background);
+    color: var(--zoom-buttons-color);
+    transition: background-color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
+    font-size: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--zoom-buttons-hover-background);
+    }
+
+    &:first-child {
+      border-radius: 5px 5px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  &__Separator {
+    border-bottom: 1px solid var(--zoom-buttons-separator);
+  }
+}

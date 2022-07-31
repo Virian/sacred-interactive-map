@@ -1,6 +1,6 @@
 import range from 'lodash/range';
 
-import { TILE_SIZE } from './constants';
+import { TILE_SIZE } from '../../constants';
 
 const getTileCoordsForView = (
   numberOfHorizontalTiles: number,

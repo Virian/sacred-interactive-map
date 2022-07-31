@@ -1,21 +1,18 @@
-import { useState, useMemo, Dispatch, SetStateAction } from 'react';
+import { useMemo, useContext } from 'react';
 import throttle from 'lodash/throttle';
 
-import { Coords } from './types';
-import {
-  MAP_SCALE_LEVELS,
-  INITIAL_SCALE_LEVEL,
-  MAP_HEIGHT,
-  MAP_WIDTH,
-} from './constants';
+import { MAP_HEIGHT, MAP_WIDTH, MAP_SCALE_LEVELS } from '../../constants';
+import { Coords } from '../../types';
+import ZoomContext from '../../context/ZoomContext';
+import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
 
 interface UseWheelParams {
-  setMapCoordOffset: Dispatch<SetStateAction<Coords>>;
   mousePosition: Coords;
 }
 
-const useWheel = ({ setMapCoordOffset, mousePosition }: UseWheelParams) => {
-  const [zoomLevel, setZoomLevel] = useState(INITIAL_SCALE_LEVEL);
+const useWheel = ({ mousePosition }: UseWheelParams) => {
+  const { zoomLevel, setZoomLevel } = useContext(ZoomContext);
+  const { setMapCoordOffset } = useContext(MapCoordOffsetContext);
 
   const handleWheel = useMemo(
     () =>
@@ -108,7 +105,7 @@ const useWheel = ({ setMapCoordOffset, mousePosition }: UseWheelParams) => {
           });
         }
       }, 100),
-    [setMapCoordOffset, mousePosition]
+    [setMapCoordOffset, setZoomLevel, mousePosition]
   );
 
   return { zoomLevel, handleWheel };

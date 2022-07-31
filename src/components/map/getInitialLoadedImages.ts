@@ -1,6 +1,7 @@
 import range from 'lodash/range';
 
-import { HORIZONTAL_TILES, MAP_SCALE_LEVELS } from './constants';
+import { HORIZONTAL_TILES, MAP_SCALE_LEVELS } from '../../constants';
+
 import { LoadedImages } from './types';
 
 const getInitialLoadedImages = (): LoadedImages =>

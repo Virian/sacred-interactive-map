@@ -2,24 +2,18 @@ import {
   useState,
   useCallback,
   useMemo,
+  useContext,
   MouseEvent,
   TouchEvent,
-  Dispatch,
-  SetStateAction,
 } from 'react';
 import throttle from 'lodash/throttle';
 
-import { Coords } from './types';
-import {
-  MAP_WIDTH,
-  MAP_HEIGHT,
-  MOUSE_MOVE_THROTTLE_TIMEOUT,
-} from './constants';
+import { Coords } from '../../types';
+import { MAP_WIDTH, MAP_HEIGHT } from '../../constants';
+import ZoomContext from '../../context/ZoomContext';
+import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
 
-interface UseMoveParams {
-  setMapCoordOffset: Dispatch<SetStateAction<Coords>>;
-  scale?: number;
-}
+import { MOUSE_MOVE_THROTTLE_TIMEOUT } from './constants';
 
 interface UseMove {
   isMoving: boolean;
@@ -31,7 +25,12 @@ interface UseMove {
   handleTouchEnd: (event: TouchEvent) => void;
 }
 
-const useMove = ({ setMapCoordOffset, scale = 1 }: UseMoveParams): UseMove => {
+const useMove = (): UseMove => {
+  const {
+    zoomLevel: { scale = 1 },
+  } = useContext(ZoomContext);
+  const { setMapCoordOffset } = useContext(MapCoordOffsetContext);
+
   const [isMoving, setIsMoving] = useState<boolean>(false);
   const [moveDelta, setMoveDelta] = useState<Coords>({ x: 0, y: 0 });
   const [touchIdentifier, setTouchIdentifier] = useState<number | null>(null);
