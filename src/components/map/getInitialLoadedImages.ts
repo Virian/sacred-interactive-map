@@ -5,9 +5,9 @@ import { LoadedImages } from './types';
 
 const getInitialLoadedImages = (): LoadedImages =>
   Object.values(MAP_SCALE_LEVELS).reduce(
-    (acc, { level, scale }) => ({
+    (acc, { levelNumber, scale }) => ({
       ...acc,
-      [level]: range(Math.ceil(HORIZONTAL_TILES / scale)).reduce(
+      [levelNumber]: range(Math.ceil(HORIZONTAL_TILES / scale)).reduce(
         (acc, xCoord) => ({
           ...acc,
           [xCoord]: [],

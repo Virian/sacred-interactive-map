@@ -8,7 +8,7 @@ import { MARKER_SIZE } from './constants';
 interface DrawMarkersParams {
   context: CanvasRenderingContext2D;
   mapCoordOffset: Coords;
-  scaleLevel: { scale: number; level: number };
+  zoomLevel: { scale: number; levelNumber: number };
   LoadedMarkersRef: MutableRefObject<LoadedMarkers>;
   filters: Record<string, boolean>;
 }
@@ -16,7 +16,7 @@ interface DrawMarkersParams {
 const drawMarkers = ({
   context,
   mapCoordOffset,
-  scaleLevel,
+  zoomLevel,
   LoadedMarkersRef,
   filters,
 }: DrawMarkersParams) => {
@@ -33,22 +33,22 @@ const drawMarkers = ({
 
     data.markers.forEach(({ x, y, label }) => {
       const shouldDrawMarker =
-        mapCoordOffset.x - MARKER_SIZE * scaleLevel.scale < x && // checking left edge of the screen
+        mapCoordOffset.x - MARKER_SIZE * zoomLevel.scale < x && // checking left edge of the screen
         mapCoordOffset.x +
-          window.innerWidth * scaleLevel.scale +
-          MARKER_SIZE * scaleLevel.scale >
+          window.innerWidth * zoomLevel.scale +
+          MARKER_SIZE * zoomLevel.scale >
           x && // right edge
-        mapCoordOffset.y - MARKER_SIZE * scaleLevel.scale < y && // top edge
+        mapCoordOffset.y - MARKER_SIZE * zoomLevel.scale < y && // top edge
         mapCoordOffset.y +
-          window.innerHeight * scaleLevel.scale +
-          MARKER_SIZE * scaleLevel.scale >
+          window.innerHeight * zoomLevel.scale +
+          MARKER_SIZE * zoomLevel.scale >
           y; // bottom edge
 
       if (shouldDrawMarker) {
         const markerScreenX =
-          (x - mapCoordOffset.x) / scaleLevel.scale - MARKER_SIZE / 2;
+          (x - mapCoordOffset.x) / zoomLevel.scale - MARKER_SIZE / 2;
         const markerScreenY =
-          (y - mapCoordOffset.y) / scaleLevel.scale - MARKER_SIZE / 2;
+          (y - mapCoordOffset.y) / zoomLevel.scale - MARKER_SIZE / 2;
 
         drawnMarkers.push({ x: markerScreenX, y: markerScreenY, label });
 

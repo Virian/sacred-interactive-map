@@ -11,14 +11,14 @@ import coordToString from './coordToString';
 interface DrawMapTilesParams {
   context: CanvasRenderingContext2D;
   mapCoordOffset: Coords;
-  scaleLevel: { scale: number; level: number };
+  zoomLevel: { scale: number; levelNumber: number };
   loadedImagesRef: MutableRefObject<LoadedImages>;
 }
 
 const drawMapTiles = ({
   context,
   mapCoordOffset,
-  scaleLevel,
+  zoomLevel,
   loadedImagesRef,
 }: DrawMapTilesParams) => {
   // adding 3 because 1 is an additional tile to ensure that the whole screen will be covered
@@ -28,16 +28,16 @@ const drawMapTiles = ({
 
   const { x: currentXCoordOffset, y: currentYCoordOffset } = mapCoordOffset;
   const screenXOverflow =
-    (currentXCoordOffset % (TILE_SIZE * scaleLevel.scale)) / scaleLevel.scale;
+    (currentXCoordOffset % (TILE_SIZE * zoomLevel.scale)) / zoomLevel.scale;
   const screenYOverflow =
-    (currentYCoordOffset % (TILE_SIZE * scaleLevel.scale)) / scaleLevel.scale;
+    (currentYCoordOffset % (TILE_SIZE * zoomLevel.scale)) / zoomLevel.scale;
 
   const { tileXCoords, tileYCoords } = getTileCoordsForView(
     numberOfHorizontalTiles,
     numberOfVerticalTiles,
     currentXCoordOffset,
     currentYCoordOffset,
-    scaleLevel.scale
+    zoomLevel.scale
   );
 
   tileXCoords.forEach((tileXCoord, tileXCoordIndex) => {
@@ -52,10 +52,10 @@ const drawMapTiles = ({
         isTileAvailable({
           x: tileXCoord,
           y: tileYCoord,
-          scaleLevel: scaleLevel.level,
+          zoomLevelNumber: zoomLevel.levelNumber,
         })
       ) {
-        const loadedImage = loadedImagesRef.current[`${scaleLevel.level}`][
+        const loadedImage = loadedImagesRef.current[`${zoomLevel.levelNumber}`][
           `${tileXCoord}`
         ].find(({ coords: { y } }) => y === tileYCoord);
         if (loadedImage && shouldDraw) {
@@ -81,9 +81,9 @@ const drawMapTiles = ({
           const stringTileXCoord = coordToString(tileXCoord);
           const stringTileYCoord = coordToString(tileYCoord);
           img.src =
-            require(`../../assets/tiles/${scaleLevel.level}/${stringTileXCoord}_${stringTileYCoord}.webp`).default;
+            require(`../../assets/tiles/${zoomLevel.levelNumber}/${stringTileXCoord}_${stringTileYCoord}.webp`).default;
           img.onload = () => {
-            loadedImagesRef.current[`${scaleLevel.level}`][
+            loadedImagesRef.current[`${zoomLevel.levelNumber}`][
               `${tileXCoord}`
             ].push({
               img,

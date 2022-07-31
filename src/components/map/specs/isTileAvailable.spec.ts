@@ -46,9 +46,9 @@ const cases: [Coords, number, boolean][] = [
 describe('isTileAvailable', () => {
   it.each(cases)(
     'for coords %o should return %p',
-    (coords, scaleLevel, expectedResult) => {
+    (coords, zoomLevel, expectedResult) => {
       // when
-      const result = isTileAvailable({ ...coords, scaleLevel });
+      const result = isTileAvailable({ ...coords, zoomLevel });
 
       // then
       expect(result).toBe(expectedResult);

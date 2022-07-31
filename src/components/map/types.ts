@@ -9,7 +9,7 @@ export type LoadedImage = {
 };
 
 export type LoadedImages = {
-  [level: string]: Record<string, LoadedImage[]>;
+  [levelNumber: string]: Record<string, LoadedImage[]>;
 };
 
 export type Marker = Coords & {

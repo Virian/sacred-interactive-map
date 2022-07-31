@@ -9,14 +9,14 @@ export const MAP_HEIGHT = VERTICAL_TILES * TILE_SIZE;
 // some levels were omitted on purpose because they are unnecessary for a smooth UX
 // they are also omitted in gitignore
 export const MAP_SCALE_LEVELS = [
-  { level: 12, scale: 1 },
-  { level: 11, scale: 3 },
-  { level: 10, scale: 5 },
-  { level: 9, scale: 7 },
-  { level: 8, scale: 9 },
-  { level: 6, scale: 13 },
-  { level: 4, scale: 17 },
-  { level: 1, scale: 23 },
+  { levelNumber: 12, scale: 1 },
+  { levelNumber: 11, scale: 3 },
+  { levelNumber: 10, scale: 5 },
+  { levelNumber: 9, scale: 7 },
+  { levelNumber: 8, scale: 9 },
+  { levelNumber: 6, scale: 13 },
+  { levelNumber: 4, scale: 17 },
+  { levelNumber: 1, scale: 23 },
 ];
 export const INITIAL_SCALE_LEVEL =
   MAP_SCALE_LEVELS[MAP_SCALE_LEVELS.length - 1];

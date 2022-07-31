@@ -7,14 +7,14 @@ import translateMapCoordsToGameCoords from './translateMapCoordsToGameCoords';
 interface DrawMouseCoordsParams {
   context: CanvasRenderingContext2D;
   mapCoordOffset: Coords;
-  scaleLevel: { scale: number; level: number };
+  zoomLevel: { scale: number; levelNumber: number };
   mousePosition: Coords;
 }
 
 const drawMouseCoords = ({
   context,
   mapCoordOffset,
-  scaleLevel,
+  zoomLevel,
   mousePosition,
 }: DrawMouseCoordsParams) => {
   if (SHOULD_DRAW_COORDS) {
@@ -25,7 +25,7 @@ const drawMouseCoords = ({
     let cursorCoords = translateScreenToCoords({
       screenCoords: mousePosition,
       mapCoordOffset,
-      scale: scaleLevel.scale,
+      scale: zoomLevel.scale,
     });
     if (SHOULD_USE_GAME_COORDS) {
       cursorCoords = translateMapCoordsToGameCoords(cursorCoords);

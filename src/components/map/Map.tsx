@@ -56,7 +56,7 @@ const Map = ({ filters }: MapProps) => {
 
   const { mousePosition, handleMouseMove: onMouseMove } = useMousePosition();
 
-  const { scaleLevel, handleWheel } = useWheel({
+  const { zoomLevel, handleWheel } = useWheel({
     setMapCoordOffset,
     mousePosition,
   });
@@ -69,7 +69,7 @@ const Map = ({ filters }: MapProps) => {
     handleTouchStart,
     handleTouchMove,
     handleTouchEnd,
-  } = useMove({ setMapCoordOffset, scale: scaleLevel.scale });
+  } = useMove({ setMapCoordOffset, scale: zoomLevel.scale });
 
   const handleMouseMove = useCallback(
     (event: MouseEvent) => {
@@ -86,11 +86,11 @@ const Map = ({ filters }: MapProps) => {
       drawMapTiles({
         context: tilesContext,
         mapCoordOffset,
-        scaleLevel,
+        zoomLevel,
         loadedImagesRef,
       });
     }
-  }, [mapCoordOffset, scaleLevel]);
+  }, [mapCoordOffset, zoomLevel]);
 
   useEffect(() => {
     const markersContext = markersLayerRef.current?.getContext('2d');
@@ -99,7 +99,7 @@ const Map = ({ filters }: MapProps) => {
       const drawnMarkers = drawMarkers({
         context: markersContext,
         mapCoordOffset,
-        scaleLevel,
+        zoomLevel,
         LoadedMarkersRef,
         filters,
       });
@@ -118,7 +118,7 @@ const Map = ({ filters }: MapProps) => {
 
       setHoveredMarker(currentlyHoveredMarker || null);
     }
-  }, [mapCoordOffset, scaleLevel, filters, mousePosition]);
+  }, [mapCoordOffset, zoomLevel, filters, mousePosition]);
 
   useEffect(() => {
     const coordsContext = coordsLayerRef.current?.getContext('2d');
@@ -127,11 +127,11 @@ const Map = ({ filters }: MapProps) => {
       drawMouseCoords({
         context: coordsContext,
         mapCoordOffset,
-        scaleLevel,
+        zoomLevel,
         mousePosition,
       });
     }
-  }, [mapCoordOffset, mousePosition, scaleLevel]);
+  }, [mapCoordOffset, mousePosition, zoomLevel]);
 
   return (
     <div className="Map">
