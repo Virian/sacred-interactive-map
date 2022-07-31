@@ -1,10 +1,10 @@
 import getInitialLoadedImages from '../getInitialLoadedImages';
 
-jest.mock('../constants', () => ({
+jest.mock('../../../constants', () => ({
   HORIZONTAL_TILES: 5,
   MAP_SCALE_LEVELS: [
-    { level: 2, scale: 1 },
-    { level: 1, scale: 2 },
+    { levelNumber: 2, scale: 1 },
+    { levelNumber: 1, scale: 2 },
   ],
 }));
 

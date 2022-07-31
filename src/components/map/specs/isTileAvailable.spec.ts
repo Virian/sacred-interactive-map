@@ -1,5 +1,5 @@
 import isTileAvailable from '../isTileAvailable';
-import { Coords } from '../types';
+import { Coords } from '../../../types';
 
 jest.mock('../../../assets/availableTiles.json', () => ({
   '1': [
@@ -46,9 +46,9 @@ const cases: [Coords, number, boolean][] = [
 describe('isTileAvailable', () => {
   it.each(cases)(
     'for coords %o should return %p',
-    (coords, zoomLevel, expectedResult) => {
+    (coords, zoomLevelNumber, expectedResult) => {
       // when
-      const result = isTileAvailable({ ...coords, zoomLevel });
+      const result = isTileAvailable({ ...coords, zoomLevelNumber });
 
       // then
       expect(result).toBe(expectedResult);
