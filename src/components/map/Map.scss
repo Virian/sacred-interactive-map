@@ -20,6 +20,7 @@
     border: 10px solid transparent;
     border-bottom: 0;
     border-top-color: var(--tooltip-background);
+    transform: translateY(-1px); // for some tooltips there is a space between the arrow and content
   }
 
   &__Content {
