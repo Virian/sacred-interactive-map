@@ -1,6 +1,6 @@
 {
   "dragons": {
-    "filterLabel": "Dragons",
+    "filterLabel": "Dragon",
     "markers": [
       { "x": 34211, "y": 9213, "label": "Acutami" },
       { "x": 24909, "y": 14618, "label": "D'Cay" },
@@ -15,7 +15,7 @@
     ]
   },
   "portals": {
-    "filterLabel": "Portals",
+    "filterLabel": "Portal",
     "markers": [
       { "x": 29192, "y": 11620, "label": "Bellevue Portal" },
       { "x": 23940, "y": 11394, "label": "Porto Vallum Portal" },
@@ -96,7 +96,7 @@
     ]
   },
   "bountyHunt": {
-    "filterLabel": "Bounty Hunt Targets",
+    "filterLabel": "Bounty Hunt Target",
     "markers": [
       { "x": 30320, "y": 10780, "label": "Athurion, Dark Elf warrior" },
       { "x": 24900, "y": 11020, "label": "Azathot, Minotaur" },
