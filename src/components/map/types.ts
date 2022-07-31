@@ -16,7 +16,7 @@ export type Marker = Coords & {
   label: string;
 };
 
-export type MarkerCategories = 'dragons' | 'portals' | 'chests';
+export type MarkerCategories = 'dragons' | 'portals' | 'chests' | 'bountyHunt';
 
 export type LoadedMarkers = {
   [key in MarkerCategories]: HTMLImageElement | null;

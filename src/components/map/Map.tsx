@@ -51,6 +51,7 @@ const Map = ({ filters }: MapProps) => {
     dragons: null,
     portals: null,
     chests: null,
+    bountyHunt: null,
   });
 
   const { mousePosition, handleMouseMove: onMouseMove } = useMousePosition();

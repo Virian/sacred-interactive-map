@@ -94,5 +94,35 @@
       { "x": 20489, "y": 15360, "label": "Pirate Island Personal Stash" },
       { "x": 11425, "y": 12850, "label": "Alkazaba Noc Draco Personal Stash" }
     ]
+  },
+  "bountyHunt": {
+    "filterLabel": "Bounty Hunt Targets",
+    "markers": [
+      { "x": 30320, "y": 10780, "label": "Athurion, Dark Elf warrior" },
+      { "x": 24900, "y": 11020, "label": "Azathot, Minotaur" },
+      { "x": 35319, "y": 12441, "label": "Baltasar, Goblin shaman" },
+      { "x": 20230, "y": 10255, "label": "Bogomir, Outlaw" },
+      { "x": 24920, "y": 7632, "label": "Boris, Sakkara Priest" },
+      { "x": 19968, "y": 11457, "label": "Calisto, Female cutpurse" },
+      { "x": 28247, "y": 11900, "label": "Darkeagle, Scoundrel" },
+      { "x": 21494, "y": 9865, "label": "Exp. Creature VXIII, Black magician" },
+      { "x": 23854, "y": 11225, "label": "Gilbert, Orc leader" },
+      { "x": 20727, "y": 7879, "label": "Gul Har, Female Elf" },
+      { "x": 34559, "y": 11722, "label": "Hator, Sakkara Priest" },
+      { "x": 32875, "y": 9693, "label": "Hatuni, Troll" },
+      { "x": 32408, "y": 13363, "label": "Hinsch, Magician" },
+      { "x": 23053, "y": 10843, "label": "Homer, Orc shaman" },
+      { "x": 26693, "y": 10914, "label": "Kaspar, Sakkara Priest" },
+      {
+        "x": 26127,
+        "y": 9003,
+        "label": "Laoshi, Deserter of DeMordrey's Guard"
+      },
+      { "x": 24343, "y": 9463, "label": "L.S.P., Nasty robber" },
+      { "x": 32258, "y": 12118, "label": "Robin, Deranged magician" },
+      { "x": 23517, "y": 8358, "label": "Simba, Diabolical witch" },
+      { "x": 21379, "y": 7952, "label": "Theharenod, Ronin" },
+      { "x": 29433, "y": 9693, "label": "T'Man, Dark Elf" }
+    ]
   }
 }
