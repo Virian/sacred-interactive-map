@@ -7,8 +7,13 @@ import React, {
 } from 'react';
 
 import './Map.scss';
-import { Coords, LoadedImages, LoadedMarkers } from './types';
-import { MAP_WIDTH, MAP_HEIGHT, INITIAL_SCALE_LEVEL } from './constants';
+import { Coords, LoadedImages, LoadedMarkers, Marker } from './types';
+import {
+  MAP_WIDTH,
+  MAP_HEIGHT,
+  INITIAL_SCALE_LEVEL,
+  MARKER_SIZE,
+} from './constants';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMousePosition from './useMousePosition';
 import useMove from './useMove';
@@ -38,6 +43,9 @@ const Map = ({ filters }: MapProps) => {
       y: Math.max(0, yOffsetToCenterMap),
     };
   });
+
+  const [hoveredMarker, setHoveredMarker] = useState<Marker | null>(null);
+
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
   const LoadedMarkersRef = useRef<LoadedMarkers>({
     dragons: null,
@@ -84,15 +92,29 @@ const Map = ({ filters }: MapProps) => {
     const markersContext = markersLayerRef.current?.getContext('2d');
 
     if (markersContext) {
-      drawMarkers({
+      const drawnMarkers = drawMarkers({
         context: markersContext,
         mapCoordOffset,
         scaleLevel,
         LoadedMarkersRef,
         filters,
       });
+
+      // reversing because markers that were drawn later will be displayed on
+      // top of those drawn earlier
+      const currentlyHoveredMarker = drawnMarkers.reverse().find(({ x, y }) => {
+        const markerBoundingBox = new Path2D();
+        markerBoundingBox.rect(x, y, MARKER_SIZE, MARKER_SIZE);
+        return markersContext.isPointInPath(
+          markerBoundingBox,
+          mousePosition.x,
+          mousePosition.y
+        );
+      });
+
+      setHoveredMarker(currentlyHoveredMarker || null);
     }
-  }, [mapCoordOffset, scaleLevel, filters]);
+  }, [mapCoordOffset, scaleLevel, filters, mousePosition]);
 
   useEffect(() => {
     const coordsContext = coordsLayerRef.current?.getContext('2d');
@@ -108,30 +130,47 @@ const Map = ({ filters }: MapProps) => {
   }, [mapCoordOffset, mousePosition, scaleLevel]);
 
   return (
-    <div className="MapContainer">
-      <canvas
-        ref={tilesLayerRef}
-        height={window.innerHeight}
-        width={window.innerWidth}
-        className="Layer"
-      />
-      <canvas
-        ref={markersLayerRef}
-        height={window.innerHeight}
-        width={window.innerWidth}
-        className="Layer"
-      />
-      <canvas
-        ref={coordsLayerRef}
-        height={window.innerHeight}
-        width={window.innerWidth}
-        className={`Layer ${isMoving ? 'isMoving' : ''}`}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        onWheel={handleWheel}
-      />
+    <div className="Map">
+      <div className="Map__CanvasContainer">
+        <canvas
+          ref={tilesLayerRef}
+          height={window.innerHeight}
+          width={window.innerWidth}
+          className="Layer"
+        />
+        <canvas
+          ref={markersLayerRef}
+          height={window.innerHeight}
+          width={window.innerWidth}
+          className="Layer"
+        />
+        <canvas
+          ref={coordsLayerRef}
+          height={window.innerHeight}
+          width={window.innerWidth}
+          className={`Layer ${isMoving ? 'isMoving' : ''} ${
+            hoveredMarker ? 'isMarkerHovered' : ''
+          }`}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onWheel={handleWheel}
+        />
+      </div>
+      {hoveredMarker?.label ? (
+        <div
+          className="Tooltip"
+          style={{
+            transform: `translate(calc(-50% + ${
+              MARKER_SIZE / 2
+            }px), -100%) translate(${hoveredMarker.x}px, ${hoveredMarker.y}px)`,
+          }}
+        >
+          <span className="Tooltip__Content">{hoveredMarker.label}</span>
+          <span className="Tooltip__Arrow" />
+        </div>
+      ) : null}
     </div>
   );
 };

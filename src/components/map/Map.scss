@@ -1,5 +1,34 @@
-.MapContainer {
+.Map {
   position: relative;
+
+  &__CanvasContainer {
+    position: relative;
+  }
+}
+
+.Tooltip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+
+  &__Arrow {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 0;
+    border-top-color: var(--tooltip-background);
+  }
+
+  &__Content {
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    background-color: var(--tooltip-background);
+    color: var(--tooltip-color);
+    pointer-events: auto;
+  }
 }
 
 .Layer {
@@ -9,5 +38,9 @@
 
   &.isMoving {
     cursor: move;
+  }
+
+  &.isMarkerHovered {
+    cursor: pointer;
   }
 }

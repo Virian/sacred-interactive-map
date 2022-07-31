@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Map from './components/map/Map';
 import FiltersMenu from './components/filtersMenu/FiltersMenu';
 import Footer from './components/footer/Footer';
-import './assets/scss/variables.scss';
 import './App.scss';
 
 const App = () => {

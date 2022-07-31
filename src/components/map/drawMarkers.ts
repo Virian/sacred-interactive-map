@@ -2,7 +2,7 @@ import { MutableRefObject } from 'react';
 
 import markersData from '../../assets/markers.json';
 
-import { Coords, LoadedMarkers, MarkerCategories } from './types';
+import { Coords, Marker, LoadedMarkers, MarkerCategories } from './types';
 import { MARKER_SIZE } from './constants';
 
 interface DrawMarkersParams {
@@ -22,6 +22,8 @@ const drawMarkers = ({
 }: DrawMarkersParams) => {
   context.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
+  const drawnMarkers: Marker[] = [];
+
   Object.entries(markersData).forEach(([category, data]) => {
     if (!filters[category]) {
       return;
@@ -29,7 +31,7 @@ const drawMarkers = ({
 
     const loadedMarker = LoadedMarkersRef.current[category as MarkerCategories];
 
-    data.markers.forEach(({ x, y }) => {
+    data.markers.forEach(({ x, y, label }) => {
       const shouldDrawMarker =
         mapCoordOffset.x - MARKER_SIZE * scaleLevel.scale < x && // checking left edge of the screen
         mapCoordOffset.x +
@@ -47,6 +49,8 @@ const drawMarkers = ({
           (x - mapCoordOffset.x) / scaleLevel.scale - MARKER_SIZE / 2;
         const markerScreenY =
           (y - mapCoordOffset.y) / scaleLevel.scale - MARKER_SIZE / 2;
+
+        drawnMarkers.push({ x: markerScreenX, y: markerScreenY, label });
 
         if (loadedMarker) {
           context.drawImage(
@@ -74,6 +78,8 @@ const drawMarkers = ({
       }
     });
   });
+
+  return drawnMarkers;
 };
 
 export default drawMarkers;

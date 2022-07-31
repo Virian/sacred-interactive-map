@@ -12,6 +12,10 @@ export type LoadedImages = {
   [level: string]: Record<string, LoadedImage[]>;
 };
 
+export type Marker = Coords & {
+  label: string;
+};
+
 export type MarkerCategories = 'dragons' | 'portals' | 'chests';
 
 export type LoadedMarkers = {
