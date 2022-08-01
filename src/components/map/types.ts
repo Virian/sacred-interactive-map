@@ -13,7 +13,12 @@ export type Marker = Coords & {
   label: string;
 };
 
-export type MarkerCategories = 'dragons' | 'portals' | 'chests' | 'bountyHunt';
+export type MarkerCategories =
+  | 'dragons'
+  | 'portals'
+  | 'chests'
+  | 'bountyHunt'
+  | 'caves';
 
 export type LoadedMarkers = {
   [key in MarkerCategories]: HTMLImageElement | null;

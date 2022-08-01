@@ -2,12 +2,12 @@
   "dragons": {
     "filterLabel": "Dragon",
     "markers": [
-      { "x": 34211, "y": 9213, "label": "Acutami" },
+      { "x": 45451, "y": 13250, "label": "Acutami" },
       { "x": 24909, "y": 14618, "label": "D'Cay" },
       { "x": 23273, "y": 10034, "label": "Draconis Mortis" },
       { "x": 15779, "y": 9150, "label": "Lorinor" },
       { "x": 31860, "y": 11715, "label": "Loromir" },
-      { "x": 16376, "y": 12123, "label": "Sirithcam" },
+      { "x": 9682, "y": 11150, "label": "Sirithcam" },
       { "x": 21800, "y": 5246, "label": "Sisslith" },
       { "x": 31950, "y": 11088, "label": "Sssiliths" },
       { "x": 15399, "y": 7405, "label": "Frosttod" },
@@ -123,6 +123,34 @@
       { "x": 23517, "y": 8358, "label": "Simba, Diabolical witch" },
       { "x": 21379, "y": 7952, "label": "Theharenod, Ronin" },
       { "x": 29433, "y": 9693, "label": "T'Man, Dark Elf" }
+    ]
+  },
+  "caves": {
+    "filterLabel": "Cave Entrance",
+    "markers": [
+      { "x": 25571, "y": 1380, "label": "Cave Entrance" },
+      { "x": 29096, "y": 3170, "label": "Cave Entrance" },
+      { "x": 29317, "y": 3207, "label": "Cave Entrance" },
+      { "x": 17376, "y": 6792, "label": "Cave Entrance" },
+      { "x": 19558, "y": 5787, "label": "Cave Entrance" },
+      { "x": 18106, "y": 4601, "label": "Cave Entrance" },
+      { "x": 17380, "y": 4661, "label": "Bear Cave Entrance" },
+      { "x": 34300, "y": 14496, "label": "Cave Entrance" },
+      { "x": 33997, "y": 14198, "label": "Cave Entrance" },
+      { "x": 16258, "y": 9341, "label": "Cave Entrance" },
+      { "x": 16708, "y": 10243, "label": "Cave Entrance" },
+      { "x": 17789, "y": 8571, "label": "Cave Entrance" },
+      { "x": 17284, "y": 12909, "label": "Cave Entrance" },
+      { "x": 18204, "y": 12660, "label": "Cave Entrance" },
+      { "x": 17551, "y": 12284, "label": "Alkazaba Noc Draco Cave Entrance" },
+      { "x": 16585, "y": 12514, "label": "Cave Entrance" },
+      { "x": 15969, "y": 11642, "label": "Cave Entrance" },
+      { "x": 16376, "y": 12123, "label": "Cave Entrance" },
+      { "x": 15465, "y": 15784, "label": "Cave Entrance" },
+      { "x": 16419, "y": 14938, "label": "Cave Entrance" },
+      { "x": 16533, "y": 14684, "label": "Cave Entrance" },
+      { "x": 16722, "y": 14730, "label": "Hero Cave Entrance" },
+      { "x": 18284, "y": 15339, "label": "Cave Entrance" }
     ]
   }
 }

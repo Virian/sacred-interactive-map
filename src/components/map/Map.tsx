@@ -41,6 +41,7 @@ const Map = () => {
     portals: null,
     chests: null,
     bountyHunt: null,
+    caves: null,
   });
 
   const { mousePosition, handleMouseMove: onMouseMove } = useMousePosition();
