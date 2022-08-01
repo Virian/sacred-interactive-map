@@ -33,6 +33,69 @@
   }
 }
 
+.Popup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  pointer-events: none;
+  z-index: 1;
+
+  &__Arrow {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 0;
+    border-top-color: var(--popup-background);
+    transform: translateY(-1px); // for some popops there is a space between the arrow and content
+  }
+
+  &__Content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0.875rem 1.25rem;
+    border-radius: 5px;
+    background-color: var(--popup-background);
+    color: var(--popup-color);
+    box-shadow: var(--popup-shadow);
+    pointer-events: auto;
+  }
+
+  &__CloseButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    padding: 6px 9px;
+    background-color: transparent;
+    color: var(--popup-color);
+    transition: color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--popup-close-button-color-hover);
+    }
+  }
+
+  &__Title {
+    margin: 0;
+    margin-right: 27px; // size of the close button
+    font-size: 1.375rem;
+  }
+
+  &__Category {
+    font-size: 0.875rem;
+  }
+
+  &__Description {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--popup-color);
+  }
+}
+
 .Layer {
   position: absolute;
   top: 0;

@@ -1,5 +1,5 @@
 import translateMapCoordsToGameCoords from '../translateMapCoordsToGameCoords';
-import { Coords } from '../types';
+import { Coords } from '../../../types';
 
 const cases: [Coords, Coords][] = [
   [

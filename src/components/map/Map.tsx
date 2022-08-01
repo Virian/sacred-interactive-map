@@ -1,7 +1,6 @@
 import React, {
   useEffect,
   useRef,
-  useState,
   useCallback,
   useContext,
   MouseEvent,
@@ -12,12 +11,13 @@ import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
 import FiltersContext from '../../context/FiltersContext';
 
 import './Map.scss';
-import { LoadedImages, LoadedMarkers, Marker } from './types';
+import { LoadedImages, LoadedMarkers } from './types';
 import { MARKER_SIZE } from './constants';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMousePosition from './useMousePosition';
 import useMove from './useMove';
 import useWheel from './useWheel';
+import useMarkers from './useMarkers';
 import drawMapTiles from './drawMapTiles';
 import drawMarkers from './drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
@@ -30,10 +30,7 @@ const Map = () => {
   const { filters } = useContext(FiltersContext);
 
   const tilesLayerRef = useRef<HTMLCanvasElement>(null);
-  const markersLayerRef = useRef<HTMLCanvasElement>(null);
   const coordsLayerRef = useRef<HTMLCanvasElement>(null);
-
-  const [hoveredMarker, setHoveredMarker] = useState<Marker | null>(null);
 
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
   const LoadedMarkersRef = useRef<LoadedMarkers>({
@@ -43,26 +40,38 @@ const Map = () => {
     bountyHunt: null,
   });
 
-  const { mousePosition, handleMouseMove: onMouseMove } = useMousePosition();
+  const { mousePosition, handleMouseMove: handleMousePositionMove } =
+    useMousePosition();
 
   const { handleWheel } = useWheel({ mousePosition });
 
   const {
+    markersLayerRef,
+    setDrawnMarkers,
+    hoveredMarker,
+    clickedMarker,
+    setClickedMarker,
+    clickedMarkerTranslateX,
+    clickedMarkerTranslateY,
+    checkMarkerClick,
+  } = useMarkers({ mousePosition });
+
+  const {
     isMoving,
     handleMouseDown,
-    handleMouseMove: onMapMove,
+    handleMouseMove: onMouseMove,
     handleMouseUp,
     handleTouchStart,
     handleTouchMove,
     handleTouchEnd,
-  } = useMove();
+  } = useMove({ onMoveEnd: checkMarkerClick });
 
   const handleMouseMove = useCallback(
     (event: MouseEvent) => {
+      handleMousePositionMove(event);
       onMouseMove(event);
-      onMapMove(event);
     },
-    [onMouseMove, onMapMove]
+    [handleMousePositionMove, onMouseMove]
   );
 
   useEffect(() => {
@@ -82,7 +91,7 @@ const Map = () => {
     const markersContext = markersLayerRef.current?.getContext('2d');
 
     if (markersContext) {
-      const drawnMarkers = drawMarkers({
+      const newDrawnMarkers = drawMarkers({
         context: markersContext,
         mapCoordOffset,
         zoomLevel,
@@ -90,21 +99,9 @@ const Map = () => {
         filters,
       });
 
-      // reversing because markers that were drawn later will be displayed on
-      // top of those drawn earlier
-      const currentlyHoveredMarker = drawnMarkers.reverse().find(({ x, y }) => {
-        const markerBoundingBox = new Path2D();
-        markerBoundingBox.rect(x, y, MARKER_SIZE, MARKER_SIZE);
-        return markersContext.isPointInPath(
-          markerBoundingBox,
-          mousePosition.x,
-          mousePosition.y
-        );
-      });
-
-      setHoveredMarker(currentlyHoveredMarker || null);
+      setDrawnMarkers(newDrawnMarkers);
     }
-  }, [mapCoordOffset, zoomLevel, filters, mousePosition]);
+  }, [markersLayerRef, mapCoordOffset, zoomLevel, filters, setDrawnMarkers]);
 
   useEffect(() => {
     const coordsContext = coordsLayerRef.current?.getContext('2d');
@@ -152,17 +149,46 @@ const Map = () => {
           onWheel={handleWheel}
         />
       </div>
-      {hoveredMarker?.label ? (
+      {hoveredMarker?.label && hoveredMarker.id !== clickedMarker?.id ? (
         <div
           className="Tooltip"
           style={{
             transform: `translate(calc(-50% + ${
               MARKER_SIZE / 2
-            }px), -100%) translate(${hoveredMarker.x}px, ${hoveredMarker.y}px)`,
+            }px), -100%) translate(${hoveredMarker.screenX}px, ${
+              hoveredMarker.screenY
+            }px)`,
           }}
         >
           <span className="Tooltip__Content">{hoveredMarker.label}</span>
           <span className="Tooltip__Arrow" />
+        </div>
+      ) : null}
+      {clickedMarker?.label ? (
+        <div
+          className="Popup"
+          style={{
+            transform: `translate(calc(-50% + ${
+              MARKER_SIZE / 2
+            }px), -100%) translate(${clickedMarkerTranslateX}px, ${clickedMarkerTranslateY}px)`,
+          }}
+        >
+          <div className="Popup__Content">
+            <button
+              className="Popup__CloseButton"
+              onClick={() => setClickedMarker(null)}
+            >
+              X
+            </button>
+            <h3 className="Popup__Title">{clickedMarker.label}</h3>
+            <i className="Popup__Category">{clickedMarker.category}</i>
+            {clickedMarker.description ? (
+              <span className="Popup__Description">
+                {clickedMarker.description}
+              </span>
+            ) : null}
+          </div>
+          <span className="Popup__Arrow" />
         </div>
       ) : null}
     </div>

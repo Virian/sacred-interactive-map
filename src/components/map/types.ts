@@ -9,11 +9,16 @@ export type LoadedImages = {
   [levelNumber: string]: Record<string, LoadedImage[]>;
 };
 
-export type Marker = Coords & {
-  label: string;
-};
-
 export type MarkerCategories = 'dragons' | 'portals' | 'chests' | 'bountyHunt';
+
+export type Marker = Coords & {
+  id: string;
+  screenX: number;
+  screenY: number;
+  label: string;
+  description: string | null;
+  category: string;
+};
 
 export type LoadedMarkers = {
   [key in MarkerCategories]: HTMLImageElement | null;
