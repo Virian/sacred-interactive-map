@@ -181,7 +181,9 @@ const Map = () => {
               X
             </button>
             <h3 className="Popup__Title">{clickedMarker.label}</h3>
-            <i className="Popup__Category">{clickedMarker.category}</i>
+            <i className="Popup__Category">
+              {clickedMarker.categoryFilterLabel}
+            </i>
             {clickedMarker.description ? (
               <span className="Popup__Description">
                 {clickedMarker.description}

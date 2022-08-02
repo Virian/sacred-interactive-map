@@ -8,8 +8,14 @@ import ZoomControls from './components/zoomControls/ZoomControls';
 import ZoomContext from './context/ZoomContext';
 import MapCoordOffsetContext from './context/MapCoordOffsetContext';
 import FiltersContext from './context/FiltersContext';
-import { MAP_WIDTH, MAP_HEIGHT, INITIAL_SCALE_LEVEL } from './constants';
+import {
+  MAP_WIDTH,
+  MAP_HEIGHT,
+  INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED,
+  INITIAL_SCALE_LEVEL,
+} from './constants';
 import { Coords } from './types';
+import getMarkerFromSearchParams from './getMarkerFromSearchParams';
 
 const OFFSET_TO_CENTER_MAP = {
   x: Math.max(
@@ -23,10 +29,52 @@ const OFFSET_TO_CENTER_MAP = {
 };
 
 const App = () => {
-  const [zoomLevel, setZoomLevel] = useState(INITIAL_SCALE_LEVEL);
-  const [mapCoordOffset, setMapCoordOffset] =
-    useState<Coords>(OFFSET_TO_CENTER_MAP);
-  const [filters, setFilters] = useState<Record<string, boolean>>({});
+  const [zoomLevel, setZoomLevel] = useState(() => {
+    const marker = getMarkerFromSearchParams();
+
+    return marker
+      ? INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED
+      : INITIAL_SCALE_LEVEL;
+  });
+
+  const [mapCoordOffset, setMapCoordOffset] = useState<Coords>(() => {
+    const marker = getMarkerFromSearchParams();
+
+    if (marker) {
+      // centering the screen on the marker
+      return {
+        x: Math.max(
+          0,
+          Math.min(
+            marker.x -
+              (window.innerWidth / 2) *
+                INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale,
+            MAP_WIDTH -
+              window.innerWidth * INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale
+          )
+        ),
+        y: Math.max(
+          0,
+          Math.min(
+            marker.y -
+              (window.innerHeight / 2) *
+                INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale,
+            MAP_HEIGHT -
+              window.innerHeight *
+                INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale
+          )
+        ),
+      };
+    }
+
+    return OFFSET_TO_CENTER_MAP;
+  });
+
+  const [filters, setFilters] = useState<Record<string, boolean>>(() => {
+    const marker = getMarkerFromSearchParams();
+
+    return marker ? { [marker.category]: true } : {};
+  });
 
   return (
     <div className="App">

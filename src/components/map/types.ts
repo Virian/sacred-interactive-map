@@ -13,11 +13,12 @@ export type MarkerCategories = 'dragons' | 'portals' | 'chests' | 'bountyHunt';
 
 export type Marker = Coords & {
   id: string;
-  screenX: number;
-  screenY: number;
+  screenX?: number;
+  screenY?: number;
   label: string;
   description: string | null;
   category: string;
+  categoryFilterLabel: string;
 };
 
 export type LoadedMarkers = {

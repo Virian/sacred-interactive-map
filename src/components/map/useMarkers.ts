@@ -1,8 +1,16 @@
-import { useRef, useState, useMemo, useCallback, useContext } from 'react';
+import {
+  useRef,
+  useState,
+  useMemo,
+  useCallback,
+  useContext,
+  useEffect,
+} from 'react';
 
 import { Coords } from '../../types';
 import ZoomContext from '../../context/ZoomContext';
 import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
+import getMarkerFromSearchParams from '../../getMarkerFromSearchParams';
 
 import { MARKER_SIZE } from './constants';
 import { Marker } from './types';
@@ -19,7 +27,20 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
   const markersLayerRef = useRef<HTMLCanvasElement>(null);
 
   const [drawnMarkers, setDrawnMarkers] = useState<Marker[]>([]);
-  const [clickedMarker, setClickedMarker] = useState<Marker | null>(null);
+  const [clickedMarker, setClickedMarker] = useState<Marker | null>(() => {
+    return getMarkerFromSearchParams() || null;
+  });
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams();
+
+    if (clickedMarker) {
+      searchParams.set('x', clickedMarker.x.toString());
+      searchParams.set('y', clickedMarker.y.toString());
+    }
+
+    window.history.replaceState(null, '', `?${searchParams.toString()}`);
+  }, [clickedMarker]);
 
   const hoveredMarker = useMemo(() => {
     const markersContext = markersLayerRef.current?.getContext('2d');
@@ -27,7 +48,7 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
     // reversing because markers that were drawn later will be displayed on
     // top of those drawn earlier
     return (
-      drawnMarkers.reverse().find(({ screenX, screenY }) => {
+      drawnMarkers.reverse().find(({ screenX = 0, screenY = 0 }) => {
         const markerBoundingBox = new Path2D();
         markerBoundingBox.rect(screenX, screenY, MARKER_SIZE, MARKER_SIZE);
         return markersContext?.isPointInPath(
@@ -56,7 +77,7 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
         // reversing because markers that were drawn later will be displayed on
         // top of those drawn earlier
         const newClickedMarker =
-          drawnMarkers.reverse().find(({ screenX, screenY }) => {
+          drawnMarkers.reverse().find(({ screenX = 0, screenY = 0 }) => {
             const markerBoundingBox = new Path2D();
             markerBoundingBox.rect(screenX, screenY, MARKER_SIZE, MARKER_SIZE);
             return markersContext?.isPointInPath(

@@ -73,7 +73,8 @@ const drawMarkers = ({
           screenY: markerScreenY,
           label,
           description,
-          category: filterLabel,
+          category,
+          categoryFilterLabel: filterLabel,
         });
 
         if (loadedMarker) {
