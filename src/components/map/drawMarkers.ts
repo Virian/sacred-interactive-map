@@ -75,28 +75,35 @@ const drawMarkers = ({
           description,
           category: filterLabel,
         });
-
-        if (loadedMarker) {
+        const drawSingleMarker = (image: HTMLImageElement) => {
+          context.beginPath();
+          context.arc(
+            markerScreenX + MARKER_SIZE / 2,
+            markerScreenY + MARKER_SIZE / 2,
+            MARKER_SIZE / 2,
+            0,
+            2 * Math.PI
+          );
+          context.fillStyle = 'rgba(255, 50, 50, 0.55)';
+          context.fill();
           context.drawImage(
-            loadedMarker,
+            image,
             markerScreenX,
             markerScreenY,
             MARKER_SIZE,
             MARKER_SIZE
           );
+        };
+
+        if (loadedMarker) {
+          drawSingleMarker(loadedMarker);
         } else {
           const img = new Image();
           img.src = require(`../../assets/icons/icon-${category}.webp`).default;
           img.onload = () => {
             LoadedMarkersRef.current[category as MarkerCategories] = img;
 
-            context.drawImage(
-              img,
-              markerScreenX,
-              markerScreenY,
-              MARKER_SIZE,
-              MARKER_SIZE
-            );
+            drawSingleMarker(img);
           };
         }
       }
