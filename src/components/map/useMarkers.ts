@@ -15,6 +15,7 @@ import getMarkerFromSearchParams from '../../getMarkerFromSearchParams';
 import { MARKER_SIZE } from './constants';
 import { Marker } from './types';
 import calculatePopupTranslate from './calculatePopupTranslate';
+import FiltersContext from '../../context/FiltersContext';
 
 interface UseMarkersParams {
   mousePosition: Coords;
@@ -23,6 +24,7 @@ interface UseMarkersParams {
 const useMarkers = ({ mousePosition }: UseMarkersParams) => {
   const { zoomLevel } = useContext(ZoomContext);
   const { mapCoordOffset } = useContext(MapCoordOffsetContext);
+  const { filters } = useContext(FiltersContext);
 
   const markersLayerRef = useRef<HTMLCanvasElement>(null);
 
@@ -41,6 +43,16 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
 
     window.history.replaceState(null, '', `?${searchParams.toString()}`);
   }, [clickedMarker]);
+
+  useEffect(() => {
+    if (
+      clickedMarker &&
+      clickedMarker.category !== 'custom' &&
+      !filters[clickedMarker.category]
+    ) {
+      setClickedMarker(null);
+    }
+  }, [clickedMarker, filters]);
 
   const hoveredMarker = useMemo(() => {
     const markersContext = markersLayerRef.current?.getContext('2d');
