@@ -5,6 +5,10 @@ import React, {
   useContext,
   MouseEvent,
 } from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import LinkIcon from '@mui/icons-material/Link';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 import ZoomContext from '../../context/ZoomContext';
 import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
@@ -18,6 +22,7 @@ import useMousePosition from './useMousePosition';
 import useMove from './useMove';
 import useWheel from './useWheel';
 import useMarkers from './useMarkers';
+import useCopyLinkToClipboard from './useCopyLinkToClipboard';
 import drawMapTiles from './drawMapTiles';
 import drawMarkers from './drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
@@ -40,6 +45,13 @@ const Map = () => {
     chests: null,
     bountyHunt: null,
   });
+
+  const {
+    isClipboardInfoOpen,
+    clipboardInfoSeverity,
+    copyLinkToClipboard,
+    handleClipboardInfoClose,
+  } = useCopyLinkToClipboard();
 
   const { mousePosition, handleMouseMove: handleMousePositionMove } =
     useMousePosition();
@@ -186,11 +198,21 @@ const Map = () => {
           <div className="Popup__Content">
             <button
               className="Popup__CloseButton"
+              title="Close popup"
               onClick={() => setClickedMarker(null)}
             >
-              X
+              <CloseIcon />
             </button>
-            <h3 className="Popup__Title">{clickedMarker.label}</h3>
+            <h3 className="Popup__Title">
+              {clickedMarker.label}
+              <button
+                className="Popup__LinkButton"
+                title="Copy link to clipboard"
+                onClick={copyLinkToClipboard}
+              >
+                <LinkIcon />
+              </button>
+            </h3>
             <i className="Popup__Category">
               {clickedMarker.categoryFilterLabel}
             </i>
@@ -203,6 +225,22 @@ const Map = () => {
           <span className="Popup__Arrow" />
         </div>
       ) : null}
+      <Snackbar
+        open={isClipboardInfoOpen}
+        autoHideDuration={5000}
+        onClose={handleClipboardInfoClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <MuiAlert
+          onClose={handleClipboardInfoClose}
+          severity={clipboardInfoSeverity}
+          elevation={5}
+        >
+          {clipboardInfoSeverity === 'success'
+            ? 'Link copied to clipboard'
+            : 'Unable to copy to clipboard'}
+        </MuiAlert>
+      </Snackbar>
     </div>
   );
 };

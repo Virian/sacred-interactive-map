@@ -68,7 +68,6 @@
     top: 0;
     right: 0;
     border: 0;
-    padding: 6px 9px;
     background-color: transparent;
     color: var(--popup-color);
     transition: color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
@@ -80,9 +79,23 @@
   }
 
   &__Title {
+    display: flex;
+    align-items: center;
     margin: 0;
-    margin-right: 27px; // size of the close button
+    margin-right: 24px; // size of the close button
     font-size: 1.375rem;
+  }
+
+  &__LinkButton {
+    border: 0;
+    background-color: transparent;
+    color: var(--popup-color);
+    transition: color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--popup-link-button-color-hover);
+    }
   }
 
   &__Category {
