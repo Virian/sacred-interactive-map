@@ -102,6 +102,19 @@
     font-size: 0.875rem;
   }
 
+  &__Coordinates {
+    display: flex;
+    align-items: center;
+    margin-top: 0.375rem;
+    font-size: 0.75rem;
+
+    & &WarningIcon {
+      margin-left: 0.25rem;
+      font-size: 0.875rem;
+      color: var(--popup-warning-icon);
+    }
+  }
+
   &__Description {
     margin-top: 0.75rem;
     padding-top: 0.75rem;

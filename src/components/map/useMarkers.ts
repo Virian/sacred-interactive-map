@@ -114,6 +114,7 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
             description: null,
             x: mapCoordOffset.x + eventCoords.x * zoomLevel.scale,
             y: mapCoordOffset.y + eventCoords.y * zoomLevel.scale,
+            z: 0,
           });
         }
       }

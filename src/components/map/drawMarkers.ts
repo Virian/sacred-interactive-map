@@ -47,7 +47,7 @@ const drawMarkers = ({
         filterLabel: customMarker.categoryFilterLabel,
       })
     : sortedMarkersData
-  ).forEach(({ id, x, y, label, category, description, filterLabel }) => {
+  ).forEach(({ id, x, y, z, label, category, description, filterLabel }) => {
     if (!filters[category] && category !== 'custom') {
       return;
     }
@@ -75,6 +75,7 @@ const drawMarkers = ({
         id,
         x,
         y,
+        z,
         screenX: markerScreenX,
         screenY: markerScreenY,
         label,

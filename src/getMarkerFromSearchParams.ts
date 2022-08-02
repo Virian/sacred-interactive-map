@@ -33,6 +33,7 @@ const getMarkerFromSearchParams = () => {
       description: null,
       x: searchX,
       y: searchY,
+      z: 0,
     };
   }
 

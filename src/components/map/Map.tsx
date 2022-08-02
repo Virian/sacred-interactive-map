@@ -7,8 +7,10 @@ import React, {
 } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import LinkIcon from '@mui/icons-material/Link';
+import WarningIcon from '@mui/icons-material/WarningAmber';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import Tooltip from '@mui/material/Tooltip';
 
 import ZoomContext from '../../context/ZoomContext';
 import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
@@ -26,6 +28,7 @@ import useCopyLinkToClipboard from './useCopyLinkToClipboard';
 import drawMapTiles from './drawMapTiles';
 import drawMarkers from './drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
+import translateMapCoordsToGameCoords from './translateMapCoordsToGameCoords';
 
 const initialLoadedImages = getInitialLoadedImages();
 
@@ -216,6 +219,19 @@ const Map = () => {
             <i className="Popup__Category">
               {clickedMarker.categoryFilterLabel}
             </i>
+            <span className="Popup__Coordinates">
+              In-game coordinates: [
+              {Object.values(translateMapCoordsToGameCoords(clickedMarker))
+                .concat(clickedMarker.z)
+                .join(', ')}
+              ]
+              <Tooltip
+                title="Coordinates are approximate and may slightly differ from actual in-game coordinates"
+                placement="right"
+              >
+                <WarningIcon className="Popup__CoordinatesWarningIcon" />
+              </Tooltip>
+            </span>
             {clickedMarker.description ? (
               <span className="Popup__Description">
                 {clickedMarker.description}

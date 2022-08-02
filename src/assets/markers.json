@@ -6,6 +6,7 @@
         "id": "dragon-1",
         "x": 34211,
         "y": 9213,
+        "z": 0,
         "label": "Acutami",
         "description": null
       },
@@ -13,6 +14,7 @@
         "id": "dragon-2",
         "x": 24909,
         "y": 14618,
+        "z": 0,
         "label": "D'Cay",
         "description": null
       },
@@ -20,6 +22,7 @@
         "id": "dragon-3",
         "x": 23273,
         "y": 10034,
+        "z": 0,
         "label": "Draconis Mortis",
         "description": null
       },
@@ -27,6 +30,7 @@
         "id": "dragon-4",
         "x": 15779,
         "y": 9150,
+        "z": 0,
         "label": "Lorinor",
         "description": null
       },
@@ -34,6 +38,7 @@
         "id": "dragon-5",
         "x": 31860,
         "y": 11715,
+        "z": 0,
         "label": "Loromir",
         "description": "This dragon is not hostile."
       },
@@ -41,6 +46,7 @@
         "id": "dragon-6",
         "x": 16376,
         "y": 12123,
+        "z": 0,
         "label": "Sirithcam",
         "description": null
       },
@@ -48,6 +54,7 @@
         "id": "dragon-7",
         "x": 21800,
         "y": 5246,
+        "z": 0,
         "label": "Sisslith",
         "description": null
       },
@@ -55,6 +62,7 @@
         "id": "dragon-8",
         "x": 31950,
         "y": 11088,
+        "z": 0,
         "label": "Sssiliths",
         "description": null
       },
@@ -62,6 +70,7 @@
         "id": "dragon-9",
         "x": 15399,
         "y": 7405,
+        "z": 0,
         "label": "Frosttod",
         "description": null
       },
@@ -69,6 +78,7 @@
         "id": "dragon-10",
         "x": 15324,
         "y": 7425,
+        "z": 0,
         "label": "Winterstarre",
         "description": null
       }
@@ -81,6 +91,7 @@
         "id": "portal-1",
         "x": 29192,
         "y": 11620,
+        "z": 0,
         "label": "Bellevue Portal",
         "description": null
       },
@@ -88,6 +99,7 @@
         "id": "portal-2",
         "x": 23940,
         "y": 11394,
+        "z": 0,
         "label": "Porto Vallum Portal",
         "description": null
       },
@@ -95,6 +107,7 @@
         "id": "portal-3",
         "x": 22016,
         "y": 7160,
+        "z": 0,
         "label": "Icecreek Pass Portal",
         "description": null
       },
@@ -102,6 +115,7 @@
         "id": "portal-4",
         "x": 18492,
         "y": 13080,
+        "z": 0,
         "label": "Fields of Urkuk Portal",
         "description": null
       },
@@ -109,6 +123,7 @@
         "id": "portal-5",
         "x": 19844,
         "y": 8447,
+        "z": 0,
         "label": "Timberton Portal",
         "description": null
       },
@@ -116,6 +131,7 @@
         "id": "portal-6",
         "x": 19055,
         "y": 10707,
+        "z": 0,
         "label": "Mascarell Portal",
         "description": null
       },
@@ -123,6 +139,7 @@
         "id": "portal-7",
         "x": 25240,
         "y": 14174,
+        "z": 0,
         "label": "Khorad-Nur Portal",
         "description": null
       },
@@ -130,6 +147,7 @@
         "id": "portal-8",
         "x": 27380,
         "y": 8925,
+        "z": 0,
         "label": "Braverock Castle Portal",
         "description": null
       },
@@ -137,6 +155,7 @@
         "id": "portal-9",
         "x": 25147,
         "y": 5802,
+        "z": 0,
         "label": "Monastery of the Seraphim Portal",
         "description": null
       },
@@ -144,6 +163,7 @@
         "id": "portal-10",
         "x": 29248,
         "y": 10700,
+        "z": 0,
         "label": "Hedgenton Portal",
         "description": null
       },
@@ -151,6 +171,7 @@
         "id": "portal-11",
         "x": 33177,
         "y": 9370,
+        "z": 0,
         "label": "Valley of Zhurag-Nar Portal",
         "description": null
       },
@@ -158,6 +179,7 @@
         "id": "portal-12",
         "x": 31815,
         "y": 13135,
+        "z": 0,
         "label": "Mystdale Castle Portal",
         "description": null
       },
@@ -165,6 +187,7 @@
         "id": "portal-13",
         "x": 34147,
         "y": 14223,
+        "z": 0,
         "label": "Shaddar-Nur Portal",
         "description": null
       },
@@ -172,6 +195,7 @@
         "id": "portal-14",
         "x": 26860,
         "y": 6480,
+        "z": 0,
         "label": "Dwarven Ruins Portal",
         "description": null
       },
@@ -179,6 +203,7 @@
         "id": "portal-15",
         "x": 25724,
         "y": 4045,
+        "z": 0,
         "label": "Purgatori Portal",
         "description": null
       },
@@ -186,6 +211,7 @@
         "id": "portal-16",
         "x": 24295,
         "y": 2962,
+        "z": 0,
         "label": "Embalmed Forest Portal",
         "description": null
       },
@@ -193,6 +219,7 @@
         "id": "portal-17",
         "x": 20203,
         "y": 15448,
+        "z": 0,
         "label": "Pirate Isles Portal",
         "description": null
       },
@@ -200,6 +227,7 @@
         "id": "portal-18",
         "x": 31782,
         "y": 5296,
+        "z": 0,
         "label": "Dryad Forest Portal",
         "description": null
       },
@@ -207,6 +235,7 @@
         "id": "portal-19",
         "x": 29483,
         "y": 2989,
+        "z": 0,
         "label": "Hell's Ridge Portal",
         "description": null
       },
@@ -214,6 +243,7 @@
         "id": "portal-20",
         "x": 17139,
         "y": 4790,
+        "z": 0,
         "label": "Valley of Tears Portal",
         "description": null
       }
@@ -226,6 +256,7 @@
         "id": "stash-1",
         "x": 23990,
         "y": 2974,
+        "z": 0,
         "label": "Garema Personal Stash",
         "description": null
       },
@@ -233,6 +264,7 @@
         "id": "stash-2",
         "x": 29063,
         "y": 3161,
+        "z": 0,
         "label": "Shaddar-Sub Personal Stash",
         "description": null
       },
@@ -240,6 +272,7 @@
         "id": "stash-3",
         "x": 26140,
         "y": 4207,
+        "z": 0,
         "label": "Purgatori Personal Stash",
         "description": null
       },
@@ -247,6 +280,7 @@
         "id": "stash-4",
         "x": 17175,
         "y": 5342,
+        "z": 0,
         "label": "Darkwood Personal Stash",
         "description": null
       },
@@ -254,6 +288,7 @@
         "id": "stash-5",
         "x": 27082,
         "y": 5454,
+        "z": 0,
         "label": "Fungi Hillock Personal Stash",
         "description": null
       },
@@ -261,6 +296,7 @@
         "id": "stash-6",
         "x": 31920,
         "y": 5500,
+        "z": 0,
         "label": "Esotopia Personal Stash",
         "description": null
       },
@@ -268,6 +304,7 @@
         "id": "stash-7",
         "x": 26615,
         "y": 6518,
+        "z": 0,
         "label": "Dwarven Ruins Personal Stash",
         "description": null
       },
@@ -275,6 +312,7 @@
         "id": "stash-8",
         "x": 29800,
         "y": 7090,
+        "z": 0,
         "label": "Dwarven Ruins Personal Stash",
         "description": null
       },
@@ -282,6 +320,7 @@
         "id": "stash-9",
         "x": 24010,
         "y": 6329,
+        "z": 0,
         "label": "Monastery of the Seraphim Personal Stash",
         "description": null
       },
@@ -289,6 +328,7 @@
         "id": "stash-10",
         "x": 16158,
         "y": 8048,
+        "z": 0,
         "label": "Tyr-Haddar Personal Stash",
         "description": null
       },
@@ -296,6 +336,7 @@
         "id": "stash-11",
         "x": 20040,
         "y": 8306,
+        "z": 0,
         "label": "Timberton Personal Stash",
         "description": null
       },
@@ -303,6 +344,7 @@
         "id": "stash-12",
         "x": 22580,
         "y": 7523,
+        "z": 0,
         "label": "Slater's Grave Personal Stash",
         "description": null
       },
@@ -310,6 +352,7 @@
         "id": "stash-13",
         "x": 24359,
         "y": 7454,
+        "z": 0,
         "label": "Wolfdale Personal Stash",
         "description": null
       },
@@ -317,6 +360,7 @@
         "id": "stash-14",
         "x": 23130,
         "y": 8600,
+        "z": 0,
         "label": "Crow's Rock Personal Stash",
         "description": null
       },
@@ -324,6 +368,7 @@
         "id": "stash-15",
         "x": 17340,
         "y": 9360,
+        "z": 0,
         "label": "Tyr-Fasul Personal Stash",
         "description": null
       },
@@ -331,6 +376,7 @@
         "id": "stash-16",
         "x": 19449,
         "y": 10545,
+        "z": 0,
         "label": "Mascarell Personal Stash",
         "description": null
       },
@@ -338,6 +384,7 @@
         "id": "stash-17",
         "x": 20845,
         "y": 9830,
+        "z": 0,
         "label": "Faeries Crossing Personal Stash",
         "description": null
       },
@@ -345,6 +392,7 @@
         "id": "stash-18",
         "x": 20148,
         "y": 11213,
+        "z": 0,
         "label": "Porto Draco Personal Stash",
         "description": null
       },
@@ -352,6 +400,7 @@
         "id": "stash-19",
         "x": 21784,
         "y": 10741,
+        "z": 0,
         "label": "Florentina Personal Stash",
         "description": null
       },
@@ -359,6 +408,7 @@
         "id": "stash-20",
         "x": 23560,
         "y": 11600,
+        "z": 0,
         "label": "Porto Vallum Personal Stash",
         "description": null
       },
@@ -366,6 +416,7 @@
         "id": "stash-21",
         "x": 24123,
         "y": 9383,
+        "z": 0,
         "label": "Shire's Pen Personal Stash",
         "description": null
       },
@@ -373,6 +424,7 @@
         "id": "stash-22",
         "x": 27140,
         "y": 9287,
+        "z": 0,
         "label": "Braverock Personal Stash",
         "description": null
       },
@@ -380,6 +432,7 @@
         "id": "stash-23",
         "x": 29684,
         "y": 9095,
+        "z": 0,
         "label": "Bravewall Personal Stash",
         "description": null
       },
@@ -387,6 +440,7 @@
         "id": "stash-24",
         "x": 29182,
         "y": 10571,
+        "z": 0,
         "label": "Hedgenton Personal Stash",
         "description": null
       },
@@ -394,6 +448,7 @@
         "id": "stash-25",
         "x": 26318,
         "y": 10721,
+        "z": 0,
         "label": "Bravesbury Personal Stash",
         "description": null
       },
@@ -401,6 +456,7 @@
         "id": "stash-26",
         "x": 25572,
         "y": 11548,
+        "z": 0,
         "label": "Silver Creek Outpost Personal Stash",
         "description": null
       },
@@ -408,6 +464,7 @@
         "id": "stash-27",
         "x": 27270,
         "y": 11928,
+        "z": 0,
         "label": "Silver Creek Personal Stash",
         "description": null
       },
@@ -415,6 +472,7 @@
         "id": "stash-28",
         "x": 27155,
         "y": 12219,
+        "z": 0,
         "label": "Haven Isle Personal Stash",
         "description": null
       },
@@ -422,6 +480,7 @@
         "id": "stash-29",
         "x": 28997,
         "y": 12037,
+        "z": 0,
         "label": "Bellevue Personal Stash",
         "description": null
       },
@@ -429,6 +488,7 @@
         "id": "stash-30",
         "x": 33079,
         "y": 9988,
+        "z": 0,
         "label": "Highmarsh Personal Stash",
         "description": null
       },
@@ -436,6 +496,7 @@
         "id": "stash-31",
         "x": 34918,
         "y": 11004,
+        "z": 0,
         "label": "Gloomoor Personal Stash",
         "description": null
       },
@@ -443,6 +504,7 @@
         "id": "stash-32",
         "x": 31914,
         "y": 11987,
+        "z": 0,
         "label": "Drakenden Personal Stash",
         "description": null
       },
@@ -450,6 +512,7 @@
         "id": "stash-33",
         "x": 34382,
         "y": 12682,
+        "z": 0,
         "label": "Moorbrook Personal Stash",
         "description": null
       },
@@ -457,6 +520,7 @@
         "id": "stash-34",
         "x": 31622,
         "y": 13395,
+        "z": 0,
         "label": "Mystdale Personal Stash",
         "description": null
       },
@@ -464,6 +528,7 @@
         "id": "stash-35",
         "x": 21210,
         "y": 12649,
+        "z": 0,
         "label": "N'Aquali Personal Stash",
         "description": null
       },
@@ -471,6 +536,7 @@
         "id": "stash-36",
         "x": 23763,
         "y": 12555,
+        "z": 0,
         "label": "Urkenburgh Personal Stash",
         "description": null
       },
@@ -478,6 +544,7 @@
         "id": "stash-37",
         "x": 26085,
         "y": 13472,
+        "z": 0,
         "label": "Oasis of Ahil-Tar Personal Stash",
         "description": null
       },
@@ -485,6 +552,7 @@
         "id": "stash-38",
         "x": 28522,
         "y": 13544,
+        "z": 0,
         "label": "Kahari Personal Stash",
         "description": null
       },
@@ -492,6 +560,7 @@
         "id": "stash-39",
         "x": 26928,
         "y": 14421,
+        "z": 0,
         "label": "Aish-Jadar Personal Stash",
         "description": null
       },
@@ -499,6 +568,7 @@
         "id": "stash-40",
         "x": 25082,
         "y": 14222,
+        "z": 0,
         "label": "Khorad-Nur Personal Stash",
         "description": null
       },
@@ -506,6 +576,7 @@
         "id": "stash-41",
         "x": 22299,
         "y": 14721,
+        "z": 0,
         "label": "Nomad-Nur Personal Stash",
         "description": null
       },
@@ -513,6 +584,7 @@
         "id": "stash-42",
         "x": 20489,
         "y": 15360,
+        "z": 0,
         "label": "Pirate Island Personal Stash",
         "description": null
       },
@@ -520,6 +592,7 @@
         "id": "stash-43",
         "x": 11425,
         "y": 12850,
+        "z": 0,
         "label": "Alkazaba Noc Draco Personal Stash",
         "description": null
       }
@@ -532,6 +605,7 @@
         "id": "target-1",
         "x": 30320,
         "y": 10780,
+        "z": 0,
         "label": "Athurion, Dark Elf warrior",
         "description": null
       },
@@ -539,6 +613,7 @@
         "id": "target-2",
         "x": 24900,
         "y": 11020,
+        "z": 0,
         "label": "Azathot, Minotaur",
         "description": null
       },
@@ -546,6 +621,7 @@
         "id": "target-3",
         "x": 35319,
         "y": 12441,
+        "z": 0,
         "label": "Baltasar, Goblin shaman",
         "description": null
       },
@@ -553,6 +629,7 @@
         "id": "target-4",
         "x": 20230,
         "y": 10255,
+        "z": 0,
         "label": "Bogomir, Outlaw",
         "description": null
       },
@@ -560,6 +637,7 @@
         "id": "target-5",
         "x": 24920,
         "y": 7632,
+        "z": 0,
         "label": "Boris, Sakkara Priest",
         "description": null
       },
@@ -567,6 +645,7 @@
         "id": "target-6",
         "x": 19968,
         "y": 11457,
+        "z": 0,
         "label": "Calisto, Female cutpurse",
         "description": null
       },
@@ -574,6 +653,7 @@
         "id": "target-7",
         "x": 28247,
         "y": 11900,
+        "z": 0,
         "label": "Darkeagle, Scoundrel",
         "description": null
       },
@@ -581,6 +661,7 @@
         "id": "target-8",
         "x": 21494,
         "y": 9865,
+        "z": 0,
         "label": "Exp. Creature VXIII, Black magician",
         "description": null
       },
@@ -588,6 +669,7 @@
         "id": "target-9",
         "x": 23854,
         "y": 11225,
+        "z": 0,
         "label": "Gilbert, Orc leader",
         "description": null
       },
@@ -595,6 +677,7 @@
         "id": "target-10",
         "x": 20727,
         "y": 7879,
+        "z": 0,
         "label": "Gul Har, Female Elf",
         "description": null
       },
@@ -602,6 +685,7 @@
         "id": "target-11",
         "x": 34559,
         "y": 11722,
+        "z": 0,
         "label": "Hator, Sakkara Priest",
         "description": null
       },
@@ -609,6 +693,7 @@
         "id": "target-12",
         "x": 32875,
         "y": 9693,
+        "z": 0,
         "label": "Hatuni, Troll",
         "description": null
       },
@@ -616,6 +701,7 @@
         "id": "target-13",
         "x": 32408,
         "y": 13363,
+        "z": 0,
         "label": "Hinsch, Magician",
         "description": null
       },
@@ -623,6 +709,7 @@
         "id": "target-14",
         "x": 23053,
         "y": 10843,
+        "z": 0,
         "label": "Homer, Orc shaman",
         "description": null
       },
@@ -630,6 +717,7 @@
         "id": "target-15",
         "x": 26693,
         "y": 10914,
+        "z": 0,
         "label": "Kaspar, Sakkara Priest",
         "description": null
       },
@@ -637,6 +725,7 @@
         "id": "target-16",
         "x": 26127,
         "y": 9003,
+        "z": 0,
         "label": "Laoshi, Deserter of DeMordrey's Guard",
         "description": null
       },
@@ -644,6 +733,7 @@
         "id": "target-17",
         "x": 24343,
         "y": 9463,
+        "z": 1,
         "label": "L.S.P., Nasty robber",
         "description": null
       },
@@ -651,6 +741,7 @@
         "id": "target-18",
         "x": 32258,
         "y": 12118,
+        "z": 0,
         "label": "Robin, Deranged magician",
         "description": null
       },
@@ -658,6 +749,7 @@
         "id": "target-19",
         "x": 23517,
         "y": 8358,
+        "z": 0,
         "label": "Simba, Diabolical witch",
         "description": null
       },
@@ -665,6 +757,7 @@
         "id": "target-20",
         "x": 21379,
         "y": 7952,
+        "z": 0,
         "label": "Theharenod, Ronin",
         "description": null
       },
@@ -672,6 +765,7 @@
         "id": "target-21",
         "x": 29433,
         "y": 9693,
+        "z": 0,
         "label": "T'Man, Dark Elf",
         "description": null
       }

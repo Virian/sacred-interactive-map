@@ -17,6 +17,7 @@ export type MarkerCategories =
   | 'bountyHunt';
 
 export type Marker = Coords & {
+  z: number;
   id: string;
   screenX?: number;
   screenY?: number;
