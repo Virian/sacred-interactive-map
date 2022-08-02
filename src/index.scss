@@ -1,4 +1,5 @@
 :root {
+  // colors
   --app-background: #000;
   --app-font-color: #111;
   --link-hover-color: #002aff;
@@ -23,6 +24,13 @@
   --zoom-buttons-shadow: var(--tooltip-shadow);
   --zoom-buttons-separator: var(--filter-menu-separator);
   --zoom-buttons-hover-background: #333;
+
+  // z-indexes
+  --filter-menu-z-index: 2;
+  --footer-z-index: 1;
+  --tooltip-z-index: 1;
+  --popup-z-index: 1;
+  --zoom-buttons-z-index: 1;
 }
 
 body {

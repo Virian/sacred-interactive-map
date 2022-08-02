@@ -8,7 +8,7 @@ $filter-categories: dragons, portals, chests, bountyHunt;
   border-bottom-right-radius: 5px;
   background-color: var(--filter-menu-background);
   color: var(--filter-menu-color);
-  z-index: 2;
+  z-index: var(--filter-menu-z-index);
   transition: transform cubic-bezier(0.215, 0.610, 0.355, 1) .2s;
 
   &.isHidden {
