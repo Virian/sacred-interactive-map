@@ -87,19 +87,26 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
             );
           }) || null;
 
-        if (!newClickedMarker) {
-          setClickedMarker(null);
-        } else if (
-          newClickedMarker &&
-          newClickedMarker.id === clickedMarker?.id
-        ) {
+        if (newClickedMarker && newClickedMarker.id === clickedMarker?.id) {
           setClickedMarker(null);
         } else if (newClickedMarker) {
           setClickedMarker(newClickedMarker);
+        } else if (!newClickedMarker && clickedMarker) {
+          setClickedMarker(null);
+        } else if (!newClickedMarker) {
+          setClickedMarker({
+            id: 'custom',
+            label: 'Your location',
+            category: 'custom',
+            categoryFilterLabel: 'Custom location',
+            description: null,
+            x: mapCoordOffset.x + eventCoords.x * zoomLevel.scale,
+            y: mapCoordOffset.y + eventCoords.y * zoomLevel.scale,
+          });
         }
       }
     },
-    [drawnMarkers, clickedMarker?.id]
+    [drawnMarkers, clickedMarker, mapCoordOffset, zoomLevel.scale]
   );
 
   return {

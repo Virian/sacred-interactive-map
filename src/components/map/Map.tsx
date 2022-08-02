@@ -34,6 +34,7 @@ const Map = () => {
 
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
   const LoadedMarkersRef = useRef<LoadedMarkers>({
+    custom: null,
     dragons: null,
     portals: null,
     chests: null,
@@ -97,11 +98,20 @@ const Map = () => {
         zoomLevel,
         LoadedMarkersRef,
         filters,
+        customMarker:
+          clickedMarker?.category === 'custom' ? clickedMarker : null,
       });
 
       setDrawnMarkers(newDrawnMarkers);
     }
-  }, [markersLayerRef, mapCoordOffset, zoomLevel, filters, setDrawnMarkers]);
+  }, [
+    markersLayerRef,
+    mapCoordOffset,
+    zoomLevel,
+    filters,
+    setDrawnMarkers,
+    clickedMarker,
+  ]);
 
   useEffect(() => {
     const coordsContext = coordsLayerRef.current?.getContext('2d');

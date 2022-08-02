@@ -9,7 +9,12 @@ export type LoadedImages = {
   [levelNumber: string]: Record<string, LoadedImage[]>;
 };
 
-export type MarkerCategories = 'dragons' | 'portals' | 'chests' | 'bountyHunt';
+export type MarkerCategories =
+  | 'custom'
+  | 'dragons'
+  | 'portals'
+  | 'chests'
+  | 'bountyHunt';
 
 export type Marker = Coords & {
   id: string;
@@ -17,7 +22,7 @@ export type Marker = Coords & {
   screenY?: number;
   label: string;
   description: string | null;
-  category: string;
+  category: MarkerCategories;
   categoryFilterLabel: string;
 };
 
