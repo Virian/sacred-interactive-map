@@ -11,7 +11,11 @@ import { MARKER_SIZE } from './constants';
 // higher in case they overlap
 const sortedMarkersData = sortBy(
   Object.entries(markersData).flatMap(([category, data]) =>
-    data.markers.map((marker) => ({ ...marker, category }))
+    data.markers.map((marker) => ({
+      ...marker,
+      category: category as MarkerCategories,
+      filterLabel: data.filterLabel,
+    }))
   ),
   ['y', 'x']
 );
@@ -22,6 +26,7 @@ interface DrawMarkersParams {
   zoomLevel: ZoomLevel;
   LoadedMarkersRef: MutableRefObject<LoadedMarkers>;
   filters: Record<string, boolean>;
+  customMarker?: Marker | null;
 }
 
 const drawMarkers = ({
@@ -30,17 +35,24 @@ const drawMarkers = ({
   zoomLevel,
   LoadedMarkersRef,
   filters,
+  customMarker,
 }: DrawMarkersParams) => {
   context.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
   const drawnMarkers: Marker[] = [];
 
-  sortedMarkersData.forEach(({ x, y, label, category }) => {
-    if (!filters[category]) {
+  (customMarker
+    ? sortedMarkersData.concat({
+        ...customMarker,
+        filterLabel: customMarker.categoryFilterLabel,
+      })
+    : sortedMarkersData
+  ).forEach(({ id, x, y, z, label, category, description, filterLabel }) => {
+    if (!filters[category] && category !== 'custom') {
       return;
     }
 
-    const loadedMarker = LoadedMarkersRef.current[category as MarkerCategories];
+    const loadedMarker = LoadedMarkersRef.current[category];
     const shouldDrawMarker =
       mapCoordOffset.x - MARKER_SIZE * zoomLevel.scale < x && // checking left edge of the screen
       mapCoordOffset.x +
@@ -59,7 +71,18 @@ const drawMarkers = ({
       const markerScreenY =
         (y - mapCoordOffset.y) / zoomLevel.scale - MARKER_SIZE / 2;
 
-      drawnMarkers.push({ x: markerScreenX, y: markerScreenY, label });
+      drawnMarkers.push({
+        id,
+        x,
+        y,
+        z,
+        screenX: markerScreenX,
+        screenY: markerScreenY,
+        label,
+        description,
+        category,
+        categoryFilterLabel: filterLabel,
+      });
 
       if (loadedMarker) {
         context.drawImage(
@@ -73,7 +96,7 @@ const drawMarkers = ({
         const img = new Image();
         img.src = require(`../../assets/icons/icon-${category}.webp`).default;
         img.onload = () => {
-          LoadedMarkersRef.current[category as MarkerCategories] = img;
+          LoadedMarkersRef.current[category] = img;
 
           context.drawImage(
             img,

@@ -1,3 +1,5 @@
+$filter-categories: dragons, portals, chests, bountyHunt;
+
 .FiltersMenu {
   position: fixed;
   top: 0;
@@ -6,7 +8,7 @@
   border-bottom-right-radius: 5px;
   background-color: var(--filter-menu-background);
   color: var(--filter-menu-color);
-  z-index: 2;
+  z-index: var(--filter-menu-z-index);
   transition: transform cubic-bezier(0.215, 0.610, 0.355, 1) .2s;
 
   &.isHidden {
@@ -105,20 +107,10 @@
     height: 24px;
     background-size: cover;
 
-    &--dragons {
-      background-image: url('../../assets/icons/icon-dragons.webp');
-    }
-
-    &--portals {
-      background-image: url('../../assets/icons/icon-portals.webp');
-    }
-
-    &--chests {
-      background-image: url('../../assets/icons/icon-chests.webp');
-    }
-
-    &--bountyHunt {
-      background-image: url('../../assets/icons/icon-bountyHunt.webp');
+    @each $category in $filter-categories {
+      &--#{$category} {
+        background-image: url('../../assets/icons/icon-#{$category}.webp');
+      }
     }
 
     &--caves {

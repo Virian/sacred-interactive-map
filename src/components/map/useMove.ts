@@ -19,13 +19,17 @@ interface UseMove {
   isMoving: boolean;
   handleMouseDown: (event: MouseEvent) => void;
   handleMouseMove: (event: MouseEvent) => void;
-  handleMouseUp: () => void;
+  handleMouseUp: (event: MouseEvent) => void;
   handleTouchStart: (event: TouchEvent) => void;
   handleTouchMove: (event: TouchEvent) => void;
   handleTouchEnd: (event: TouchEvent) => void;
 }
 
-const useMove = (): UseMove => {
+interface UseMoveProps {
+  onMoveEnd: (eventCoords: Coords, moveStartingCoords: Coords) => void;
+}
+
+const useMove = ({ onMoveEnd }: UseMoveProps): UseMove => {
   const {
     zoomLevel: { scale = 1 },
   } = useContext(ZoomContext);
@@ -33,10 +37,15 @@ const useMove = (): UseMove => {
 
   const [isMoving, setIsMoving] = useState<boolean>(false);
   const [moveDelta, setMoveDelta] = useState<Coords>({ x: 0, y: 0 });
+  const [moveStartingCoords, setMoveStartingCoords] = useState<Coords>({
+    x: 0,
+    y: 0,
+  });
   const [touchIdentifier, setTouchIdentifier] = useState<number | null>(null);
 
   const startMoving = useCallback((startingPosition: Coords) => {
     setMoveDelta({ x: startingPosition.x, y: startingPosition.y });
+    setMoveStartingCoords({ x: startingPosition.x, y: startingPosition.y });
     setIsMoving(true);
   }, []);
 
@@ -121,12 +130,19 @@ const useMove = (): UseMove => {
     [moveMap, touchIdentifier]
   );
 
-  const stopMoving = useCallback(() => {
-    setIsMoving(false);
-  }, []);
+  const stopMoving = useCallback(
+    (eventCoords: Coords) => {
+      onMoveEnd(eventCoords, moveStartingCoords);
+      setIsMoving(false);
+    },
+    [onMoveEnd, moveStartingCoords]
+  );
 
   const handleTouchEnd = useCallback(
     (event: TouchEvent) => {
+      // prevents mousedown event that would result in calling `stopMoving`
+      // twice
+      event.preventDefault();
       if (typeof touchIdentifier === 'number') {
         // the logic below can be replaced with `identifiedTouch` method once
         // it gets implemented and working
@@ -136,7 +152,7 @@ const useMove = (): UseMove => {
           const changedTouch = event.changedTouches.item(i);
           if (changedTouch.identifier === touchIdentifier) {
             setTouchIdentifier(null);
-            stopMoving();
+            stopMoving({ x: changedTouch.clientX, y: changedTouch.clientY });
             break;
           }
         }
@@ -145,9 +161,12 @@ const useMove = (): UseMove => {
     [touchIdentifier, stopMoving]
   );
 
-  const handleMouseUp = useCallback(() => {
-    stopMoving();
-  }, [stopMoving]);
+  const handleMouseUp = useCallback(
+    (event: MouseEvent) => {
+      stopMoving({ x: event.clientX, y: event.clientY });
+    },
+    [stopMoving]
+  );
 
   return {
     isMoving,

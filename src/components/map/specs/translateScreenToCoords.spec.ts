@@ -1,5 +1,5 @@
 import translateScreenToCoords from '../translateScreenToCoords';
-import { Coords } from '../types';
+import { Coords } from '../../../types';
 
 const cases: [Coords, Coords, number, Coords][] = [
   [{ x: 500, y: 200 }, { x: 12277, y: 5823 }, 1, { x: 12777, y: 6023 }],
