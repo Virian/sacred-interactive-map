@@ -10,7 +10,7 @@ import {
 import { Coords } from '../../types';
 import ZoomContext from '../../context/ZoomContext';
 import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
-import getMarkerFromSearchParams from '../../getMarkerFromSearchParams';
+import getMarkerFromSearchParams from '../../shared/getMarkerFromSearchParams';
 
 import { MARKER_SIZE } from './constants';
 import { Marker } from './types';

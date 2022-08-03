@@ -26,6 +26,11 @@ export type Marker = Coords & {
   description: string | null;
   category: MarkerCategories;
   categoryFilterLabel: string;
+  linkedMarkerId?: string;
+};
+
+export type CustomMarker = Omit<Marker, 'category'> & {
+  category: 'custom';
 };
 
 export type LoadedMarkers = {

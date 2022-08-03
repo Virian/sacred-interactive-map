@@ -15,7 +15,8 @@ import {
   INITIAL_SCALE_LEVEL,
 } from './constants';
 import { Coords } from './types';
-import getMarkerFromSearchParams from './getMarkerFromSearchParams';
+import getMarkerFromSearchParams from './shared/getMarkerFromSearchParams';
+import getOffsetToCenterOnPoint from './shared/getOffsetToCenterOnPoint';
 
 const OFFSET_TO_CENTER_MAP = {
   x: Math.max(
@@ -42,29 +43,10 @@ const App = () => {
 
     if (marker) {
       // centering the screen on the marker
-      return {
-        x: Math.max(
-          0,
-          Math.min(
-            marker.x -
-              (window.innerWidth / 2) *
-                INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale,
-            MAP_WIDTH -
-              window.innerWidth * INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale
-          )
-        ),
-        y: Math.max(
-          0,
-          Math.min(
-            marker.y -
-              (window.innerHeight / 2) *
-                INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale,
-            MAP_HEIGHT -
-              window.innerHeight *
-                INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale
-          )
-        ),
-      };
+      return getOffsetToCenterOnPoint(
+        marker,
+        INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale
+      );
     }
 
     return OFFSET_TO_CENTER_MAP;

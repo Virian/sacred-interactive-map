@@ -1,6 +1,6 @@
-import markersData from './assets/markers.json';
-import { MarkerCategories } from './components/map/types';
-import { MAP_WIDTH, MAP_HEIGHT } from './constants';
+import markersData from '../assets/markers.json';
+import { MarkerCategories } from '../components/map/types';
+import { MAP_WIDTH, MAP_HEIGHT } from '../constants';
 
 const getMarkerFromSearchParams = () => {
   const searchParams = new URLSearchParams(window.location.search);
