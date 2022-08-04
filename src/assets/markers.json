@@ -24,7 +24,7 @@
         "y": 10034,
         "z": 0,
         "label": "Draconis Mortis",
-        "description": null
+        "description": "This dragon is accessible either by going through caves or by jumping to the island."
       },
       {
         "id": "dragon-4",
@@ -781,28 +781,10 @@
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-hells-ridge-inside-1"
+        "linkedMarkerId": "cave-hells-ridge-1-inside"
       },
       {
-        "id": "cave-hells-ridge-2",
-        "x": 29317,
-        "y": 3207,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-hells-ridge-inside-2"
-      },
-      {
-        "id": "cave-hells-ridge-3",
-        "x": 25571,
-        "y": 1380,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-hells-ridge-inside-3"
-      },
-      {
-        "id": "cave-hells-ridge-inside-1",
+        "id": "cave-hells-ridge-1-inside",
         "x": 26789,
         "y": 23330,
         "z": 0,
@@ -811,7 +793,16 @@
         "linkedMarkerId": "cave-hells-ridge-1"
       },
       {
-        "id": "cave-hells-ridge-inside-2",
+        "id": "cave-hells-ridge-2",
+        "x": 29317,
+        "y": 3207,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-hells-ridge-2-inside"
+      },
+      {
+        "id": "cave-hells-ridge-2-inside",
         "x": 23679,
         "y": 22073,
         "z": 0,
@@ -820,7 +811,16 @@
         "linkedMarkerId": "cave-hells-ridge-2"
       },
       {
-        "id": "cave-hells-ridge-inside-3",
+        "id": "cave-hells-ridge-3",
+        "x": 25571,
+        "y": 1380,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-hells-ridge-3-inside"
+      },
+      {
+        "id": "cave-hells-ridge-3-inside",
         "x": 14226,
         "y": 6140,
         "z": 0,
@@ -835,37 +835,10 @@
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-vot-inside-1"
+        "linkedMarkerId": "cave-vot-1-inside"
       },
       {
-        "id": "cave-vot-2",
-        "x": 17380,
-        "y": 4661,
-        "z": 0,
-        "label": "Bear Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-vot-inside-2"
-      },
-      {
-        "id": "cave-vot-3",
-        "x": 17376,
-        "y": 6792,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-vot-inside-3"
-      },
-      {
-        "id": "cave-vot-4",
-        "x": 18102,
-        "y": 4597,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-vot-inside-4"
-      },
-      {
-        "id": "cave-vot-inside-1",
+        "id": "cave-vot-1-inside",
         "x": 1141,
         "y": 12944,
         "z": 0,
@@ -874,7 +847,16 @@
         "linkedMarkerId": "cave-vot-1"
       },
       {
-        "id": "cave-vot-inside-2",
+        "id": "cave-vot-2",
+        "x": 17380,
+        "y": 4661,
+        "z": 0,
+        "label": "Bear Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-vot-2-inside"
+      },
+      {
+        "id": "cave-vot-2-inside",
         "x": 9582,
         "y": 16185,
         "z": 0,
@@ -883,7 +865,16 @@
         "linkedMarkerId": "cave-vot-2"
       },
       {
-        "id": "cave-vot-inside-3",
+        "id": "cave-vot-3",
+        "x": 17376,
+        "y": 6792,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-vot-3-inside"
+      },
+      {
+        "id": "cave-vot-3-inside",
         "x": 24681,
         "y": 21313,
         "z": 0,
@@ -892,7 +883,16 @@
         "linkedMarkerId": "cave-vot-3"
       },
       {
-        "id": "cave-vot-inside-4",
+        "id": "cave-vot-4",
+        "x": 18102,
+        "y": 4597,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-vot-4-inside"
+      },
+      {
+        "id": "cave-vot-4-inside",
         "x": 30058,
         "y": 22053,
         "z": 0,
@@ -907,19 +907,10 @@
         "z": 1,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-shaddar-inside-1"
+        "linkedMarkerId": "cave-shaddar-1-inside"
       },
       {
-        "id": "cave-shaddar-2",
-        "x": 33997,
-        "y": 14198,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-shaddar-inside-2"
-      },
-      {
-        "id": "cave-shaddar-inside-1",
+        "id": "cave-shaddar-1-inside",
         "x": 38400,
         "y": 13341,
         "z": 0,
@@ -928,7 +919,16 @@
         "linkedMarkerId": "cave-shaddar-1"
       },
       {
-        "id": "cave-shaddar-inside-2",
+        "id": "cave-shaddar-2",
+        "x": 33997,
+        "y": 14198,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-2-inside"
+      },
+      {
+        "id": "cave-shaddar-2-inside",
         "x": 14661,
         "y": 18937,
         "z": 0,
@@ -937,34 +937,124 @@
         "linkedMarkerId": "cave-shaddar-2"
       },
       {
+        "id": "cave-shaddar-3",
+        "x": 32538,
+        "y": 14963,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-3-inside"
+      },
+      {
+        "id": "cave-shaddar-3-inside",
+        "x": 34335,
+        "y": 18662,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-3"
+      },
+      {
+        "id": "cave-shaddar-4",
+        "x": 31610,
+        "y": 14905,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-4-inside"
+      },
+      {
+        "id": "cave-shaddar-4-inside",
+        "x": 33696,
+        "y": 18621,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-4"
+      },
+      {
+        "id": "cave-shaddar-5",
+        "x": 31616,
+        "y": 14482,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-5-inside"
+      },
+      {
+        "id": "cave-shaddar-5-inside",
+        "x": 19638,
+        "y": 18758,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-5"
+      },
+      {
+        "id": "cave-shaddar-6",
+        "x": 31134,
+        "y": 14303,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-6-inside"
+      },
+      {
+        "id": "cave-shaddar-6-inside",
+        "x": 11731,
+        "y": 8473,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-6"
+      },
+      {
+        "id": "cave-shaddar-6-inside-1",
+        "x": 11344,
+        "y": 8443,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-6-inside-2"
+      },
+      {
+        "id": "cave-shaddar-6-inside-2",
+        "x": 12869,
+        "y": 8282,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-shaddar-6-inside-1"
+      },
+      {
+        "id": "cave-swamp-1",
+        "x": 33260,
+        "y": 13449,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-swamp-1-inside"
+      },
+      {
+        "id": "cave-swamp-1-inside",
+        "x": 12613,
+        "y": 8095,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-swamp-1"
+      },
+      {
         "id": "cave-tyr-fasul-1",
         "x": 16258,
         "y": 9341,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-tyr-fasul-inside-1"
+        "linkedMarkerId": "cave-tyr-fasul-1-inside"
       },
       {
-        "id": "cave-tyr-fasul-2",
-        "x": 16708,
-        "y": 10243,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-tyr-fasul-inside-2"
-      },
-      {
-        "id": "cave-tyr-fasul-3",
-        "x": 17789,
-        "y": 8571,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-tyr-fasul-inside-3"
-      },
-      {
-        "id": "cave-tyr-fasul-inside-1",
+        "id": "cave-tyr-fasul-1-inside",
         "x": 24981,
         "y": 19986,
         "z": 0,
@@ -973,16 +1063,34 @@
         "linkedMarkerId": "cave-tyr-fasul-1"
       },
       {
-        "id": "cave-tyr-fasul-inside-2",
-        "x": 18267,
-        "y": 20226,
+        "id": "cave-tyr-fasul-2",
+        "x": 16708,
+        "y": 10243,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-tyr-fasul-2-inside"
+      },
+      {
+        "id": "cave-tyr-fasul-2-inside",
+        "x": 25700,
+        "y": 20614,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
         "linkedMarkerId": "cave-tyr-fasul-2"
       },
       {
-        "id": "cave-tyr-fasul-inside-3",
+        "id": "cave-tyr-fasul-3",
+        "x": 17789,
+        "y": 8571,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-tyr-fasul-3-inside"
+      },
+      {
+        "id": "cave-tyr-fasul-3-inside",
         "x": 23848,
         "y": 19556,
         "z": 0,
@@ -997,19 +1105,10 @@
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-desert-inside-1"
+        "linkedMarkerId": "cave-desert-1-inside"
       },
       {
-        "id": "cave-desert-2",
-        "x": 18204,
-        "y": 12660,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-desert-inside-2"
-      },
-      {
-        "id": "cave-desert-inside-1",
+        "id": "cave-desert-1-inside",
         "x": 16740,
         "y": 18477,
         "z": 0,
@@ -1018,7 +1117,16 @@
         "linkedMarkerId": "cave-desert-1"
       },
       {
-        "id": "cave-desert-inside-2",
+        "id": "cave-desert-2",
+        "x": 18204,
+        "y": 12660,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-2-inside"
+      },
+      {
+        "id": "cave-desert-2-inside",
         "x": 14789,
         "y": 17401,
         "z": 0,
@@ -1027,43 +1135,304 @@
         "linkedMarkerId": "cave-desert-2"
       },
       {
+        "id": "cave-desert-3",
+        "x": 20513,
+        "y": 12744,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-3-inside"
+      },
+      {
+        "id": "cave-desert-3-inside",
+        "x": 15579,
+        "y": 18003,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-3"
+      },
+      {
+        "id": "cave-desert-4",
+        "x": 20563,
+        "y": 13093,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-4-inside"
+      },
+      {
+        "id": "cave-desert-4-inside",
+        "x": 17470,
+        "y": 18941,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-4"
+      },
+      {
+        "id": "cave-desert-5",
+        "x": 20587,
+        "y": 14085,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-5-inside"
+      },
+      {
+        "id": "cave-desert-5-inside",
+        "x": 18877,
+        "y": 19658,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-5"
+      },
+      {
+        "id": "cave-desert-6",
+        "x": 20895,
+        "y": 13229,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-6-inside"
+      },
+      {
+        "id": "cave-desert-6-inside",
+        "x": 5854,
+        "y": 11683,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-6"
+      },
+      {
+        "id": "cave-desert-7",
+        "x": 22205,
+        "y": 13321,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-7-inside"
+      },
+      {
+        "id": "cave-desert-7-inside",
+        "x": 7061,
+        "y": 11980,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-7"
+      },
+      {
+        "id": "cave-desert-8",
+        "x": 22359,
+        "y": 13569,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-8-inside"
+      },
+      {
+        "id": "cave-desert-8-inside",
+        "x": 18852,
+        "y": 18189,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-8"
+      },
+      {
+        "id": "cave-desert-9",
+        "x": 22319,
+        "y": 14278,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-9-inside"
+      },
+      {
+        "id": "cave-desert-9-inside",
+        "x": 21964,
+        "y": 19707,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-9"
+      },
+      {
+        "id": "cave-desert-10",
+        "x": 23493,
+        "y": 13936,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-10-inside"
+      },
+      {
+        "id": "cave-desert-10-inside",
+        "x": 11124,
+        "y": 17047,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-10"
+      },
+      {
+        "id": "cave-desert-11",
+        "x": 24433,
+        "y": 14850,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-11-inside"
+      },
+      {
+        "id": "cave-desert-11-inside",
+        "x": 12469,
+        "y": 16432,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-11"
+      },
+      {
+        "id": "cave-desert-12",
+        "x": 25050,
+        "y": 13164,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-12-inside"
+      },
+      {
+        "id": "cave-desert-12-inside",
+        "x": 22889,
+        "y": 20266,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-12"
+      },
+      {
+        "id": "cave-desert-13",
+        "x": 25716,
+        "y": 14605,
+        "z": 0,
+        "label": "Orc Cave West Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-13-inside"
+      },
+      {
+        "id": "cave-desert-13-inside",
+        "x": 8805,
+        "y": 14102,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-13"
+      },
+      {
+        "id": "cave-desert-14",
+        "x": 26897,
+        "y": 14785,
+        "z": 0,
+        "label": "Orc Cave East Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-14-inside"
+      },
+      {
+        "id": "cave-desert-14-inside",
+        "x": 10095,
+        "y": 14295,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-14"
+      },
+      {
+        "id": "cave-desert-15",
+        "x": 27364,
+        "y": 13297,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-15-inside"
+      },
+      {
+        "id": "cave-desert-15-inside",
+        "x": 20702,
+        "y": 19279,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-15"
+      },
+      {
+        "id": "cave-desert-16",
+        "x": 28599,
+        "y": 13464,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-16-inside"
+      },
+      {
+        "id": "cave-desert-16-inside",
+        "x": 38508,
+        "y": 16580,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-16"
+      },
+      {
+        "id": "cave-desert-17",
+        "x": 29168,
+        "y": 14152,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-17-inside"
+      },
+      {
+        "id": "cave-desert-17-inside",
+        "x": 23609,
+        "y": 20732,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-17"
+      },
+      {
+        "id": "cave-desert-18",
+        "x": 29896,
+        "y": 14369,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-18-inside"
+      },
+      {
+        "id": "cave-desert-18-inside",
+        "x": 35435,
+        "y": 17436,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-desert-18"
+      },
+      {
         "id": "cave-lava-1",
         "x": 17551,
         "y": 12284,
         "z": 0,
         "label": "Alkazaba Noc Draco Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-lava-inside-1"
+        "linkedMarkerId": "cave-lava-1-inside"
       },
       {
-        "id": "cave-lava-2",
-        "x": 16585,
-        "y": 12514,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-lava-inside-2"
-      },
-      {
-        "id": "cave-lava-3",
-        "x": 16376,
-        "y": 12123,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-lava-inside-3"
-      },
-      {
-        "id": "cave-lava-4",
-        "x": 15969,
-        "y": 11642,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-lava-inside-4"
-      },
-      {
-        "id": "cave-lava-inside-1",
+        "id": "cave-lava-1-inside",
         "x": 11506,
         "y": 12855,
         "z": 0,
@@ -1072,7 +1441,16 @@
         "linkedMarkerId": "cave-lava-1"
       },
       {
-        "id": "cave-lava-inside-2",
+        "id": "cave-lava-2",
+        "x": 16585,
+        "y": 12514,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-lava-2-inside"
+      },
+      {
+        "id": "cave-lava-2-inside",
         "x": 10494,
         "y": 12954,
         "z": 0,
@@ -1081,7 +1459,16 @@
         "linkedMarkerId": "cave-lava-2"
       },
       {
-        "id": "cave-lava-inside-3",
+        "id": "cave-lava-3",
+        "x": 16376,
+        "y": 12123,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-lava-3-inside"
+      },
+      {
+        "id": "cave-lava-3-inside",
         "x": 10146,
         "y": 11688,
         "z": 0,
@@ -1090,7 +1477,16 @@
         "linkedMarkerId": "cave-lava-3"
       },
       {
-        "id": "cave-lava-inside-4",
+        "id": "cave-lava-4",
+        "x": 15969,
+        "y": 11642,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-lava-4-inside"
+      },
+      {
+        "id": "cave-lava-4-inside",
         "x": 9541,
         "y": 11167,
         "z": 0,
@@ -1105,28 +1501,10 @@
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-inside-1"
+        "linkedMarkerId": "cave-naquali-1-inside"
       },
       {
-        "id": "cave-naquali-2",
-        "x": 21339,
-        "y": 13057,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-naquali-inside-2"
-      },
-      {
-        "id": "cave-naquali-3",
-        "x": 21102,
-        "y": 14285,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-naquali-inside-3"
-      },
-      {
-        "id": "cave-naquali-inside-1",
+        "id": "cave-naquali-1-inside",
         "x": 8829,
         "y": 16932,
         "z": 0,
@@ -1135,7 +1513,16 @@
         "linkedMarkerId": "cave-naquali-1"
       },
       {
-        "id": "cave-naquali-inside-2",
+        "id": "cave-naquali-2",
+        "x": 21339,
+        "y": 13057,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-naquali-2-inside"
+      },
+      {
+        "id": "cave-naquali-2-inside",
         "x": 13620,
         "y": 12610,
         "z": 0,
@@ -1144,7 +1531,16 @@
         "linkedMarkerId": "cave-naquali-2"
       },
       {
-        "id": "cave-naquali-inside-3",
+        "id": "cave-naquali-3",
+        "x": 21102,
+        "y": 14285,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-naquali-3-inside"
+      },
+      {
+        "id": "cave-naquali-3-inside",
         "x": 37374,
         "y": 7353,
         "z": 0,
@@ -1159,64 +1555,10 @@
         "z": 0,
         "label": "Crab Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-pirate-inside-1"
+        "linkedMarkerId": "cave-pirate-1-inside"
       },
       {
-        "id": "cave-pirate-2",
-        "x": 16533,
-        "y": 14684,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-pirate-inside-2"
-      },
-      {
-        "id": "cave-pirate-3",
-        "x": 16722,
-        "y": 14730,
-        "z": 1,
-        "label": "Hero Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-pirate-inside-3"
-      },
-      {
-        "id": "cave-pirate-4",
-        "x": 19955,
-        "y": 15855,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-pirate-inside-4"
-      },
-      {
-        "id": "cave-pirate-5",
-        "x": 19979,
-        "y": 15417,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-pirate-inside-5"
-      },
-      {
-        "id": "cave-pirate-6",
-        "x": 16419,
-        "y": 14938,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-pirate-inside-6"
-      },
-      {
-        "id": "cave-pirate-7",
-        "x": 18284,
-        "y": 15339,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-pirate-inside-7"
-      },
-      {
-        "id": "cave-pirate-inside-1",
+        "id": "cave-pirate-1-inside",
         "x": 22493,
         "y": 23767,
         "z": 0,
@@ -1225,7 +1567,16 @@
         "linkedMarkerId": "cave-pirate-1"
       },
       {
-        "id": "cave-pirate-inside-2",
+        "id": "cave-pirate-2",
+        "x": 16533,
+        "y": 14684,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-pirate-2-inside"
+      },
+      {
+        "id": "cave-pirate-2-inside",
         "x": 25690,
         "y": 24134,
         "z": 0,
@@ -1234,7 +1585,16 @@
         "linkedMarkerId": "cave-pirate-2"
       },
       {
-        "id": "cave-pirate-inside-3",
+        "id": "cave-pirate-3",
+        "x": 16722,
+        "y": 14730,
+        "z": 1,
+        "label": "Hero Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-pirate-3-inside"
+      },
+      {
+        "id": "cave-pirate-3-inside",
         "x": 26527,
         "y": 24763,
         "z": 0,
@@ -1243,7 +1603,16 @@
         "linkedMarkerId": "cave-pirate-3"
       },
       {
-        "id": "cave-pirate-inside-4",
+        "id": "cave-pirate-4",
+        "x": 19955,
+        "y": 15855,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-pirate-4-inside"
+      },
+      {
+        "id": "cave-pirate-4-inside",
         "x": 24395,
         "y": 23361,
         "z": 0,
@@ -1252,7 +1621,16 @@
         "linkedMarkerId": "cave-pirate-4"
       },
       {
-        "id": "cave-pirate-inside-5",
+        "id": "cave-pirate-5",
+        "x": 19979,
+        "y": 15417,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-pirate-5-inside"
+      },
+      {
+        "id": "cave-pirate-5-inside",
         "x": 36467,
         "y": 8126,
         "z": 0,
@@ -1261,7 +1639,16 @@
         "linkedMarkerId": "cave-pirate-5"
       },
       {
-        "id": "cave-pirate-inside-6",
+        "id": "cave-pirate-6",
+        "x": 16419,
+        "y": 14938,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-pirate-6-inside"
+      },
+      {
+        "id": "cave-pirate-6-inside",
         "x": 15452,
         "y": 20162,
         "z": 0,
@@ -1270,25 +1657,34 @@
         "linkedMarkerId": "cave-pirate-6"
       },
       {
-        "id": "cave-pirate-inside-6-1",
+        "id": "cave-pirate-6-inside-1",
         "x": 14998,
         "y": 19909,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-pirate-inside-6-2"
+        "linkedMarkerId": "cave-pirate-6-inside-2"
       },
       {
-        "id": "cave-pirate-inside-6-2",
+        "id": "cave-pirate-6-inside-2",
         "x": 21151,
         "y": 21667,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-pirate-inside-6-1"
+        "linkedMarkerId": "cave-pirate-6-inside-1"
       },
       {
-        "id": "cave-pirate-inside-7",
+        "id": "cave-pirate-7",
+        "x": 18284,
+        "y": 15339,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-pirate-7-inside"
+      },
+      {
+        "id": "cave-pirate-7-inside",
         "x": 21376,
         "y": 23067,
         "z": 0,
@@ -1297,22 +1693,22 @@
         "linkedMarkerId": "cave-pirate-7"
       },
       {
-        "id": "cave-pirate-inside-7-1",
+        "id": "cave-pirate-7-inside-1",
         "x": 20572,
         "y": 22755,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-pirate-inside-7-2"
+        "linkedMarkerId": "cave-pirate-7-inside-2"
       },
       {
-        "id": "cave-pirate-inside-7-2",
+        "id": "cave-pirate-7-inside-2",
         "x": 22602,
         "y": 22716,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-pirate-inside-7-1"
+        "linkedMarkerId": "cave-pirate-7-inside-1"
       },
       {
         "id": "cave-seraphim-1",
@@ -1321,64 +1717,10 @@
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-seraphim-inside-1"
+        "linkedMarkerId": "cave-seraphim-1-inside"
       },
       {
-        "id": "cave-seraphim-2",
-        "x": 22525,
-        "y": 6519,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-seraphim-inside-2"
-      },
-      {
-        "id": "cave-seraphim-3",
-        "x": 23524,
-        "y": 6431,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-seraphim-inside-3"
-      },
-      {
-        "id": "cave-seraphim-4",
-        "x": 24393,
-        "y": 5931,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-seraphim-inside-4"
-      },
-      {
-        "id": "cave-seraphim-5",
-        "x": 24628,
-        "y": 5921,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-seraphim-inside-5"
-      },
-      {
-        "id": "cave-seraphim-6",
-        "x": 22962,
-        "y": 5684,
-        "z": 0,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-seraphim-inside-6"
-      },
-      {
-        "id": "cave-seraphim-7",
-        "x": 24793,
-        "y": 5665,
-        "z": 1,
-        "label": "Cave Entrance",
-        "description": null,
-        "linkedMarkerId": "cave-seraphim-inside-7"
-      },
-      {
-        "id": "cave-seraphim-inside-1",
+        "id": "cave-seraphim-1-inside",
         "x": 20665,
         "y": 20094,
         "z": 0,
@@ -1387,7 +1729,16 @@
         "linkedMarkerId": "cave-seraphim-1"
       },
       {
-        "id": "cave-seraphim-inside-2",
+        "id": "cave-seraphim-2",
+        "x": 22525,
+        "y": 6519,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-seraphim-2-inside"
+      },
+      {
+        "id": "cave-seraphim-2-inside",
         "x": 13251,
         "y": 18295,
         "z": 0,
@@ -1396,7 +1747,16 @@
         "linkedMarkerId": "cave-seraphim-2"
       },
       {
-        "id": "cave-seraphim-inside-3",
+        "id": "cave-seraphim-3",
+        "x": 23524,
+        "y": 6431,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-seraphim-3-inside"
+      },
+      {
+        "id": "cave-seraphim-3-inside",
         "x": 21573,
         "y": 20859,
         "z": 0,
@@ -1405,7 +1765,16 @@
         "linkedMarkerId": "cave-seraphim-3"
       },
       {
-        "id": "cave-seraphim-inside-4",
+        "id": "cave-seraphim-4",
+        "x": 24393,
+        "y": 5931,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-seraphim-4-inside"
+      },
+      {
+        "id": "cave-seraphim-4-inside",
         "x": 38638,
         "y": 15636,
         "z": 0,
@@ -1414,7 +1783,16 @@
         "linkedMarkerId": "cave-seraphim-4"
       },
       {
-        "id": "cave-seraphim-inside-5",
+        "id": "cave-seraphim-5",
+        "x": 24628,
+        "y": 5921,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-seraphim-5-inside"
+      },
+      {
+        "id": "cave-seraphim-5-inside",
         "x": 39055,
         "y": 15749,
         "z": 0,
@@ -1423,7 +1801,16 @@
         "linkedMarkerId": "cave-seraphim-5"
       },
       {
-        "id": "cave-seraphim-inside-6",
+        "id": "cave-seraphim-6",
+        "x": 22962,
+        "y": 5684,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-seraphim-6-inside"
+      },
+      {
+        "id": "cave-seraphim-6-inside",
         "x": 38857,
         "y": 15196,
         "z": 0,
@@ -1432,7 +1819,16 @@
         "linkedMarkerId": "cave-seraphim-6"
       },
       {
-        "id": "cave-seraphim-inside-7",
+        "id": "cave-seraphim-7",
+        "x": 24793,
+        "y": 5665,
+        "z": 1,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-seraphim-7-inside"
+      },
+      {
+        "id": "cave-seraphim-7-inside",
         "x": 16732,
         "y": 20789,
         "z": 0,
@@ -1441,16 +1837,502 @@
         "linkedMarkerId": "cave-seraphim-7"
       },
       {
+        "id": "cave-main-sw-1",
+        "x": 19107,
+        "y": 11251,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-1-inside"
+      },
+      {
+        "id": "cave-main-sw-1-inside",
+        "x": 45737,
+        "y": 11414,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-1"
+      },
+      {
+        "id": "cave-main-sw-2",
+        "x": 19996,
+        "y": 10800,
+        "z": 1,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-2-inside"
+      },
+      {
+        "id": "cave-main-sw-2-inside",
+        "x": 3829,
+        "y": 12214,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-2"
+      },
+      {
+        "id": "cave-main-sw-3",
+        "x": 19857,
+        "y": 10870,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-3-inside"
+      },
+      {
+        "id": "cave-main-sw-3-inside",
+        "x": 44396,
+        "y": 10857,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-3"
+      },
+      {
+        "id": "cave-main-sw-4",
+        "x": 18401,
+        "y": 10635,
+        "z": 1,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-4-inside"
+      },
+      {
+        "id": "cave-main-sw-4-inside",
+        "x": 4853,
+        "y": 12723,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-4"
+      },
+      {
+        "id": "cave-main-sw-5",
+        "x": 20101,
+        "y": 9882,
+        "z": 0,
+        "label": "Pacman Cave Entrance",
+        "description": "The hidden path to this cave leads through the woods, northeast from the entrance.",
+        "linkedMarkerId": "cave-main-sw-5-inside"
+      },
+      {
+        "id": "cave-main-sw-5-inside",
+        "x": 10101,
+        "y": 17561,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-5"
+      },
+      {
+        "id": "cave-main-sw-6",
+        "x": 20837,
+        "y": 9581,
+        "z": 0,
+        "label": "Undead Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-6-inside"
+      },
+      {
+        "id": "cave-main-sw-6-inside",
+        "x": 18267,
+        "y": 20226,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-6"
+      },
+      {
+        "id": "cave-main-sw-7",
+        "x": 20079,
+        "y": 9600,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-7-inside"
+      },
+      {
+        "id": "cave-main-sw-7-inside",
+        "x": 46941,
+        "y": 12029,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-7"
+      },
+      {
+        "id": "cave-main-sw-8",
+        "x": 19228,
+        "y": 9560,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-8-inside"
+      },
+      {
+        "id": "cave-main-sw-8-inside",
+        "x": 22702,
+        "y": 18989,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-8"
+      },
+      {
+        "id": "cave-main-sw-9",
+        "x": 24315,
+        "y": 11764,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-9-inside"
+      },
+      {
+        "id": "cave-main-sw-9-inside",
+        "x": 21763,
+        "y": 17446,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-sw-9"
+      },
+      {
+        "id": "cave-main-nw-1",
+        "x": 19714,
+        "y": 8954,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-1-inside"
+      },
+      {
+        "id": "cave-main-nw-1-inside",
+        "x": 22770,
+        "y": 17981,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-1"
+      },
+      {
+        "id": "cave-main-nw-2",
+        "x": 22791,
+        "y": 8914,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-2-inside"
+      },
+      {
+        "id": "cave-main-nw-2-inside",
+        "x": 27901,
+        "y": 18400,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-2"
+      },
+      {
+        "id": "cave-main-nw-3",
+        "x": 21384,
+        "y": 8327,
+        "z": 1,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-3-inside"
+      },
+      {
+        "id": "cave-main-nw-3-inside",
+        "x": 7570,
+        "y": 11159,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-3"
+      },
+      {
+        "id": "cave-main-nw-4",
+        "x": 22185,
+        "y": 7896,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-4-inside"
+      },
+      {
+        "id": "cave-main-nw-4-inside",
+        "x": 45662,
+        "y": 10465,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-4"
+      },
+      {
+        "id": "cave-main-nw-5",
+        "x": 21059,
+        "y": 7776,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-5-inside"
+      },
+      {
+        "id": "cave-main-nw-5-inside",
+        "x": 28027,
+        "y": 17374,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-5"
+      },
+      {
+        "id": "cave-main-nw-6",
+        "x": 20937,
+        "y": 7481,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-6-inside"
+      },
+      {
+        "id": "cave-main-nw-6-inside",
+        "x": 43675,
+        "y": 9363,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-6"
+      },
+      {
+        "id": "cave-main-nw-7",
+        "x": 21488,
+        "y": 7246,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-7-inside"
+      },
+      {
+        "id": "cave-main-nw-7-inside",
+        "x": 29953,
+        "y": 17301,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-7"
+      },
+      {
+        "id": "cave-main-nw-8",
+        "x": 22572,
+        "y": 7029,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-8-inside"
+      },
+      {
+        "id": "cave-main-nw-8-inside",
+        "x": 47614,
+        "y": 12553,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-8"
+      },
+      {
+        "id": "cave-main-nw-9",
+        "x": 23220,
+        "y": 7444,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-9-inside"
+      },
+      {
+        "id": "cave-main-nw-9-inside",
+        "x": 7743,
+        "y": 16386,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-9"
+      },
+      {
+        "id": "cave-main-nw-10",
+        "x": 23858,
+        "y": 7443,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-10-inside"
+      },
+      {
+        "id": "cave-main-nw-10-inside",
+        "x": 8135,
+        "y": 16389,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-10"
+      },
+      {
+        "id": "cave-main-nw-11",
+        "x": 23709,
+        "y": 7948,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-11-inside"
+      },
+      {
+        "id": "cave-main-nw-11-inside",
+        "x": 44543,
+        "y": 9818,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-11"
+      },
+      {
+        "id": "cave-main-nw-12",
+        "x": 22819,
+        "y": 7783,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-12-inside"
+      },
+      {
+        "id": "cave-main-nw-12-inside",
+        "x": 4235,
+        "y": 14637,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-12"
+      },
+      {
+        "id": "cave-main-nw-13",
+        "x": 23143,
+        "y": 10029,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-13-inside"
+      },
+      {
+        "id": "cave-main-nw-13-inside",
+        "x": 4694,
+        "y": 14400,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": "To open the portal you need to kill the magician guarding it first.",
+        "linkedMarkerId": "cave-main-nw-13"
+      },
+      {
+        "id": "cave-main-nw-14",
+        "x": 24870,
+        "y": 7388,
+        "z": 1,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-14-inside"
+      },
+      {
+        "id": "cave-main-nw-14-inside",
+        "x": 41469,
+        "y": 9218,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-14"
+      },
+      {
+        "id": "cave-main-nw-15",
+        "x": 25190,
+        "y": 7316,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-15-inside"
+      },
+      {
+        "id": "cave-main-nw-15-inside",
+        "x": 42651,
+        "y": 8854,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-15"
+      },
+      {
+        "id": "cave-main-nw-16",
+        "x": 25345,
+        "y": 7578,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-16-inside"
+      },
+      {
+        "id": "cave-main-nw-16-inside",
+        "x": 23930,
+        "y": 17388,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-16"
+      },
+      {
+        "id": "cave-main-nw-17",
+        "x": 26173,
+        "y": 8107,
+        "z": 1,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-17-inside"
+      },
+      {
+        "id": "cave-main-nw-17-inside",
+        "x": 3949,
+        "y": 11195,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-17"
+      },
+      {
+        "id": "cave-main-nw-18",
+        "x": 25711,
+        "y": 7899,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-18-inside"
+      },
+      {
+        "id": "cave-main-nw-18-inside",
+        "x": 25853,
+        "y": 17290,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-main-nw-18"
+      },
+      {
         "id": "cave-haven-1",
         "x": 27129,
         "y": 12163,
         "z": 1,
         "label": "Haven Isle Portal Room",
         "description": null,
-        "linkedMarkerId": "cave-haven-inside-1"
+        "linkedMarkerId": "cave-haven-1-inside"
       },
       {
-        "id": "cave-haven-inside-1",
+        "id": "cave-haven-1-inside",
         "x": 11154,
         "y": 15686,
         "z": 0,
