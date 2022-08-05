@@ -33,7 +33,7 @@ import translateMapCoordsToGameCoords from './translateMapCoordsToGameCoords';
 const initialLoadedImages = getInitialLoadedImages();
 
 const Map = () => {
-  const { zoomLevel } = useContext(ZoomContext);
+  const { zoomLevel, zoomLevelRef } = useContext(ZoomContext);
   const { mapCoordOffset } = useContext(MapCoordOffsetContext);
   const { filters } = useContext(FiltersContext);
 
@@ -99,9 +99,10 @@ const Map = () => {
         mapCoordOffset,
         zoomLevel,
         loadedImagesRef,
+        zoomLevelRef,
       });
     }
-  }, [mapCoordOffset, zoomLevel]);
+  }, [mapCoordOffset, zoomLevel, zoomLevelRef]);
 
   useEffect(() => {
     const markersContext = markersLayerRef.current?.getContext('2d');

@@ -1,4 +1,10 @@
-import React, { useState } from 'react';
+import React, {
+  useRef,
+  useState,
+  useCallback,
+  Dispatch,
+  SetStateAction,
+} from 'react';
 
 import './App.scss';
 import Map from './components/map/Map';
@@ -14,7 +20,7 @@ import {
   INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED,
   INITIAL_SCALE_LEVEL,
 } from './constants';
-import { Coords } from './types';
+import { Coords, ZoomLevel } from './types';
 import getMarkerFromSearchParams from './getMarkerFromSearchParams';
 
 const OFFSET_TO_CENTER_MAP = {
@@ -29,13 +35,35 @@ const OFFSET_TO_CENTER_MAP = {
 };
 
 const App = () => {
-  const [zoomLevel, setZoomLevel] = useState(() => {
+  const [zoomLevel, setZoomLevelState] = useState(() => {
     const marker = getMarkerFromSearchParams();
 
     return marker
       ? INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED
       : INITIAL_SCALE_LEVEL;
   });
+  // ref is used in the image `onload` function where want to draw the tile
+  // only if the current zoom level is still the same as it was when we
+  // started loading it
+  const zoomLevelRef = useRef(zoomLevel);
+
+  // this wrapper sets both state and ref to the same value
+  const setZoomLevel: Dispatch<SetStateAction<ZoomLevel>> = useCallback(
+    (newZoomLevelParam) => {
+      if (typeof newZoomLevelParam === 'function') {
+        setZoomLevelState((currentZoomLevel) => {
+          const newZoomLevel = newZoomLevelParam(currentZoomLevel);
+          zoomLevelRef.current = newZoomLevel;
+          return newZoomLevel;
+        });
+        return;
+      }
+
+      setZoomLevelState(newZoomLevelParam);
+      zoomLevelRef.current = newZoomLevelParam;
+    },
+    []
+  );
 
   const [mapCoordOffset, setMapCoordOffset] = useState<Coords>(() => {
     const marker = getMarkerFromSearchParams();
@@ -78,7 +106,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <ZoomContext.Provider value={{ zoomLevel, setZoomLevel }}>
+      <ZoomContext.Provider value={{ zoomLevel, setZoomLevel, zoomLevelRef }}>
         <MapCoordOffsetContext.Provider
           value={{ mapCoordOffset, setMapCoordOffset }}
         >
