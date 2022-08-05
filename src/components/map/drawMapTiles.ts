@@ -14,6 +14,7 @@ interface DrawMapTilesParams {
   mapCoordOffset: Coords;
   zoomLevel: ZoomLevel;
   loadedImagesRef: MutableRefObject<LoadedImages>;
+  zoomLevelRef?: MutableRefObject<ZoomLevel>;
 }
 
 const drawMapTiles = ({
@@ -21,6 +22,7 @@ const drawMapTiles = ({
   mapCoordOffset,
   zoomLevel,
   loadedImagesRef,
+  zoomLevelRef,
 }: DrawMapTilesParams) => {
   // adding 3 because 1 is an additional tile to ensure that the whole screen will be covered
   // and next 2 to load tiles outside of the screen (on both ends)
@@ -93,7 +95,12 @@ const drawMapTiles = ({
                 y: tileYCoord,
               },
             });
-            if (shouldDraw) {
+            if (
+              shouldDraw &&
+              // we want to draw the tile only if the zoom level is still the
+              // same as it was when we started loading the image
+              zoomLevelRef?.current.levelNumber === zoomLevel.levelNumber
+            ) {
               context.drawImage(
                 img,
                 (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
