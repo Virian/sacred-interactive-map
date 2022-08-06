@@ -8,7 +8,7 @@
         "y": 13250,
         "z": 0,
         "label": "Acutami",
-        "description": null
+        "description": "Also known as Relerisstith in previous versions of the game and in single player."
       },
       {
         "id": "dragon-2",
@@ -1868,7 +1868,7 @@
         "y": 11167,
         "z": 0,
         "label": "Cave Entrance",
-        "description": null,
+        "description": "The gate will be locked until you defeat nearby dragon, Sirithcam.",
         "linkedMarkerId": "cave-lava-4"
       },
       {
@@ -3562,6 +3562,258 @@
         "label": "Cave Entrance",
         "description": null,
         "linkedMarkerId": "cave-main-ne-20-vamp-3"
+      },
+      {
+        "id": "cave-verag-1",
+        "x": 34270,
+        "y": 9586,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-1-inside"
+      },
+      {
+        "id": "cave-verag-1-inside",
+        "x": 38379,
+        "y": 12172,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-1"
+      },
+      {
+        "id": "cave-verag-2",
+        "x": 33787,
+        "y": 9587,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-2-inside"
+      },
+      {
+        "id": "cave-verag-2-inside",
+        "x": 42351,
+        "y": 15465,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-2"
+      },
+      {
+        "id": "cave-verag-3",
+        "x": 32819,
+        "y": 9006,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-3-inside"
+      },
+      {
+        "id": "cave-verag-3-inside",
+        "x": 29773,
+        "y": 19500,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-3"
+      },
+      {
+        "id": "cave-verag-4",
+        "x": 32356,
+        "y": 8769,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-4-inside"
+      },
+      {
+        "id": "cave-verag-4-inside",
+        "x": 29006,
+        "y": 18897,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-4"
+      },
+      {
+        "id": "cave-verag-5",
+        "x": 32357,
+        "y": 8506,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-5-inside"
+      },
+      {
+        "id": "cave-verag-5-inside",
+        "x": 28390,
+        "y": 20745,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-5"
+      },
+      {
+        "id": "cave-verag-6",
+        "x": 32753,
+        "y": 8148,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-6-inside"
+      },
+      {
+        "id": "cave-verag-6-inside",
+        "x": 12182,
+        "y": 11881,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-6"
+      },
+      {
+        "id": "cave-verag-7",
+        "x": 34573,
+        "y": 9798,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": "In single player, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
+        "linkedMarkerId": "cave-verag-7-inside-1"
+      },
+      {
+        "id": "cave-verag-7-inside-1",
+        "x": 10429,
+        "y": 7884,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-7"
+      },
+      {
+        "id": "cave-verag-7-inside-2",
+        "x": 10395,
+        "y": 7936,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-7-inside-3"
+      },
+      {
+        "id": "cave-verag-7-inside-3",
+        "x": 13263,
+        "y": 6899,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-7-inside-2"
+      },
+      {
+        "id": "cave-verag-8",
+        "x": 33688,
+        "y": 8647,
+        "z": 0,
+        "label": "Gnarlstat Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-8-inside"
+      },
+      {
+        "id": "cave-verag-8-inside",
+        "x": 40012,
+        "y": 11169,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-8"
+      },
+      {
+        "id": "cave-verag-9",
+        "x": 33719,
+        "y": 8632,
+        "z": 0,
+        "label": "Gnarlstat Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-9-inside"
+      },
+      {
+        "id": "cave-verag-9-inside",
+        "x": 40049,
+        "y": 11150,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-9"
+      },
+      {
+        "id": "cave-verag-9-inside-1",
+        "x": 40557,
+        "y": 10772,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-10-inside-1"
+      },
+      {
+        "id": "cave-verag-10",
+        "x": 34277,
+        "y": 8815,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-10-inside"
+      },
+      {
+        "id": "cave-verag-10-inside",
+        "x": 42376,
+        "y": 12594,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-10"
+      },
+      {
+        "id": "cave-verag-10-inside-1",
+        "x": 40935,
+        "y": 12257,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-9-inside-1"
+      },
+      {
+        "id": "cave-verag-10-inside-2",
+        "x": 42135,
+        "y": 12017,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-11-inside-1"
+      },
+      {
+        "id": "cave-verag-11",
+        "x": 34211,
+        "y": 9213,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": "In single player, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
+        "linkedMarkerId": "cave-verag-11-inside"
+      },
+      {
+        "id": "cave-verag-11-inside",
+        "x": 44152,
+        "y": 13494,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-11"
+      },
+      {
+        "id": "cave-verag-11-inside-1",
+        "x": 45458,
+        "y": 12872,
+        "z": 0,
+        "label": "Cave Entrance",
+        "description": null,
+        "linkedMarkerId": "cave-verag-10-inside-2"
       },
       {
         "id": "cave-haven-1",
