@@ -112,6 +112,10 @@ $filter-categories: dragons, portals, chests, bountyHunt;
         background-image: url('../../assets/icons/icon-#{$category}.webp');
       }
     }
+
+    &--caves {
+      background-image: url('../../assets/icons/icon-caves.webp');
+    }
   }
 
   &__Text {

@@ -8,6 +8,7 @@ import React, {
 import CloseIcon from '@mui/icons-material/Close';
 import LinkIcon from '@mui/icons-material/Link';
 import WarningIcon from '@mui/icons-material/WarningAmber';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Tooltip from '@mui/material/Tooltip';
@@ -15,9 +16,16 @@ import Tooltip from '@mui/material/Tooltip';
 import ZoomContext from '../../context/ZoomContext';
 import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
 import FiltersContext from '../../context/FiltersContext';
+import markersData from '../../assets/markers.json';
 
 import './Map.scss';
-import { LoadedImages, LoadedMarkers } from './types';
+import {
+  LoadedImages,
+  LoadedMarkers,
+  Marker,
+  CustomMarker,
+  MarkerCategories,
+} from './types';
 import { MARKER_SIZE } from './constants';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMousePosition from './useMousePosition';
@@ -29,8 +37,12 @@ import drawMapTiles from './drawMapTiles';
 import drawMarkers from './drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
 import translateMapCoordsToGameCoords from './translateMapCoordsToGameCoords';
+import useFocusOnPoint from './useFocusOnPoint';
 
 const initialLoadedImages = getInitialLoadedImages();
+
+const isCustomMarker = (marker?: Marker | null): marker is CustomMarker =>
+  marker?.category === 'custom';
 
 const Map = () => {
   const { zoomLevel, zoomLevelRef } = useContext(ZoomContext);
@@ -47,6 +59,7 @@ const Map = () => {
     portals: null,
     chests: null,
     bountyHunt: null,
+    caves: null,
   });
 
   const {
@@ -55,6 +68,8 @@ const Map = () => {
     copyLinkToClipboard,
     handleClipboardInfoClose,
   } = useCopyLinkToClipboard();
+
+  const focusOnPoint = useFocusOnPoint();
 
   const { mousePosition, handleMouseMove: handleMousePositionMove } =
     useMousePosition();
@@ -90,6 +105,31 @@ const Map = () => {
     [handleMousePositionMove, onMouseMove]
   );
 
+  const handleEnterCaveButton = useCallback(() => {
+    const targetMarkerId = clickedMarker?.linkedMarkerId;
+
+    if (!targetMarkerId) {
+      return;
+    }
+
+    const targetMarker = Object.entries(markersData)
+      .flatMap(([category, { markers, filterLabel }]) =>
+        markers.map((marker) => ({
+          ...marker,
+          category: category as MarkerCategories,
+          categoryFilterLabel: filterLabel,
+        }))
+      )
+      .find(({ id }) => id === targetMarkerId);
+
+    if (!targetMarker) {
+      return;
+    }
+
+    setClickedMarker(targetMarker);
+    focusOnPoint(targetMarker);
+  }, [clickedMarker?.linkedMarkerId, setClickedMarker, focusOnPoint]);
+
   useEffect(() => {
     const tilesContext = tilesLayerRef.current?.getContext('2d');
 
@@ -114,8 +154,7 @@ const Map = () => {
         zoomLevel,
         LoadedMarkersRef,
         filters,
-        customMarker:
-          clickedMarker?.category === 'custom' ? clickedMarker : null,
+        customMarker: isCustomMarker(clickedMarker) ? clickedMarker : null,
       });
 
       setDrawnMarkers(newDrawnMarkers);
@@ -237,6 +276,16 @@ const Map = () => {
               <span className="Popup__Description">
                 {clickedMarker.description}
               </span>
+            ) : null}
+            {clickedMarker.linkedMarkerId ? (
+              <button
+                className="Popup__EnterCaveButton"
+                title="Enter the cave"
+                onClick={handleEnterCaveButton}
+              >
+                enter{' '}
+                <ChevronRightIcon className="Popup__EnterCaveButtonIcon" />
+              </button>
             ) : null}
           </div>
           <span className="Popup__Arrow" />

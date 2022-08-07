@@ -1,7 +1,7 @@
 import getMarkerFromSearchParams from '../getMarkerFromSearchParams';
-import { Marker } from '../components/map/types';
+import { Marker } from '../../components/map/types';
 
-jest.mock('../assets/markers.json', () => ({
+jest.mock('../../assets/markers.json', () => ({
   dragons: {
     filterLabel: 'dragon-filter',
     markers: [

@@ -55,6 +55,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     padding: 0.875rem 1.25rem;
     border-radius: 5px;
     background-color: var(--popup-background);
@@ -119,6 +120,33 @@
     margin-top: 0.75rem;
     padding-top: 0.75rem;
     border-top: 1px solid var(--popup-color);
+  }
+
+  &__EnterCaveButton {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    // padding on the right has to be smaller because the icon introduces
+    // a "margin" by default
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    margin-top: 0.75rem;
+    border: 1px solid var(--popup-cave-button-border);
+    border-radius: 0.25rem;
+    background-color: var(--popup-cave-button-background);
+    transition: background-color cubic-bezier(0.215, 0.610, 0.355, 1) .3s,
+      border-color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
+    color: var(--popup-color);
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--popup-cave-button-border-hover);
+      background-color: var(--popup-cave-button-hover-background);
+    }
+
+    & &Icon {
+      font-size: 1.25rem;
+    }
   }
 }
 

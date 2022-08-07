@@ -14,7 +14,8 @@ export type MarkerCategories =
   | 'dragons'
   | 'portals'
   | 'chests'
-  | 'bountyHunt';
+  | 'bountyHunt'
+  | 'caves';
 
 export type Marker = Coords & {
   z: number;
@@ -25,6 +26,11 @@ export type Marker = Coords & {
   description: string | null;
   category: MarkerCategories;
   categoryFilterLabel: string;
+  linkedMarkerId?: string;
+};
+
+export type CustomMarker = Omit<Marker, 'category'> & {
+  category: 'custom';
 };
 
 export type LoadedMarkers = {
