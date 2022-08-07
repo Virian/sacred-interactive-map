@@ -1,7 +1,6 @@
 import { Coords } from '../types';
 import { MAP_WIDTH, MAP_HEIGHT } from '../constants';
 
-// TODO: tests
 const getOffsetToCenterOnPoint = (
   point: Coords,
   zoomLevelScale: number = 1

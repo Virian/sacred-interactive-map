@@ -225,8 +225,7 @@ const Map = () => {
             }px)`,
           }}
         >
-          {/* TODO: change back to label */}
-          <span className="Tooltip__Content">{hoveredMarker.id}</span>
+          <span className="Tooltip__Content">{hoveredMarker.label}</span>
           <span className="Tooltip__Arrow" />
         </div>
       ) : null}
