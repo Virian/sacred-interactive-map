@@ -10,12 +10,12 @@ import {
 import { Coords } from '../../types';
 import ZoomContext from '../../context/ZoomContext';
 import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
+import FiltersContext from '../../context/FiltersContext';
 import getMarkerFromSearchParams from '../../shared/getMarkerFromSearchParams';
 
-import { MARKER_SIZE } from './constants';
 import { Marker } from './types';
 import calculatePopupTranslate from './calculatePopupTranslate';
-import FiltersContext from '../../context/FiltersContext';
+import { CUSTOM_MARKER_SIZE } from './constants';
 
 interface UseMarkersParams {
   mousePosition: Coords;
@@ -29,9 +29,9 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
   const markersLayerRef = useRef<HTMLCanvasElement>(null);
 
   const [drawnMarkers, setDrawnMarkers] = useState<Marker[]>([]);
-  const [clickedMarker, setClickedMarker] = useState<Marker | null>(() => {
-    return getMarkerFromSearchParams() || null;
-  });
+  const [clickedMarker, setClickedMarker] = useState<Marker | null>(
+    () => getMarkerFromSearchParams() || null
+  );
 
   useEffect(() => {
     const searchParams = new URLSearchParams();
@@ -60,9 +60,9 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
     // reversing because markers that were drawn later will be displayed on
     // top of those drawn earlier
     return (
-      drawnMarkers.reverse().find(({ screenX = 0, screenY = 0 }) => {
+      drawnMarkers.reverse().find(({ screenX = 0, screenY = 0, size }) => {
         const markerBoundingBox = new Path2D();
-        markerBoundingBox.rect(screenX, screenY, MARKER_SIZE, MARKER_SIZE);
+        markerBoundingBox.rect(screenX, screenY, size, size);
         return markersContext?.isPointInPath(
           markerBoundingBox,
           mousePosition.x,
@@ -74,7 +74,12 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
 
   const { x: clickedMarkerTranslateX, y: clickedMarkerTranslateY } = useMemo(
     () =>
-      calculatePopupTranslate(clickedMarker, mapCoordOffset, zoomLevel.scale),
+      calculatePopupTranslate(
+        clickedMarker,
+        mapCoordOffset,
+        zoomLevel.scale,
+        clickedMarker?.size
+      ),
     [clickedMarker, mapCoordOffset, zoomLevel.scale]
   );
 
@@ -89,9 +94,9 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
         // reversing because markers that were drawn later will be displayed on
         // top of those drawn earlier
         const newClickedMarker =
-          drawnMarkers.reverse().find(({ screenX = 0, screenY = 0 }) => {
+          drawnMarkers.reverse().find(({ screenX = 0, screenY = 0, size }) => {
             const markerBoundingBox = new Path2D();
-            markerBoundingBox.rect(screenX, screenY, MARKER_SIZE, MARKER_SIZE);
+            markerBoundingBox.rect(screenX, screenY, size, size);
             return markersContext?.isPointInPath(
               markerBoundingBox,
               eventCoords.x,
@@ -115,6 +120,7 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
             x: mapCoordOffset.x + eventCoords.x * zoomLevel.scale,
             y: mapCoordOffset.y + eventCoords.y * zoomLevel.scale,
             z: 0,
+            size: CUSTOM_MARKER_SIZE,
           });
         }
       }

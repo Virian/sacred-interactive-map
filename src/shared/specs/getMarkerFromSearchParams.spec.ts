@@ -4,6 +4,7 @@ import { Marker } from '../../components/map/types';
 jest.mock('../../assets/markers.json', () => ({
   dragons: {
     filterLabel: 'dragon-filter',
+    size: 32,
     markers: [
       {
         id: 'dragon-1',
@@ -25,6 +26,7 @@ jest.mock('../../assets/markers.json', () => ({
   },
   portals: {
     filterLabel: 'portal-filter',
+    size: 32,
     markers: [
       {
         id: 'portal-1',
@@ -61,6 +63,7 @@ const cases: [string, Marker | undefined][] = [
       categoryFilterLabel: 'dragon-filter',
       label: 'dragon-label-1',
       description: null,
+      size: 32,
     },
   ],
   [
@@ -74,6 +77,7 @@ const cases: [string, Marker | undefined][] = [
       categoryFilterLabel: 'dragon-filter',
       label: 'dragon-label-2',
       description: null,
+      size: 32,
     },
   ],
   [
@@ -87,6 +91,7 @@ const cases: [string, Marker | undefined][] = [
       categoryFilterLabel: 'portal-filter',
       label: 'portal-label-2',
       description: 'portal-description-2',
+      size: 32,
     },
   ],
   [
@@ -100,6 +105,7 @@ const cases: [string, Marker | undefined][] = [
       categoryFilterLabel: 'Custom location',
       label: 'Your location',
       description: null,
+      size: 64,
     },
   ],
   [
@@ -113,6 +119,7 @@ const cases: [string, Marker | undefined][] = [
       categoryFilterLabel: 'Custom location',
       label: 'Your location',
       description: null,
+      size: 64,
     },
   ],
 ];

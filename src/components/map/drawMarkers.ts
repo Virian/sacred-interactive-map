@@ -5,7 +5,6 @@ import markersData from '../../assets/markers.json';
 import { Coords, ZoomLevel } from '../../types';
 
 import { Marker, CustomMarker, LoadedMarkers, MarkerCategories } from './types';
-import { MARKER_SIZE } from './constants';
 
 // markers that are lower on the screen will be layered on top of those being
 // higher in case they overlap
@@ -15,6 +14,7 @@ const sortedMarkersData = sortBy(
       ...marker,
       category: category as MarkerCategories,
       filterLabel: data.filterLabel,
+      size: data.size,
     }))
   ),
   ['y', 'x']
@@ -30,6 +30,7 @@ interface MarkerData {
   label: string;
   description: string | null;
   linkedMarkerId?: string;
+  size: number;
 }
 
 interface DrawMarkersParams {
@@ -74,6 +75,7 @@ const drawMarkers = ({
       description,
       filterLabel,
       linkedMarkerId,
+      size,
     }) => {
       if (!filters[category] && category !== 'custom') {
         return;
@@ -81,22 +83,22 @@ const drawMarkers = ({
 
       const loadedMarker = LoadedMarkersRef.current[category];
       const shouldDrawMarker =
-        mapCoordOffset.x - MARKER_SIZE * zoomLevel.scale < x && // checking left edge of the screen
+        mapCoordOffset.x - size * zoomLevel.scale < x && // checking left edge of the screen
         mapCoordOffset.x +
           window.innerWidth * zoomLevel.scale +
-          MARKER_SIZE * zoomLevel.scale >
+          size * zoomLevel.scale >
           x && // right edge
-        mapCoordOffset.y - MARKER_SIZE * zoomLevel.scale < y && // top edge
+        mapCoordOffset.y - size * zoomLevel.scale < y && // top edge
         mapCoordOffset.y +
           window.innerHeight * zoomLevel.scale +
-          MARKER_SIZE * zoomLevel.scale >
+          size * zoomLevel.scale >
           y; // bottom edge
 
       if (shouldDrawMarker) {
         const markerScreenX =
-          (x - mapCoordOffset.x) / zoomLevel.scale - MARKER_SIZE / 2;
+          (x - mapCoordOffset.x) / zoomLevel.scale - size / 2;
         const markerScreenY =
-          (y - mapCoordOffset.y) / zoomLevel.scale - MARKER_SIZE / 2;
+          (y - mapCoordOffset.y) / zoomLevel.scale - size / 2;
 
         drawnMarkers.push({
           id,
@@ -110,6 +112,7 @@ const drawMarkers = ({
           category,
           categoryFilterLabel: filterLabel,
           linkedMarkerId,
+          size,
         });
 
         if (loadedMarker) {
@@ -117,8 +120,8 @@ const drawMarkers = ({
             loadedMarker,
             markerScreenX,
             markerScreenY,
-            MARKER_SIZE,
-            MARKER_SIZE
+            size,
+            size
           );
         } else {
           const img = new Image();
@@ -126,13 +129,7 @@ const drawMarkers = ({
           img.onload = () => {
             LoadedMarkersRef.current[category] = img;
 
-            context.drawImage(
-              img,
-              markerScreenX,
-              markerScreenY,
-              MARKER_SIZE,
-              MARKER_SIZE
-            );
+            context.drawImage(img, markerScreenX, markerScreenY, size, size);
           };
         }
       }

@@ -26,7 +26,6 @@ import {
   CustomMarker,
   MarkerCategories,
 } from './types';
-import { MARKER_SIZE } from './constants';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMousePosition from './useMousePosition';
 import useMove from './useMove';
@@ -113,11 +112,12 @@ const Map = () => {
     }
 
     const targetMarker = Object.entries(markersData)
-      .flatMap(([category, { markers, filterLabel }]) =>
+      .flatMap(([category, { markers, filterLabel, size }]) =>
         markers.map((marker) => ({
           ...marker,
           category: category as MarkerCategories,
           categoryFilterLabel: filterLabel,
+          size,
         }))
       )
       .find(({ id }) => id === targetMarkerId);
@@ -219,7 +219,7 @@ const Map = () => {
           className="Tooltip"
           style={{
             transform: `translate(calc(-50% + ${
-              MARKER_SIZE / 2
+              hoveredMarker.size / 2
             }px), -100%) translate(${hoveredMarker.screenX}px, ${
               hoveredMarker.screenY
             }px)`,
@@ -234,7 +234,7 @@ const Map = () => {
           className="Popup"
           style={{
             transform: `translate(calc(-50% + ${
-              MARKER_SIZE / 2
+              clickedMarker.size / 2
             }px), -100%) translate(${clickedMarkerTranslateX}px, ${clickedMarkerTranslateY}px)`,
           }}
         >

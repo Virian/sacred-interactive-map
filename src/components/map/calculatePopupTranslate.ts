@@ -1,11 +1,10 @@
 import { Coords } from '../../types';
 
-import { MARKER_SIZE } from './constants';
-
 const calculatePopupTranslate = (
   markerCoords: Coords | null,
   mapCoordOffset: Coords,
-  zoomLevelScale: number
+  zoomLevelScale: number,
+  markerSize: number = 0
 ): Coords => {
   if (!markerCoords) {
     return {
@@ -15,9 +14,9 @@ const calculatePopupTranslate = (
   }
 
   const screenX =
-    (markerCoords.x - mapCoordOffset.x) / zoomLevelScale - MARKER_SIZE / 2;
+    (markerCoords.x - mapCoordOffset.x) / zoomLevelScale - markerSize / 2;
   const screenY =
-    (markerCoords.y - mapCoordOffset.y) / zoomLevelScale - MARKER_SIZE / 2;
+    (markerCoords.y - mapCoordOffset.y) / zoomLevelScale - markerSize / 2;
 
   return {
     x: screenX,

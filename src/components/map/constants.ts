@@ -1,3 +1,3 @@
-export const MARKER_SIZE = 32;
+export const CUSTOM_MARKER_SIZE = 64;
 
 export const MOUSE_MOVE_THROTTLE_TIMEOUT = 16;

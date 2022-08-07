@@ -1,6 +1,7 @@
 {
   "dragons": {
     "filterLabel": "Dragon",
+    "size": 32,
     "markers": [
       {
         "id": "dragon-1",
@@ -86,6 +87,7 @@
   },
   "portals": {
     "filterLabel": "Portal",
+    "size": 32,
     "markers": [
       {
         "id": "portal-1",
@@ -251,6 +253,7 @@
   },
   "chests": {
     "filterLabel": "Personal Stash",
+    "size": 32,
     "markers": [
       {
         "id": "stash-1",
@@ -600,6 +603,7 @@
   },
   "bountyHunt": {
     "filterLabel": "Bounty Hunt Target",
+    "size": 32,
     "markers": [
       {
         "id": "target-1",
@@ -773,6 +777,7 @@
   },
   "caves": {
     "filterLabel": "Cave Entrance",
+    "size": 32,
     "markers": [
       {
         "id": "cave-hells-ridge-1",

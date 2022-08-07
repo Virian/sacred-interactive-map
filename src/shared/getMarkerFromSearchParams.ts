@@ -1,4 +1,5 @@
 import markersData from '../assets/markers.json';
+import { CUSTOM_MARKER_SIZE } from '../components/map/constants';
 import { MarkerCategories } from '../components/map/types';
 import { MAP_WIDTH, MAP_HEIGHT } from '../constants';
 
@@ -9,11 +10,12 @@ const getMarkerFromSearchParams = () => {
   const searchY = Number(searchParams.get('y'));
 
   const regularMarker = Object.entries(markersData)
-    .flatMap(([category, { markers, filterLabel }]) =>
+    .flatMap(([category, { markers, filterLabel, size }]) =>
       markers.map((marker) => ({
         ...marker,
         category: category as MarkerCategories,
         categoryFilterLabel: filterLabel,
+        size,
       }))
     )
     .find(({ x, y }) => x === searchX && y === searchY);
@@ -34,6 +36,7 @@ const getMarkerFromSearchParams = () => {
       x: searchX,
       y: searchY,
       z: 0,
+      size: CUSTOM_MARKER_SIZE,
     };
   }
 
