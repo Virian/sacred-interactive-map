@@ -24,6 +24,7 @@ const drawMapTiles = ({
   loadedImagesRef,
   zoomLevelRef,
 }: DrawMapTilesParams) => {
+  context.clearRect(0, 0, window.innerWidth, window.innerHeight);
   // adding 3 because 1 is an additional tile to ensure that the whole screen will be covered
   // and next 2 to load tiles outside of the screen (on both ends)
   const numberOfHorizontalTiles = Math.ceil(window.innerWidth / TILE_SIZE) + 3;
@@ -64,16 +65,16 @@ const drawMapTiles = ({
         if (loadedImage && shouldDraw) {
           context.drawImage(
             loadedImage.img,
-            (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-            (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
+            Math.round((tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow),
+            Math.round((tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow),
             TILE_SIZE,
             TILE_SIZE
           );
           if (SHOULD_DRAW_TILE_EDGES) {
             context.strokeStyle = 'black';
             context.strokeRect(
-              (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-              (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
+              Math.round((tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow),
+              Math.round((tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow),
               TILE_SIZE,
               TILE_SIZE
             );
@@ -103,16 +104,20 @@ const drawMapTiles = ({
             ) {
               context.drawImage(
                 img,
-                (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-                (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
+                Math.round((tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow),
+                Math.round((tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow),
                 TILE_SIZE,
                 TILE_SIZE
               );
               if (SHOULD_DRAW_TILE_EDGES) {
                 context.strokeStyle = 'black';
                 context.strokeRect(
-                  (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
-                  (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
+                  Math.round(
+                    (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow
+                  ),
+                  Math.round(
+                    (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow
+                  ),
                   TILE_SIZE,
                   TILE_SIZE
                 );
