@@ -1,4 +1,5 @@
 import React, {
+  useState,
   useEffect,
   useRef,
   useCallback,
@@ -59,6 +60,11 @@ const Map = () => {
     chests: null,
     bountyHunt: null,
     caves: null,
+  });
+
+  const [canvasDimensions, setCanvasDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
   });
 
   const {
@@ -131,6 +137,21 @@ const Map = () => {
   }, [clickedMarker?.linkedMarkerId, setClickedMarker, focusOnPoint]);
 
   useEffect(() => {
+    const handleResize = () => {
+      setCanvasDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     const tilesContext = tilesLayerRef.current?.getContext('2d');
 
     if (tilesContext) {
@@ -142,7 +163,12 @@ const Map = () => {
         zoomLevelRef,
       });
     }
-  }, [mapCoordOffset, zoomLevel, zoomLevelRef]);
+  }, [
+    mapCoordOffset,
+    zoomLevel,
+    zoomLevelRef,
+    canvasDimensions, // needed to handle canvas resize
+  ]);
 
   useEffect(() => {
     const markersContext = markersLayerRef.current?.getContext('2d');
@@ -166,6 +192,7 @@ const Map = () => {
     filters,
     setDrawnMarkers,
     clickedMarker,
+    canvasDimensions, // needed to handle canvas resize
   ]);
 
   useEffect(() => {
@@ -186,20 +213,20 @@ const Map = () => {
       <div className="Map__CanvasContainer">
         <canvas
           ref={tilesLayerRef}
-          height={window.innerHeight}
-          width={window.innerWidth}
+          height={canvasDimensions.height}
+          width={canvasDimensions.width}
           className="Layer"
         />
         <canvas
           ref={markersLayerRef}
-          height={window.innerHeight}
-          width={window.innerWidth}
+          height={canvasDimensions.height}
+          width={canvasDimensions.width}
           className="Layer"
         />
         <canvas
           ref={coordsLayerRef}
-          height={window.innerHeight}
-          width={window.innerWidth}
+          height={canvasDimensions.height}
+          width={canvasDimensions.width}
           className={`Layer ${isMoving ? 'isMoving' : ''} ${
             hoveredMarker ? 'isMarkerHovered' : ''
           }`}
