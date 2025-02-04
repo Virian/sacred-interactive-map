@@ -117,6 +117,11 @@ const drawMarkers = async ({
           size,
         });
 
+        context.shadowColor = '#000';
+        context.shadowBlur = 8;
+        context.shadowOffsetX = 4;
+        context.shadowOffsetY = 4;
+
         if (loadedMarker) {
           context.drawImage(
             loadedMarker,
