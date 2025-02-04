@@ -1,6 +1,7 @@
 import { useRef, useState, useCallback, Dispatch, SetStateAction } from 'react';
 
 import './App.scss';
+import markersData from './assets/markers.json';
 import Map from './components/map/Map';
 import FiltersMenu from './components/filtersMenu/FiltersMenu';
 import Footer from './components/footer/Footer';
@@ -9,6 +10,7 @@ import ZoomContext from './context/ZoomContext';
 import MapCoordOffsetContext from './context/MapCoordOffsetContext';
 import FiltersContext from './context/FiltersContext';
 import {
+  FILTER_CATEGORY_CAVES,
   MAP_WIDTH,
   MAP_HEIGHT,
   INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED,
@@ -75,9 +77,18 @@ const App = () => {
   });
 
   const [filters, setFilters] = useState<Record<string, boolean>>(() => {
+    const initialFilterCategories = Object.keys(markersData).filter(
+      (category) => category !== FILTER_CATEGORY_CAVES,
+    );
+    const initialFilters = initialFilterCategories.reduce(
+      (acc, category) => ({ ...acc, [category]: true }),
+      {},
+    );
     const marker = getMarkerFromSearchParams();
 
-    return marker ? { [marker.category]: true } : {};
+    return marker
+      ? { ...initialFilters, [marker.category]: true }
+      : initialFilters;
   });
 
   return (
