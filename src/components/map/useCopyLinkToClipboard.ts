@@ -18,14 +18,14 @@ const useCopyLinkToClipboard = () => {
   }, []);
 
   const handleClipboardInfoClose = useCallback(
-    (event?: SyntheticEvent | Event, reason?: string) => {
+    (_event?: SyntheticEvent | Event, reason?: string) => {
       if (reason === 'clickaway') {
         return;
       }
 
       setIsClipboardInfoOpen(false);
     },
-    []
+    [],
   );
 
   return {

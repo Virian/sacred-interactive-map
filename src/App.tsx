@@ -1,10 +1,4 @@
-import React, {
-  useRef,
-  useState,
-  useCallback,
-  Dispatch,
-  SetStateAction,
-} from 'react';
+import { useRef, useState, useCallback, Dispatch, SetStateAction } from 'react';
 
 import './App.scss';
 import Map from './components/map/Map';
@@ -27,11 +21,11 @@ import getOffsetToCenterOnPoint from './shared/getOffsetToCenterOnPoint';
 const OFFSET_TO_CENTER_MAP = {
   x: Math.max(
     0,
-    MAP_WIDTH / 2 - (window.innerWidth * INITIAL_SCALE_LEVEL.scale) / 2
+    MAP_WIDTH / 2 - (window.innerWidth * INITIAL_SCALE_LEVEL.scale) / 2,
   ),
   y: Math.max(
     0,
-    MAP_HEIGHT / 2 - (window.innerHeight * INITIAL_SCALE_LEVEL.scale) / 2
+    MAP_HEIGHT / 2 - (window.innerHeight * INITIAL_SCALE_LEVEL.scale) / 2,
   ),
 };
 
@@ -63,7 +57,7 @@ const App = () => {
       setZoomLevelState(newZoomLevelParam);
       zoomLevelRef.current = newZoomLevelParam;
     },
-    []
+    [],
   );
 
   const [mapCoordOffset, setMapCoordOffset] = useState<Coords>(() => {
@@ -73,7 +67,7 @@ const App = () => {
       // centering the screen on the marker
       return getOffsetToCenterOnPoint(
         marker,
-        INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale
+        INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED.scale,
       );
     }
 

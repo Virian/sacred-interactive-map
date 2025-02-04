@@ -11,7 +11,7 @@ const isTileAvailable = ({
   zoomLevelNumber,
 }: IsTileAvailableParams): boolean =>
   availableTiles[`${zoomLevelNumber}` as keyof typeof availableTiles].some(
-    (tile) => tile.x === x && tile.y === y
+    (tile) => tile.x === x && tile.y === y,
   );
 
 export default isTileAvailable;

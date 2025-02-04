@@ -1,7 +1,8 @@
+import { beforeAll, describe, expect, it, vi } from 'vitest';
 import getOffsetToCenterOnPoint from '../getOffsetToCenterOnPoint';
 import { Coords } from '../../types';
 
-jest.mock('../../constants', () => ({
+vi.mock('../../constants', () => ({
   MAP_WIDTH: 20000,
   MAP_HEIGHT: 10000,
 }));
@@ -40,6 +41,6 @@ describe('getMarkerFromSearchParams', () => {
 
       // then
       expect(result).toStrictEqual(expectedResult);
-    }
+    },
   );
 });

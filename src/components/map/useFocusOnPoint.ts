@@ -22,7 +22,7 @@ const useFocusOnPoint = () => {
       }
       setMapCoordOffset(getOffsetToCenterOnPoint(point, newZoomLevel.scale));
     },
-    [setZoomLevel, zoomLevel, setMapCoordOffset]
+    [setZoomLevel, zoomLevel, setMapCoordOffset],
   );
 
   return focusOnPoint;

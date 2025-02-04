@@ -4,7 +4,7 @@ const calculatePopupTranslate = (
   markerCoords: Coords | null,
   mapCoordOffset: Coords,
   zoomLevelScale: number,
-  markerSize: number = 0
+  markerSize: number = 0,
 ): Coords => {
   if (!markerCoords) {
     return {

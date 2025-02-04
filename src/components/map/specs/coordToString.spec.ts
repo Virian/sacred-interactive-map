@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import coordToString from '../coordToString';
 
 const cases: [number, string][] = [
@@ -20,6 +22,6 @@ describe('coordToString', () => {
 
       // then
       expect(result).toBe(expectedResult);
-    }
+    },
   );
 });

@@ -43,16 +43,16 @@ const useWheel = ({ mousePosition }: UseWheelParams) => {
                     Math.min(
                       currentMouseCoords.x -
                         mousePosition.x * newZoomLevel.scale,
-                      MAP_WIDTH - window.innerWidth * newZoomLevel.scale
-                    )
+                      MAP_WIDTH - window.innerWidth * newZoomLevel.scale,
+                    ),
                   ),
                   y: Math.max(
                     0,
                     Math.min(
                       currentMouseCoords.y -
                         mousePosition.y * newZoomLevel.scale,
-                      MAP_HEIGHT - window.innerHeight * newZoomLevel.scale
-                    )
+                      MAP_HEIGHT - window.innerHeight * newZoomLevel.scale,
+                    ),
                   ),
                 };
               });
@@ -86,16 +86,16 @@ const useWheel = ({ mousePosition }: UseWheelParams) => {
                     Math.min(
                       currentMouseCoords.x -
                         mousePosition.x * newZoomLevel.scale,
-                      MAP_WIDTH - window.innerWidth * newZoomLevel.scale
-                    )
+                      MAP_WIDTH - window.innerWidth * newZoomLevel.scale,
+                    ),
                   ),
                   y: Math.max(
                     0,
                     Math.min(
                       currentMouseCoords.y -
                         mousePosition.y * newZoomLevel.scale,
-                      MAP_HEIGHT - window.innerHeight * newZoomLevel.scale
-                    )
+                      MAP_HEIGHT - window.innerHeight * newZoomLevel.scale,
+                    ),
                   ),
                 };
               });
@@ -105,7 +105,7 @@ const useWheel = ({ mousePosition }: UseWheelParams) => {
           });
         }
       }, 100),
-    [setMapCoordOffset, setZoomLevel, mousePosition]
+    [setMapCoordOffset, setZoomLevel, mousePosition],
   );
 
   return { zoomLevel, handleWheel };

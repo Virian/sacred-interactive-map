@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { Coords } from '../../../types';
 import calculatePopupTranslate from '../calculatePopupTranslate';
 
@@ -26,18 +28,18 @@ describe('calculatePopupTranslate', () => {
       mapCoordOffset,
       zoomLevelScale,
       markerSize,
-      expectedResult
+      expectedResult,
     ) => {
       // when
       const result = calculatePopupTranslate(
         markerCoords,
         mapCoordOffset,
         zoomLevelScale,
-        markerSize
+        markerSize,
       );
 
       // then
       expect(result).toStrictEqual(expectedResult);
-    }
+    },
   );
 });

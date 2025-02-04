@@ -34,7 +34,7 @@ const drawMouseCoords = ({
     context.fillText(
       `(${cursorCoords.x}, ${cursorCoords.y})`,
       mousePosition.x,
-      mousePosition.y
+      mousePosition.y,
     );
   }
 };

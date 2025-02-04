@@ -1,50 +1,54 @@
+import { beforeAll, describe, expect, it, vi } from 'vitest';
+
 import getMarkerFromSearchParams from '../getMarkerFromSearchParams';
 import { Marker } from '../../components/map/types';
 
-jest.mock('../../assets/markers.json', () => ({
-  dragons: {
-    filterLabel: 'dragon-filter',
-    size: 32,
-    markers: [
-      {
-        id: 'dragon-1',
-        x: 10,
-        y: 20,
-        z: 0,
-        label: 'dragon-label-1',
-        description: null,
-      },
-      {
-        id: 'dragon-2',
-        x: 10,
-        y: 30,
-        z: 0,
-        label: 'dragon-label-2',
-        description: null,
-      },
-    ],
-  },
-  portals: {
-    filterLabel: 'portal-filter',
-    size: 32,
-    markers: [
-      {
-        id: 'portal-1',
-        x: 10,
-        y: 40,
-        z: 0,
-        label: 'portal-label-1',
-        description: null,
-      },
-      {
-        id: 'portal-2',
-        x: 20,
-        y: 20,
-        z: 1,
-        label: 'portal-label-2',
-        description: 'portal-description-2',
-      },
-    ],
+vi.mock('../../assets/markers.json', () => ({
+  default: {
+    dragons: {
+      filterLabel: 'dragon-filter',
+      size: 32,
+      markers: [
+        {
+          id: 'dragon-1',
+          x: 10,
+          y: 20,
+          z: 0,
+          label: 'dragon-label-1',
+          description: null,
+        },
+        {
+          id: 'dragon-2',
+          x: 10,
+          y: 30,
+          z: 0,
+          label: 'dragon-label-2',
+          description: null,
+        },
+      ],
+    },
+    portals: {
+      filterLabel: 'portal-filter',
+      size: 32,
+      markers: [
+        {
+          id: 'portal-1',
+          x: 10,
+          y: 40,
+          z: 0,
+          label: 'portal-label-1',
+          description: null,
+        },
+        {
+          id: 'portal-2',
+          x: 20,
+          y: 20,
+          z: 1,
+          label: 'portal-label-2',
+          description: 'portal-description-2',
+        },
+      ],
+    },
   },
 }));
 
@@ -146,6 +150,6 @@ describe('getMarkerFromSearchParams', () => {
 
       // then
       expect(result).toStrictEqual(expectedResult);
-    }
+    },
   );
 });

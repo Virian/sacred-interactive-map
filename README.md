@@ -17,35 +17,50 @@ Coefficients for the function to translate map coords to game coords were calcul
 
 ### Environment variables
 
-| Name                               | Default value | Description                                                                                                                                                                                    |
-| ---------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `REACT_APP_SHOULD_DRAW_TILE_EDGES` | `false`       | Draws borders around rendered tiles, resulting in grid-like view.                                                                                                                              |
-| `REACT_APP_SHOULD_DRAW_COORDS`     | `false`       | Draws coords near the cursor.                                                                                                                                                                  |
-| `REACT_APP_SHOULD_USE_GAME_COORDS` | `false`       | When `true`, displayed coords near the cursor are in-game coords. When `false`, displayed coords are map coords. This only has an effect when `REACT_APP_SHOULD_DRAW_COORDS` is set to `true`. |
+| Name                          | Default value | Description                                                                                                                                                                               |
+| ----------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `VITE_SHOULD_DRAW_TILE_EDGES` | `false`       | Draws borders around rendered tiles, resulting in grid-like view.                                                                                                                         |
+| `VITE_SHOULD_DRAW_COORDS`     | `false`       | Draws coords near the cursor.                                                                                                                                                             |
+| `VITE_SHOULD_USE_GAME_COORDS` | `false`       | When `true`, displayed coords near the cursor are in-game coords. When `false`, displayed coords are map coords. This only has an effect when `VITE_SHOULD_DRAW_COORDS` is set to `true`. |
 
-## Available Scripts
+## Expanding the ESLint configuration
 
-In the project directory, you can run:
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-### `yarn start`
+- Configure the top-level `parserOptions` property like this:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+});
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-### `yarn test`
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react';
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+});
+```

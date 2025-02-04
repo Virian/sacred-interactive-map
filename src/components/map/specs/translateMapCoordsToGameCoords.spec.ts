@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import translateMapCoordsToGameCoords from '../translateMapCoordsToGameCoords';
 import { Coords } from '../../../types';
 
@@ -63,6 +65,6 @@ describe('translateMapCoordsToGameCoords', () => {
       expect(result.x).toBeLessThan(expectedGameCoords.x + allowedError);
       expect(result.y).toBeGreaterThan(expectedGameCoords.y - allowedError);
       expect(result.y).toBeLessThan(expectedGameCoords.y + allowedError);
-    }
+    },
   );
 });

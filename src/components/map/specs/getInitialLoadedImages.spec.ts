@@ -1,6 +1,8 @@
+import { describe, expect, it, vi } from 'vitest';
+
 import getInitialLoadedImages from '../getInitialLoadedImages';
 
-jest.mock('../../../constants', () => ({
+vi.mock('../../../constants', () => ({
   HORIZONTAL_TILES: 5,
   MAP_SCALE_LEVELS: [
     { levelNumber: 2, scale: 1 },

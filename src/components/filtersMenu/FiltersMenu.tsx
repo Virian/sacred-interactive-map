@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useContext } from 'react';
+import { useState, useCallback, useContext } from 'react';
 
 import markersData from '../../assets/markers.json';
 import FiltersContext from '../../context/FiltersContext';
@@ -20,7 +20,7 @@ const FiltersMenu = () => {
         ...currentFilters,
         [filterName]: !currentFilters[filterName],
       })),
-    [setFilters]
+    [setFilters],
   );
 
   const setAllFilters = useCallback(
@@ -30,11 +30,11 @@ const FiltersMenu = () => {
           ...acc,
           [category]: shouldEnable,
         }),
-        {}
+        {},
       );
       setFilters(newFilters);
     },
-    [setFilters]
+    [setFilters],
   );
 
   return (

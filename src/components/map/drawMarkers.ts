@@ -2,6 +2,7 @@ import { MutableRefObject } from 'react';
 import sortBy from 'lodash/sortBy';
 
 import markersData from '../../assets/markers.json';
+import asyncForEach from '../../shared/asyncForEach';
 import { Coords, ZoomLevel } from '../../types';
 
 import { Marker, CustomMarker, LoadedMarkers, MarkerCategories } from './types';
@@ -15,9 +16,9 @@ const sortedMarkersData = sortBy(
       category: category as MarkerCategories,
       filterLabel: data.filterLabel,
       size: data.size,
-    }))
+    })),
   ),
-  ['y', 'x']
+  ['y', 'x'],
 );
 
 interface MarkerData {
@@ -42,7 +43,7 @@ interface DrawMarkersParams {
   customMarker?: CustomMarker | null;
 }
 
-const drawMarkers = ({
+const drawMarkers = async ({
   context,
   mapCoordOffset,
   zoomLevel,
@@ -64,8 +65,9 @@ const drawMarkers = ({
       ]
     : sortedMarkersData;
 
-  allMarkers.forEach(
-    ({
+  await asyncForEach(
+    allMarkers,
+    async ({
       id,
       x,
       y,
@@ -121,11 +123,13 @@ const drawMarkers = ({
             markerScreenX,
             markerScreenY,
             size,
-            size
+            size,
           );
         } else {
           const img = new Image();
-          img.src = require(`../../assets/icons/icon-${category}.webp`).default;
+          img.src = (
+            await import(`../../assets/icons/icon-${category}.webp`)
+          ).default;
           img.onload = () => {
             LoadedMarkersRef.current[category] = img;
 
@@ -133,7 +137,7 @@ const drawMarkers = ({
           };
         }
       }
-    }
+    },
   );
 
   return drawnMarkers;
