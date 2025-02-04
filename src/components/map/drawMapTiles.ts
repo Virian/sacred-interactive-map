@@ -3,6 +3,7 @@ import { MutableRefObject } from 'react';
 import { SHOULD_DRAW_TILE_EDGES } from '../../config';
 import { Coords, ZoomLevel } from '../../types';
 import { TILE_SIZE } from '../../constants';
+import asyncForEach from '../../shared/asyncForEach';
 
 import { LoadedImages } from './types';
 import getTileCoordsForView from './getTileCoordsForView';
@@ -17,7 +18,7 @@ interface DrawMapTilesParams {
   zoomLevelRef?: MutableRefObject<ZoomLevel>;
 }
 
-const drawMapTiles = ({
+const drawMapTiles = async ({
   context,
   mapCoordOffset,
   zoomLevel,
@@ -41,11 +42,11 @@ const drawMapTiles = ({
     numberOfVerticalTiles,
     currentXCoordOffset,
     currentYCoordOffset,
-    zoomLevel.scale
+    zoomLevel.scale,
   );
 
-  tileXCoords.forEach((tileXCoord, tileXCoordIndex) => {
-    tileYCoords.forEach((tileYCoord, tileYCoordIndex) => {
+  await asyncForEach(tileXCoords, (tileXCoord, tileXCoordIndex) =>
+    asyncForEach(tileYCoords, async (tileYCoord, tileYCoordIndex) => {
       const shouldDraw =
         tileXCoordIndex !== 0 && // don't draw tiles outside of the view
         tileXCoordIndex !== tileXCoords.length - 1 &&
@@ -68,7 +69,7 @@ const drawMapTiles = ({
             Math.round((tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow),
             Math.round((tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow),
             TILE_SIZE,
-            TILE_SIZE
+            TILE_SIZE,
           );
           if (SHOULD_DRAW_TILE_EDGES) {
             context.strokeStyle = 'black';
@@ -76,7 +77,7 @@ const drawMapTiles = ({
               Math.round((tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow),
               Math.round((tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow),
               TILE_SIZE,
-              TILE_SIZE
+              TILE_SIZE,
             );
           }
         } else {
@@ -84,8 +85,11 @@ const drawMapTiles = ({
           // functions can't be used in a string literal with file path
           const stringTileXCoord = coordToString(tileXCoord);
           const stringTileYCoord = coordToString(tileYCoord);
-          img.src =
-            require(`../../assets/tiles/${zoomLevel.levelNumber}/${stringTileXCoord}_${stringTileYCoord}.webp`).default;
+          img.src = (
+            await import(
+              `../../assets/tiles/${zoomLevel.levelNumber}/${stringTileXCoord}_${stringTileYCoord}.webp`
+            )
+          ).default;
           img.onload = () => {
             loadedImagesRef.current[`${zoomLevel.levelNumber}`][
               `${tileXCoord}`
@@ -107,19 +111,19 @@ const drawMapTiles = ({
                 Math.round((tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow),
                 Math.round((tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow),
                 TILE_SIZE,
-                TILE_SIZE
+                TILE_SIZE,
               );
               if (SHOULD_DRAW_TILE_EDGES) {
                 context.strokeStyle = 'black';
                 context.strokeRect(
                   Math.round(
-                    (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow
+                    (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
                   ),
                   Math.round(
-                    (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow
+                    (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
                   ),
                   TILE_SIZE,
-                  TILE_SIZE
+                  TILE_SIZE,
                 );
               }
             }
@@ -131,11 +135,11 @@ const drawMapTiles = ({
           (tileXCoordIndex - 1) * TILE_SIZE - screenXOverflow,
           (tileYCoordIndex - 1) * TILE_SIZE - screenYOverflow,
           TILE_SIZE,
-          TILE_SIZE
+          TILE_SIZE,
         );
       }
-    });
-  });
+    }),
+  );
 };
 
 export default drawMapTiles;

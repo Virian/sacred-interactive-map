@@ -1,27 +1,31 @@
+import { describe, expect, it, vi } from 'vitest';
+
 import isTileAvailable from '../isTileAvailable';
 import { Coords } from '../../../types';
 
-jest.mock('../../../assets/availableTiles.json', () => ({
-  '1': [
-    { x: 0, y: 0 },
-    { x: 0, y: 2 },
-    { x: 0, y: 5 },
-    { x: 1, y: 3 },
-    { x: 2, y: 2 },
-    { x: 2, y: 2 },
-    { x: 4, y: 0 },
-    { x: 4, y: 1 },
-    { x: 4, y: 4 },
-    { x: 4, y: 5 },
-    { x: 5, y: 2 },
-  ],
-  '2': [
-    { x: 0, y: 0 },
-    { x: 0, y: 1 },
-    { x: 0, y: 3 },
-    { x: 1, y: 3 },
-    { x: 3, y: 2 },
-  ],
+vi.mock('../../../assets/availableTiles.json', () => ({
+  default: {
+    '1': [
+      { x: 0, y: 0 },
+      { x: 0, y: 2 },
+      { x: 0, y: 5 },
+      { x: 1, y: 3 },
+      { x: 2, y: 2 },
+      { x: 2, y: 2 },
+      { x: 4, y: 0 },
+      { x: 4, y: 1 },
+      { x: 4, y: 4 },
+      { x: 4, y: 5 },
+      { x: 5, y: 2 },
+    ],
+    '2': [
+      { x: 0, y: 0 },
+      { x: 0, y: 1 },
+      { x: 0, y: 3 },
+      { x: 1, y: 3 },
+      { x: 3, y: 2 },
+    ],
+  },
 }));
 
 const cases: [Coords, number, boolean][] = [
@@ -52,6 +56,6 @@ describe('isTileAvailable', () => {
 
       // then
       expect(result).toBe(expectedResult);
-    }
+    },
   );
 });

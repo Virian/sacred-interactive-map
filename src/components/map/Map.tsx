@@ -1,4 +1,4 @@
-import React, {
+import {
   useState,
   useEffect,
   useRef,
@@ -107,7 +107,7 @@ const Map = () => {
       handleMousePositionMove(event);
       onMouseMove(event);
     },
-    [handleMousePositionMove, onMouseMove]
+    [handleMousePositionMove, onMouseMove],
   );
 
   const handleEnterCaveButton = useCallback(() => {
@@ -124,7 +124,7 @@ const Map = () => {
           category: category as MarkerCategories,
           categoryFilterLabel: filterLabel,
           size,
-        }))
+        })),
       )
       .find(({ id }) => id === targetMarkerId);
 
@@ -171,20 +171,24 @@ const Map = () => {
   ]);
 
   useEffect(() => {
-    const markersContext = markersLayerRef.current?.getContext('2d');
+    const drawMarkersLayer = async () => {
+      const markersContext = markersLayerRef.current?.getContext('2d');
 
-    if (markersContext) {
-      const newDrawnMarkers = drawMarkers({
-        context: markersContext,
-        mapCoordOffset,
-        zoomLevel,
-        LoadedMarkersRef,
-        filters,
-        customMarker: isCustomMarker(clickedMarker) ? clickedMarker : null,
-      });
+      if (markersContext) {
+        const newDrawnMarkers = await drawMarkers({
+          context: markersContext,
+          mapCoordOffset,
+          zoomLevel,
+          LoadedMarkersRef,
+          filters,
+          customMarker: isCustomMarker(clickedMarker) ? clickedMarker : null,
+        });
 
-      setDrawnMarkers(newDrawnMarkers);
-    }
+        setDrawnMarkers(newDrawnMarkers);
+      }
+    };
+
+    drawMarkersLayer();
   }, [
     markersLayerRef,
     mapCoordOffset,

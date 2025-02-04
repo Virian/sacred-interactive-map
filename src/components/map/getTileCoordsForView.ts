@@ -7,7 +7,7 @@ const getTileCoordsForView = (
   numberOfVerticalTiles: number,
   currentXOffset: number,
   currentYOffset: number,
-  scale: number
+  scale: number,
 ): { tileXCoords: number[]; tileYCoords: number[] } => {
   const firstXCoord = Math.floor(currentXOffset / (TILE_SIZE * scale)) - 1; // subtracting 1 to fetch tiles outside of the view
   const tileXCoords = range(firstXCoord, firstXCoord + numberOfHorizontalTiles);

@@ -13,7 +13,7 @@ const useMousePosition = () => {
       throttle((event: MouseEvent) => {
         setMousePosition({ x: event.clientX, y: event.clientY });
       }, MOUSE_MOVE_THROTTLE_TIMEOUT),
-    []
+    [],
   );
 
   return {

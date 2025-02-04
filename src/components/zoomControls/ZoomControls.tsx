@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react';
+import { useCallback, useContext } from 'react';
 
 import { MAP_HEIGHT, MAP_WIDTH, MAP_SCALE_LEVELS } from '../../constants';
 import ZoomContext from '../../context/ZoomContext';
@@ -42,16 +42,16 @@ const ZoomControls = () => {
                   Math.min(
                     currentCenterCoords.x -
                       (window.innerWidth / 2) * newZoomLevel.scale,
-                    MAP_WIDTH - window.innerWidth * newZoomLevel.scale
-                  )
+                    MAP_WIDTH - window.innerWidth * newZoomLevel.scale,
+                  ),
                 ),
                 y: Math.max(
                   0,
                   Math.min(
                     currentCenterCoords.y -
                       (window.innerHeight / 2) * newZoomLevel.scale,
-                    MAP_HEIGHT - window.innerHeight * newZoomLevel.scale
-                  )
+                    MAP_HEIGHT - window.innerHeight * newZoomLevel.scale,
+                  ),
                 ),
               };
             });
@@ -84,16 +84,16 @@ const ZoomControls = () => {
                   Math.min(
                     currentCenterCoords.x -
                       (window.innerWidth / 2) * newZoomLevel.scale,
-                    MAP_WIDTH - window.innerWidth * newZoomLevel.scale
-                  )
+                    MAP_WIDTH - window.innerWidth * newZoomLevel.scale,
+                  ),
                 ),
                 y: Math.max(
                   0,
                   Math.min(
                     currentCenterCoords.y -
                       (window.innerHeight / 2) * newZoomLevel.scale,
-                    MAP_HEIGHT - window.innerHeight * newZoomLevel.scale
-                  )
+                    MAP_HEIGHT - window.innerHeight * newZoomLevel.scale,
+                  ),
                 ),
               };
             });
@@ -103,7 +103,7 @@ const ZoomControls = () => {
         });
       }
     },
-    [setMapCoordOffset, setZoomLevel]
+    [setMapCoordOffset, setZoomLevel],
   );
 
   return (

@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import translateScreenToCoords from '../translateScreenToCoords';
 import { Coords } from '../../../types';
 
@@ -27,6 +29,6 @@ describe('translateScreenToCoords', () => {
 
       // then
       expect(result).toEqual(expectedCoords);
-    }
+    },
   );
 });

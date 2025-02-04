@@ -13,10 +13,10 @@ const getInitialLoadedImages = (): LoadedImages =>
           ...acc,
           [xCoord]: [],
         }),
-        {}
+        {},
       ),
     }),
-    {}
+    {},
   );
 
 export default getInitialLoadedImages;

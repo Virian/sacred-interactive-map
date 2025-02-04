@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import getTileCoordsForView from '../getTileCoordsForView';
 
 const cases: [
@@ -6,7 +8,7 @@ const cases: [
   number,
   number,
   number,
-  { tileXCoords: number[]; tileYCoords: number[] }
+  { tileXCoords: number[]; tileYCoords: number[] },
 ][] = [
   [
     6,
@@ -89,7 +91,7 @@ describe('getTileCoordsForView', () => {
       currentXOffset,
       currentYOffset,
       scale,
-      expectedResult
+      expectedResult,
     ) => {
       // when
       const result = getTileCoordsForView(
@@ -97,11 +99,11 @@ describe('getTileCoordsForView', () => {
         numberOfVerticalTiles,
         currentXOffset,
         currentYOffset,
-        scale
+        scale,
       );
 
       // then
       expect(result).toStrictEqual(expectedResult);
-    }
+    },
   );
 });

@@ -30,7 +30,7 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
 
   const [drawnMarkers, setDrawnMarkers] = useState<Marker[]>([]);
   const [clickedMarker, setClickedMarker] = useState<Marker | null>(
-    () => getMarkerFromSearchParams() || null
+    () => getMarkerFromSearchParams() || null,
   );
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
         return markersContext?.isPointInPath(
           markerBoundingBox,
           mousePosition.x,
-          mousePosition.y
+          mousePosition.y,
         );
       }) || null
     );
@@ -78,9 +78,9 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
         clickedMarker,
         mapCoordOffset,
         zoomLevel.scale,
-        clickedMarker?.size
+        clickedMarker?.size,
       ),
-    [clickedMarker, mapCoordOffset, zoomLevel.scale]
+    [clickedMarker, mapCoordOffset, zoomLevel.scale],
   );
 
   const checkMarkerClick = useCallback(
@@ -100,7 +100,7 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
             return markersContext?.isPointInPath(
               markerBoundingBox,
               eventCoords.x,
-              eventCoords.y
+              eventCoords.y,
             );
           }) || null;
 
@@ -125,7 +125,7 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
         }
       }
     },
-    [drawnMarkers, clickedMarker, mapCoordOffset, zoomLevel.scale]
+    [drawnMarkers, clickedMarker, mapCoordOffset, zoomLevel.scale],
   );
 
   return {

@@ -16,7 +16,7 @@ const getMarkerFromSearchParams = () => {
         category: category as MarkerCategories,
         categoryFilterLabel: filterLabel,
         size,
-      }))
+      })),
     )
     .find(({ x, y }) => x === searchX && y === searchY);
 

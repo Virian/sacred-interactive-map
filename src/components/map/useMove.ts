@@ -59,14 +59,14 @@ const useMove = ({ onMoveEnd }: UseMoveProps): UseMove => {
         });
       }
     },
-    [startMoving, touchIdentifier]
+    [startMoving, touchIdentifier],
   );
 
   const handleMouseDown = useCallback(
     (event: MouseEvent) => {
       startMoving({ x: event.clientX, y: event.clientY });
     },
-    [startMoving]
+    [startMoving],
   );
 
   const moveMap = useCallback(
@@ -99,7 +99,7 @@ const useMove = ({ onMoveEnd }: UseMoveProps): UseMove => {
         });
       }
     },
-    [setMapCoordOffset, isMoving, moveDelta.x, moveDelta.y, scale]
+    [setMapCoordOffset, isMoving, moveDelta.x, moveDelta.y, scale],
   );
 
   const handleMouseMove = useMemo(
@@ -107,7 +107,7 @@ const useMove = ({ onMoveEnd }: UseMoveProps): UseMove => {
       throttle((event: MouseEvent) => {
         moveMap({ x: event.clientX, y: event.clientY });
       }, MOUSE_MOVE_THROTTLE_TIMEOUT),
-    [moveMap]
+    [moveMap],
   );
 
   const handleTouchMove = useMemo(
@@ -127,7 +127,7 @@ const useMove = ({ onMoveEnd }: UseMoveProps): UseMove => {
           }
         }
       }, MOUSE_MOVE_THROTTLE_TIMEOUT),
-    [moveMap, touchIdentifier]
+    [moveMap, touchIdentifier],
   );
 
   const stopMoving = useCallback(
@@ -135,7 +135,7 @@ const useMove = ({ onMoveEnd }: UseMoveProps): UseMove => {
       onMoveEnd(eventCoords, moveStartingCoords);
       setIsMoving(false);
     },
-    [onMoveEnd, moveStartingCoords]
+    [onMoveEnd, moveStartingCoords],
   );
 
   const handleTouchEnd = useCallback(
@@ -158,14 +158,14 @@ const useMove = ({ onMoveEnd }: UseMoveProps): UseMove => {
         }
       }
     },
-    [touchIdentifier, stopMoving]
+    [touchIdentifier, stopMoving],
   );
 
   const handleMouseUp = useCallback(
     (event: MouseEvent) => {
       stopMoving({ x: event.clientX, y: event.clientY });
     },
-    [stopMoving]
+    [stopMoving],
   );
 
   return {
