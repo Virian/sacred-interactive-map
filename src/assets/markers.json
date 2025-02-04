@@ -775,6 +775,84 @@
       }
     ]
   },
+  "regionBoss": {
+    "filterLabel": "Region Bosses",
+    "size": 32,
+    "markers": [
+      {
+        "id": "region-1",
+        "x": 27427,
+        "y": 11175,
+        "z": 0,
+        "label": "Southern Core Region Bosses",
+        "description": "6501 kills required. 2x Acutami, 2x Lorinor."
+      },
+      {
+        "id": "region-2",
+        "x": 19191,
+        "y": 7939,
+        "z": 0,
+        "label": "Northern Core Region Bosses",
+        "description": "6501 kills required. 1x Acutami, 1x Stygian Eldar, 2x Dryad Huntress, 1x Dryad Druid."
+      },
+      {
+        "id": "region-3",
+        "x": 30570,
+        "y": 14889,
+        "z": 0,
+        "label": "Desert Region Bosses",
+        "description": "7501 kills required. 2x Sirithicam, 2x D'Cay, 2x Crab Queen."
+      },
+      {
+        "id": "region-4",
+        "x": 31242,
+        "y": 13439,
+        "z": 0,
+        "label": "Swamp Region Bosses",
+        "description": "4501 kills required. 1x Acutami, 3x Mountain Giant, 1x Giant Burning Arachnid, 1x H'Runga'zz."
+      },
+      {
+        "id": "region-5",
+        "x": 10990,
+        "y": 13240,
+        "z": 0,
+        "label": "Lava Region Bosses",
+        "description": "4501 kills required. 2x Anducar Elite Guard, 4x Demon Lord."
+      },
+      {
+        "id": "region-6",
+        "x": 38362,
+        "y": 13424,
+        "z": 0,
+        "label": "Shaddar-Nur Region Bosses",
+        "description": "2501 kills required. 2x Sakkara Demon, 2x Demon Lord, 2x Sakkara Priest."
+      },
+      {
+        "id": "region-7",
+        "x": 20429,
+        "y": 20072,
+        "z": 0,
+        "label": "Northern Region Bosses",
+        "description": "5501 kills required. 2x Cerebropod, 2x Demon Lord, 2x Insect Larva Queen."
+      },
+      {
+        "id": "region-8",
+        "x": 28376,
+        "y": 5422,
+        "z": 0,
+        "label": "Upper Underworld Region Bosses",
+        "description": "6501 kills required. 1x D'Cay, 1x Skeleton Mage, 2x Nuk-Nuk Champion. The quest is bugged and often doesn't complete even if you kill all the bosses."
+      },
+      {
+        "id": "region-9",
+        "x": 18778,
+        "y": 4553,
+        "z": 0,
+        "label": "Lower Underworld Region Bosses",
+        "description": "6501 kills required. 1x Acutami, 3x Anducar's Elite Guard, 2x Cerebropod."
+      }
+    ]
+  },
   "caves": {
     "filterLabel": "Cave Entrance",
     "size": 32,
