@@ -1,0 +1,88 @@
+@use '../../../variables';
+
+.Search {
+  &__Input {
+    .MuiOutlinedInput-notchedOutline {
+      border-color: var(--search-input-border);
+    }
+
+    &.MuiInputBase-root:hover .MuiOutlinedInput-notchedOutline {
+      border-color: var(--search-input-border-active);
+    }
+
+    &.MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border-color: var(--search-input-border-active);
+    }
+
+    .Search__ClearIcon {
+      cursor: pointer;
+      display: none;
+
+      &:hover {
+        color: var(--search-input-clear-button-hover);
+      }
+    }
+
+    &.MuiInputBase-root:hover .Search__ClearIcon,
+    &.MuiInputBase-root.Mui-focused .Search__ClearIcon {
+      display: inline-block;
+    }
+  }
+}
+
+.SearchDropdown {
+  &__Container {
+    max-height: 400px;
+    width: 500px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    box-shadow: var(--search-dropdown-shadow);
+    overflow-y: auto;
+    z-index: var(--search-dropdown-z-index);
+  }
+
+  &__List {
+    margin: 0;
+    padding: 0.25rem 0;
+    background-color: var(--search-dropdown-background);
+    list-style-type: none;
+  }
+
+  &__Element {
+    display: grid;
+    grid-template-areas: "icon label"
+                         ". description";
+    justify-content: start;
+    align-items: center;
+    column-gap: 4px;
+    padding: 0.3125rem 0.5rem;
+    transition: background-color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
+
+    &:hover {
+      background-color: var(--search-dropdown-background-hover);
+      cursor: pointer;
+    }
+  }
+
+  &__ElementIcon {
+    grid-area: icon;
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+
+    @each $category in variables.$categories {
+      &--#{$category} {
+        background-image: url('../../../assets/icons/icon-#{$category}.webp');
+      }
+    }
+  }
+
+  &__ElementLabel {
+    grid-area: label;
+  }
+
+  &__ElementDescription {
+    grid-area: description;
+    font-size: 0.875rem;
+  }
+}

@@ -1,10 +1,10 @@
 import { useCallback, useContext } from 'react';
 
-import ZoomContext from '../../context/ZoomContext';
-import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
-import { Coords } from '../../types';
-import { MAP_SCALE_LEVELS } from '../../constants';
-import getOffsetToCenterOnPoint from '../../shared/getOffsetToCenterOnPoint';
+import ZoomContext from '../context/ZoomContext';
+import MapCoordOffsetContext from '../context/MapCoordOffsetContext';
+import { Coords } from '../types';
+import { MAP_SCALE_LEVELS } from '../constants';
+import getOffsetToCenterOnPoint from './getOffsetToCenterOnPoint';
 
 const useFocusOnPoint = () => {
   const { zoomLevel, setZoomLevel } = useContext(ZoomContext);

@@ -7,13 +7,12 @@ import {
   useEffect,
 } from 'react';
 
-import { Coords } from '../../types';
+import { Coords, Marker } from '../../types';
 import ZoomContext from '../../context/ZoomContext';
 import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
 import FiltersContext from '../../context/FiltersContext';
-import getMarkerFromSearchParams from '../../shared/getMarkerFromSearchParams';
+import ClickedMarkerContext from '../../context/ClickedMarkerContext';
 
-import { Marker } from './types';
 import calculatePopupTranslate from './calculatePopupTranslate';
 import { CUSTOM_MARKER_SIZE } from './constants';
 
@@ -25,13 +24,11 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
   const { zoomLevel } = useContext(ZoomContext);
   const { mapCoordOffset } = useContext(MapCoordOffsetContext);
   const { filters } = useContext(FiltersContext);
+  const { clickedMarker, setClickedMarker } = useContext(ClickedMarkerContext);
 
   const markersLayerRef = useRef<HTMLCanvasElement>(null);
 
   const [drawnMarkers, setDrawnMarkers] = useState<Marker[]>([]);
-  const [clickedMarker, setClickedMarker] = useState<Marker | null>(
-    () => getMarkerFromSearchParams() || null,
-  );
 
   useEffect(() => {
     const searchParams = new URLSearchParams();
@@ -52,7 +49,7 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
     ) {
       setClickedMarker(null);
     }
-  }, [clickedMarker, filters]);
+  }, [clickedMarker, filters, setClickedMarker]);
 
   const hoveredMarker = useMemo(() => {
     const markersContext = markersLayerRef.current?.getContext('2d');
@@ -125,7 +122,13 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
         }
       }
     },
-    [drawnMarkers, clickedMarker, mapCoordOffset, zoomLevel.scale],
+    [
+      drawnMarkers,
+      clickedMarker,
+      mapCoordOffset,
+      zoomLevel.scale,
+      setClickedMarker,
+    ],
   );
 
   return {

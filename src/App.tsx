@@ -1,4 +1,5 @@
 import { useRef, useState, useCallback, Dispatch, SetStateAction } from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import './App.scss';
 import markersData from './assets/markers.json';
@@ -9,6 +10,7 @@ import ZoomControls from './components/zoomControls/ZoomControls';
 import ZoomContext from './context/ZoomContext';
 import MapCoordOffsetContext from './context/MapCoordOffsetContext';
 import FiltersContext from './context/FiltersContext';
+import ClickedMarkerContext from './context/ClickedMarkerContext';
 import {
   FILTER_CATEGORY_CAVES,
   MAP_WIDTH,
@@ -16,9 +18,13 @@ import {
   INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED,
   INITIAL_SCALE_LEVEL,
 } from './constants';
-import { Coords, ZoomLevel } from './types';
+import { Coords, Marker, ZoomLevel } from './types';
 import getMarkerFromSearchParams from './shared/getMarkerFromSearchParams';
 import getOffsetToCenterOnPoint from './shared/getOffsetToCenterOnPoint';
+
+const theme = createTheme({
+  cssVariables: true,
+});
 
 const OFFSET_TO_CENTER_MAP = {
   x: Math.max(
@@ -91,20 +97,30 @@ const App = () => {
       : initialFilters;
   });
 
+  const [clickedMarker, setClickedMarker] = useState<Marker | null>(
+    () => getMarkerFromSearchParams() || null,
+  );
+
   return (
     <div className="App">
-      <ZoomContext.Provider value={{ zoomLevel, setZoomLevel, zoomLevelRef }}>
-        <MapCoordOffsetContext.Provider
-          value={{ mapCoordOffset, setMapCoordOffset }}
-        >
-          <FiltersContext.Provider value={{ filters, setFilters }}>
-            <FiltersMenu />
-            <Map />
-            <ZoomControls />
-            <Footer />
-          </FiltersContext.Provider>
-        </MapCoordOffsetContext.Provider>
-      </ZoomContext.Provider>
+      <ThemeProvider theme={theme}>
+        <ZoomContext.Provider value={{ zoomLevel, setZoomLevel, zoomLevelRef }}>
+          <MapCoordOffsetContext.Provider
+            value={{ mapCoordOffset, setMapCoordOffset }}
+          >
+            <FiltersContext.Provider value={{ filters, setFilters }}>
+              <ClickedMarkerContext.Provider
+                value={{ clickedMarker, setClickedMarker }}
+              >
+                <FiltersMenu />
+                <Map />
+                <ZoomControls />
+                <Footer />
+              </ClickedMarkerContext.Provider>
+            </FiltersContext.Provider>
+          </MapCoordOffsetContext.Provider>
+        </ZoomContext.Provider>
+      </ThemeProvider>
     </div>
   );
 };
