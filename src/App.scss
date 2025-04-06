@@ -1,4 +1,9 @@
 .App {
+  --mui-palette-primary-main: var(--mui-primary-main);
+  --mui-palette-primary-dark: var(--mui-primary-dark);
+  --mui-palette-text-primary: var(--mui-text-primary);
+  --mui-palette-action-active: var(--mui-action-active);
+
   height: 100vh;
   width: 100vw;
   overflow: hidden;

@@ -1,4 +1,4 @@
-$filter-categories: dragons, portals, chests, bountyHunt, regionBoss;
+@use '../../variables';
 
 .FiltersMenu {
   position: fixed;
@@ -65,21 +65,17 @@ $filter-categories: dragons, portals, chests, bountyHunt, regionBoss;
   &__Buttons {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
-  &__Button {
-    padding: 0.375rem 0.725rem;
-    border: 0;
-    background-color: var(--filter-menu-button-background);
-    color: var(--filter-menu-color);
-    transition: background-color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
-    text-transform: uppercase;
-    cursor: pointer;
+  &__Search {
+    margin-bottom: 20px;
+  }
 
-    &:hover {
-      background-color: var(--filter-menu-button-hover-background);
-    }
+  &__Filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
   }
 }
 
@@ -107,14 +103,10 @@ $filter-categories: dragons, portals, chests, bountyHunt, regionBoss;
     height: 24px;
     background-size: cover;
 
-    @each $category in $filter-categories {
+    @each $category in variables.$categories {
       &--#{$category} {
         background-image: url('../../assets/icons/icon-#{$category}.webp');
       }
-    }
-
-    &--caves {
-      background-image: url('../../assets/icons/icon-caves.webp');
     }
   }
 

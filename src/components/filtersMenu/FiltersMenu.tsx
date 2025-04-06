@@ -1,9 +1,11 @@
 import { useState, useCallback, useContext } from 'react';
+import Button from '@mui/material/Button';
 
 import markersData from '../../assets/markers.json';
 import FiltersContext from '../../context/FiltersContext';
 
 import './FiltersMenu.scss';
+import SearchInput from './searchInput/SearchInput';
 
 const FiltersMenu = () => {
   const { filters, setFilters } = useContext(FiltersContext);
@@ -50,31 +52,34 @@ const FiltersMenu = () => {
         <h1 className="FiltersMenu__Header">Interactive Map</h1>
         <div className="FiltersMenu__Separator" />
         <div className="FiltersMenu__Buttons">
-          <button
-            className="FiltersMenu__Button"
+          <Button
+            variant="contained"
             onClick={() => setAllFilters(true)}
           >
             show all
-          </button>
-          <button
-            className="FiltersMenu__Button"
+          </Button>
+          <Button
+            variant="contained"
             onClick={() => setAllFilters(false)}
           >
             hide all
-          </button>
+          </Button>
         </div>
         <div className="FiltersMenu__Separator" />
-        {Object.entries(markersData).map(([category, data]) => (
-          <div
-            key={category}
-            className={`Filter ${!filters[category] ? 'Filter--Disabled' : ''}`}
-            onClick={() => toggleFilter(category)}
-          >
-            <span className={`Filter__Icon Filter__Icon--${category}`} />
-            <span className="Filter__Text">{data.filterLabel}</span>
-            <span className="Filter__Count">{data.markers.length}</span>
-          </div>
-        ))}
+        <SearchInput className="FiltersMenu__Search" />
+        <div className="FiltersMenu__Filters">
+          {Object.entries(markersData).map(([category, data]) => (
+            <div
+              key={category}
+              className={`Filter ${!filters[category] ? 'Filter--Disabled' : ''}`}
+              onClick={() => toggleFilter(category)}
+            >
+              <span className={`Filter__Icon Filter__Icon--${category}`} />
+              <span className="Filter__Text">{data.filterLabel}</span>
+              <span className="Filter__Count">{data.markers.length}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

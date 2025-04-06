@@ -3,9 +3,9 @@ import sortBy from 'lodash/sortBy';
 
 import markersData from '../../assets/markers.json';
 import asyncForEach from '../../shared/asyncForEach';
-import { Coords, ZoomLevel } from '../../types';
+import { Coords, Marker, MarkerCategories, ZoomLevel } from '../../types';
 
-import { Marker, CustomMarker, LoadedMarkers, MarkerCategories } from './types';
+import { CustomMarker, LoadedMarkers } from './types';
 
 // markers that are lower on the screen will be layered on top of those being
 // higher in case they overlap

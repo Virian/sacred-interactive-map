@@ -17,16 +17,12 @@ import Tooltip from '@mui/material/Tooltip';
 import ZoomContext from '../../context/ZoomContext';
 import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
 import FiltersContext from '../../context/FiltersContext';
+import useFocusOnPoint from '../../shared/useFocusOnPoint';
+import { Marker, MarkerCategories } from '../../types';
 import markersData from '../../assets/markers.json';
 
 import './Map.scss';
-import {
-  LoadedImages,
-  LoadedMarkers,
-  Marker,
-  CustomMarker,
-  MarkerCategories,
-} from './types';
+import { LoadedImages, LoadedMarkers, CustomMarker } from './types';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMousePosition from './useMousePosition';
 import useMove from './useMove';
@@ -37,7 +33,6 @@ import drawMapTiles from './drawMapTiles';
 import drawMarkers from './drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
 import translateMapCoordsToGameCoords from './translateMapCoordsToGameCoords';
-import useFocusOnPoint from './useFocusOnPoint';
 
 const initialLoadedImages = getInitialLoadedImages();
 

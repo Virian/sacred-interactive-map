@@ -6,8 +6,6 @@
   --filter-menu-background: #444;
   --filter-menu-color: #e0e0e0;
   --filter-menu-separator: #888;
-  --filter-menu-button-background: #333;
-  --filter-menu-button-hover-background: #222;
   --filter-menu-filter-color-hover: #fff;
   --footer-background: rgba(255, 255, 255, 0.6);
   --tooltip-background: var(--filter-menu-background);
@@ -28,6 +26,19 @@
   --zoom-buttons-shadow: var(--tooltip-shadow);
   --zoom-buttons-separator: var(--filter-menu-separator);
   --zoom-buttons-hover-background: #333;
+  --search-input-border: var(--filter-menu-separator);
+  --search-input-border-active: var(--filter-menu-color);
+  --search-input-clear-button-hover: var(--filter-menu-color);
+  --search-dropdown-shadow: 0 5px 10px 2px rgba(0,0,0,0.8);
+  --search-dropdown-background: rgba(50,50,50,0.95);
+  --search-dropdown-background-hover: rgba(20,20,20,0.8);
+
+  // MUI colors
+  --mui-primary-main: #333;
+  --mui-primary-dark: #222;
+  --mui-text-primary: var(--filter-menu-color);
+  --mui-action-active: var(--filter-menu-separator);
+  --mui-outlined-input-border: #111;
 
   // z-indexes
   --filter-menu-z-index: 2;
@@ -35,6 +46,7 @@
   --tooltip-z-index: 1;
   --popup-z-index: 1;
   --zoom-buttons-z-index: 1;
+  --search-dropdown-z-index: 1;
 }
 
 body {
