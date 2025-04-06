@@ -20,7 +20,9 @@
     border: 10px solid transparent;
     border-bottom: 0;
     border-top-color: var(--tooltip-background);
-    transform: translateY(-1px); // for some tooltips there is a space between the arrow and content
+    transform: translateY(
+      -1px
+    ); // for some tooltips there is a space between the arrow and content
   }
 
   &__Content {
@@ -48,7 +50,9 @@
     border: 10px solid transparent;
     border-bottom: 0;
     border-top-color: var(--popup-background);
-    transform: translateY(-1px); // for some popops there is a space between the arrow and content
+    transform: translateY(
+      -1px
+    ); // for some popops there is a space between the arrow and content
   }
 
   &__Content {
@@ -71,7 +75,7 @@
     border: 0;
     background-color: transparent;
     color: var(--popup-color);
-    transition: color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
+    transition: color cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
     cursor: pointer;
 
     &:hover {
@@ -91,7 +95,7 @@
     border: 0;
     background-color: transparent;
     color: var(--popup-color);
-    transition: color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
+    transition: color cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
     cursor: pointer;
 
     &:hover {
@@ -133,8 +137,9 @@
     border: 1px solid var(--popup-cave-button-border);
     border-radius: 0.25rem;
     background-color: var(--popup-cave-button-background);
-    transition: background-color cubic-bezier(0.215, 0.610, 0.355, 1) .3s,
-      border-color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
+    transition:
+      background-color cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s,
+      border-color cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
     color: var(--popup-color);
     text-transform: uppercase;
     cursor: pointer;

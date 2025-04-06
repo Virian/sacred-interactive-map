@@ -34,7 +34,7 @@ const SearchInput = ({ className }: SearchInputProps) => {
 
   const focusOnPoint = useFocusOnPoint();
 
-  const inputRef = useRef<HTMLDivElement>();
+  const inputRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [searchValue, setSearchValue] = useState('');
   const [searchResults, setSearchResults] = useState<Array<Marker>>([]);

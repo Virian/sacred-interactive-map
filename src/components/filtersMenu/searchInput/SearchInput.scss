@@ -50,13 +50,14 @@
 
   &__Element {
     display: grid;
-    grid-template-areas: "icon label"
-                         ". description";
+    grid-template-areas:
+      'icon label'
+      '. description';
     justify-content: start;
     align-items: center;
     column-gap: 4px;
     padding: 0.3125rem 0.5rem;
-    transition: background-color cubic-bezier(0.215, 0.610, 0.355, 1) .3s;
+    transition: background-color cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
 
     &:hover {
       background-color: var(--search-dropdown-background-hover);
