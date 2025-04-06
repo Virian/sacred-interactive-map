@@ -9,7 +9,7 @@
   background-color: var(--filter-menu-background);
   color: var(--filter-menu-color);
   z-index: var(--filter-menu-z-index);
-  transition: transform cubic-bezier(0.215, 0.610, 0.355, 1) .2s;
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
 
   &.isHidden {
     transform: translateX(-100%);

@@ -1,4 +1,4 @@
-import { beforeAll, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { Marker } from '../../types';
 import getMarkerFromSearchParams from '../getMarkerFromSearchParams';
@@ -131,19 +131,18 @@ const cases: [string, Marker | undefined][] = [
 const originalWindowLocation = window.location;
 
 describe('getMarkerFromSearchParams', () => {
-  beforeAll(() => {
-    Reflect.deleteProperty(window, 'location');
-    window.location = {
-      ...originalWindowLocation,
-      search: '',
-    };
+  beforeEach(() => {
+    vi.restoreAllMocks();
   });
 
   it.each(cases)(
     'should return correct marker for search params %s',
     (searchParams, expectedResult) => {
       // given
-      window.location.search = searchParams;
+      vi.spyOn(window, 'location', 'get').mockReturnValue({
+        ...originalWindowLocation,
+        search: searchParams,
+      });
 
       // when
       const result = getMarkerFromSearchParams();

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import getTextWithHighlight from '../getTextWithHighlight';
 
-const cases: [string, Array<string | JSX.Element>][] = [
+const cases: [string, Array<string | React.JSX.Element>][] = [
   ['Lorem ipsum dolor sit amet', ['Lorem ipsum dolor sit amet']],
   [
     'Lorem ipsum **dolor** sit amet',
