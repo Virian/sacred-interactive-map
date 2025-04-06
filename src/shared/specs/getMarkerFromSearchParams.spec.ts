@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 
+import { Marker } from '../../types';
 import getMarkerFromSearchParams from '../getMarkerFromSearchParams';
-import { Marker } from '../../components/map/types';
 
 vi.mock('../../assets/markers.json', () => ({
   default: {

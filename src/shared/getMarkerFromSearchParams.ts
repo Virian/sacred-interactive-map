@@ -1,7 +1,7 @@
 import markersData from '../assets/markers.json';
 import { CUSTOM_MARKER_SIZE } from '../components/map/constants';
-import { MarkerCategories } from '../components/map/types';
 import { MAP_WIDTH, MAP_HEIGHT } from '../constants';
+import { MarkerCategories } from '../types';
 
 const getMarkerFromSearchParams = () => {
   const searchParams = new URLSearchParams(window.location.search);
