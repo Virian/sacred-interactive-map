@@ -38,7 +38,11 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
       searchParams.set('y', clickedMarker.y.toString());
     }
 
-    window.history.replaceState(null, '', `?${searchParams.toString()}`);
+    window.history.replaceState(
+      null,
+      '',
+      clickedMarker ? `?${searchParams.toString()}` : '/',
+    );
   }, [clickedMarker]);
 
   useEffect(() => {
