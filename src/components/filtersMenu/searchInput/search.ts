@@ -12,51 +12,49 @@ const allMarkers = Object.entries(markersData).flatMap(
     })),
 );
 
-const highlightText = (text: string, index: number, length: number) => {
-  if (index < 0) {
-    return text;
-  }
-
-  return (
-    text.slice(0, index) +
-    HIGHLIGHT_INDICATOR +
-    text.slice(index, index + length) +
-    HIGHLIGHT_INDICATOR +
-    text.slice(index + length)
-  );
-};
-
 const search = (phrase: string) => {
   if (!phrase) {
     return [];
   }
 
-  const lowerCasePhrase = phrase.toLocaleLowerCase();
+  const phraseRegex = new RegExp(
+    phrase
+      .split('')
+      .join(
+        '[\\!\\@\\#\\$\\%\\^\\&\\*\\)\\(\\+\\=\\.\\<\\>\\{\\}\\[\\]\\:\\;\\\'"\\|\\~\\`\\_\\-]*',
+      ),
+    'gi',
+  );
 
   const markersWithHighlights = allMarkers.reduce<{
     markersWithPhraseInLabel: Array<Marker>;
     markersWithPhraseInDescription: Array<Marker>;
   }>(
     (acc, marker) => {
-      const labelIndex = marker.label
-        .toLocaleLowerCase()
-        .indexOf(lowerCasePhrase);
-      const descriptionIndex =
-        marker.description?.toLocaleLowerCase().indexOf(lowerCasePhrase) ?? -1;
+      const isPhraseInLabel = Boolean(marker.label.match(phraseRegex));
+      const isPhraseInDescription = Boolean(
+        marker.description?.match(phraseRegex),
+      );
 
-      if (labelIndex === -1 && descriptionIndex === -1) {
+      if (!isPhraseInLabel && !isPhraseInDescription) {
         return acc;
       }
 
       const markerWithHighlight = {
         ...marker,
-        label: highlightText(marker.label, labelIndex, phrase.length),
+        label: marker.label.replace(
+          phraseRegex,
+          `${HIGHLIGHT_INDICATOR}$&${HIGHLIGHT_INDICATOR}`,
+        ),
         description: marker.description
-          ? highlightText(marker.description, descriptionIndex, phrase.length)
+          ? marker.description.replace(
+              phraseRegex,
+              `${HIGHLIGHT_INDICATOR}$&${HIGHLIGHT_INDICATOR}`,
+            )
           : marker.description,
       };
 
-      if (labelIndex > -1) {
+      if (isPhraseInLabel) {
         return {
           ...acc,
           markersWithPhraseInLabel: [
