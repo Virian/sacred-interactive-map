@@ -21,6 +21,10 @@ const cases: [string, Array<string | React.JSX.Element>][] = [
     'Lorem **ipsum** dolor **sit** amet',
     ['Lorem ', <mark>ipsum</mark>, ' dolor ', <mark>sit</mark>, ' amet'],
   ],
+  [
+    "L**or,em Ip.sum D?olor S'it Am!e**t",
+    ['L', <mark>or,em Ip.sum D?olor S'it Am!e</mark>, 't'],
+  ],
 ];
 
 describe('getTextWithHighlight', () => {
