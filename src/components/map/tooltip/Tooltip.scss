@@ -1,0 +1,28 @@
+.Tooltip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: var(--tooltip-z-index);
+
+  &__Arrow {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 0;
+    border-top-color: var(--tooltip-background);
+    transform: translateY(
+      -1px
+    ); // for some tooltips there is a space between the arrow and content
+  }
+
+  &__Content {
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    background-color: var(--tooltip-background);
+    color: var(--tooltip-color);
+    box-shadow: var(--tooltip-shadow);
+    pointer-events: auto;
+  }
+}

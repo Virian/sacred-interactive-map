@@ -32,6 +32,7 @@ interface MarkerData {
   description: string | null;
   linkedMarkerId?: string;
   size: number;
+  isFromExpansion?: boolean;
 }
 
 interface DrawMarkersParams {
@@ -78,6 +79,7 @@ const drawMarkers = async ({
       filterLabel,
       linkedMarkerId,
       size,
+      isFromExpansion,
     }) => {
       if (!filters[category] && category !== 'custom') {
         return;
@@ -115,6 +117,7 @@ const drawMarkers = async ({
           categoryFilterLabel: filterLabel,
           linkedMarkerId,
           size,
+          isFromExpansion,
         });
 
         context.shadowColor = '#000';
