@@ -877,8 +877,8 @@
       },
       {
         "id": "cave-hells-ridge-2",
-        "x": 29317,
-        "y": 3207,
+        "x": 25571,
+        "y": 1380,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
@@ -895,8 +895,8 @@
       },
       {
         "id": "cave-hells-ridge-3",
-        "x": 25571,
-        "y": 1380,
+        "x": 29317,
+        "y": 3207,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
