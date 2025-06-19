@@ -251,6 +251,1398 @@
       }
     ]
   },
+  "quests": {
+    "filterLabel": "Side quests",
+    "size": 32,
+    "markers": [
+      {
+        "id": "quest-ahil-tar-1",
+        "x": 26028,
+        "y": 13500,
+        "z": 0,
+        "label": "The Agent's Message",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-ahil-tar-2",
+        "x": 26083,
+        "y": 13390,
+        "z": 0,
+        "label": "Collect Orc Rings",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-alkazaba-3",
+        "x": 10783,
+        "y": 13116,
+        "z": 0,
+        "label": "Egg Thief",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-alkazaba-4",
+        "x": 10569,
+        "y": 13173,
+        "z": 0,
+        "label": "Lonely Tears",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-alkazaba-5",
+        "x": 11426,
+        "y": 12850,
+        "z": 0,
+        "label": "The Missing Mother",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-alkazaba-6",
+        "x": 16429,
+        "y": 12217,
+        "z": 0,
+        "label": "Runaway Virgin",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-alkazaba-7",
+        "x": 10823,
+        "y": 13215,
+        "z": 0,
+        "label": "The Stolen Chicken",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-alkazaba-8",
+        "x": 10548,
+        "y": 11500,
+        "z": 0,
+        "label": "Unintentional Visit",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-2",
+        "x": 27902,
+        "y": 11929,
+        "z": 0,
+        "label": "The Absent-Minded Sister",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-3",
+        "x": 28077,
+        "y": 12275,
+        "z": 0,
+        "label": "Angling without Bait",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-4",
+        "x": 28814,
+        "y": 12400,
+        "z": 0,
+        "label": "Arogarn the Forest Ranger",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bellevue-5",
+        "x": 29203,
+        "y": 11660,
+        "z": 0,
+        "label": "Burning Hatred",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-7",
+        "x": 29017,
+        "y": 19942,
+        "z": 0,
+        "label": "Missing Son",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bellevue-8",
+        "x": 28984,
+        "y": 11787,
+        "z": 0,
+        "label": "Pay Book",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-9",
+        "x": 29156,
+        "y": 12053,
+        "z": 0,
+        "label": "Sheepless in Bellevue",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-10",
+        "x": 28409,
+        "y": 11461,
+        "z": 1,
+        "label": "Tangleweed",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-11",
+        "x": 28044,
+        "y": 11987,
+        "z": 0,
+        "label": "War Bear",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-13",
+        "x": 29168,
+        "y": 11985,
+        "z": 0,
+        "label": "Wolf's Eyes",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-1",
+        "x": 27112,
+        "y": 9209,
+        "z": 0,
+        "label": "Ancarian Snow",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-2",
+        "x": 26782,
+        "y": 9097,
+        "z": 0,
+        "label": "An Officer and Gentleman",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-3",
+        "x": 26803,
+        "y": 9464,
+        "z": 0,
+        "label": "Arm of the Black Priest",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-4",
+        "x": 28093,
+        "y": 9417,
+        "z": 0,
+        "label": "The Axe of Galadius",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-braverock-5",
+        "x": 27537,
+        "y": 9465,
+        "z": 0,
+        "label": "Demon Food",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-6",
+        "x": 26657,
+        "y": 9064,
+        "z": 0,
+        "label": "Escort to the Thieves' District",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-7",
+        "x": 26799,
+        "y": 9412,
+        "z": 0,
+        "label": "Evil Fire Beasts",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-braverock-10",
+        "x": 27619,
+        "y": 8987,
+        "z": 0,
+        "label": "Law and Justice",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-13",
+        "x": 27244,
+        "y": 8952,
+        "z": 1,
+        "label": "Ornate Staff of Rituals",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-braverock-14",
+        "x": 27665,
+        "y": 8938,
+        "z": 0,
+        "label": "The Rescue of a Noble Lady",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-braverock-16",
+        "x": 40436,
+        "y": 14426,
+        "z": 0,
+        "label": "The Tournament",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravesbury-1",
+        "x": 25596,
+        "y": 10386,
+        "z": 0,
+        "label": "Bah Spider!",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravesbury-2",
+        "x": 26155,
+        "y": 10454,
+        "z": 0,
+        "label": "Books of Faith",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bravesbury-3",
+        "x": 26065,
+        "y": 10344,
+        "z": 0,
+        "label": "Hunt for Poachers",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravesbury-4",
+        "x": 24664,
+        "y": 10416,
+        "z": 0,
+        "label": "The Plans of the Brotherhood",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravesbury-5",
+        "x": 26324,
+        "y": 10823,
+        "z": 0,
+        "label": "Rose Bush",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bravesbury-6",
+        "x": 26608,
+        "y": 10670,
+        "z": 1,
+        "label": "Shoemaker's Basics",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bravesbury-7",
+        "x": 25149,
+        "y": 10785,
+        "z": 0,
+        "label": "Terrible Crime",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravewall-1",
+        "x": 29452,
+        "y": 9008,
+        "z": 0,
+        "label": "Desecration",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bravewall-3",
+        "x": 29895,
+        "y": 8979,
+        "z": 0,
+        "label": "Ilim Zhurag-Thalir",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravewall-4",
+        "x": 29446,
+        "y": 9037,
+        "z": 0,
+        "label": "Kalim-Khor",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravewall-5",
+        "x": 29659,
+        "y": 9244,
+        "z": 0,
+        "label": "Terrorflux",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-crows-rock-1",
+        "x": 23259,
+        "y": 8462,
+        "z": 0,
+        "label": "Captain Pigface",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-crows-rock-2",
+        "x": 22861,
+        "y": 8486,
+        "z": 0,
+        "label": "Finding the Document of a Decree",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-crows-rock-4",
+        "x": 23495,
+        "y": 8354,
+        "z": 0,
+        "label": "Helping the Poor",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-crows-rock-6",
+        "x": 22687,
+        "y": 8558,
+        "z": 0,
+        "label": "Promenade",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-drakenden-2",
+        "x": 32273,
+        "y": 12085,
+        "z": 1,
+        "label": "Fishy Business",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-drakenden-3",
+        "x": 31497,
+        "y": 11952,
+        "z": 0,
+        "label": "From Crawlers to Copper",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-drakenden-4",
+        "x": 31899,
+        "y": 11925,
+        "z": 1,
+        "label": "Hell Spawn",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-faeries-1",
+        "x": 20694,
+        "y": 9810,
+        "z": 1,
+        "label": "Evil Witch",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-faeries-2",
+        "x": 20538,
+        "y": 9671,
+        "z": 0,
+        "label": "Family Ties",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-faeries-3",
+        "x": 21044,
+        "y": 9857,
+        "z": 0,
+        "label": "Herd of Cattle",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-faeries-4",
+        "x": 20812,
+        "y": 9818,
+        "z": 0,
+        "label": "Poisoned Wells",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-faeries-5",
+        "x": 20863,
+        "y": 9752,
+        "z": 0,
+        "label": "Ronin",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-florentina-1",
+        "x": 21777,
+        "y": 10716,
+        "z": 0,
+        "label": "Children's Bugbear",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-florentina-2",
+        "x": 21933,
+        "y": 10730,
+        "z": 1,
+        "label": "Florentina and the Thieves",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-florentina-3",
+        "x": 21810,
+        "y": 10526,
+        "z": 0,
+        "label": "Hunters of the Night",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-florentina-4",
+        "x": 22323,
+        "y": 10723,
+        "z": 0,
+        "label": "Ravenous Beasts",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-florentina-5",
+        "x": 21609,
+        "y": 10748,
+        "z": 0,
+        "label": "Sera Elander's Father",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-florentina-6",
+        "x": 21894,
+        "y": 10357,
+        "z": 0,
+        "label": "Whispers in the Wind",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-gloomoor-2",
+        "x": 34663,
+        "y": 10993,
+        "z": 1,
+        "label": "Reliquary Casket",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-gloomoor-3",
+        "x": 34536,
+        "y": 11137,
+        "z": 0,
+        "label": "Rescue Mission",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-gloomoor-4",
+        "x": 34288,
+        "y": 11613,
+        "z": 0,
+        "label": "The Eye of Hell",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-gloomoor-5",
+        "x": 34434,
+        "y": 10734,
+        "z": 0,
+        "label": "The Lich Lord",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-1",
+        "x": 29094,
+        "y": 10757,
+        "z": 0,
+        "label": "Art Robbers",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-2",
+        "x": 29063,
+        "y": 11025,
+        "z": 0,
+        "label": "Assassins in the Family Crypt",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-4",
+        "x": 29174,
+        "y": 10723,
+        "z": 1,
+        "label": "Dragon Lungs",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hedgenton-5",
+        "x": 28917,
+        "y": 10725,
+        "z": 0,
+        "label": "Excursion",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hedgenton-6",
+        "x": 28761,
+        "y": 10573,
+        "z": 0,
+        "label": "Exterminator",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hedgenton-7",
+        "x": 29062,
+        "y": 10535,
+        "z": 0,
+        "label": "Forbidden Love",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-8",
+        "x": 29265,
+        "y": 10526,
+        "z": 0,
+        "label": "Intruders",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hedgenton-9",
+        "x": 29282,
+        "y": 10567,
+        "z": 0,
+        "label": "Robber Baron",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-10",
+        "x": 30526,
+        "y": 10279,
+        "z": 0,
+        "label": "The Abducted Woman",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hedgenton-11",
+        "x": 29376,
+        "y": 10444,
+        "z": 0,
+        "label": "The Gallows of Hedgenton",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-12",
+        "x": 29067,
+        "y": 10722,
+        "z": 1,
+        "label": "The Testament",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-highmarsh-1",
+        "x": 33478,
+        "y": 10207,
+        "z": 0,
+        "label": "A Dish Eaten Cold",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-highmarsh-2",
+        "x": 33278,
+        "y": 9935,
+        "z": 1,
+        "label": "Missing Expedition",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-highmarsh-3",
+        "x": 33208,
+        "y": 9951,
+        "z": 0,
+        "label": "Mother's Powder Container",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-highmarsh-4",
+        "x": 32909,
+        "y": 10516,
+        "z": 0,
+        "label": "Skull Collector",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-highmarsh-5",
+        "x": 32939,
+        "y": 9818,
+        "z": 0,
+        "label": "The Lost Daughter",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-highmarsh-7",
+        "x": 33228,
+        "y": 10026,
+        "z": 1,
+        "label": "Truffle Weed",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-khorad-1",
+        "x": 25040,
+        "y": 14264,
+        "z": 0,
+        "label": "The Scroll of Mhic'Dar-Mon",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-khorad-2",
+        "x": 25062,
+        "y": 14144,
+        "z": 0,
+        "label": "The Cowardly Dog",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-khorad-3",
+        "x": 25412,
+        "y": 14227,
+        "z": 0,
+        "label": "The Slaves of the Orcs",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-khorad-4",
+        "x": 26122,
+        "y": 15675,
+        "z": 0,
+        "label": "The Stranded Pirate",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mascarell-1",
+        "x": 18599,
+        "y": 9804,
+        "z": 0,
+        "label": "Boris Richfield",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mascarell-2",
+        "x": 18898,
+        "y": 10717,
+        "z": 0,
+        "label": "Groom on the Run",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mascarell-3",
+        "x": 19530,
+        "y": 10617,
+        "z": 0,
+        "label": "Lentil Liqueur",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mascarell-6",
+        "x": 19235,
+        "y": 10530,
+        "z": 0,
+        "label": "The Painting",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mascarell-7",
+        "x": 19182,
+        "y": 10339,
+        "z": 0,
+        "label": "The Stolen Gold",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-moorbrook-1",
+        "x": 34420,
+        "y": 12669,
+        "z": 0,
+        "label": "Accursed Ruins",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-moorbrook-2",
+        "x": 34447,
+        "y": 12750,
+        "z": 0,
+        "label": "The Narcotic Witch",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-moorbrook-4",
+        "x": 34486,
+        "y": 12752,
+        "z": 0,
+        "label": "Sore Head",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-moorbrook-6",
+        "x": 34064,
+        "y": 12967,
+        "z": 0,
+        "label": "The Spider Monster of Moorbrook",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mystdale-1",
+        "x": 31341,
+        "y": 13554,
+        "z": 1,
+        "label": "Death to the Ogre Referee",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mystdale-2",
+        "x": 31767,
+        "y": 13130,
+        "z": 0,
+        "label": "Eldritch Apparitions",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mystdale-3",
+        "x": 32412,
+        "y": 13362,
+        "z": 0,
+        "label": "Finding Fyren",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mystdale-5",
+        "x": 32086,
+        "y": 13599,
+        "z": 0,
+        "label": "The Lost Experimental Beings",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mystdale-6",
+        "x": 31668,
+        "y": 13516,
+        "z": 0,
+        "label": "The Regentium Silver Blossom",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mystdale-7",
+        "x": 31716,
+        "y": 13582,
+        "z": 0,
+        "label": "Wrong Choice of Words",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-draco-2",
+        "x": 19786,
+        "y": 11214,
+        "z": 0,
+        "label": "Dancer of the Dead",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-draco-3",
+        "x": 19989,
+        "y": 11137,
+        "z": 1,
+        "label": "Death to the Brigands",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-draco-5",
+        "x": 19864,
+        "y": 11136,
+        "z": 0,
+        "label": "Nucquam Astralis",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-draco-6",
+        "x": 19800,
+        "y": 11138,
+        "z": 0,
+        "label": "The Robber's Camp",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vallum-1",
+        "x": 23498,
+        "y": 11390,
+        "z": 0,
+        "label": "Cattle Rustlers",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vallum-2",
+        "x": 23575,
+        "y": 11560,
+        "z": 1,
+        "label": "The Favorite Shirt",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vallum-4",
+        "x": 23986,
+        "y": 11563,
+        "z": 0,
+        "label": "The Lost Map",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vallum-5",
+        "x": 23724,
+        "y": 11556,
+        "z": 0,
+        "label": "The Medicine Bag",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vallum-6",
+        "x": 23365,
+        "y": 11764,
+        "z": 0,
+        "label": "Orcs!",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vallum-7",
+        "x": 23621,
+        "y": 11647,
+        "z": 0,
+        "label": "Orc Slayer",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vallum-8",
+        "x": 23820,
+        "y": 11462,
+        "z": 0,
+        "label": "Stolen Iron Bars",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-shires-2",
+        "x": 24408,
+        "y": 9465,
+        "z": 0,
+        "label": "Compromising Situation",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-shires-3",
+        "x": 24967,
+        "y": 9089,
+        "z": 1,
+        "label": "Dark Conjuration",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-shires-4",
+        "x": 24070,
+        "y": 9284,
+        "z": 0,
+        "label": "Poacher",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-shires-5",
+        "x": 24254,
+        "y": 9347,
+        "z": 0,
+        "label": "Rascals",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-silver-1",
+        "x": 27394,
+        "y": 11812,
+        "z": 0,
+        "label": "Adelina",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-silver-2",
+        "x": 27204,
+        "y": 12053,
+        "z": 0,
+        "label": "A Tragic Loss",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-silver-4",
+        "x": 27299,
+        "y": 11909,
+        "z": 0,
+        "label": "Escort",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-silver-5",
+        "x": 27097,
+        "y": 11925,
+        "z": 1,
+        "label": "Evil Shamans",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-silver-6",
+        "x": 25569,
+        "y": 11563,
+        "z": 0,
+        "label": "Green Plague",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-silver-7",
+        "x": 26966,
+        "y": 12008,
+        "z": 0,
+        "label": "Salted Meat",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-silver-8",
+        "x": 27097,
+        "y": 11950,
+        "z": 0,
+        "label": "Shining Light",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-silver-9",
+        "x": 26952,
+        "y": 11522,
+        "z": 0,
+        "label": "The Thirsty Gravedigger",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-slaters-1",
+        "x": 22559,
+        "y": 7523,
+        "z": 0,
+        "label": "Abduction of the Women of Slater's Grave",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-slaters-2",
+        "x": 22368,
+        "y": 7519,
+        "z": 1,
+        "label": "Spring Water",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-slaters-3",
+        "x": 22531,
+        "y": 7466,
+        "z": 1,
+        "label": "The Axe Rock Splitter",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-slaters-4",
+        "x": 21702,
+        "y": 7851,
+        "z": 0,
+        "label": "The Merchant of Slater's Grave",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-timberton-1",
+        "x": 19910,
+        "y": 8334,
+        "z": 0,
+        "label": "Blood Money",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-timberton-2",
+        "x": 19989,
+        "y": 8373,
+        "z": 0,
+        "label": "Hunting Blood Bears",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-timberton-3",
+        "x": 20011,
+        "y": 8253,
+        "z": 1,
+        "label": "Stone Sample",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-timberton-4",
+        "x": 19946,
+        "y": 8309,
+        "z": 0,
+        "label": "The Tree of Life",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-timberton-5",
+        "x": 20051,
+        "y": 8279,
+        "z": 0,
+        "label": "Traces of the Forest Rangers",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-fasul-1",
+        "x": 17330,
+        "y": 9380,
+        "z": 0,
+        "label": "Guard Wolf",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fasul-5",
+        "x": 14957,
+        "y": 7293,
+        "z": 0,
+        "label": "Elven Lady from Tyr-Hadar",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-urkenburgh-1",
+        "x": 23889,
+        "y": 12464,
+        "z": 0,
+        "label": "Braggart?",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-urkenburgh-2",
+        "x": 23913,
+        "y": 12460,
+        "z": 0,
+        "label": "The Merchant's Message",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-wolfdale-1",
+        "x": 24742,
+        "y": 7549,
+        "z": 0,
+        "label": "Elven Art Robbery",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-wolfdale-3",
+        "x": 24486,
+        "y": 7436,
+        "z": 0,
+        "label": "Missing Lumberjacks",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-wolfdale-4",
+        "x": 24319,
+        "y": 7431,
+        "z": 0,
+        "label": "Tax Collectors",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-wolfdale-5",
+        "x": 25344,
+        "y": 7975,
+        "z": 0,
+        "label": "The Search for Peace",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-wolfdale-6",
+        "x": 23929,
+        "y": 7650,
+        "z": 0,
+        "label": "Wolf's Blood",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vot-2",
+        "x": 1186,
+        "y": 12901,
+        "z": 0,
+        "label": "The Epidemic",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vot-3",
+        "x": 18478,
+        "y": 4950,
+        "z": 0,
+        "label": "The Imprisoned Thief",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vot-4",
+        "x": 17284,
+        "y": 5466,
+        "z": 0,
+        "label": "Looking for Bears",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vot-5",
+        "x": 17720,
+        "y": 6682,
+        "z": 0,
+        "label": "The Painter's Lock of Hair",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vot-6",
+        "x": 17720,
+        "y": 6586,
+        "z": 0,
+        "label": "Revolution",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dwarven-2",
+        "x": 26450,
+        "y": 6905,
+        "z": 0,
+        "label": "The Dwarven Mine",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dryad-2",
+        "x": 30309,
+        "y": 5969,
+        "z": 0,
+        "label": "The Hag in the Tree",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dryad-3",
+        "x": 31668,
+        "y": 5523,
+        "z": 0,
+        "label": "Hunting Druids",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-1",
+        "x": 26923,
+        "y": 5501,
+        "z": 1,
+        "label": "Desecrated Graves",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-2",
+        "x": 24108,
+        "y": 4676,
+        "z": 0,
+        "label": "For a Handful of Fools",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-3",
+        "x": 26777,
+        "y": 5380,
+        "z": 0,
+        "label": "Insect Blood for the Healer",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-5",
+        "x": 23853,
+        "y": 4303,
+        "z": 0,
+        "label": "The Swarm of Hornets",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-naguali-2",
+        "x": 21216,
+        "y": 12529,
+        "z": 0,
+        "label": "An Eerie Graveyard",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-3",
+        "x": 25795,
+        "y": 4043,
+        "z": 0,
+        "label": "Localization Spell",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hells-1",
+        "x": 29523,
+        "y": 3002,
+        "z": 0,
+        "label": "Terror Heads",
+        "description": null,
+        "isFromExpansion": true
+      }
+    ]
+  },
   "chests": {
     "filterLabel": "Personal Stash",
     "size": 32,
