@@ -6,13 +6,8 @@ import {
   useContext,
   MouseEvent,
 } from 'react';
-import CloseIcon from '@mui/icons-material/Close';
-import LinkIcon from '@mui/icons-material/Link';
-import WarningIcon from '@mui/icons-material/WarningAmber';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import Tooltip from '@mui/material/Tooltip';
 
 import ZoomContext from '../../context/ZoomContext';
 import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
@@ -23,6 +18,8 @@ import markersData from '../../assets/markers.json';
 
 import './Map.scss';
 import { LoadedImages, LoadedMarkers, CustomMarker } from './types';
+import Popup from './popup/Popup';
+import MapTooltip from './tooltip/Tooltip';
 import getInitialLoadedImages from './getInitialLoadedImages';
 import useMousePosition from './useMousePosition';
 import useMove from './useMove';
@@ -32,7 +29,6 @@ import useCopyLinkToClipboard from './useCopyLinkToClipboard';
 import drawMapTiles from './drawMapTiles';
 import drawMarkers from './drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
-import translateMapCoordsToGameCoords from './translateMapCoordsToGameCoords';
 
 const initialLoadedImages = getInitialLoadedImages();
 
@@ -241,8 +237,7 @@ const Map = () => {
         />
       </div>
       {hoveredMarker?.label && hoveredMarker.id !== clickedMarker?.id ? (
-        <div
-          className="Tooltip"
+        <MapTooltip
           style={{
             transform: `translate(calc(-50% + ${
               hoveredMarker.size / 2
@@ -251,71 +246,21 @@ const Map = () => {
             }px)`,
           }}
         >
-          <span className="Tooltip__Content">{hoveredMarker.label}</span>
-          <span className="Tooltip__Arrow" />
-        </div>
+          {hoveredMarker.label}
+        </MapTooltip>
       ) : null}
       {clickedMarker?.label ? (
-        <div
-          className="Popup"
+        <Popup
+          marker={clickedMarker}
           style={{
             transform: `translate(calc(-50% + ${
               clickedMarker.size / 2
             }px), -100%) translate(${clickedMarkerTranslateX}px, ${clickedMarkerTranslateY}px)`,
           }}
-        >
-          <div className="Popup__Content">
-            <button
-              className="Popup__CloseButton"
-              title="Close popup"
-              onClick={() => setClickedMarker(null)}
-            >
-              <CloseIcon />
-            </button>
-            <h3 className="Popup__Title">
-              {clickedMarker.label}
-              <button
-                className="Popup__LinkButton"
-                title="Copy link to clipboard"
-                onClick={copyLinkToClipboard}
-              >
-                <LinkIcon />
-              </button>
-            </h3>
-            <i className="Popup__Category">
-              {clickedMarker.categoryFilterLabel}
-            </i>
-            <span className="Popup__Coordinates">
-              In-game coordinates: [
-              {Object.values(translateMapCoordsToGameCoords(clickedMarker))
-                .concat(clickedMarker.z)
-                .join(', ')}
-              ]
-              <Tooltip
-                title="Coordinates are approximate and may slightly differ from actual in-game coordinates"
-                placement="right"
-              >
-                <WarningIcon className="Popup__CoordinatesWarningIcon" />
-              </Tooltip>
-            </span>
-            {clickedMarker.description ? (
-              <span className="Popup__Description">
-                {clickedMarker.description}
-              </span>
-            ) : null}
-            {clickedMarker.linkedMarkerId ? (
-              <button
-                className="Popup__EnterCaveButton"
-                title="Enter the cave"
-                onClick={handleEnterCaveButton}
-              >
-                enter{' '}
-                <ChevronRightIcon className="Popup__EnterCaveButtonIcon" />
-              </button>
-            ) : null}
-          </div>
-          <span className="Popup__Arrow" />
-        </div>
+          onClose={() => setClickedMarker(null)}
+          onLinkButtonClick={copyLinkToClipboard}
+          onEnterCaveButtonClick={handleEnterCaveButton}
+        />
       ) : null}
       <Snackbar
         open={isClipboardInfoOpen}

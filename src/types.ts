@@ -27,4 +27,5 @@ export type Marker = Coords & {
   categoryFilterLabel: string;
   linkedMarkerId?: string;
   size: number;
+  isFromExpansion?: boolean;
 };

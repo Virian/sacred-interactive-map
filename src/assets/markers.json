@@ -37,8 +37,8 @@
       },
       {
         "id": "dragon-5",
-        "x": 31860,
-        "y": 11715,
+        "x": 31845,
+        "y": 11695,
         "z": 0,
         "label": "Loromir",
         "description": "This dragon is not hostile."
@@ -251,6 +251,2226 @@
       }
     ]
   },
+  "quests": {
+    "filterLabel": "Side quests",
+    "size": 32,
+    "markers": [
+      {
+        "id": "quest-ahil-tar-1",
+        "x": 26028,
+        "y": 13500,
+        "z": 0,
+        "label": "The Agent's Message",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-ahil-tar-2",
+        "x": 26083,
+        "y": 13390,
+        "z": 0,
+        "label": "Collect Orc Rings",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-ahil-tar-3",
+        "x": 26141,
+        "y": 13468,
+        "z": 0,
+        "label": "Merely a Nightmare?",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-ahil-tar-4",
+        "x": 25936,
+        "y": 13464,
+        "z": 0,
+        "label": "The Riddle in the Desert",
+        "description": "The correct urn to choose during the quest is the one on the far right.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-ahil-tar-5",
+        "x": 25948,
+        "y": 13423,
+        "z": 0,
+        "label": "Scout Post",
+        "description": "It's the first quest out of 4 quests from the commander.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-ahil-tar-6",
+        "x": 25968,
+        "y": 13423,
+        "z": 0,
+        "label": "Settlers of the Desert",
+        "description": "It's the second quest out of 4 quests from the commander.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-ahil-tar-7",
+        "x": 25948,
+        "y": 13443,
+        "z": 0,
+        "label": "The Lost Settlers",
+        "description": "It's the third quest out of 4 quests from the commander.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-ahil-tar-8",
+        "x": 25968,
+        "y": 13443,
+        "z": 0,
+        "label": "Evacuation",
+        "description": "It's the fourth quest out of 4 quests from the commander. You can later find the settlers in Bellevue, they will thank you but won't give any reward.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-alkazaba-1",
+        "x": 11302,
+        "y": 12995,
+        "z": 0,
+        "label": "Dragon Scale",
+        "description": "As a reward for this quest, you get a unique item Scale of a Dragon. The quest giver turns into a blacksmith after completing the quest.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-alkazaba-2",
+        "x": 11064,
+        "y": 13024,
+        "z": 0,
+        "label": "Dragon Slayer",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-alkazaba-3",
+        "x": 10783,
+        "y": 13116,
+        "z": 0,
+        "label": "Egg Thief",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-alkazaba-4",
+        "x": 10569,
+        "y": 13173,
+        "z": 0,
+        "label": "Lonely Tears",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-alkazaba-5",
+        "x": 11426,
+        "y": 12850,
+        "z": 0,
+        "label": "The Missing Mother",
+        "description": "The quest giver is not marked with a white dot on the minimap.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-alkazaba-6",
+        "x": 16429,
+        "y": 12217,
+        "z": 0,
+        "label": "Runaway Virgin",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-alkazaba-7",
+        "x": 10823,
+        "y": 13215,
+        "z": 0,
+        "label": "The Stolen Chicken",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-alkazaba-8",
+        "x": 10548,
+        "y": 11500,
+        "z": 0,
+        "label": "Unintentional Visit",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-1",
+        "x": 28281,
+        "y": 11675,
+        "z": 0,
+        "label": "Abducted",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bellevue-2",
+        "x": 27902,
+        "y": 11929,
+        "z": 0,
+        "label": "The Absent-Minded Sister",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-3",
+        "x": 28077,
+        "y": 12275,
+        "z": 0,
+        "label": "Angling without Bait",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-4",
+        "x": 28814,
+        "y": 12400,
+        "z": 0,
+        "label": "Arogarn the Forest Ranger",
+        "description": "This quest needs to be completed first before the \"Arogarn's Sword\" quest.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bellevue-5",
+        "x": 29203,
+        "y": 11660,
+        "z": 0,
+        "label": "Burning Hatred",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-6",
+        "x": 29140,
+        "y": 11590,
+        "z": 0,
+        "label": "Messenger",
+        "description": "After completing the quest, you can go back to Sandra (the quest giver) to get additional reward which has a relatively high chance to be an item from the Icons set.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bellevue-7",
+        "x": 29017,
+        "y": 19942,
+        "z": 0,
+        "label": "Missing Son",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bellevue-8",
+        "x": 28984,
+        "y": 11787,
+        "z": 0,
+        "label": "Pay Book",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-9",
+        "x": 29156,
+        "y": 12053,
+        "z": 0,
+        "label": "Sheepless in Bellevue",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-10",
+        "x": 28409,
+        "y": 11461,
+        "z": 1,
+        "label": "Tangleweed",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-11",
+        "x": 28044,
+        "y": 11987,
+        "z": 0,
+        "label": "War Bear",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-12",
+        "x": 28879,
+        "y": 11771,
+        "z": 0,
+        "label": "Where is the Blacksmith?",
+        "description": "As a reward for this quest, you get a unique sword Hack. This is a pre-requisite quest before the third quest from the Unknown Warrior series, \"Jacquaire's Revenge\".",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bellevue-13",
+        "x": 29168,
+        "y": 11985,
+        "z": 0,
+        "label": "Wolf's Eyes",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-1",
+        "x": 27112,
+        "y": 9209,
+        "z": 0,
+        "label": "Ancarian Snow",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-2",
+        "x": 26782,
+        "y": 9097,
+        "z": 0,
+        "label": "An Officer and Gentleman",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-3",
+        "x": 26803,
+        "y": 9464,
+        "z": 0,
+        "label": "Arm of the Black Priest",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-4",
+        "x": 28093,
+        "y": 9417,
+        "z": 0,
+        "label": "The Axe of Galadius",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-braverock-5",
+        "x": 27537,
+        "y": 9465,
+        "z": 0,
+        "label": "Demon Food",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-6",
+        "x": 26657,
+        "y": 9064,
+        "z": 0,
+        "label": "Escort to the Thieves' District",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-7",
+        "x": 26799,
+        "y": 9412,
+        "z": 0,
+        "label": "Evil Fire Beasts",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-braverock-8",
+        "x": 27016,
+        "y": 9244,
+        "z": 0,
+        "label": "Goods Messenger",
+        "description": "The quest giver turns into a merchant after completing the quest, creating the so-called Bravemart.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-9",
+        "x": 27675,
+        "y": 9033,
+        "z": 1,
+        "label": "Jacquaire's Battle Uniform",
+        "description": "It's the second quest out of 3 quests from the Unknown Warrior series. Make sure to cross the bridge between Mascarell and Tyr-Fasul to spawn Jacquaire in Braverock.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-10",
+        "x": 27619,
+        "y": 8987,
+        "z": 0,
+        "label": "Law and Justice",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-11",
+        "x": 26766,
+        "y": 9285,
+        "z": 0,
+        "label": "Magical Thistle",
+        "description": "After completing the quest and talking to Tussock again, he's going to turn into a merchant.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-12",
+        "x": 28165,
+        "y": 9258,
+        "z": 0,
+        "label": "Moca the Minotaur",
+        "description": "If you accept the minotaur's offer during the quest, he can later be used as a companion. When the region is at peace (after completing most side quests in the area), you can come back to him and he will join your party. If he dies, he becomes available to join again in the Bellevue garrison.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-13",
+        "x": 27244,
+        "y": 8952,
+        "z": 1,
+        "label": "Ornate Staff of Rituals",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-braverock-14",
+        "x": 27665,
+        "y": 8938,
+        "z": 0,
+        "label": "The Rescue of a Noble Lady",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-braverock-15",
+        "x": 26877,
+        "y": 9025,
+        "z": 0,
+        "label": "The Snow Hare",
+        "description": "The quest giver is not marked with a white dot on the minimap.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-braverock-16",
+        "x": 40436,
+        "y": 14426,
+        "z": 0,
+        "label": "The Tournament",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravesbury-1",
+        "x": 25596,
+        "y": 10386,
+        "z": 0,
+        "label": "Bah Spider!",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravesbury-2",
+        "x": 26155,
+        "y": 10454,
+        "z": 0,
+        "label": "Books of Faith",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bravesbury-3",
+        "x": 26065,
+        "y": 10344,
+        "z": 0,
+        "label": "Hunt for Poachers",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravesbury-4",
+        "x": 24664,
+        "y": 10416,
+        "z": 0,
+        "label": "The Plans of the Brotherhood",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravesbury-5",
+        "x": 26324,
+        "y": 10823,
+        "z": 0,
+        "label": "Rose Bush",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bravesbury-6",
+        "x": 26608,
+        "y": 10670,
+        "z": 1,
+        "label": "Shoemaker's Basics",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bravesbury-7",
+        "x": 25149,
+        "y": 10785,
+        "z": 0,
+        "label": "Terrible Crime",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravewall-1",
+        "x": 29452,
+        "y": 9008,
+        "z": 0,
+        "label": "Desecration",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-bravewall-2",
+        "x": 31446,
+        "y": 9474,
+        "z": 0,
+        "label": "Dreamer of Winters",
+        "description": "To spawn the quest giver, you have to walk through one of the entrances to Bravewall.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravewall-3",
+        "x": 29895,
+        "y": 8979,
+        "z": 0,
+        "label": "Ilim Zhurag-Thalir",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravewall-4",
+        "x": 29446,
+        "y": 9037,
+        "z": 0,
+        "label": "Kalim-Khor",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-bravewall-5",
+        "x": 29659,
+        "y": 9244,
+        "z": 0,
+        "label": "Terrorflux",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-crows-rock-1",
+        "x": 23259,
+        "y": 8462,
+        "z": 0,
+        "label": "Captain Pigface",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-crows-rock-2",
+        "x": 22861,
+        "y": 8486,
+        "z": 0,
+        "label": "Finding the Document of a Decree",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-crows-rock-3",
+        "x": 22114,
+        "y": 8663,
+        "z": 0,
+        "label": "The Gypsy Camp",
+        "description": "You need to wait for the quest giver to walk to the camp to be able to talk to her and finish the quest.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-crows-rock-4",
+        "x": 23495,
+        "y": 8354,
+        "z": 0,
+        "label": "Helping the Poor",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-crows-rock-5",
+        "x": 22923,
+        "y": 8396,
+        "z": 0,
+        "label": "Inquisition Plans",
+        "description": "You need to walk around the edge of the fort to avoid being seen, otherwise the quest fails.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-crows-rock-6",
+        "x": 22687,
+        "y": 8558,
+        "z": 0,
+        "label": "Promenade",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-drakenden-1",
+        "x": 31163,
+        "y": 11447,
+        "z": 0,
+        "label": "Arogarn's Sword",
+        "description": "This quest is only available if you have already completed \"Arogarn the Forest Ranger\" in Bellevue.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-drakenden-2",
+        "x": 32273,
+        "y": 12085,
+        "z": 1,
+        "label": "Fishy Business",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-drakenden-3",
+        "x": 31497,
+        "y": 11952,
+        "z": 0,
+        "label": "From Crawlers to Copper",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-drakenden-4",
+        "x": 31899,
+        "y": 11925,
+        "z": 1,
+        "label": "Hell Spawn",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-drakenden-5",
+        "x": 31870,
+        "y": 11695,
+        "z": 0,
+        "label": "The Female Dragonslayer",
+        "description": "It's the first quest out of 3 quests from Loromir series.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-drakenden-6",
+        "x": 31845,
+        "y": 11720,
+        "z": 0,
+        "label": "Toothpick for a Dragon",
+        "description": "It's the second quest out of 3 quests from Loromir series.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-drakenden-7",
+        "x": 31870,
+        "y": 11720,
+        "z": 0,
+        "label": "Brother of the Dragon",
+        "description": "It's the third quest out of 3 quests from Loromir series. As a reward for this quest, you get a magic item Orbus Dracos.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-faeries-1",
+        "x": 20694,
+        "y": 9810,
+        "z": 1,
+        "label": "Evil Witch",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-faeries-2",
+        "x": 20538,
+        "y": 9671,
+        "z": 0,
+        "label": "Family Ties",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-faeries-3",
+        "x": 21044,
+        "y": 9857,
+        "z": 0,
+        "label": "Herd of Cattle",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-faeries-4",
+        "x": 20812,
+        "y": 9818,
+        "z": 0,
+        "label": "Poisoned Wells",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-faeries-5",
+        "x": 20863,
+        "y": 9752,
+        "z": 0,
+        "label": "Ronin",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-florentina-1",
+        "x": 21777,
+        "y": 10716,
+        "z": 0,
+        "label": "Children's Bugbear",
+        "description": "The quest giver is not marked with a white dot on the minimap.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-florentina-2",
+        "x": 21933,
+        "y": 10730,
+        "z": 1,
+        "label": "Florentina and the Thieves",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-florentina-3",
+        "x": 21810,
+        "y": 10526,
+        "z": 0,
+        "label": "Hunters of the Night",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-florentina-4",
+        "x": 22323,
+        "y": 10723,
+        "z": 0,
+        "label": "Ravenous Beasts",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-florentina-5",
+        "x": 21609,
+        "y": 10748,
+        "z": 0,
+        "label": "Sera Elander's Father",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-florentina-6",
+        "x": 21894,
+        "y": 10357,
+        "z": 0,
+        "label": "Whispers in the Wind",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-gloomoor-1",
+        "x": 34575,
+        "y": 11151,
+        "z": 0,
+        "label": "Antidote",
+        "description": "You need to kill Tarantula Medialis, not Tarantula Gravis like the NPC says.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-gloomoor-2",
+        "x": 34663,
+        "y": 10993,
+        "z": 1,
+        "label": "Reliquary Casket",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-gloomoor-3",
+        "x": 34536,
+        "y": 11137,
+        "z": 0,
+        "label": "Rescue Mission",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-gloomoor-4",
+        "x": 34288,
+        "y": 11613,
+        "z": 0,
+        "label": "The Eye of Hell",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-gloomoor-5",
+        "x": 34434,
+        "y": 10734,
+        "z": 0,
+        "label": "The Lich Lord",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-gloomoor-6",
+        "x": 43776,
+        "y": 14812,
+        "z": 0,
+        "label": "Panem et Circensis",
+        "description": "This is a pre-requisite quest to get to Azschabrag Swamps. In order to be able to get there, you need to win at least 5 rounds. The maximum number of rounds is 9.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-gloomoor-7",
+        "x": 34548,
+        "y": 11220,
+        "z": 0,
+        "label": "Tomb Raiders: Treasure Hunters Inc.",
+        "description": "It's the first quest out of 3 quests from Swamps of Azschabrag series. You need to win at least 5 rounds in the arena during \"Panem et Circensis\" beforehand. You will also need to pay 100.000 gold to start the quest.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-gloomoor-8",
+        "x": 31389,
+        "y": 11052,
+        "z": 0,
+        "label": "The Forgotten Swamps of Azschabrag",
+        "description": "It's the second quest out of 3 quests from Swamps of Azschabrag series. It can only be completed after finishing the next quest, \"H'Runga'zz\".",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-gloomoor-9",
+        "x": 31580,
+        "y": 10573,
+        "z": 0,
+        "label": "H'Runga'zz",
+        "description": "It's the third quest out of 3 quests from Swamps of Azschabrag series. You need to accept Goblin's offer to successfully complete the quest.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-1",
+        "x": 29094,
+        "y": 10757,
+        "z": 0,
+        "label": "Art Robbers",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-2",
+        "x": 29063,
+        "y": 11025,
+        "z": 0,
+        "label": "Assassins in the Family Crypt",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-3",
+        "x": 29027,
+        "y": 10812,
+        "z": 0,
+        "label": "Blockade Breaker of the Trade Embargo",
+        "description": "The quest giver turns into a blacksmith after completing the quest.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-4",
+        "x": 29174,
+        "y": 10723,
+        "z": 1,
+        "label": "Dragon Lungs",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hedgenton-5",
+        "x": 28917,
+        "y": 10725,
+        "z": 0,
+        "label": "Excursion",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hedgenton-6",
+        "x": 28761,
+        "y": 10573,
+        "z": 0,
+        "label": "Exterminator",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hedgenton-7",
+        "x": 29062,
+        "y": 10535,
+        "z": 0,
+        "label": "Forbidden Love",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-8",
+        "x": 29265,
+        "y": 10526,
+        "z": 0,
+        "label": "Intruders",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hedgenton-9",
+        "x": 29282,
+        "y": 10567,
+        "z": 0,
+        "label": "Robber Baron",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-10",
+        "x": 30526,
+        "y": 10279,
+        "z": 0,
+        "label": "The Abducted Woman",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hedgenton-11",
+        "x": 29376,
+        "y": 10444,
+        "z": 0,
+        "label": "The Gallows of Hedgenton",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-hedgenton-12",
+        "x": 29067,
+        "y": 10722,
+        "z": 1,
+        "label": "The Testament",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-highmarsh-1",
+        "x": 33478,
+        "y": 10207,
+        "z": 0,
+        "label": "A Dish Eaten Cold",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-highmarsh-2",
+        "x": 33278,
+        "y": 9935,
+        "z": 1,
+        "label": "Missing Expedition",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-highmarsh-3",
+        "x": 33208,
+        "y": 9951,
+        "z": 0,
+        "label": "Mother's Powder Container",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-highmarsh-4",
+        "x": 32909,
+        "y": 10516,
+        "z": 0,
+        "label": "Skull Collector",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-highmarsh-5",
+        "x": 32939,
+        "y": 9818,
+        "z": 0,
+        "label": "The Lost Daughter",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-highmarsh-6",
+        "x": 33129,
+        "y": 10082,
+        "z": 1,
+        "label": "The Missing Pet",
+        "description": "The quest giver is not marked with a white dot on the minimap.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-highmarsh-7",
+        "x": 33228,
+        "y": 10026,
+        "z": 1,
+        "label": "Truffle Weed",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-khorad-1",
+        "x": 25040,
+        "y": 14264,
+        "z": 0,
+        "label": "The Scroll of Mhic'Dar-Mon",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-khorad-2",
+        "x": 25062,
+        "y": 14144,
+        "z": 0,
+        "label": "The Cowardly Dog",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-khorad-3",
+        "x": 25412,
+        "y": 14227,
+        "z": 0,
+        "label": "The Slaves of the Orcs",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-khorad-4",
+        "x": 26122,
+        "y": 15675,
+        "z": 0,
+        "label": "The Stranded Pirate",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-khorad-5",
+        "x": 24907,
+        "y": 14280,
+        "z": 0,
+        "label": "The Camp of the Undead",
+        "description": "This quest is only available during the campaign. You need to accept the gatekeeper's offer to get this quest.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mascarell-1",
+        "x": 18599,
+        "y": 9804,
+        "z": 0,
+        "label": "Boris Richfield",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mascarell-2",
+        "x": 18898,
+        "y": 10717,
+        "z": 0,
+        "label": "Groom on the Run",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mascarell-3",
+        "x": 19530,
+        "y": 10617,
+        "z": 0,
+        "label": "Lentil Liqueur",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mascarell-4",
+        "x": 19355,
+        "y": 10635,
+        "z": 0,
+        "label": "Pony Express",
+        "description": "This quest is only available during the campaign after escorting Vilya to Tyr-Fasul and letting Shareefa open the portal to Ahil-Tar. The quest has a time limit (for instance, to get to the first destination you have about 90 seconds) so you will need to hurry up.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mascarell-5",
+        "x": 18832,
+        "y": 10689,
+        "z": 0,
+        "label": "Sneaking Around",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mascarell-6",
+        "x": 19235,
+        "y": 10530,
+        "z": 0,
+        "label": "The Painting",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mascarell-7",
+        "x": 19182,
+        "y": 10339,
+        "z": 0,
+        "label": "The Stolen Gold",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-moorbrook-1",
+        "x": 34420,
+        "y": 12669,
+        "z": 0,
+        "label": "Accursed Ruins",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-moorbrook-2",
+        "x": 34447,
+        "y": 12750,
+        "z": 0,
+        "label": "The Narcotic Witch",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-moorbrook-3",
+        "x": 34374,
+        "y": 12397,
+        "z": 0,
+        "label": "Pure Water",
+        "description": "If you accepted the Rapso's offer, you can drink the antidote to get rid of the poison effect.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-moorbrook-4",
+        "x": 34486,
+        "y": 12752,
+        "z": 0,
+        "label": "Sore Head",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-moorbrook-5",
+        "x": 34567,
+        "y": 12429,
+        "z": 1,
+        "label": "Special Flavor",
+        "description": "Quest item name doesn't appear when using \"Alt\" key, it doesn't appear either when hovering over the item but the item is visible on the minimap as a yellow dot.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-moorbrook-6",
+        "x": 34064,
+        "y": 12967,
+        "z": 0,
+        "label": "The Spider Monster of Moorbrook",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-moorbrook-7",
+        "x": 34242,
+        "y": 12624,
+        "z": 0,
+        "label": "Whiskey Supplier",
+        "description": "By doing \"Pure Water\" beforehand and collecting all 6 whiskey casks there, you can glitch the game and you will be able to sell them to any barman/innkeeper infinitely for 1k gold each - you won't be able to complete this quest though.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mystdale-1",
+        "x": 31341,
+        "y": 13554,
+        "z": 1,
+        "label": "Death to the Ogre Referee",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mystdale-2",
+        "x": 31767,
+        "y": 13130,
+        "z": 0,
+        "label": "Eldritch Apparitions",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mystdale-3",
+        "x": 32412,
+        "y": 13362,
+        "z": 0,
+        "label": "Finding Fyren",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mystdale-4",
+        "x": 31825,
+        "y": 13263,
+        "z": 0,
+        "label": "Jacquaire's Revenge",
+        "description": "It's the third quest out of 3 quests from the Unknown Warrior series. You need to complete \"Where is the Blacksmith?\" in Bellevue beforehand. This is where Jacquaire typically is but you may need to walk around Mystdale to find him. As a reward for this quest, you get a unique sword The Finished Prototype of the Sword.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mystdale-5",
+        "x": 32086,
+        "y": 13599,
+        "z": 0,
+        "label": "The Lost Experimental Beings",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mystdale-6",
+        "x": 31668,
+        "y": 13516,
+        "z": 0,
+        "label": "The Regentium Silver Blossom",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mystdale-7",
+        "x": 31716,
+        "y": 13582,
+        "z": 0,
+        "label": "Wrong Choice of Words",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-draco-2",
+        "x": 19786,
+        "y": 11214,
+        "z": 0,
+        "label": "Dancer of the Dead",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-draco-3",
+        "x": 19989,
+        "y": 11137,
+        "z": 1,
+        "label": "Death to the Brigands",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-draco-4",
+        "x": 20087,
+        "y": 11035,
+        "z": 0,
+        "label": "Love Token",
+        "description": "After completing the quest, the quest giver can be found in the Oasis of Ahil-Tar and you can talk to him to get a small reward.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-draco-5",
+        "x": 19864,
+        "y": 11136,
+        "z": 0,
+        "label": "Nucquam Astralis",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-draco-6",
+        "x": 19800,
+        "y": 11138,
+        "z": 0,
+        "label": "The Robber's Camp",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vallum-1",
+        "x": 23498,
+        "y": 11390,
+        "z": 0,
+        "label": "Cattle Rustlers",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vallum-2",
+        "x": 23575,
+        "y": 11560,
+        "z": 1,
+        "label": "The Favorite Shirt",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vallum-3",
+        "x": 21585,
+        "y": 17407,
+        "z": 0,
+        "label": "Hidden Merchant",
+        "description": "The quest giver turns into a merchant after completing the quest.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vallum-4",
+        "x": 23986,
+        "y": 11563,
+        "z": 0,
+        "label": "The Lost Map",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vallum-5",
+        "x": 23724,
+        "y": 11556,
+        "z": 0,
+        "label": "The Medicine Bag",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vallum-6",
+        "x": 23365,
+        "y": 11764,
+        "z": 0,
+        "label": "Orcs!",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vallum-7",
+        "x": 23621,
+        "y": 11647,
+        "z": 0,
+        "label": "Orc Slayer",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vallum-8",
+        "x": 23820,
+        "y": 11462,
+        "z": 0,
+        "label": "Stolen Iron Bars",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-shaddar-1",
+        "x": 34296,
+        "y": 14477,
+        "z": 1,
+        "label": "Glubba-Jar",
+        "description": "This quest is only available during the campaign. The quest becomes available after getting the Element of Void. This quest ends on the bridge a bit before the quest marker.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-shires-1",
+        "x": 24083,
+        "y": 9406,
+        "z": 0,
+        "label": "Blackrobes",
+        "description": "Don't let the priests finish the ritual as this will cause the quest to fail.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-shires-2",
+        "x": 24408,
+        "y": 9465,
+        "z": 0,
+        "label": "Compromising Situation",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-shires-3",
+        "x": 24967,
+        "y": 9089,
+        "z": 1,
+        "label": "Dark Conjuration",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-shires-4",
+        "x": 24070,
+        "y": 9284,
+        "z": 0,
+        "label": "Poacher",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-shires-5",
+        "x": 24254,
+        "y": 9347,
+        "z": 0,
+        "label": "Rascals",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-silver-1",
+        "x": 27394,
+        "y": 11812,
+        "z": 0,
+        "label": "Adelina",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-silver-2",
+        "x": 27204,
+        "y": 12053,
+        "z": 0,
+        "label": "A Tragic Loss",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-silver-3",
+        "x": 27237,
+        "y": 11914,
+        "z": 0,
+        "label": "The Book of Wisdom",
+        "description": "The quest giver turns into a combo master after completing the quest.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-silver-4",
+        "x": 27299,
+        "y": 11909,
+        "z": 0,
+        "label": "Escort",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-silver-5",
+        "x": 27097,
+        "y": 11925,
+        "z": 1,
+        "label": "Evil Shamans",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-silver-6",
+        "x": 25569,
+        "y": 11563,
+        "z": 0,
+        "label": "Green Plague",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-silver-7",
+        "x": 26966,
+        "y": 12008,
+        "z": 0,
+        "label": "Salted Meat",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-silver-8",
+        "x": 27097,
+        "y": 11950,
+        "z": 0,
+        "label": "Shining Light",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-silver-9",
+        "x": 26952,
+        "y": 11522,
+        "z": 0,
+        "label": "The Thirsty Gravedigger",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-slaters-1",
+        "x": 22559,
+        "y": 7523,
+        "z": 0,
+        "label": "Abduction of the Women of Slater's Grave",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-slaters-2",
+        "x": 22368,
+        "y": 7519,
+        "z": 1,
+        "label": "Spring Water",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-slaters-3",
+        "x": 22531,
+        "y": 7466,
+        "z": 1,
+        "label": "The Axe Rock Splitter",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-slaters-4",
+        "x": 21702,
+        "y": 7851,
+        "z": 0,
+        "label": "The Merchant of Slater's Grave",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-slaters-5",
+        "x": 22550,
+        "y": 7496,
+        "z": 0,
+        "label": "The Outlaws of Slater's Grave",
+        "description": "As a reward for this quest, you get a unique sword Albion if you accept the Robert's offer.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-timberton-1",
+        "x": 19910,
+        "y": 8334,
+        "z": 0,
+        "label": "Blood Money",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-timberton-2",
+        "x": 19989,
+        "y": 8373,
+        "z": 0,
+        "label": "Hunting Blood Bears",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-timberton-3",
+        "x": 20011,
+        "y": 8253,
+        "z": 1,
+        "label": "Stone Sample",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-timberton-4",
+        "x": 19946,
+        "y": 8309,
+        "z": 0,
+        "label": "The Tree of Life",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-timberton-5",
+        "x": 20051,
+        "y": 8279,
+        "z": 0,
+        "label": "Traces of the Forest Rangers",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-timberton-6",
+        "x": 21284,
+        "y": 8661,
+        "z": 0,
+        "label": "Bounty Hunt",
+        "description": "This is not a quest that appears in the quest log and there are no quest markers on the in-game map. Check the wanted sign to see what is the next target and refer to \"Bounty Hunt Target\" markers on this map to help you find them. There are 21 targets and their order is random. After killing all targets, talk to Richford to get a unique amulet Ancarian Medal of Honor as well as 2 skill points and 2 attribute points.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fasul-1",
+        "x": 17330,
+        "y": 9380,
+        "z": 0,
+        "label": "Guard Wolf",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fasul-2",
+        "x": 17109,
+        "y": 9918,
+        "z": 0,
+        "label": "The Unknown Warrior",
+        "description": "It's the first quest out of 3 quests from the Unknown Warrior series. After completing the quest, make sure to cross the bridge between Mascarell and Tyr-Fasul to spawn Jacquaire in the next location in Braverock.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-fasul-3",
+        "x": 16898,
+        "y": 9337,
+        "z": 0,
+        "label": "The Plains of Tyr-Hadar",
+        "description": "You need to start this quest to be able to access Tyr-Hadar.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-fasul-4",
+        "x": 17458,
+        "y": 7647,
+        "z": 0,
+        "label": "Unexpected Aid",
+        "description": "This quest can only be started before killing all 3 priestesses in \"The Plains of Tyr-Hadar\".",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-fasul-5",
+        "x": 14957,
+        "y": 7293,
+        "z": 0,
+        "label": "Elven Lady from Tyr-Hadar",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-urkenburgh-1",
+        "x": 23889,
+        "y": 12464,
+        "z": 0,
+        "label": "Braggart?",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-urkenburgh-2",
+        "x": 23913,
+        "y": 12460,
+        "z": 0,
+        "label": "The Merchant's Message",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-wolfdale-1",
+        "x": 24742,
+        "y": 7549,
+        "z": 0,
+        "label": "Elven Art Robbery",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-wolfdale-2",
+        "x": 24391,
+        "y": 7383,
+        "z": 0,
+        "label": "Grandmother's Ring",
+        "description": "The quest giver is not marked with a white dot on the minimap.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-wolfdale-3",
+        "x": 24486,
+        "y": 7436,
+        "z": 0,
+        "label": "Missing Lumberjacks",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-wolfdale-4",
+        "x": 24319,
+        "y": 7431,
+        "z": 0,
+        "label": "Tax Collectors",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-wolfdale-5",
+        "x": 25344,
+        "y": 7975,
+        "z": 0,
+        "label": "The Search for Peace",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-wolfdale-6",
+        "x": 23929,
+        "y": 7650,
+        "z": 0,
+        "label": "Wolf's Blood",
+        "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-zhurag-1",
+        "x": 40683,
+        "y": 10787,
+        "z": 0,
+        "label": "Buried Slaves",
+        "description": "To be able to start the quest, you need to kill nearby Guards and pick up the Cell Key.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-vot-1",
+        "x": 17119,
+        "y": 4773,
+        "z": 0,
+        "label": "The Book of Wisdom",
+        "description": "It's the fifth quest out of 5 quests from The Path to Becoming a True Warrior series. There is a cartoon at the end of this quest. As a reward for this quest, you get a unique weapon for Battle Mage, Book of Wisdom, as well as 2/4/6 skill and attribute points depending on how many guardians you kill at the exact same time.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vot-2",
+        "x": 1186,
+        "y": 12901,
+        "z": 0,
+        "label": "The Epidemic",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vot-3",
+        "x": 18478,
+        "y": 4950,
+        "z": 0,
+        "label": "The Imprisoned Thief",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vot-4",
+        "x": 17284,
+        "y": 5466,
+        "z": 0,
+        "label": "Looking for Bears",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vot-5",
+        "x": 17720,
+        "y": 6682,
+        "z": 0,
+        "label": "The Painter's Lock of Hair",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vot-6",
+        "x": 17720,
+        "y": 6586,
+        "z": 0,
+        "label": "Revolution",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-vot-7",
+        "x": 17082,
+        "y": 5372,
+        "z": 0,
+        "label": "Salvation of the Doomed",
+        "description": "The quest giver turns into a combo master and the other nearby NPC turns into a merchant after completing the quest.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dwarven-1",
+        "x": 26504,
+        "y": 6440,
+        "z": 0,
+        "label": "Arachnophobia",
+        "description": "You need to keep right while in the temple and keep left after leaving the temple, the quest can be replayed as many times as you want.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dwarven-2",
+        "x": 26450,
+        "y": 6905,
+        "z": 0,
+        "label": "The Dwarven Mine",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dwarven-3",
+        "x": 29810,
+        "y": 6891,
+        "z": 0,
+        "label": "Dwarven Treasure",
+        "description": "The quest begins after killing Extraordinary Demon and reading the note it drops, it can spawn anywhere in Dwarven Ruins. This is one of the locations which players reported to be more frequent to find the Demon.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dwarven-4",
+        "x": 27595,
+        "y": 6402,
+        "z": 0,
+        "label": "Dwarven Uprising on the Cemetery",
+        "description": "Keep opening the graves and killing Dwarf Ghosts until the Dwarf King appears.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dwarven-5",
+        "x": 29355,
+        "y": 7110,
+        "z": 0,
+        "label": "The Squire",
+        "description": "It's the first quest out of 5 quests from The Path to Becoming a True Warrior series.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dwarven-6",
+        "x": 26352,
+        "y": 6696,
+        "z": 0,
+        "label": "Valuable Giblets - Hornet / Battle of Powers - Hornet",
+        "description": "It's the first quest out of 3 (Valuable Giblets) or 4 (Battle of Powers) quests from the series. Gladiator, Battle Mage, Seraphim, Wood Elf and Dwarf get Valuable Giblets version of the series while Dark Elf, Daemon and Vampiress get Battle of Powers version. At the end of the quest, quickly click on the NPC while he's teleporting away to talk to him and immediately get to know his next location.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dryad-1",
+        "x": 49311,
+        "y": 12714,
+        "z": 0,
+        "label": "Conspirator's Reward",
+        "description": "It's the fourth quest out of 4 quests from Intrigues series which is only available for Dark Elf, Vampiress and Daemon. As a reward for this quest, you get 1 skill point.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dryad-2",
+        "x": 30309,
+        "y": 5969,
+        "z": 0,
+        "label": "The Hag in the Tree",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dryad-3",
+        "x": 31668,
+        "y": 5523,
+        "z": 0,
+        "label": "Hunting Druids",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dryad-4",
+        "x": 32205,
+        "y": 5023,
+        "z": 0,
+        "label": "The Monster in the Forest",
+        "description": "It's the fourth quest out of 5 quests from The Path to Becoming a True Warrior series. You can only hurt the golem with Weapon of Legends from the previous quest, nothing else works.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-embalmed-1",
+        "x": 26208,
+        "y": 3275,
+        "z": 0,
+        "label": "A New Leader",
+        "description": "It's the third quest out of 4 quests from Intrigues series which is only available for Dark Elf, Vampiress and Daemon.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-embalmed-2",
+        "x": 23345,
+        "y": 2586,
+        "z": 0,
+        "label": "Freedom for the Haduk",
+        "description": "This quest is only available for Gladiator, Battle Mage, Seraphim, Wood Elf and Dwarf. As a reward for this quest, you get 1 skill point.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-embalmed-3",
+        "x": 23636,
+        "y": 3450,
+        "z": 0,
+        "label": "Fresh Meat",
+        "description": "This quest is unavailable in most versions of the game.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-embalmed-4",
+        "x": 25614,
+        "y": 3193,
+        "z": 0,
+        "label": "Intrigues",
+        "description": "It's the first quest out of 4 quests from Intrigues series which is only available for Dark Elf, Vampiress and Daemon.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-embalmed-5",
+        "x": 25635,
+        "y": 3193,
+        "z": 0,
+        "label": "Messenger of Evil",
+        "description": "It's the second quest out of 4 quests from Intrigues series which is only available for Dark Elf, Vampiress and Daemon.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-embalmed-6",
+        "x": 24279,
+        "y": 3573,
+        "z": 1,
+        "label": "The Sacrificial Stone",
+        "description": "It's the fourth quest out of 4 quests from The Missing Brother series. As a reward for this quest, you get 1 skill point.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-embalmed-7",
+        "x": 22028,
+        "y": 4034,
+        "z": 0,
+        "label": "The Weapon of Legends",
+        "description": "It's the third quest out of 5 quests from The Path to Becoming a True Warrior series. You will need the Weapon of Legends to be able to complete the next quest from the series.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-1",
+        "x": 26923,
+        "y": 5501,
+        "z": 1,
+        "label": "Desecrated Graves",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-2",
+        "x": 24108,
+        "y": 4676,
+        "z": 0,
+        "label": "For a Handful of Fools",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-3",
+        "x": 26777,
+        "y": 5380,
+        "z": 0,
+        "label": "Insect Blood for the Healer",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-4",
+        "x": 23583,
+        "y": 4708,
+        "z": 0,
+        "label": "The Master",
+        "description": "It's the second quest out of 5 quests from The Path to Becoming a True Warrior series.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-5",
+        "x": 23853,
+        "y": 4303,
+        "z": 0,
+        "label": "The Swarm of Hornets",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-6",
+        "x": 23543,
+        "y": 4769,
+        "z": 0,
+        "label": "The Missing Brother",
+        "description": "It's the first quest out of 4 quests from The Missing Brother series.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-7",
+        "x": 23565,
+        "y": 4769,
+        "z": 0,
+        "label": "The Seer",
+        "description": "It's the second quest out of 4 quests from The Missing Brother series.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-8",
+        "x": 25156,
+        "y": 4717,
+        "z": 1,
+        "label": "Rescue Mission to the Nuk-Nuk",
+        "description": "It's the third quest out of 4 quests from The Missing Brother series.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-9",
+        "x": 25143,
+        "y": 4737,
+        "z": 0,
+        "label": "Where is the Mother?",
+        "description": "It's the first quest out of 2 quests from Scared Child/Mother.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-10",
+        "x": 25134,
+        "y": 4761,
+        "z": 0,
+        "label": "Mokhva Blood",
+        "description": "It's the second quest out of 2 quests from Scared Child/Mother.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-fungi-11",
+        "x": 28173,
+        "y": 4935,
+        "z": 0,
+        "label": "Valuable Giblets - Mire Worm / Battle of Powers - Mire Worm",
+        "description": "It's the second quest out of 3 (Valuable Giblets) or 4 (Battle of Powers) quests from the series. Gladiator, Battle Mage, Seraphim, Wood Elf and Dwarf get Valuable Giblets version of the series while Dark Elf, Daemon and Vampiress get Battle of Powers version. At the end of the quest, quickly click on the NPC while he's teleporting away to talk to him and immediately get to know his next location.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-naguali-1",
+        "x": 21192,
+        "y": 14317,
+        "z": 0,
+        "label": "A Brother in Need",
+        "description": "It's the first quest out of 2 quests from A Brother in Need series.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-naguali-2",
+        "x": 21216,
+        "y": 12529,
+        "z": 0,
+        "label": "An Eerie Graveyard",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-naguali-3",
+        "x": 20977,
+        "y": 12376,
+        "z": 0,
+        "label": "Escort to the South",
+        "description": "The quest giver turns into a merchant after completing the quest.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-naguali-4",
+        "x": 21139,
+        "y": 12688,
+        "z": 0,
+        "label": "The Missing Child",
+        "description": "It's the first quest out of 2 quests from the mother. As a reward for this quest, you get 1 skill point.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-naguali-5",
+        "x": 21160,
+        "y": 12688,
+        "z": 0,
+        "label": "Scorpion Poison",
+        "description": "It's the second quest out of 2 quests from the mother.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-1",
+        "x": 19153,
+        "y": 16250,
+        "z": 0,
+        "label": "Abducted",
+        "description": "The quest is triggered after picking up the note from the ground. After this, the quest giver appears next to you.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-2",
+        "x": 20166,
+        "y": 15312,
+        "z": 1,
+        "label": "Death to the Dead",
+        "description": "It's the second quest out of 2 quests from A Brother in Need series.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-3",
+        "x": 20190,
+        "y": 15308,
+        "z": 1,
+        "label": "Pirate Treasures",
+        "description": "This quest is only available for Daemon.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-4",
+        "x": 20524,
+        "y": 15921,
+        "z": 1,
+        "label": "Remembrance",
+        "description": "This quest is only available during the campaign. As a reward for this quest, you get 1 skill point.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-5",
+        "x": 20190,
+        "y": 15288,
+        "z": 1,
+        "label": "New Potions",
+        "description": "This quest is only available during the campaign. It's the first quest out of 2 quests from Jab. Quest item name doesn't appear when using \"Alt\" key, it doesn't appear either when hovering over the item but the item is visible on the minimap as a yellow dot.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-6",
+        "x": 20210,
+        "y": 15288,
+        "z": 1,
+        "label": "Crab Cocktail",
+        "description": "This quest is only available during the campaign. It's the second quest out of 2 quests from Jab.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-7",
+        "x": 20442,
+        "y": 15550,
+        "z": 0,
+        "label": "Sebastian's Instruments",
+        "description": "This quest is only available during the campaign. It's the first quest out of 3 quests from Sebastian.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-8",
+        "x": 20463,
+        "y": 15550,
+        "z": 0,
+        "label": "Rum for the Binge",
+        "description": "This quest is only available during the campaign. It's the second quest out of 3 quests from Sebastian.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-9",
+        "x": 20442,
+        "y": 15571,
+        "z": 0,
+        "label": "Pirate's Binge",
+        "description": "This quest is only available during the campaign. It's the third quest out of 3 quests from Sebastian.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-1",
+        "x": 26040,
+        "y": 3893,
+        "z": 3,
+        "label": "The Farmer's First Prank",
+        "description": "The quest giver is not marked with a white dot on the minimap. As a reward for this quest, you get 1 skill point and 1 attribute point. To spawn the NPCs for this quest, you need to walk through the south-western end of the bridge.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-2",
+        "x": 25173,
+        "y": 3977,
+        "z": 0,
+        "label": "Free the Slaves",
+        "description": "This is not a quest that appears in the quest log. Kill all Mokhva guards and speak to the Haduk. As a reward for this quest, you get 1 skill point.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-3",
+        "x": 25795,
+        "y": 4043,
+        "z": 0,
+        "label": "Localization Spell",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-4",
+        "x": 26824,
+        "y": 4024,
+        "z": 0,
+        "label": "Valuable Giblets - Insect Larva / Battle of Powers - Insect Larva",
+        "description": "It's the third quest out of 3 (Valuable Giblets) or 4 (Battle of Powers) quests from the series. Gladiator, Battle Mage, Seraphim, Wood Elf and Dwarf get Valuable Giblets version of the series while Dark Elf, Daemon and Vampiress get Battle of Powers version. In case of Valuable Giblets, the quest giver turns into a merchant after completing the quest.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-5",
+        "x": 26845,
+        "y": 4024,
+        "z": 0,
+        "label": "Battle of Powers - Never Trust a Demon",
+        "description": "It's the fourth quest out of 4 quests from the Battle of Powers series. This quest is only available for Dark Elf, Daemon and Vampiress. The third Mokhva that you need to kill in this quest, Teppic, can be found in Dwarven Ruins where the first quest (\"Battle of Powers - Hornet\") from this series started.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-6",
+        "x": 26190,
+        "y": 4177,
+        "z": 0,
+        "label": "Cookies for the Marquis",
+        "description": "You need to complete \"A Demon Called Mirkon\" subquest before being able to complete this one.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-7",
+        "x": 26542,
+        "y": 3995,
+        "z": 0,
+        "label": "A Demon Called Mirkon",
+        "description": "This is a subquest from \"Cookies for the Marquis\", will start another subquest \"Mirkon\" if you accept to help him.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-8",
+        "x": 27786,
+        "y": 4007,
+        "z": 0,
+        "label": "Mirkon",
+        "description": "This is a subquest from \"A Demon Called Mirkon\", which starts if you accept to help Mirkon.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-hells-1",
+        "x": 29523,
+        "y": 3002,
+        "z": 0,
+        "label": "Terror Heads",
+        "description": null,
+        "isFromExpansion": true
+      }
+    ]
+  },
   "chests": {
     "filterLabel": "Personal Stash",
     "size": 32,
@@ -332,7 +2552,7 @@
         "x": 16158,
         "y": 8048,
         "z": 0,
-        "label": "Tyr-Haddar Personal Stash",
+        "label": "Tyr-Hadar Personal Stash",
         "description": null
       },
       {
@@ -1192,7 +3412,7 @@
         "x": 23245,
         "y": 4236,
         "z": 0,
-        "label": "Mines Rear Cave Entrance",
+        "label": "Mines Main Cave Entrance",
         "description": null,
         "linkedMarkerId": "cave-purgatori-3-inside"
       },
@@ -1210,8 +3430,8 @@
         "x": 22825,
         "y": 4504,
         "z": 0,
-        "label": "Mines Main Cave Entrance",
-        "description": "In single player, the door needs to be unlocked by Gargaduk.",
+        "label": "Mines Secret Cave Entrance",
+        "description": "In the campaign, the door needs to be unlocked by Gargaduk.",
         "linkedMarkerId": "cave-purgatori-4-inside"
       },
       {
@@ -2339,58 +4559,58 @@
         "linkedMarkerId": "cave-lava-4"
       },
       {
-        "id": "cave-naquali-1",
+        "id": "cave-naguali-1",
         "x": 21590,
         "y": 12456,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-1-inside"
+        "linkedMarkerId": "cave-naguali-1-inside"
       },
       {
-        "id": "cave-naquali-1-inside",
+        "id": "cave-naguali-1-inside",
         "x": 8829,
         "y": 16932,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-1"
+        "linkedMarkerId": "cave-naguali-1"
       },
       {
-        "id": "cave-naquali-2",
+        "id": "cave-naguali-2",
         "x": 21339,
         "y": 13057,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-2-inside"
+        "linkedMarkerId": "cave-naguali-2-inside"
       },
       {
-        "id": "cave-naquali-2-inside",
+        "id": "cave-naguali-2-inside",
         "x": 13620,
         "y": 12610,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-2"
+        "linkedMarkerId": "cave-naguali-2"
       },
       {
-        "id": "cave-naquali-3",
+        "id": "cave-naguali-3",
         "x": 21102,
         "y": 14285,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-3-inside"
+        "linkedMarkerId": "cave-naguali-3-inside"
       },
       {
-        "id": "cave-naquali-3-inside",
-        "x": 37374,
-        "y": 7353,
+        "id": "cave-naguali-3-inside",
+        "x": 36467,
+        "y": 8126,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-3"
+        "linkedMarkerId": "cave-naguali-3"
       },
       {
         "id": "cave-pirate-1",
@@ -2475,8 +4695,8 @@
       },
       {
         "id": "cave-pirate-5-inside",
-        "x": 36467,
-        "y": 8126,
+        "x": 37374,
+        "y": 7353,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
@@ -4198,7 +6418,7 @@
         "y": 9798,
         "z": 0,
         "label": "Verag-Nar Cave Entrance",
-        "description": "In single player, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
+        "description": "In the campaign, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
         "linkedMarkerId": "cave-zhurag-7-inside-1"
       },
       {
@@ -4315,7 +6535,7 @@
         "y": 9213,
         "z": 0,
         "label": "Cave Entrance",
-        "description": "In single player, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
+        "description": "In the campaign, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
         "linkedMarkerId": "cave-zhurag-11-inside"
       },
       {
