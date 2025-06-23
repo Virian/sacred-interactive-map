@@ -319,12 +319,30 @@
         "isFromExpansion": false
       },
       {
+        "id": "quest-ahil-tar-8",
+        "x": 25968,
+        "y": 13443,
+        "z": 0,
+        "label": "Evacuation",
+        "description": "It's the fourth quest out of 4 quests from the commander. You can later find the settlers in Bellevue, they will thank you but won't give any reward.",
+        "isFromExpansion": false
+      },
+      {
         "id": "quest-alkazaba-1",
         "x": 11302,
         "y": 12995,
         "z": 0,
         "label": "Dragon Scale",
         "description": "As a reward for this quest, you get a unique item Scale of a Dragon. The quest giver turns into a blacksmith after completing the quest.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-alkazaba-2",
+        "x": 11064,
+        "y": 13024,
+        "z": 0,
+        "label": "Dragon Slayer",
+        "description": null,
         "isFromExpansion": false
       },
       {
@@ -351,7 +369,7 @@
         "y": 12850,
         "z": 0,
         "label": "The Missing Mother",
-        "description": null,
+        "description": "The quest giver is not marked with a white dot on the minimap.",
         "isFromExpansion": true
       },
       {
@@ -380,6 +398,15 @@
         "label": "Unintentional Visit",
         "description": null,
         "isFromExpansion": true
+      },
+      {
+        "id": "quest-bellevue-1",
+        "x": 28281,
+        "y": 11675,
+        "z": 0,
+        "label": "Abducted",
+        "description": null,
+        "isFromExpansion": false
       },
       {
         "id": "quest-bellevue-2",
@@ -562,12 +589,30 @@
         "isFromExpansion": false
       },
       {
+        "id": "quest-braverock-9",
+        "x": 27675,
+        "y": 9033,
+        "z": 1,
+        "label": "Jacquaire's Battle Uniform",
+        "description": "It's the second quest out of 3 quests from the Unknown Warrior series. Make sure to cross the bridge between Mascarell and Tyr-Fasul to spawn Jacquaire in Braverock.",
+        "isFromExpansion": false
+      },
+      {
         "id": "quest-braverock-10",
         "x": 27619,
         "y": 8987,
         "z": 0,
         "label": "Law and Justice",
         "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-braverock-11",
+        "x": 26766,
+        "y": 9285,
+        "z": 0,
+        "label": "Magical Thistle",
+        "description": "After completing the quest and talking to Tussock again, he's going to turn into a merchant.",
         "isFromExpansion": false
       },
       {
@@ -686,6 +731,15 @@
         "label": "Desecration",
         "description": null,
         "isFromExpansion": true
+      },
+      {
+        "id": "quest-bravewall-2",
+        "x": 31446,
+        "y": 9474,
+        "z": 0,
+        "label": "Dreamer of Winters",
+        "description": "To spawn the quest giver, you have to walk through one of the entrances to Bravewall.",
+        "isFromExpansion": false
       },
       {
         "id": "quest-bravewall-3",
@@ -882,7 +936,7 @@
         "y": 10716,
         "z": 0,
         "label": "Children's Bugbear",
-        "description": null,
+        "description": "The quest giver is not marked with a white dot on the minimap.",
         "isFromExpansion": true
       },
       {
@@ -973,6 +1027,24 @@
         "z": 0,
         "label": "The Lich Lord",
         "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-gloomoor-6",
+        "x": 43776,
+        "y": 14812,
+        "z": 0,
+        "label": "Panem et Circensis",
+        "description": "This is a pre-requisite quest to get to Azschabrag Swamps. In order to be able to get there, you need to win at least 5 rounds. The maximum number of rounds is 9.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-gloomoor-7",
+        "x": 34548,
+        "y": 11220,
+        "z": 0,
+        "label": "Tomb Raiders: Treasure Hunters Inc.",
+        "description": "It's the first quest out of 3 quests from Swamps of Azschabrag series. You need to win at least 5 rounds in the arena during \"Panem et Circensis\" beforehand. You will also need to pay 100.000 gold to start the quest.",
         "isFromExpansion": false
       },
       {
@@ -1201,6 +1273,15 @@
         "isFromExpansion": true
       },
       {
+        "id": "quest-khorad-5",
+        "x": 24907,
+        "y": 14280,
+        "z": 0,
+        "label": "The Camp of the Undead",
+        "description": "This quest is only available during the campaign. You need to accept the gatekeeper's offer to get this quest.",
+        "isFromExpansion": false
+      },
+      {
         "id": "quest-mascarell-1",
         "x": 18599,
         "y": 9804,
@@ -1224,6 +1305,24 @@
         "y": 10617,
         "z": 0,
         "label": "Lentil Liqueur",
+        "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-mascarell-4",
+        "x": 19355,
+        "y": 10635,
+        "z": 0,
+        "label": "Pony Express",
+        "description": "This quest is only available during the campaign after escorting Vilya to Tyr-Fasul and letting Shareefa open the portal to Ahil-Tar. The quest has a time limit (for instance, to get to the first destination you have about 90 seconds) so you will need to hurry up.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-mascarell-5",
+        "x": 18832,
+        "y": 10689,
+        "z": 0,
+        "label": "Sneaking Around",
         "description": null,
         "isFromExpansion": true
       },
@@ -1279,6 +1378,15 @@
         "z": 0,
         "label": "Sore Head",
         "description": null,
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-moorbrook-5",
+        "x": 34567,
+        "y": 12429,
+        "z": 1,
+        "label": "Special Flavor",
+        "description": "Quest item name doesn't appear when using \"Alt\" key, it doesn't appear either when hovering over the item but the item is visible on the minimap as a yellow dot.",
         "isFromExpansion": true
       },
       {
@@ -1426,6 +1534,15 @@
         "isFromExpansion": true
       },
       {
+        "id": "quest-vallum-3",
+        "x": 21585,
+        "y": 17407,
+        "z": 0,
+        "label": "Hidden Merchant",
+        "description": "The quest giver turns into a merchant after completing the quest.",
+        "isFromExpansion": false
+      },
+      {
         "id": "quest-vallum-4",
         "x": 23986,
         "y": 11563,
@@ -1476,7 +1593,7 @@
         "y": 14477,
         "z": 1,
         "label": "Glubba-Jar",
-        "description": "This quest is only available in the Campaign mode. The quest becomes available after getting the Element of Void. This quest ends on the bridge a bit before the quest marker.",
+        "description": "This quest is only available during the campaign. The quest becomes available after getting the Element of Void. This quest ends on the bridge a bit before the quest marker.",
         "isFromExpansion": false
       },
       {
@@ -1714,12 +1831,30 @@
         "isFromExpansion": true
       },
       {
+        "id": "quest-fasul-2",
+        "x": 17109,
+        "y": 9918,
+        "z": 0,
+        "label": "The Unknown Warrior",
+        "description": "It's the first quest out of 3 quests from the Unknown Warrior series. After completing the quest, make sure to cross the bridge between Mascarell and Tyr-Fasul to spawn Jacquaire in the next location in Braverock.",
+        "isFromExpansion": false
+      },
+      {
         "id": "quest-fasul-3",
         "x": 16898,
         "y": 9337,
         "z": 0,
         "label": "The Plains of Tyr-Hadar",
         "description": "You need to start this quest to be able to access Tyr-Hadar.",
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-fasul-4",
+        "x": 17458,
+        "y": 7647,
+        "z": 0,
+        "label": "Unexpected Aid",
+        "description": "This quest can only be started before killing all 3 priestesses in \"The Plains of Tyr-Hadar\".",
         "isFromExpansion": false
       },
       {
@@ -1759,6 +1894,15 @@
         "isFromExpansion": false
       },
       {
+        "id": "quest-wolfdale-2",
+        "x": 24391,
+        "y": 7383,
+        "z": 0,
+        "label": "Grandmother's Ring",
+        "description": "The quest giver is not marked with a white dot on the minimap.",
+        "isFromExpansion": true
+      },
+      {
         "id": "quest-wolfdale-3",
         "x": 24486,
         "y": 7436,
@@ -1792,6 +1936,15 @@
         "z": 0,
         "label": "Wolf's Blood",
         "description": null,
+        "isFromExpansion": false
+      },
+      {
+        "id": "quest-zhurag-1",
+        "x": 40683,
+        "y": 10787,
+        "z": 0,
+        "label": "Buried Slaves",
+        "description": "To be able to start the quest, you need to kill nearby Guards and pick up the Cell Key.",
         "isFromExpansion": false
       },
       {
@@ -1903,6 +2056,15 @@
         "isFromExpansion": true
       },
       {
+        "id": "quest-dwarven-6",
+        "x": 26352,
+        "y": 6696,
+        "z": 0,
+        "label": "Valuable Giblets - Hornet / Battle of Powers - Hornet",
+        "description": "It's the first quest out of 3 (Valuable Giblets) or 4 (Battle of Powers) quests from the series. Gladiator, Battle Mage, Seraphim, Wood Elf and Dwarf get Valuable Giblets version of the series while Dark Elf, Daemon and Vampiress get Battle of Powers version. At the end of the quest, quickly click on the NPC while he's teleporting away to talk to him and immediately get to know his next location.",
+        "isFromExpansion": true
+      },
+      {
         "id": "quest-dryad-1",
         "x": 49311,
         "y": 12714,
@@ -1953,7 +2115,7 @@
         "y": 2586,
         "z": 0,
         "label": "Freedom for the Haduk",
-        "description": "Kill all Nuk-Nuk Warriors. As a reward for this quest, you get 1 skill point.",
+        "description": "This quest is only available for Gladiator, Battle Mage, Seraphim, Wood Elf and Dwarf. As a reward for this quest, you get 1 skill point.",
         "isFromExpansion": true
       },
       {
@@ -1963,6 +2125,15 @@
         "z": 0,
         "label": "Fresh Meat",
         "description": "This quest is unavailable in most versions of the game.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-embalmed-4",
+        "x": 25614,
+        "y": 3193,
+        "z": 0,
+        "label": "Intrigues",
+        "description": "It's the first quest out of 4 quests from Intrigues series which is only available for Dark Elf, Vampiress and Daemon.",
         "isFromExpansion": true
       },
       {
@@ -2083,6 +2254,15 @@
         "isFromExpansion": true
       },
       {
+        "id": "quest-fungi-11",
+        "x": 28173,
+        "y": 4935,
+        "z": 0,
+        "label": "Valuable Giblets - Mire Worm / Battle of Powers - Mire Worm",
+        "description": "It's the second quest out of 3 (Valuable Giblets) or 4 (Battle of Powers) quests from the series. Gladiator, Battle Mage, Seraphim, Wood Elf and Dwarf get Valuable Giblets version of the series while Dark Elf, Daemon and Vampiress get Battle of Powers version. At the end of the quest, quickly click on the NPC while he's teleporting away to talk to him and immediately get to know his next location.",
+        "isFromExpansion": true
+      },
+      {
         "id": "quest-naguali-1",
         "x": 21192,
         "y": 14317,
@@ -2128,6 +2308,15 @@
         "isFromExpansion": true
       },
       {
+        "id": "quest-pirate-1",
+        "x": 19153,
+        "y": 16250,
+        "z": 0,
+        "label": "Abducted",
+        "description": "The quest is triggered after picking up the note from the ground. After this, the quest giver appears next to you.",
+        "isFromExpansion": true
+      },
+      {
         "id": "quest-pirate-2",
         "x": 20166,
         "y": 15312,
@@ -2137,12 +2326,75 @@
         "isFromExpansion": true
       },
       {
+        "id": "quest-pirate-3",
+        "x": 20190,
+        "y": 15308,
+        "z": 1,
+        "label": "Pirate Treasures",
+        "description": "This quest is only available for Daemon.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-4",
+        "x": 20524,
+        "y": 15921,
+        "z": 1,
+        "label": "Remembrance",
+        "description": "This quest is only available during the campaign. As a reward for this quest, you get 1 skill point.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-5",
+        "x": 20190,
+        "y": 15288,
+        "z": 1,
+        "label": "New Potions",
+        "description": "This quest is only available during the campaign. It's the first quest out of 2 quests from Jab. Quest item name doesn't appear when using \"Alt\" key, it doesn't appear either when hovering over the item but the item is visible on the minimap as a yellow dot.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-6",
+        "x": 20210,
+        "y": 15288,
+        "z": 1,
+        "label": "Crab Cocktail",
+        "description": "This quest is only available during the campaign. It's the second quest out of 2 quests from Jab.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-7",
+        "x": 20442,
+        "y": 15550,
+        "z": 0,
+        "label": "Sebastian's Instruments",
+        "description": "This quest is only available during the campaign. It's the first quest out of 3 quests from Sebastian.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-8",
+        "x": 20463,
+        "y": 15550,
+        "z": 0,
+        "label": "Rum for the Binge",
+        "description": "This quest is only available during the campaign. It's the second quest out of 3 quests from Sebastian.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-pirate-9",
+        "x": 20442,
+        "y": 15571,
+        "z": 0,
+        "label": "Pirate's Binge",
+        "description": "This quest is only available during the campaign. It's the third quest out of 3 quests from Sebastian.",
+        "isFromExpansion": true
+      },
+      {
         "id": "quest-purgatori-1",
         "x": 26040,
         "y": 3893,
-        "z": 2,
+        "z": 3,
         "label": "The Farmer's First Prank",
-        "description": "The quest giver is not marked with a white dot on the minimap. As a reward for this quest, you get 1 skill point and 1 attribute point.",
+        "description": "The quest giver is not marked with a white dot on the minimap. As a reward for this quest, you get 1 skill point and 1 attribute point. To spawn the NPCs for this quest, you need to walk through the south-western end of the bridge.",
         "isFromExpansion": true
       },
       {
@@ -2164,6 +2416,24 @@
         "isFromExpansion": true
       },
       {
+        "id": "quest-purgatori-4",
+        "x": 26824,
+        "y": 4024,
+        "z": 0,
+        "label": "Valuable Giblets - Insect Larva / Battle of Powers - Insect Larva",
+        "description": "It's the third quest out of 3 (Valuable Giblets) or 4 (Battle of Powers) quests from the series. Gladiator, Battle Mage, Seraphim, Wood Elf and Dwarf get Valuable Giblets version of the series while Dark Elf, Daemon and Vampiress get Battle of Powers version. In case of Valuable Giblets, the quest giver turns into a merchant after completing the quest.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-5",
+        "x": 26845,
+        "y": 4024,
+        "z": 0,
+        "label": "Battle of Powers - Never Trust a Demon",
+        "description": "It's the fourth quest out of 4 quests from the Battle of Powers series. This quest is only available for Dark Elf, Daemon and Vampiress. The third Mokhva that you need to kill in this quest, Teppic, can be found in Dwarven Ruins where the first quest (\"Battle of Powers - Hornet\") from this series started.",
+        "isFromExpansion": true
+      },
+      {
         "id": "quest-purgatori-6",
         "x": 26190,
         "y": 4177,
@@ -2179,6 +2449,15 @@
         "z": 0,
         "label": "A Demon Called Mirkon",
         "description": "This is a subquest from \"Cookies for the Marquis\", will start another subquest \"Mirkon\" if you accept to help him.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-purgatori-8",
+        "x": 27786,
+        "y": 4007,
+        "z": 0,
+        "label": "Mirkon",
+        "description": "This is a subquest from \"A Demon Called Mirkon\", which starts if you accept to help Mirkon.",
         "isFromExpansion": true
       },
       {
@@ -3133,7 +3412,7 @@
         "x": 23245,
         "y": 4236,
         "z": 0,
-        "label": "Mines Rear Cave Entrance",
+        "label": "Mines Main Cave Entrance",
         "description": null,
         "linkedMarkerId": "cave-purgatori-3-inside"
       },
@@ -3151,8 +3430,8 @@
         "x": 22825,
         "y": 4504,
         "z": 0,
-        "label": "Mines Main Cave Entrance",
-        "description": "In single player, the door needs to be unlocked by Gargaduk.",
+        "label": "Mines Secret Cave Entrance",
+        "description": "In the campaign, the door needs to be unlocked by Gargaduk.",
         "linkedMarkerId": "cave-purgatori-4-inside"
       },
       {
@@ -4280,58 +4559,58 @@
         "linkedMarkerId": "cave-lava-4"
       },
       {
-        "id": "cave-naquali-1",
+        "id": "cave-naguali-1",
         "x": 21590,
         "y": 12456,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-1-inside"
+        "linkedMarkerId": "cave-naguali-1-inside"
       },
       {
-        "id": "cave-naquali-1-inside",
+        "id": "cave-naguali-1-inside",
         "x": 8829,
         "y": 16932,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-1"
+        "linkedMarkerId": "cave-naguali-1"
       },
       {
-        "id": "cave-naquali-2",
+        "id": "cave-naguali-2",
         "x": 21339,
         "y": 13057,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-2-inside"
+        "linkedMarkerId": "cave-naguali-2-inside"
       },
       {
-        "id": "cave-naquali-2-inside",
+        "id": "cave-naguali-2-inside",
         "x": 13620,
         "y": 12610,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-2"
+        "linkedMarkerId": "cave-naguali-2"
       },
       {
-        "id": "cave-naquali-3",
+        "id": "cave-naguali-3",
         "x": 21102,
         "y": 14285,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-3-inside"
+        "linkedMarkerId": "cave-naguali-3-inside"
       },
       {
-        "id": "cave-naquali-3-inside",
-        "x": 37374,
-        "y": 7353,
+        "id": "cave-naguali-3-inside",
+        "x": 36467,
+        "y": 8126,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
-        "linkedMarkerId": "cave-naquali-3"
+        "linkedMarkerId": "cave-naguali-3"
       },
       {
         "id": "cave-pirate-1",
@@ -4416,8 +4695,8 @@
       },
       {
         "id": "cave-pirate-5-inside",
-        "x": 36467,
-        "y": 8126,
+        "x": 37374,
+        "y": 7353,
         "z": 0,
         "label": "Cave Entrance",
         "description": null,
@@ -6139,7 +6418,7 @@
         "y": 9798,
         "z": 0,
         "label": "Verag-Nar Cave Entrance",
-        "description": "In single player, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
+        "description": "In the campaign, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
         "linkedMarkerId": "cave-zhurag-7-inside-1"
       },
       {
@@ -6256,7 +6535,7 @@
         "y": 9213,
         "z": 0,
         "label": "Cave Entrance",
-        "description": "In single player, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
+        "description": "In the campaign, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
         "linkedMarkerId": "cave-zhurag-11-inside"
       },
       {
