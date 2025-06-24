@@ -288,7 +288,7 @@
         "y": 13464,
         "z": 0,
         "label": "The Riddle in the Desert",
-        "description": "The correct urn to choose during the quest is the one on the far right.",
+        "description": "The correct urn to choose during the quest is the one on the far right. This quest may potentially break other quests like \"The Painting\" or \"Whispers in the Wind\" in a way that they will no longer be able to be completed. There may be more affected quests so it is advised to leave this quest for later in the game.",
         "isFromExpansion": true
       },
       {
@@ -612,7 +612,7 @@
         "y": 9285,
         "z": 0,
         "label": "Magical Thistle",
-        "description": "After completing the quest and talking to Tussock again, he's going to turn into a merchant.",
+        "description": "After completing the quest and talking to Tussock again, he's going to turn into a merchant. In singleplayer, doing \"Boris Richfield\" before this quest results in a bug where Tussock is missing when trying to end the quest, causing it to be impossible to complete.",
         "isFromExpansion": false
       },
       {
@@ -1287,7 +1287,7 @@
         "y": 9804,
         "z": 0,
         "label": "Boris Richfield",
-        "description": null,
+        "description": "In singleplayer, doing this quest will cause \"Magical Thistle\" to be impossible to complete due to a bug where the NPC disappears. In such case, make sure to complete \"Magical Thistle\" first.",
         "isFromExpansion": false
       },
       {
@@ -1403,7 +1403,7 @@
         "x": 34242,
         "y": 12624,
         "z": 0,
-        "label": "Whiskey Supplier",
+        "label": "Whisky Supplier",
         "description": "By doing \"Pure Water\" beforehand and collecting all 6 whiskey casks there, you can glitch the game and you will be able to sell them to any barman/innkeeper infinitely for 1k gold each - you won't be able to complete this quest though.",
         "isFromExpansion": false
       },
@@ -2029,12 +2029,39 @@
         "isFromExpansion": true
       },
       {
-        "id": "quest-dwarven-3",
+        "id": "quest-dwarven-3-1",
         "x": 29810,
         "y": 6891,
         "z": 0,
-        "label": "Dwarven Treasure",
-        "description": "The quest begins after killing Extraordinary Demon and reading the note it drops, it can spawn anywhere in Dwarven Ruins. This is one of the locations which players reported to be more frequent to find the Demon.",
+        "label": "Dwarven Treasure (1 of 4 starting locations)",
+        "description": "The quest begins after killing Extraordinary Demon and reading the note it drops. This is one of 4 locations where it may spawn. After reading the note, head to the Burial Chamber which is a cave located east from the Cemetary, just next to it.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dwarven-3-2",
+        "x": 27805,
+        "y": 7045,
+        "z": 0,
+        "label": "Dwarven Treasure (1 of 4 starting locations)",
+        "description": "The quest begins after killing Extraordinary Demon and reading the note it drops. This is one of 4 locations where it may spawn. After reading the note, head to the Burial Chamber which is a cave located east from the Cemetary, just next to it.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dwarven-3-3",
+        "x": 28352,
+        "y": 6358,
+        "z": 0,
+        "label": "Dwarven Treasure (1 of 4 starting locations)",
+        "description": "The quest begins after killing Extraordinary Demon and reading the note it drops. This is one of 4 locations where it may spawn. After reading the note, head to the Burial Chamber which is a cave located east from the Cemetary, just next to it.",
+        "isFromExpansion": true
+      },
+      {
+        "id": "quest-dwarven-3-4",
+        "x": 29694,
+        "y": 6325,
+        "z": 0,
+        "label": "Dwarven Treasure (1 of 4 starting locations)",
+        "description": "The quest begins after killing Extraordinary Demon and reading the note it drops. This is one of 4 locations where it may spawn. After reading the note, head to the Burial Chamber which is a cave located east from the Cemetary, just next to it.",
         "isFromExpansion": true
       },
       {
@@ -2124,7 +2151,7 @@
         "y": 3450,
         "z": 0,
         "label": "Fresh Meat",
-        "description": "This quest is unavailable in most versions of the game.",
+        "description": "This quest is only available for Dark Elf, Vampiress and Daemon.",
         "isFromExpansion": true
       },
       {
@@ -3057,19 +3084,27 @@
       },
       {
         "id": "region-8",
-        "x": 28376,
-        "y": 5422,
-        "z": 0,
-        "label": "Upper Underworld Region Bosses",
-        "description": "6501 kills required. 1x D'Cay, 1x Skeleton Mage, 2x Nuk-Nuk Champion. The quest is bugged and often doesn't complete even if you kill all the bosses."
-      },
-      {
-        "id": "region-9",
         "x": 18778,
         "y": 4553,
         "z": 0,
         "label": "Lower Underworld Region Bosses",
         "description": "6501 kills required. 1x Acutami, 3x Anducar's Elite Guard, 2x Cerebropod."
+      },
+      {
+        "id": "region-9",
+        "x": 28376,
+        "y": 5422,
+        "z": 0,
+        "label": "Upper Underworld Region Bosses (first group)",
+        "description": "6501 kills required. 1x D'Cay, 1x Skeleton Mage, 2x Nuk-Nuk Champion. This is 1 of 2 boss groups that you need to kill to successfully clear the region."
+      },
+      {
+        "id": "region-10",
+        "x": 18237,
+        "y": 15145,
+        "z": 0,
+        "label": "Upper Underworld Region Bosses (second group)",
+        "description": "6501 kills required. 1x Sirithcam, 1x Lorinor, 2x Karissall, 2x Dryad Druid. This is 1 of 2 boss groups that you need to kill to successfully clear the region. This group doesn't appear on your map and you can only get to the island with Daemon."
       }
     ]
   },
@@ -3502,7 +3537,7 @@
         "x": 28133,
         "y": 6483,
         "z": 0,
-        "label": "Cave Entrance",
+        "label": "Dwarven Burial Chamber Cave Entrance",
         "description": null,
         "linkedMarkerId": "cave-dwarven-1-inside"
       },
