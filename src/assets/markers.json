@@ -9,7 +9,7 @@
         "y": 13250,
         "z": 0,
         "label": "Acutami",
-        "description": "Also known as Relerisstith in previous versions of the game and in single player."
+        "description": "Also known as Relerisstith in previous versions of the game and in the campaign."
       },
       {
         "id": "dragon-2",
@@ -612,7 +612,7 @@
         "y": 9285,
         "z": 0,
         "label": "Magical Thistle",
-        "description": "After completing the quest and talking to Tussock again, he's going to turn into a merchant. In singleplayer, doing \"Boris Richfield\" before this quest results in a bug where Tussock is missing when trying to end the quest, causing it to be impossible to complete.",
+        "description": "After completing the quest and talking to Tussock again, he's going to turn into a merchant. Doing \"Boris Richfield\" before this quest may result (especially when in single player) in a bug where Tussock is missing when trying to end the quest, causing it to be impossible to complete.",
         "isFromExpansion": false
       },
       {
@@ -1287,7 +1287,7 @@
         "y": 9804,
         "z": 0,
         "label": "Boris Richfield",
-        "description": "In singleplayer, doing this quest will cause \"Magical Thistle\" to be impossible to complete due to a bug where the NPC disappears. In such case, make sure to complete \"Magical Thistle\" first.",
+        "description": "Doing this quest may cause \"Magical Thistle\" to be impossible to complete (especially when in single player) due to a bug where the NPC disappears. In such case, make sure to complete \"Magical Thistle\" first.",
         "isFromExpansion": false
       },
       {
