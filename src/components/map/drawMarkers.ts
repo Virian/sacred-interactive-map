@@ -121,7 +121,7 @@ const drawMarkers = async ({
         });
 
         context.shadowColor = '#000';
-        context.shadowBlur = 8;
+        context.shadowBlur = 5;
         context.shadowOffsetX = 4;
         context.shadowOffsetY = 4;
 
