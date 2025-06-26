@@ -1,0 +1,49 @@
+.Checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  cursor: pointer;
+
+  &__Input {
+    position: absolute;
+    opacity: 0;
+    z-index: var(--checkbox-input-z-index);
+  }
+
+  &__IconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__Icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('../../assets/icons/icon-checkbox-false.webp');
+    background-size: cover;
+    transition: 0.1s filter ease-in-out;
+
+    &--Checked {
+      background-image: url('../../assets/icons/icon-checkbox-true.webp');
+    }
+  }
+
+  &__Label {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    .Checkbox__Icon {
+      filter: brightness(1.2);
+    }
+
+    .Checkbox__Label {
+      color: var(--filter-menu-filter-color-hover);
+    }
+  }
+}

@@ -29,3 +29,7 @@ export type Marker = Coords & {
   size: number;
   isFromExpansion?: boolean;
 };
+
+export type Options = {
+  shouldDisplayLabels: boolean;
+};

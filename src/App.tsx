@@ -10,6 +10,7 @@ import ZoomControls from './components/zoomControls/ZoomControls';
 import ZoomContext from './context/ZoomContext';
 import MapCoordOffsetContext from './context/MapCoordOffsetContext';
 import FiltersContext from './context/FiltersContext';
+import OptionsContext from './context/OptionsContext';
 import ClickedMarkerContext from './context/ClickedMarkerContext';
 import {
   FILTER_CATEGORY_CAVES,
@@ -18,7 +19,7 @@ import {
   INITIAL_SCALE_LEVEL_WITH_MARKER_SELECTED,
   INITIAL_SCALE_LEVEL,
 } from './constants';
-import { Coords, Marker, ZoomLevel } from './types';
+import { Coords, Marker, Options, ZoomLevel } from './types';
 import getMarkerFromSearchParams from './shared/getMarkerFromSearchParams';
 import getOffsetToCenterOnPoint from './shared/getOffsetToCenterOnPoint';
 
@@ -97,6 +98,10 @@ const App = () => {
       : initialFilters;
   });
 
+  const [options, setOptions] = useState<Options>({
+    shouldDisplayLabels: false,
+  });
+
   const [clickedMarker, setClickedMarker] = useState<Marker | null>(
     () => getMarkerFromSearchParams() || null,
   );
@@ -108,16 +113,18 @@ const App = () => {
           <MapCoordOffsetContext.Provider
             value={{ mapCoordOffset, setMapCoordOffset }}
           >
-            <FiltersContext.Provider value={{ filters, setFilters }}>
-              <ClickedMarkerContext.Provider
-                value={{ clickedMarker, setClickedMarker }}
-              >
-                <FiltersMenu />
-                <Map />
-                <ZoomControls />
-                <Footer />
-              </ClickedMarkerContext.Provider>
-            </FiltersContext.Provider>
+            <OptionsContext.Provider value={{ options, setOptions }}>
+              <FiltersContext.Provider value={{ filters, setFilters }}>
+                <ClickedMarkerContext.Provider
+                  value={{ clickedMarker, setClickedMarker }}
+                >
+                  <FiltersMenu />
+                  <Map />
+                  <ZoomControls />
+                  <Footer />
+                </ClickedMarkerContext.Provider>
+              </FiltersContext.Provider>
+            </OptionsContext.Provider>
           </MapCoordOffsetContext.Provider>
         </ZoomContext.Provider>
       </ThemeProvider>

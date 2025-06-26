@@ -12,6 +12,7 @@ import MuiAlert from '@mui/material/Alert';
 import ZoomContext from '../../context/ZoomContext';
 import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
 import FiltersContext from '../../context/FiltersContext';
+import OptionsContext from '../../context/OptionsContext';
 import useFocusOnPoint from '../../shared/useFocusOnPoint';
 import { Marker, MarkerCategories } from '../../types';
 import markersData from '../../assets/markers.json';
@@ -29,6 +30,7 @@ import useCopyLinkToClipboard from './useCopyLinkToClipboard';
 import drawMapTiles from './drawMapTiles';
 import drawMarkers from './drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
+import drawTownLabels from './drawTownLabels';
 
 const initialLoadedImages = getInitialLoadedImages();
 
@@ -39,8 +41,10 @@ const Map = () => {
   const { zoomLevel, zoomLevelRef } = useContext(ZoomContext);
   const { mapCoordOffset } = useContext(MapCoordOffsetContext);
   const { filters } = useContext(FiltersContext);
+  const { options } = useContext(OptionsContext);
 
   const tilesLayerRef = useRef<HTMLCanvasElement>(null);
+  const townLabelsLayerRef = useRef<HTMLCanvasElement>(null);
   const coordsLayerRef = useRef<HTMLCanvasElement>(null);
 
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
@@ -191,6 +195,19 @@ const Map = () => {
   ]);
 
   useEffect(() => {
+    const townLabelsContext = townLabelsLayerRef.current?.getContext('2d');
+
+    if (townLabelsContext) {
+      drawTownLabels({
+        context: townLabelsContext,
+        shouldDisplayLabels: options.shouldDisplayLabels,
+        mapCoordOffset,
+        zoomLevel,
+      });
+    }
+  }, [options.shouldDisplayLabels, mapCoordOffset, zoomLevel]);
+
+  useEffect(() => {
     const coordsContext = coordsLayerRef.current?.getContext('2d');
 
     if (coordsContext) {
@@ -214,6 +231,12 @@ const Map = () => {
         />
         <canvas
           ref={markersLayerRef}
+          height={canvasDimensions.height}
+          width={canvasDimensions.width}
+          className="Layer"
+        />
+        <canvas
+          ref={townLabelsLayerRef}
           height={canvasDimensions.height}
           width={canvasDimensions.width}
           className="Layer"
