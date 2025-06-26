@@ -3,12 +3,15 @@ import Button from '@mui/material/Button';
 
 import markersData from '../../assets/markers.json';
 import FiltersContext from '../../context/FiltersContext';
+import OptionsContext from '../../context/OptionsContext';
+import Checkbox from '../checkbox/Checkbox';
 
 import './FiltersMenu.scss';
 import SearchInput from './searchInput/SearchInput';
 
 const FiltersMenu = () => {
   const { filters, setFilters } = useContext(FiltersContext);
+  const { options, setOptions } = useContext(OptionsContext);
 
   const [isHidden, setIsHidden] = useState(false);
 
@@ -80,6 +83,19 @@ const FiltersMenu = () => {
             </div>
           ))}
         </div>
+        <div className="FiltersMenu__Separator" />
+        <Checkbox
+          className="FiltersMenu__Checkbox"
+          checked={options.shouldDisplayLabels}
+          onChange={(newValue) =>
+            setOptions((currentOptions) => ({
+              ...currentOptions,
+              shouldDisplayLabels: newValue,
+            }))
+          }
+        >
+          map labels
+        </Checkbox>
       </div>
     </div>
   );

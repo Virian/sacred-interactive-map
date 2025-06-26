@@ -77,6 +77,10 @@
     flex-direction: column;
     gap: 0.125rem;
   }
+
+  &__Checkbox {
+    align-self: flex-start;
+  }
 }
 
 .Filter {
