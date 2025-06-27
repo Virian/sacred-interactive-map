@@ -1427,8 +1427,8 @@
       },
       {
         "id": "quest-mystdale-3",
-        "x": 32412,
-        "y": 13362,
+        "x": 32429,
+        "y": 13368,
         "z": 0,
         "label": "Finding Fyren",
         "description": null,
@@ -2950,8 +2950,8 @@
       },
       {
         "id": "target-13",
-        "x": 32408,
-        "y": 13363,
+        "x": 32399,
+        "y": 13360,
         "z": 0,
         "label": "Hinsch, Magician",
         "description": null

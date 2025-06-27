@@ -12,8 +12,10 @@ export type MarkerCategories =
   | 'custom'
   | 'dragons'
   | 'portals'
+  | 'quests'
   | 'chests'
   | 'bountyHunt'
+  | 'regionBoss'
   | 'caves';
 
 export type Marker = Coords & {
