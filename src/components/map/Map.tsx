@@ -28,7 +28,7 @@ import useWheel from './useWheel';
 import useMarkers from './useMarkers';
 import useCopyLinkToClipboard from './useCopyLinkToClipboard';
 import drawMapTiles from './drawMapTiles';
-import drawMarkers from './drawMarkers';
+import drawMarkers from './drawMarkers/drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
 import drawTownLabels from './drawTownLabels';
 
@@ -52,8 +52,10 @@ const Map = () => {
     custom: null,
     dragons: null,
     portals: null,
+    quests: null,
     chests: null,
     bountyHunt: null,
+    regionBoss: null,
     caves: null,
   });
 
