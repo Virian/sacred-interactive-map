@@ -126,7 +126,7 @@ const drawMarkers = async ({
       } else {
         const img = new Image();
         img.src = (
-          await import(`../../assets/icons/icon-${category}.webp`)
+          await import(`../../../assets/icons/icon-${category}.webp`)
         ).default;
         return new Promise((resolve) => {
           img.onload = () => {
