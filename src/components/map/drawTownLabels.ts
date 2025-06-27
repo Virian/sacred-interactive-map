@@ -57,7 +57,6 @@ const drawTownLabels = async ({
   const fontSize = mapZoomLevelToFontSize[zoomLevel.levelNumber];
   const lineHeight = fontSize - 2;
 
-  // TODO: decide if they should be visible by default
   context.font = `${fontSize}px Sacred`;
   context.textAlign = 'center';
   context.strokeStyle = 'black';
