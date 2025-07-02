@@ -100,6 +100,7 @@ const App = () => {
 
   const [options, setOptions] = useState<Options>({
     shouldDisplayLabels: false,
+    showRegions: false,
   });
 
   const [clickedMarker, setClickedMarker] = useState<Marker | null>(

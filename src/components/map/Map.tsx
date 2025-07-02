@@ -31,6 +31,7 @@ import drawMapTiles from './drawMapTiles';
 import drawMarkers from './drawMarkers/drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
 import drawTownLabels from './drawTownLabels';
+import drawRegions from './drawRegions';
 
 const initialLoadedImages = getInitialLoadedImages();
 
@@ -44,6 +45,7 @@ const Map = () => {
   const { options } = useContext(OptionsContext);
 
   const tilesLayerRef = useRef<HTMLCanvasElement>(null);
+  const regionLayerRef = useRef<HTMLCanvasElement>(null);
   const townLabelsLayerRef = useRef<HTMLCanvasElement>(null);
   const coordsLayerRef = useRef<HTMLCanvasElement>(null);
 
@@ -197,6 +199,19 @@ const Map = () => {
   ]);
 
   useEffect(() => {
+    const regionContext = regionLayerRef.current?.getContext('2d');
+
+    if (regionContext) {
+      drawRegions({
+        context: regionContext,
+        shouldDisplayRegions: options.showRegions,
+        mapCoordOffset,
+        zoomLevel,
+      });
+    }
+  }, [options.showRegions, mapCoordOffset, zoomLevel]);
+
+  useEffect(() => {
     const townLabelsContext = townLabelsLayerRef.current?.getContext('2d');
 
     if (townLabelsContext) {
@@ -233,6 +248,12 @@ const Map = () => {
         />
         <canvas
           ref={markersLayerRef}
+          height={canvasDimensions.height}
+          width={canvasDimensions.width}
+          className="Layer"
+        />
+        <canvas
+          ref={regionLayerRef}
           height={canvasDimensions.height}
           width={canvasDimensions.width}
           className="Layer"
