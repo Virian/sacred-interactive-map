@@ -8,7 +8,7 @@ interface OptionsContextProps {
 }
 
 const OptionsContext = createContext<OptionsContextProps>({
-  options: { shouldDisplayLabels: false },
+  options: { shouldDisplayLabels: false, showRegions: false },
   setOptions: () => {},
 });
 

@@ -34,4 +34,5 @@ export type Marker = Coords & {
 
 export type Options = {
   shouldDisplayLabels: boolean;
+  showRegions: boolean;
 };

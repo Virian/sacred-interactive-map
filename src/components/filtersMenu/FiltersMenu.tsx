@@ -5,6 +5,7 @@ import markersData from '../../assets/markers.json';
 import FiltersContext from '../../context/FiltersContext';
 import OptionsContext from '../../context/OptionsContext';
 import Checkbox from '../checkbox/Checkbox';
+import type { Options } from '../../types';
 
 import './FiltersMenu.scss';
 import SearchInput from './searchInput/SearchInput';
@@ -40,6 +41,15 @@ const FiltersMenu = () => {
       setFilters(newFilters);
     },
     [setFilters],
+  );
+
+  const handleOptionChange = useCallback(
+    (optionName: keyof Options) => (newValue: boolean) =>
+      setOptions((currentOptions) => ({
+        ...currentOptions,
+        [optionName]: newValue,
+      })),
+    [setOptions],
   );
 
   return (
@@ -87,14 +97,16 @@ const FiltersMenu = () => {
         <Checkbox
           className="FiltersMenu__Checkbox"
           checked={options.shouldDisplayLabels}
-          onChange={(newValue) =>
-            setOptions((currentOptions) => ({
-              ...currentOptions,
-              shouldDisplayLabels: newValue,
-            }))
-          }
+          onChange={handleOptionChange('shouldDisplayLabels')}
         >
           map labels
+        </Checkbox>
+        <Checkbox
+          className="FiltersMenu__Checkbox"
+          checked={options.showRegions}
+          onChange={handleOptionChange('showRegions')}
+        >
+          show regions
         </Checkbox>
       </div>
     </div>
