@@ -1,7 +1,8 @@
 [
   {
-    "name": "Lava",
+    "id": "Lava",
     "color": "#cc1212",
+    "labels": [{ "text": "Lava", "x": 17473, "y": 12105, "angle": 0 }],
     "boundaries": [
       [
         { "x": 14621, "y": 11901 },
@@ -29,8 +30,12 @@
     ]
   },
   {
-    "name": "Desert",
+    "id": "Desert",
     "color": "#cccc22",
+    "labels": [
+      { "text": "Desert", "x": 19526, "y": 12987, "angle": 0 },
+      { "text": "Desert", "x": 24341, "y": 14724, "angle": 0 }
+    ],
     "boundaries": [
       [
         { "x": 20399, "y": 11586 },
@@ -135,8 +140,12 @@
     ]
   },
   {
-    "name": "Southern Core",
+    "id": "Southern Core",
     "color": "#22aa22",
+    "labels": [
+      { "text": "Southern Core", "x": 22593, "y": 11267, "angle": 0 },
+      { "text": "Southern Core", "x": 19698, "y": 13926, "angle": 0 }
+    ],
     "boundaries": [
       [
         { "x": 20872, "y": 13693 },
@@ -310,8 +319,9 @@
     ]
   },
   {
-    "name": "Northern Core",
+    "id": "Northern Core",
     "color": "#5555cc",
+    "labels": [{ "text": "Northern Core", "x": 25269, "y": 9676, "angle": 0 }],
     "boundaries": [
       [
         { "x": 17983, "y": 8330 },
@@ -428,8 +438,9 @@
     ]
   },
   {
-    "name": "Northern",
+    "id": "Northern",
     "color": "#74d3ed",
+    "labels": [{ "text": "Northern", "x": 22655, "y": 6637, "angle": 0 }],
     "boundaries": [
       [
         { "x": 22294, "y": 6792 },
@@ -456,8 +467,9 @@
     ]
   },
   {
-    "name": "Swamp",
+    "id": "Swamp",
     "color": "#8b21db",
+    "labels": [{ "text": "Swamp", "x": 32914, "y": 11477, "angle": 0 }],
     "boundaries": [
       [
         { "x": 31742, "y": 13858 },
@@ -517,8 +529,9 @@
     ]
   },
   {
-    "name": "Shaddar-Nur",
+    "id": "Shaddar-Nur",
     "color": "#824444",
+    "labels": [{ "text": "Shaddar-Nur", "x": 30640, "y": 14555, "angle": 0 }],
     "boundaries": [
       [
         { "x": 29354, "y": 14184 },
@@ -563,8 +576,11 @@
     ]
   },
   {
-    "name": "Lower Underworld",
+    "id": "Lower Underworld",
     "color": "#f08a05",
+    "labels": [
+      { "text": "Lower\nUnderworld", "x": 18351, "y": 5563, "angle": 0 }
+    ],
     "boundaries": [
       [
         { "x": 17657, "y": 6983 },
@@ -619,8 +635,13 @@
     ]
   },
   {
-    "name": "Upper Underworld",
+    "id": "Upper Underworld",
     "color": "#f005d0",
+    "labels": [
+      { "text": "Upper Underworld", "x": 17836, "y": 15917, "angle": 0 },
+      { "text": "Upper Underworld", "x": 28009, "y": 4552, "angle": 0 },
+      { "text": "Upper\nUnderworld", "x": 21216, "y": 12242, "angle": 0 }
+    ],
     "boundaries": [
       [
         { "x": 21244, "y": 11913 },

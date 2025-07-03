@@ -30,7 +30,7 @@ import useCopyLinkToClipboard from './useCopyLinkToClipboard';
 import drawMapTiles from './drawMapTiles';
 import drawMarkers from './drawMarkers/drawMarkers';
 import drawMouseCoords from './drawMouseCoords';
-import drawTownLabels from './drawTownLabels';
+import drawMapLabels from './drawMapLabels/drawMapLabels';
 import drawRegions from './drawRegions';
 
 const initialLoadedImages = getInitialLoadedImages();
@@ -46,7 +46,7 @@ const Map = () => {
 
   const tilesLayerRef = useRef<HTMLCanvasElement>(null);
   const regionLayerRef = useRef<HTMLCanvasElement>(null);
-  const townLabelsLayerRef = useRef<HTMLCanvasElement>(null);
+  const mapLabelsLayerRef = useRef<HTMLCanvasElement>(null);
   const coordsLayerRef = useRef<HTMLCanvasElement>(null);
 
   const loadedImagesRef = useRef<LoadedImages>(initialLoadedImages);
@@ -212,17 +212,23 @@ const Map = () => {
   }, [options.showRegions, mapCoordOffset, zoomLevel]);
 
   useEffect(() => {
-    const townLabelsContext = townLabelsLayerRef.current?.getContext('2d');
+    const mapLabelsContext = mapLabelsLayerRef.current?.getContext('2d');
 
-    if (townLabelsContext) {
-      drawTownLabels({
-        context: townLabelsContext,
+    if (mapLabelsContext) {
+      drawMapLabels({
+        context: mapLabelsContext,
         shouldDisplayLabels: options.shouldDisplayLabels,
+        showRegions: options.showRegions,
         mapCoordOffset,
         zoomLevel,
       });
     }
-  }, [options.shouldDisplayLabels, mapCoordOffset, zoomLevel]);
+  }, [
+    options.shouldDisplayLabels,
+    options.showRegions,
+    mapCoordOffset,
+    zoomLevel,
+  ]);
 
   useEffect(() => {
     const coordsContext = coordsLayerRef.current?.getContext('2d');
@@ -259,7 +265,7 @@ const Map = () => {
           className="Layer"
         />
         <canvas
-          ref={townLabelsLayerRef}
+          ref={mapLabelsLayerRef}
           height={canvasDimensions.height}
           width={canvasDimensions.width}
           className="Layer"
