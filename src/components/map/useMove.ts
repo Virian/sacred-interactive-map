@@ -70,12 +70,15 @@ const useMove = ({ onMoveEnd }: UseMoveProps): UseMove => {
       if (isMoving) {
         dispatch({
           type: MapStateActions.MOVE_MAP,
-          payload: { newTargetPosition, moveDelta },
+          payload: {
+            newTargetPosition,
+            moveDelta: { x: moveDelta.x, y: moveDelta.y },
+          },
         });
         setMoveDelta({ x: newTargetPosition.x, y: newTargetPosition.y });
       }
     },
-    [isMoving, moveDelta.x, moveDelta.y],
+    [isMoving, dispatch, moveDelta.x, moveDelta.y],
   );
 
   const handleMouseMove = useMemo(

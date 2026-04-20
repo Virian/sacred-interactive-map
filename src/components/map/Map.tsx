@@ -132,7 +132,7 @@ const Map = () => {
 
     setClickedMarker(targetMarker);
     dispatch({ type: MapStateActions.FOCUS_ON_POINT, payload: targetMarker });
-  }, [clickedMarker?.linkedMarkerId, setClickedMarker]);
+  }, [clickedMarker?.linkedMarkerId, setClickedMarker, dispatch]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -164,6 +164,7 @@ const Map = () => {
     }
   }, [
     coordOffset,
+    coordOffsetRef,
     zoomLevel,
     zoomLevelRef,
     canvasDimensions, // needed to handle canvas resize

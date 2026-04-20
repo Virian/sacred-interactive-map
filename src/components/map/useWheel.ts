@@ -23,7 +23,7 @@ const useWheel = ({ mousePosition }: UseWheelParams) => {
           dispatch({ type: MapStateActions.ZOOM_OUT, payload: mousePosition });
         }
       }, 100),
-    [mousePosition],
+    [dispatch, mousePosition],
   );
 
   return { handleWheel };

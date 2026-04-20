@@ -27,7 +27,7 @@ const ZoomControls = () => {
         });
       }
     },
-    [],
+    [dispatch],
   );
 
   return (
