@@ -9,16 +9,15 @@ import {
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
-import ZoomContext from '../../context/ZoomContext';
-import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
+import MapStateContext from '../../context/MapStateContext';
 import FiltersContext from '../../context/FiltersContext';
 import OptionsContext from '../../context/OptionsContext';
-import useFocusOnPoint from '../../shared/useFocusOnPoint';
-import { Marker, MarkerCategories } from '../../types';
+import { MapStateActions } from '../../state/constants';
+import type { Marker, MarkerCategories } from '../../types';
 import markersData from '../../assets/markers.json';
 
 import './Map.scss';
-import { LoadedImages, LoadedMarkers, CustomMarker } from './types';
+import type { LoadedImages, LoadedMarkers, CustomMarker } from './types';
 import Popup from './popup/Popup';
 import MapTooltip from './tooltip/Tooltip';
 import getInitialLoadedImages from './getInitialLoadedImages';
@@ -39,8 +38,10 @@ const isCustomMarker = (marker?: Marker | null): marker is CustomMarker =>
   marker?.category === 'custom';
 
 const Map = () => {
-  const { zoomLevel, zoomLevelRef } = useContext(ZoomContext);
-  const { mapCoordOffset } = useContext(MapCoordOffsetContext);
+  const {
+    state: { coordOffset, zoomLevel, zoomLevelRef },
+    dispatch,
+  } = useContext(MapStateContext);
   const { filters } = useContext(FiltersContext);
   const { options } = useContext(OptionsContext);
 
@@ -72,8 +73,6 @@ const Map = () => {
     copyLinkToClipboard,
     handleClipboardInfoClose,
   } = useCopyLinkToClipboard();
-
-  const focusOnPoint = useFocusOnPoint();
 
   const { mousePosition, handleMouseMove: handleMousePositionMove } =
     useMousePosition();
@@ -132,8 +131,8 @@ const Map = () => {
     }
 
     setClickedMarker(targetMarker);
-    focusOnPoint(targetMarker);
-  }, [clickedMarker?.linkedMarkerId, setClickedMarker, focusOnPoint]);
+    dispatch({ type: MapStateActions.FOCUS_ON_POINT, payload: targetMarker });
+  }, [clickedMarker?.linkedMarkerId, setClickedMarker]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -156,14 +155,14 @@ const Map = () => {
     if (tilesContext) {
       drawMapTiles({
         context: tilesContext,
-        mapCoordOffset,
+        mapCoordOffset: coordOffset,
         zoomLevel,
         loadedImagesRef,
         zoomLevelRef,
       });
     }
   }, [
-    mapCoordOffset,
+    coordOffset,
     zoomLevel,
     zoomLevelRef,
     canvasDimensions, // needed to handle canvas resize
@@ -176,7 +175,7 @@ const Map = () => {
       if (markersContext) {
         const newDrawnMarkers = await drawMarkers({
           context: markersContext,
-          mapCoordOffset,
+          mapCoordOffset: coordOffset,
           zoomLevel,
           LoadedMarkersRef,
           filters,
@@ -190,7 +189,7 @@ const Map = () => {
     drawMarkersLayer();
   }, [
     markersLayerRef,
-    mapCoordOffset,
+    coordOffset,
     zoomLevel,
     filters,
     setDrawnMarkers,
@@ -205,11 +204,11 @@ const Map = () => {
       drawRegions({
         context: regionContext,
         shouldDisplayRegions: options.showRegions,
-        mapCoordOffset,
+        mapCoordOffset: coordOffset,
         zoomLevel,
       });
     }
-  }, [options.showRegions, mapCoordOffset, zoomLevel]);
+  }, [options.showRegions, coordOffset, zoomLevel]);
 
   useEffect(() => {
     const mapLabelsContext = mapLabelsLayerRef.current?.getContext('2d');
@@ -219,14 +218,14 @@ const Map = () => {
         context: mapLabelsContext,
         shouldDisplayLabels: options.shouldDisplayLabels,
         showRegions: options.showRegions,
-        mapCoordOffset,
+        mapCoordOffset: coordOffset,
         zoomLevel,
       });
     }
   }, [
     options.shouldDisplayLabels,
     options.showRegions,
-    mapCoordOffset,
+    coordOffset,
     zoomLevel,
   ]);
 
@@ -236,12 +235,12 @@ const Map = () => {
     if (coordsContext) {
       drawMouseCoords({
         context: coordsContext,
-        mapCoordOffset,
+        mapCoordOffset: coordOffset,
         zoomLevel,
         mousePosition,
       });
     }
-  }, [mapCoordOffset, mousePosition, zoomLevel]);
+  }, [coordOffset, mousePosition, zoomLevel]);
 
   return (
     <div className="Map">

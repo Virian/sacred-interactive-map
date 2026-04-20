@@ -7,11 +7,10 @@ import {
   useEffect,
 } from 'react';
 
-import { Coords, Marker } from '../../types';
-import ZoomContext from '../../context/ZoomContext';
-import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
+import type { Coords, Marker } from '../../types';
 import FiltersContext from '../../context/FiltersContext';
 import ClickedMarkerContext from '../../context/ClickedMarkerContext';
+import MapStateContext from '../../context/MapStateContext';
 
 import calculatePopupTranslate from './calculatePopupTranslate';
 import { CUSTOM_MARKER_SIZE } from './constants';
@@ -21,8 +20,9 @@ interface UseMarkersParams {
 }
 
 const useMarkers = ({ mousePosition }: UseMarkersParams) => {
-  const { zoomLevel } = useContext(ZoomContext);
-  const { mapCoordOffset } = useContext(MapCoordOffsetContext);
+  const {
+    state: { coordOffset, zoomLevel },
+  } = useContext(MapStateContext);
   const { filters } = useContext(FiltersContext);
   const { clickedMarker, setClickedMarker } = useContext(ClickedMarkerContext);
 
@@ -77,11 +77,11 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
     () =>
       calculatePopupTranslate(
         clickedMarker,
-        mapCoordOffset,
+        coordOffset,
         zoomLevel.scale,
         clickedMarker?.size,
       ),
-    [clickedMarker, mapCoordOffset, zoomLevel.scale],
+    [clickedMarker, coordOffset, zoomLevel.scale],
   );
 
   const checkMarkerClick = useCallback(
@@ -118,8 +118,8 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
             category: 'custom',
             categoryFilterLabel: 'Custom location',
             description: null,
-            x: mapCoordOffset.x + eventCoords.x * zoomLevel.scale,
-            y: mapCoordOffset.y + eventCoords.y * zoomLevel.scale,
+            x: coordOffset.x + eventCoords.x * zoomLevel.scale,
+            y: coordOffset.y + eventCoords.y * zoomLevel.scale,
             z: 0,
             size: CUSTOM_MARKER_SIZE,
           });
@@ -129,7 +129,7 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
     [
       drawnMarkers,
       clickedMarker,
-      mapCoordOffset,
+      coordOffset,
       zoomLevel.scale,
       setClickedMarker,
     ],

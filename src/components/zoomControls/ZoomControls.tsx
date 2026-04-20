@@ -1,109 +1,33 @@
 import { useCallback, useContext } from 'react';
 
-import { MAP_HEIGHT, MAP_WIDTH, MAP_SCALE_LEVELS } from '../../constants';
-import ZoomContext from '../../context/ZoomContext';
-import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
+import MapStateContext from '../../context/MapStateContext';
+import { MapStateActions } from '../../state/constants';
 
 import './ZoomControls.scss';
 
-enum ZoomDirection {
-  IN,
-  OUT,
-}
+const ZoomDirection = {
+  IN: 'in',
+  OUT: 'out',
+} as const;
 
 const ZoomControls = () => {
-  const { setZoomLevel } = useContext(ZoomContext);
-  const { setMapCoordOffset } = useContext(MapCoordOffsetContext);
+  const { dispatch } = useContext(MapStateContext);
 
   const handleZoomChange = useCallback(
-    (direction: ZoomDirection) => {
+    (direction: (typeof ZoomDirection)[keyof typeof ZoomDirection]) => {
       if (direction === ZoomDirection.IN) {
-        setZoomLevel((currentZoomLevel) => {
-          const currentIndex = MAP_SCALE_LEVELS.indexOf(currentZoomLevel);
-          let newZoomLevel = currentZoomLevel;
-          if (currentIndex !== 0) {
-            newZoomLevel = MAP_SCALE_LEVELS[currentIndex - 1];
-          }
-
-          if (currentZoomLevel.levelNumber !== newZoomLevel.levelNumber) {
-            setMapCoordOffset((currentCoordOffset) => {
-              const currentCenterCoords = {
-                x:
-                  currentCoordOffset.x +
-                  (window.innerWidth / 2) * currentZoomLevel.scale,
-                y:
-                  currentCoordOffset.y +
-                  (window.innerHeight / 2) * currentZoomLevel.scale,
-              };
-
-              return {
-                x: Math.max(
-                  0,
-                  Math.min(
-                    currentCenterCoords.x -
-                      (window.innerWidth / 2) * newZoomLevel.scale,
-                    MAP_WIDTH - window.innerWidth * newZoomLevel.scale,
-                  ),
-                ),
-                y: Math.max(
-                  0,
-                  Math.min(
-                    currentCenterCoords.y -
-                      (window.innerHeight / 2) * newZoomLevel.scale,
-                    MAP_HEIGHT - window.innerHeight * newZoomLevel.scale,
-                  ),
-                ),
-              };
-            });
-          }
-
-          return newZoomLevel;
+        dispatch({
+          type: MapStateActions.ZOOM_IN,
+          payload: { x: window.innerWidth / 2, y: window.innerHeight / 2 },
         });
       } else if (direction === ZoomDirection.OUT) {
-        setZoomLevel((currentZoomLevel) => {
-          const currentIndex = MAP_SCALE_LEVELS.indexOf(currentZoomLevel);
-          let newZoomLevel = currentZoomLevel;
-          if (currentIndex !== MAP_SCALE_LEVELS.length - 1) {
-            newZoomLevel = MAP_SCALE_LEVELS[currentIndex + 1];
-          }
-
-          if (currentZoomLevel.levelNumber !== newZoomLevel.levelNumber) {
-            setMapCoordOffset((currentCoordOffset) => {
-              const currentCenterCoords = {
-                x:
-                  currentCoordOffset.x +
-                  (window.innerWidth / 2) * currentZoomLevel.scale,
-                y:
-                  currentCoordOffset.y +
-                  (window.innerHeight / 2) * currentZoomLevel.scale,
-              };
-
-              return {
-                x: Math.max(
-                  0,
-                  Math.min(
-                    currentCenterCoords.x -
-                      (window.innerWidth / 2) * newZoomLevel.scale,
-                    MAP_WIDTH - window.innerWidth * newZoomLevel.scale,
-                  ),
-                ),
-                y: Math.max(
-                  0,
-                  Math.min(
-                    currentCenterCoords.y -
-                      (window.innerHeight / 2) * newZoomLevel.scale,
-                    MAP_HEIGHT - window.innerHeight * newZoomLevel.scale,
-                  ),
-                ),
-              };
-            });
-          }
-
-          return newZoomLevel;
+        dispatch({
+          type: MapStateActions.ZOOM_OUT,
+          payload: { x: window.innerWidth / 2, y: window.innerHeight / 2 },
         });
       }
     },
-    [setMapCoordOffset, setZoomLevel],
+    [],
   );
 
   return (
