@@ -15,7 +15,8 @@ import Popper from '@mui/material/Popper';
 
 import ClickedMarkerContext from '../../../context/ClickedMarkerContext';
 import FiltersContext from '../../../context/FiltersContext';
-import useFocusOnPoint from '../../../shared/useFocusOnPoint';
+import MapStateContext from '../../../context/MapStateContext';
+import { MapStateActions } from '../../../state/constants';
 import type { Marker } from '../../../types';
 
 import './SearchInput.scss';
@@ -29,10 +30,9 @@ interface SearchInputProps {
 }
 
 const SearchInput = ({ className }: SearchInputProps) => {
+  const { dispatch } = useContext(MapStateContext);
   const { setFilters } = useContext(FiltersContext);
   const { setClickedMarker } = useContext(ClickedMarkerContext);
-
-  const focusOnPoint = useFocusOnPoint();
 
   const inputRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -106,7 +106,7 @@ const SearchInput = ({ className }: SearchInputProps) => {
         marker.description?.replaceAll(HIGHLIGHT_INDICATOR, '') || null,
     });
     setIsDropdownOpen(false);
-    focusOnPoint(marker);
+    dispatch({ type: MapStateActions.FOCUS_ON_POINT, payload: marker });
   };
 
   return (

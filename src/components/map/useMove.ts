@@ -8,10 +8,9 @@ import {
 } from 'react';
 import throttle from 'lodash/throttle';
 
-import { Coords } from '../../types';
-import { MAP_WIDTH, MAP_HEIGHT } from '../../constants';
-import ZoomContext from '../../context/ZoomContext';
-import MapCoordOffsetContext from '../../context/MapCoordOffsetContext';
+import type { Coords } from '../../types';
+import MapStateContext from '../../context/MapStateContext';
+import { MapStateActions } from '../../state/constants';
 
 import { MOUSE_MOVE_THROTTLE_TIMEOUT } from './constants';
 
@@ -30,10 +29,7 @@ interface UseMoveProps {
 }
 
 const useMove = ({ onMoveEnd }: UseMoveProps): UseMove => {
-  const {
-    zoomLevel: { scale = 1 },
-  } = useContext(ZoomContext);
-  const { setMapCoordOffset } = useContext(MapCoordOffsetContext);
+  const { dispatch } = useContext(MapStateContext);
 
   const [isMoving, setIsMoving] = useState<boolean>(false);
   const [moveDelta, setMoveDelta] = useState<Coords>({ x: 0, y: 0 });
@@ -72,34 +68,14 @@ const useMove = ({ onMoveEnd }: UseMoveProps): UseMove => {
   const moveMap = useCallback(
     (newTargetPosition: Coords) => {
       if (isMoving) {
-        setMapCoordOffset((currentOffset) => {
-          const xDelta = moveDelta.x - newTargetPosition.x;
-          const yDelta = moveDelta.y - newTargetPosition.y;
-
-          let newXPos = currentOffset.x + xDelta * scale;
-          let newYPos = currentOffset.y + yDelta * scale;
-
-          if (newXPos < 0) {
-            newXPos = 0;
-          } else if (newXPos > MAP_WIDTH - window.innerWidth * scale) {
-            newXPos = MAP_WIDTH - window.innerWidth * scale;
-          }
-
-          if (newYPos < 0) {
-            newYPos = 0;
-          } else if (newYPos > MAP_HEIGHT - window.innerHeight * scale) {
-            newYPos = MAP_HEIGHT - window.innerHeight * scale;
-          }
-
-          setMoveDelta({ x: newTargetPosition.x, y: newTargetPosition.y });
-          return {
-            x: newXPos,
-            y: newYPos,
-          };
+        dispatch({
+          type: MapStateActions.MOVE_MAP,
+          payload: { newTargetPosition, moveDelta },
         });
+        setMoveDelta({ x: newTargetPosition.x, y: newTargetPosition.y });
       }
     },
-    [setMapCoordOffset, isMoving, moveDelta.x, moveDelta.y, scale],
+    [isMoving, moveDelta.x, moveDelta.y],
   );
 
   const handleMouseMove = useMemo(
