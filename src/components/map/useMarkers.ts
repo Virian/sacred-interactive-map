@@ -14,6 +14,7 @@ import MapStateContext from '../../context/MapStateContext';
 
 import calculatePopupTranslate from './calculatePopupTranslate';
 import { CUSTOM_MARKER_SIZE } from './constants';
+import isPointInRect from './isPointInRect';
 
 interface UseMarkersParams {
   mousePosition: Coords;
@@ -56,20 +57,15 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
   }, [clickedMarker, filters, setClickedMarker]);
 
   const hoveredMarker = useMemo(() => {
-    const markersContext = markersLayerRef.current?.getContext('2d');
-
     // reversing because markers that were drawn later will be displayed on
     // top of those drawn earlier
     return (
-      drawnMarkers.reverse().find(({ screenX = 0, screenY = 0, size }) => {
-        const markerBoundingBox = new Path2D();
-        markerBoundingBox.rect(screenX, screenY, size, size);
-        return markersContext?.isPointInPath(
-          markerBoundingBox,
-          mousePosition.x,
-          mousePosition.y,
-        );
-      }) || null
+      drawnMarkers.reverse().find(({ screenX = 0, screenY = 0, size }) =>
+        isPointInRect({
+          point: mousePosition,
+          rect: { x: screenX, y: screenY, width: size, height: size },
+        }),
+      ) || null
     );
   }, [drawnMarkers, mousePosition]);
 
@@ -90,20 +86,15 @@ const useMarkers = ({ mousePosition }: UseMarkersParams) => {
         eventCoords.x === moveStartingCoords.x &&
         eventCoords.y === moveStartingCoords.y
       ) {
-        const markersContext = markersLayerRef.current?.getContext('2d');
-
         // reversing because markers that were drawn later will be displayed on
         // top of those drawn earlier
         const newClickedMarker =
-          drawnMarkers.reverse().find(({ screenX = 0, screenY = 0, size }) => {
-            const markerBoundingBox = new Path2D();
-            markerBoundingBox.rect(screenX, screenY, size, size);
-            return markersContext?.isPointInPath(
-              markerBoundingBox,
-              eventCoords.x,
-              eventCoords.y,
-            );
-          }) || null;
+          drawnMarkers.reverse().find(({ screenX = 0, screenY = 0, size }) =>
+            isPointInRect({
+              point: eventCoords,
+              rect: { x: screenX, y: screenY, width: size, height: size },
+            }),
+          ) || null;
 
         if (newClickedMarker && newClickedMarker.id === clickedMarker?.id) {
           setClickedMarker(null);
