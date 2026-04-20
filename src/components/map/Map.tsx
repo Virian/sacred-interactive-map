@@ -39,7 +39,7 @@ const isCustomMarker = (marker?: Marker | null): marker is CustomMarker =>
 
 const Map = () => {
   const {
-    state: { coordOffset, zoomLevel, zoomLevelRef },
+    state: { coordOffset, coordOffsetRef, zoomLevel, zoomLevelRef },
     dispatch,
   } = useContext(MapStateContext);
   const { filters } = useContext(FiltersContext);
@@ -158,6 +158,7 @@ const Map = () => {
         mapCoordOffset: coordOffset,
         zoomLevel,
         loadedImagesRef,
+        mapCoordOffsetRef: coordOffsetRef,
         zoomLevelRef,
       });
     }
