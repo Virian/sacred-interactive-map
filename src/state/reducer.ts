@@ -31,9 +31,15 @@ const reducer = (state: MapState, { type, payload }: MapStateAction) => {
         newYPos = MAP_HEIGHT - window.innerHeight * state.zoomLevel.scale;
       }
 
+      const newCoordOffset = { x: newXPos, y: newYPos };
+
+      if (state.coordOffsetRef?.current) {
+        state.coordOffsetRef.current = newCoordOffset;
+      }
+
       return {
         ...state,
-        coordOffset: { x: newXPos, y: newYPos },
+        coordOffset: newCoordOffset,
       };
     }
     case MapStateActions.FOCUS_ON_POINT: {
@@ -45,14 +51,28 @@ const reducer = (state: MapState, { type, payload }: MapStateAction) => {
           newZoomLevel;
       }
 
+      const newCoordOffset = getOffsetToCenterOnPoint(
+        payload,
+        newZoomLevel.scale,
+      );
+
+      if (state.zoomLevelRef?.current) {
+        state.zoomLevelRef.current = newZoomLevel;
+      }
+      if (state.coordOffsetRef?.current) {
+        state.coordOffsetRef.current = newCoordOffset;
+      }
+
       return {
         ...state,
         zoomLevel: newZoomLevel,
-        coordOffset: getOffsetToCenterOnPoint(payload, newZoomLevel.scale),
+        coordOffset: newCoordOffset,
       };
     }
     case MapStateActions.SET_ZOOM_LEVEL_REF:
       return { ...state, zoomLevelRef: payload };
+    case MapStateActions.SET_COORD_OFFSET_REF:
+      return { ...state, coordOffsetRef: payload };
     case MapStateActions.ZOOM_IN: {
       const currentIndex = MAP_SCALE_LEVELS.indexOf(state.zoomLevel);
       let newZoomLevel = state.zoomLevel;
@@ -69,28 +89,33 @@ const reducer = (state: MapState, { type, payload }: MapStateAction) => {
         y: state.coordOffset.y + payload.y * state.zoomLevel.scale,
       };
 
+      const newCoordOffset = {
+        x: Math.max(
+          0,
+          Math.min(
+            currentPointCoords.x - payload.x * newZoomLevel.scale,
+            MAP_WIDTH - window.innerWidth * newZoomLevel.scale,
+          ),
+        ),
+        y: Math.max(
+          0,
+          Math.min(
+            currentPointCoords.y - payload.y * newZoomLevel.scale,
+            MAP_HEIGHT - window.innerHeight * newZoomLevel.scale,
+          ),
+        ),
+      };
+
       if (state.zoomLevelRef?.current) {
         state.zoomLevelRef.current = newZoomLevel;
+      }
+      if (state.coordOffsetRef?.current) {
+        state.coordOffsetRef.current = newCoordOffset;
       }
 
       return {
         ...state,
-        coordOffset: {
-          x: Math.max(
-            0,
-            Math.min(
-              currentPointCoords.x - payload.x * newZoomLevel.scale,
-              MAP_WIDTH - window.innerWidth * newZoomLevel.scale,
-            ),
-          ),
-          y: Math.max(
-            0,
-            Math.min(
-              currentPointCoords.y - payload.y * newZoomLevel.scale,
-              MAP_HEIGHT - window.innerHeight * newZoomLevel.scale,
-            ),
-          ),
-        },
+        coordOffset: newCoordOffset,
         zoomLevel: newZoomLevel,
       };
     }
@@ -110,28 +135,33 @@ const reducer = (state: MapState, { type, payload }: MapStateAction) => {
         y: state.coordOffset.y + payload.y * state.zoomLevel.scale,
       };
 
+      const newCoordOffset = {
+        x: Math.max(
+          0,
+          Math.min(
+            currentPointCoords.x - payload.x * newZoomLevel.scale,
+            MAP_WIDTH - window.innerWidth * newZoomLevel.scale,
+          ),
+        ),
+        y: Math.max(
+          0,
+          Math.min(
+            currentPointCoords.y - payload.y * newZoomLevel.scale,
+            MAP_HEIGHT - window.innerHeight * newZoomLevel.scale,
+          ),
+        ),
+      };
+
       if (state.zoomLevelRef?.current) {
         state.zoomLevelRef.current = newZoomLevel;
+      }
+      if (state.coordOffsetRef?.current) {
+        state.coordOffsetRef.current = newCoordOffset;
       }
 
       return {
         ...state,
-        coordOffset: {
-          x: Math.max(
-            0,
-            Math.min(
-              currentPointCoords.x - payload.x * newZoomLevel.scale,
-              MAP_WIDTH - window.innerWidth * newZoomLevel.scale,
-            ),
-          ),
-          y: Math.max(
-            0,
-            Math.min(
-              currentPointCoords.y - payload.y * newZoomLevel.scale,
-              MAP_HEIGHT - window.innerHeight * newZoomLevel.scale,
-            ),
-          ),
-        },
+        coordOffset: newCoordOffset,
         zoomLevel: newZoomLevel,
       };
     }

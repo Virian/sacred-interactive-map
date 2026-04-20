@@ -15,6 +15,7 @@ interface DrawMapTilesParams {
   mapCoordOffset: Coords;
   zoomLevel: ZoomLevel;
   loadedImagesRef: MutableRefObject<LoadedImages>;
+  mapCoordOffsetRef?: MutableRefObject<Coords>;
   zoomLevelRef?: MutableRefObject<ZoomLevel>;
 }
 
@@ -23,6 +24,7 @@ const drawMapTiles = async ({
   mapCoordOffset,
   zoomLevel,
   loadedImagesRef,
+  mapCoordOffsetRef,
   zoomLevelRef,
 }: DrawMapTilesParams) => {
   context.clearRect(0, 0, window.innerWidth, window.innerHeight);
@@ -102,9 +104,12 @@ const drawMapTiles = async ({
             });
             if (
               shouldDraw &&
-              // we want to draw the tile only if the zoom level is still the
-              // same as it was when we started loading the image
-              zoomLevelRef?.current.levelNumber === zoomLevel.levelNumber
+              // we want to draw the tile only if the zoom level and coord
+              // offset is still the same as it was when we started loading the
+              // image
+              zoomLevelRef?.current.levelNumber === zoomLevel.levelNumber &&
+              mapCoordOffsetRef?.current.x === mapCoordOffset.x &&
+              mapCoordOffsetRef?.current.y === mapCoordOffset.y
             ) {
               context.drawImage(
                 img,
