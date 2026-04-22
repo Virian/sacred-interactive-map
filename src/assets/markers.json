@@ -8,15 +8,15 @@
         "x": 45451,
         "y": 13250,
         "z": 0,
-        "label": "Acutami",
-        "description": "Also known as Relerisstith in previous versions of the game and in the campaign."
+        "label": "Acutami of the Swamps",
+        "description": "Also known as Relerissith the Swamp Dragon in previous versions of the game and in the campaign."
       },
       {
         "id": "dragon-2",
         "x": 24909,
         "y": 14618,
         "z": 0,
-        "label": "D'Cay",
+        "label": "D'Cay, Lady of the Orcus",
         "description": null
       },
       {
@@ -32,15 +32,15 @@
         "x": 15779,
         "y": 9150,
         "z": 0,
-        "label": "Lorinor",
-        "description": null
+        "label": "Lorinor of Tyr-Fasul",
+        "description": "The existence of this dragon is hinted by one of the Ancaria rumors"
       },
       {
         "id": "dragon-5",
         "x": 31845,
         "y": 11695,
         "z": 0,
-        "label": "Loromir",
+        "label": "Loromir Protector of Honor",
         "description": "This dragon is not hostile."
       },
       {
@@ -48,7 +48,7 @@
         "x": 9682,
         "y": 11150,
         "z": 0,
-        "label": "Sirithcam",
+        "label": "Sirithcam, the Fire Dragon",
         "description": null
       },
       {
@@ -56,7 +56,7 @@
         "x": 21800,
         "y": 5246,
         "z": 0,
-        "label": "Sisslith",
+        "label": "Sisslith, Guardian of Frostgard",
         "description": null
       },
       {
@@ -64,7 +64,7 @@
         "x": 31950,
         "y": 11088,
         "z": 0,
-        "label": "Sssiliths",
+        "label": "Sssiliths, the Swamp Dragon",
         "description": null
       },
       {
@@ -72,7 +72,7 @@
         "x": 15399,
         "y": 7405,
         "z": 0,
-        "label": "Frosttod",
+        "label": "Frosted Death, Ice Dragon",
         "description": null
       },
       {
@@ -80,8 +80,16 @@
         "x": 15324,
         "y": 7425,
         "z": 0,
-        "label": "Winterstarre",
+        "label": "Winter's Rigor, Ice Dragon",
         "description": null
+      },
+      {
+        "id": "dragon-11",
+        "x": 33026,
+        "y": 13044,
+        "z": 0,
+        "label": "Baby Dragon",
+        "description": "This dragon spawns after you reject the dragon egg from the merchant near the bridge at the entrance of Mystdale Castle. It's a small dragon that it transforms into an adult dragon in about three hours."
       }
     ]
   },
@@ -270,7 +278,7 @@
         "y": 13390,
         "z": 0,
         "label": "Collect Orc Rings",
-        "description": null,
+        "description": "Accepting \"Stolen Iron Bars\" alongside this quest may make it impossible to complete the first one you accepted, as the Orc Warriors will stop dropping the item from the first one you accepted.",
         "isFromExpansion": true
       },
       {
@@ -288,7 +296,7 @@
         "y": 13464,
         "z": 0,
         "label": "The Riddle in the Desert",
-        "description": "The correct urn to choose during the quest is the one on the far right. This quest may potentially break other quests like \"The Painting\" or \"Whispers in the Wind\" in a way that they will no longer be able to be completed. There may be more affected quests so it is advised to leave this quest for later in the game.",
+        "description": "The correct urn to choose during the quest is the one on the far right. You get a guaranteed rune as reward. This quest may potentially break other quests like \"The Painting\" or \"Whispers in the Wind\" in a way that they will no longer be able to be completed. There may be more affected quests so it is advised to leave this quest for later in the game.",
         "isFromExpansion": true
       },
       {
@@ -297,7 +305,7 @@
         "y": 13423,
         "z": 0,
         "label": "Scout Post",
-        "description": "It's the first quest out of 4 quests from the commander.",
+        "description": "It's the first quest out of 4 quests from the commander. The last scout will only turn into a zombie in multi player",
         "isFromExpansion": false
       },
       {
@@ -351,7 +359,7 @@
         "y": 13116,
         "z": 0,
         "label": "Egg Thief",
-        "description": null,
+        "description": "Accepting this quest will make you loss access to a merchant",
         "isFromExpansion": false
       },
       {
@@ -432,7 +440,7 @@
         "y": 12400,
         "z": 0,
         "label": "Arogarn the Forest Ranger",
-        "description": "This quest needs to be completed first before the \"Arogarn's Sword\" quest.",
+        "description": "This quest needs to be completed before the \"Arogarn's Sword\" quest.",
         "isFromExpansion": false
       },
       {
@@ -450,7 +458,7 @@
         "y": 11590,
         "z": 0,
         "label": "Messenger",
-        "description": "After completing the quest, you can go back to Sandra (the quest giver) to get additional reward which has a relatively high chance to be an item from the Icons set.",
+        "description": "After completing the quest, you can go back to Sandra (the quest giver) to get some experience.",
         "isFromExpansion": false
       },
       {
@@ -459,7 +467,7 @@
         "y": 19942,
         "z": 0,
         "label": "Missing Son",
-        "description": null,
+        "description": "The quest giver is not marked with a white dot on the minimap. This quest rewards you with two Healing Potions.",
         "isFromExpansion": false
       },
       {
@@ -522,7 +530,7 @@
         "y": 9209,
         "z": 0,
         "label": "Ancarian Snow",
-        "description": null,
+        "description": "You get a guaranteed rune as reward if Falco Scar-Face dies",
         "isFromExpansion": false
       },
       {
@@ -630,7 +638,7 @@
         "y": 8952,
         "z": 1,
         "label": "Ornate Staff of Rituals",
-        "description": null,
+        "description": "Accepting \"Books of Faith\" alongside this quest may make it impossible to complete the first one you accepted, as the Sakkara Priests will stop dropping the item from the first one you accepted.",
         "isFromExpansion": true
       },
       {
@@ -675,7 +683,7 @@
         "y": 10454,
         "z": 0,
         "label": "Books of Faith",
-        "description": null,
+        "description": "Accepting \"Ornate Staff of Rituals\" alongside this quest may make it impossible to complete the first one you accepted, as the Sakkara Priests will stop dropping the item from the first one you accepted.",
         "isFromExpansion": true
       },
       {
@@ -738,7 +746,7 @@
         "y": 9474,
         "z": 0,
         "label": "Dreamer of Winters",
-        "description": "To spawn the quest giver, you have to walk through one of the entrances to Bravewall.",
+        "description": "To spawn the quest giver, you have to enter the Bravewall region. You don't need to enter the city, just walking a bit northwest from the spawn point will do it.'"
         "isFromExpansion": false
       },
       {
@@ -810,7 +818,7 @@
         "y": 8396,
         "z": 0,
         "label": "Inquisition Plans",
-        "description": "You need to walk around the edge of the fort to avoid being seen, otherwise the quest fails.",
+        "description": "You need to walk around the edge of the fort to avoid being seen, otherwise the quest fails. The npcs will not see you either as long as your character don't stop walking/running.",
         "isFromExpansion": false
       },
       {
@@ -981,7 +989,7 @@
         "y": 10357,
         "z": 0,
         "label": "Whispers in the Wind",
-        "description": null,
+        "description": "Completing \"The Riddle in the Desert\" may cause you can no longer complete this quest.",
         "isFromExpansion": true
       },
       {
@@ -990,7 +998,7 @@
         "y": 11151,
         "z": 0,
         "label": "Antidote",
-        "description": "You need to kill Tarantula Medialis, not Tarantula Gravis like the NPC says.",
+        "description": "You need to kill Tarantula Medialis, not Tarantula Gravis like the NPC says. Accepting \"Special Flavor\" alongside this quest may make it impossible to complete the first one you accepted, as the Tarantula Medialis will stop dropping the item from the first one you accepted.",
         "isFromExpansion": true
       },
       {
@@ -1053,7 +1061,7 @@
         "y": 11052,
         "z": 0,
         "label": "The Forgotten Swamps of Azschabrag",
-        "description": "It's the second quest out of 3 quests from Swamps of Azschabrag series. It can only be completed after finishing the next quest, \"H'Runga'zz\".",
+        "description": "It's the second quest out of 3 quests from Swamps of Azschabrag series. You get a guaranteed rune in the treasure chest",
         "isFromExpansion": false
       },
       {
@@ -1089,7 +1097,7 @@
         "y": 10812,
         "z": 0,
         "label": "Blockade Breaker of the Trade Embargo",
-        "description": "The quest giver turns into a blacksmith after completing the quest.",
+        "description": "The quest giver turns into a blacksmith after completing the quest, but it will also make you loss access to a merchant.",
         "isFromExpansion": false
       },
       {
@@ -1314,7 +1322,7 @@
         "y": 10635,
         "z": 0,
         "label": "Pony Express",
-        "description": "This quest is only available during the campaign after escorting Vilya to Tyr-Fasul and letting Shareefa open the portal to Ahil-Tar. The quest has a time limit (for instance, to get to the first destination you have about 90 seconds) so you will need to hurry up.",
+        "description": "This quest is only available during the campaign after escorting Vilya to Tyr-Fasul and letting Shareefa open the portal to Ahil-Tar. The quest has a time limit (for instance, to get to the first destination you have 85 seconds) so you will need to hurry up.",
         "isFromExpansion": false
       },
       {
@@ -1332,7 +1340,7 @@
         "y": 10530,
         "z": 0,
         "label": "The Painting",
-        "description": null,
+        "description": "Completing \"The Riddle in the Desert\" may cause you can no longer complete this quest.",
         "isFromExpansion": false
       },
       {
@@ -1358,8 +1366,8 @@
         "x": 34447,
         "y": 12750,
         "z": 0,
-        "label": "The Narcotic Witch",
-        "description": null,
+        "label": "The Narcistic Witch",
+        "description": "In a previous version of the game, the name of this quest was mistranslated as \"The Narcotic Witch\". After the change, the name remains incorrect, as the correct spelling is \"Narcissistic\". You get a guaranteed rune as reward if you accept the witch's deal.",
         "isFromExpansion": false
       },
       {
@@ -1368,7 +1376,7 @@
         "y": 12397,
         "z": 0,
         "label": "Pure Water",
-        "description": "If you accepted the Rapso's offer, you can drink the antidote to get rid of the poison effect.",
+        "description": "If you accepted the Rapso's offer, you can drink the antidote to get rid of the poison effect. Due to a bug, the \"Whisky Supplier\" side quest can only be completed before obtaining any whisky barrel from this side quest.",
         "isFromExpansion": false
       },
       {
@@ -1386,7 +1394,7 @@
         "y": 12429,
         "z": 1,
         "label": "Special Flavor",
-        "description": "Quest item name doesn't appear when using \"Alt\" key, it doesn't appear either when hovering over the item but the item is visible on the minimap as a yellow dot.",
+        "description": "Quest item name doesn't appear when using \"Alt\" key, it doesn't appear either when hovering over the item but the item is visible on the minimap as a yellow dot. Accepting \"Antidote\" alongside this quest may make it impossible to complete the first one you accepted, as the Tarantula Medialis will stop dropping the item from the first one you accepted.",
         "isFromExpansion": true
       },
       {
@@ -1440,7 +1448,7 @@
         "y": 13263,
         "z": 0,
         "label": "Jacquaire's Revenge",
-        "description": "It's the third quest out of 3 quests from the Unknown Warrior series. You need to complete \"Where is the Blacksmith?\" in Bellevue beforehand. This is where Jacquaire typically is but you may need to walk around Mystdale to find him. As a reward for this quest, you get a unique sword The Finished Prototype of the Sword.",
+        "description": "It's the third quest out of 3 quests from the Unknown Warrior series. You need to complete \"Where is the Blacksmith?\" in Bellevue beforehand. This is where Jacquaire typically is but you may need to walk around Mystdale to find him. During this quest you get a unique sword The Finished Prototype of the Sword, you need to wield it to damage a certain enemy.",
         "isFromExpansion": false
       },
       {
@@ -1511,8 +1519,8 @@
         "x": 19800,
         "y": 11138,
         "z": 0,
-        "label": "The Robber's Camp",
-        "description": null,
+        "label": "The Robber's Camp / V - Taro es Victor",
+        "description": "This quest has a different name and different dialogues if you accept it after speaking to the Captain Sharuka of DeMordrey during the campaign.",
         "isFromExpansion": false
       },
       {
@@ -1566,7 +1574,7 @@
         "y": 11764,
         "z": 0,
         "label": "Orcs!",
-        "description": null,
+        "description": "This quest start automatically when you are close enough to the farm.",
         "isFromExpansion": false
       },
       {
@@ -1584,7 +1592,7 @@
         "y": 11462,
         "z": 0,
         "label": "Stolen Iron Bars",
-        "description": null,
+        "description": "Accepting \"Collect Orc Rings\" alongside this quest may make it impossible to complete the first one you accepted, as the Orc Warriors will stop dropping the item from the first one you accepted.",
         "isFromExpansion": true
       },
       {
@@ -1593,7 +1601,7 @@
         "y": 14477,
         "z": 1,
         "label": "Glubba-Jar",
-        "description": "This quest is only available during the campaign. The quest becomes available after getting the Element of Void. This quest ends on the bridge a bit before the quest marker.",
+        "description": "This quest is only available during the campaign. The quest becomes available after killing the monsters in the cellar of Shaddar's tower and can't be done after Shaddar returns to the tower. This quest ends on the bridge a bit before the quest marker.",
         "isFromExpansion": false
       },
       {
@@ -1664,8 +1672,8 @@
         "x": 27237,
         "y": 11914,
         "z": 0,
-        "label": "The Book of Wisdom",
-        "description": "The quest giver turns into a combo master after completing the quest.",
+        "label": "The Books of Wisdom",
+        "description": "The quest giver turns into a combo master after completing the quest. You get a guaranteed specific rune as reward depending of your character (Hard Hit, Spiritual Healing, Energy Daemon, Landmine or Vampire Transformation)",
         "isFromExpansion": false
       },
       {
@@ -1854,7 +1862,7 @@
         "y": 7647,
         "z": 0,
         "label": "Unexpected Aid",
-        "description": "This quest can only be started before killing all 3 priestesses in \"The Plains of Tyr-Hadar\".",
+        "description": "This quest can only be started before killing all 3 priestesses in \"The Plains of Tyr-Hadar\". You get a guaranteed rune as reward if both orcs survive",
         "isFromExpansion": false
       },
       {
@@ -1944,7 +1952,7 @@
         "y": 10787,
         "z": 0,
         "label": "Buried Slaves",
-        "description": "To be able to start the quest, you need to kill nearby Guards and pick up the Cell Key.",
+        "description": "To be able to start the quest, you need to kill nearby Guards and pick up the Cell Key. You get a guaranteed rune as reward if you reject escorting the women, otherwise you get a ring",
         "isFromExpansion": false
       },
       {
@@ -1962,7 +1970,7 @@
         "y": 12901,
         "z": 0,
         "label": "The Epidemic",
-        "description": null,
+        "description": "Accepting \"Salvation of the Doomed\" alongside this quest may make it impossible to complete the first one you accepted, as the Sakkara Demons will stop dropping the item from the first one you accepted.",
         "isFromExpansion": true
       },
       {
@@ -2007,7 +2015,7 @@
         "y": 5372,
         "z": 0,
         "label": "Salvation of the Doomed",
-        "description": "The quest giver turns into a combo master and the other nearby NPC turns into a merchant after completing the quest.",
+        "description": "The quest giver turns into a combo master and the other nearby NPC turns into a merchant after completing the quest. Accepting \"The Epidemic\" alongside this quest may make it impossible to complete the first one you accepted, as the Sakkara Demons will stop dropping the item from the first one you accepted.",
         "isFromExpansion": true
       },
       {
@@ -2016,7 +2024,7 @@
         "y": 6440,
         "z": 0,
         "label": "Arachnophobia",
-        "description": "You need to keep right while in the temple and keep left after leaving the temple, the quest can be replayed as many times as you want.",
+        "description": "You need to keep right while in the temple and keep left after leaving the temple, the quest can be replayed as many times as you want until you complete it.",
         "isFromExpansion": true
       },
       {
@@ -2070,7 +2078,7 @@
         "y": 6402,
         "z": 0,
         "label": "Dwarven Uprising on the Cemetery",
-        "description": "Keep opening the graves and killing Dwarf Ghosts until the Dwarf King appears.",
+        "description": "Keep opening the graves in Dwarven Ruins and killing Dwarf Ghosts until the Dwarf King appears.",
         "isFromExpansion": true
       },
       {
@@ -2079,7 +2087,7 @@
         "y": 7110,
         "z": 0,
         "label": "The Squire",
-        "description": "It's the first quest out of 5 quests from The Path to Becoming a True Warrior series.",
+        "description": "It's the first quest out of 5 quests from The Path to Becoming a True Warrior series. Each character can only complete this quest once in each difficulty level.",
         "isFromExpansion": true
       },
       {
@@ -2133,7 +2141,7 @@
         "y": 3275,
         "z": 0,
         "label": "A New Leader",
-        "description": "It's the third quest out of 4 quests from Intrigues series which is only available for Dark Elf, Vampiress and Daemon.",
+        "description": "It's the third quest out of 4 quests from Intrigues series which in single player is only available for Dark Elf, Vampiress and Daemon. Any character can do this quest in multi player as long as the first character to enter the server was one of them.",
         "isFromExpansion": true
       },
       {
@@ -2142,7 +2150,7 @@
         "y": 2586,
         "z": 0,
         "label": "Freedom for the Haduk",
-        "description": "This quest is only available for Gladiator, Battle Mage, Seraphim, Wood Elf and Dwarf. As a reward for this quest, you get 1 skill point.",
+        "description": "In single player, this quest is only available for Gladiator, Battle Mage, Seraphim, Wood Elf and Dwarf. Any character can do this quest in multi player as long as the first character to enter the server was one of them. As a reward for this quest, you get 1 skill point.",
         "isFromExpansion": true
       },
       {
@@ -2151,7 +2159,7 @@
         "y": 3450,
         "z": 0,
         "label": "Fresh Meat",
-        "description": "This quest is only available for Dark Elf, Vampiress and Daemon.",
+        "description": "In single player, this quest is only available for Dark Elf, Vampiress and Daemon. Any character can do this quest in multi player as long as the first character to enter the server was one of them",
         "isFromExpansion": true
       },
       {
@@ -2160,7 +2168,7 @@
         "y": 3193,
         "z": 0,
         "label": "Intrigues",
-        "description": "It's the first quest out of 4 quests from Intrigues series which is only available for Dark Elf, Vampiress and Daemon.",
+        "description": "It's the first quest out of 4 quests from Intrigues series which in single player is only available for Dark Elf, Vampiress and Daemon. Any character can do this quest in multi player as long as the first character to enter the server was one of them.",
         "isFromExpansion": true
       },
       {
@@ -2169,7 +2177,7 @@
         "y": 3193,
         "z": 0,
         "label": "Messenger of Evil",
-        "description": "It's the second quest out of 4 quests from Intrigues series which is only available for Dark Elf, Vampiress and Daemon.",
+        "description": "It's the second quest out of 4 quests from Intrigues series which in single player is only available for Dark Elf, Vampiress and Daemon. Any character can do this quest in multi player as long as the first character to enter the server was one of them.",
         "isFromExpansion": true
       },
       {
@@ -2250,7 +2258,7 @@
         "y": 4769,
         "z": 0,
         "label": "The Seer",
-        "description": "It's the second quest out of 4 quests from The Missing Brother series.",
+        "description": "It's the second quest out of 4 quests from The Missing Brother series. This quest rewards you with two Healing Potions.",
         "isFromExpansion": true
       },
       {
@@ -2268,7 +2276,7 @@
         "y": 4737,
         "z": 0,
         "label": "Where is the Mother?",
-        "description": "It's the first quest out of 2 quests from Scared Child/Mother.",
+        "description": "It's the first quest out of 2 quests from Scared Child/Mother. The quest giver is not marked with a white dot on the minimap.",
         "isFromExpansion": true
       },
       {
@@ -2295,7 +2303,7 @@
         "y": 14317,
         "z": 0,
         "label": "A Brother in Need",
-        "description": "It's the first quest out of 2 quests from A Brother in Need series.",
+        "description": "It's the first quest out of 2 quests from A Brother in Need series. This quest rewards you with two Potion of Viper's Antidote.",
         "isFromExpansion": true
       },
       {
@@ -2313,7 +2321,7 @@
         "y": 12376,
         "z": 0,
         "label": "Escort to the South",
-        "description": "The quest giver turns into a merchant after completing the quest.",
+        "description": "The quest giver turns into a merchant after completing the quest. This quest rewards you with a Potion of the Mentor.",
         "isFromExpansion": true
       },
       {
@@ -2331,7 +2339,7 @@
         "y": 12688,
         "z": 0,
         "label": "Scorpion Poison",
-        "description": "It's the second quest out of 2 quests from the mother.",
+        "description": "It's the second quest out of 2 quests from the mother. This quest rewards you with two Potion of Viper's Antidote.",
         "isFromExpansion": true
       },
       {
@@ -2349,7 +2357,7 @@
         "y": 15312,
         "z": 1,
         "label": "Death to the Dead",
-        "description": "It's the second quest out of 2 quests from A Brother in Need series.",
+        "description": "It's the second quest out of 2 quests from A Brother in Need series. You get a guaranteed rune as reward if Conrad Densewood survives.",
         "isFromExpansion": true
       },
       {
@@ -2358,7 +2366,7 @@
         "y": 15308,
         "z": 1,
         "label": "Pirate Treasures",
-        "description": "This quest is only available for Daemon.",
+        "description": "This quest can only be completed by the Daemon.",
         "isFromExpansion": true
       },
       {
@@ -2376,7 +2384,7 @@
         "y": 15288,
         "z": 1,
         "label": "New Potions",
-        "description": "This quest is only available during the campaign. It's the first quest out of 2 quests from Jab. Quest item name doesn't appear when using \"Alt\" key, it doesn't appear either when hovering over the item but the item is visible on the minimap as a yellow dot.",
+        "description": "This quest is only available during the campaign. It's the first quest out of 2 quests from Jab. Quest item name doesn't appear when using \"Alt\" key, it doesn't appear either when hovering over the item but the item is visible on the minimap as a yellow dot. This quest rewards you with two Potions of Undead Death.",
         "isFromExpansion": true
       },
       {
@@ -2385,7 +2393,7 @@
         "y": 15288,
         "z": 1,
         "label": "Crab Cocktail",
-        "description": "This quest is only available during the campaign. It's the second quest out of 2 quests from Jab.",
+        "description": "This quest is only available during the campaign. It's the second quest out of 2 quests from Jab. You get a guaranteed rune as reward.",
         "isFromExpansion": true
       },
       {
@@ -2421,7 +2429,7 @@
         "y": 3893,
         "z": 3,
         "label": "The Farmer's First Prank",
-        "description": "The quest giver is not marked with a white dot on the minimap. As a reward for this quest, you get 1 skill point and 1 attribute point. To spawn the NPCs for this quest, you need to walk through the south-western end of the bridge.",
+        "description": "The quest giver is not marked with a white dot on the minimap. As a reward for this quest, you get 1 skill point and 1 attribute point. Each character can only complete this quest once in each difficulty level. To spawn the NPCs for this quest, you need to walk through the south-western end of the bridge.",
         "isFromExpansion": true
       },
       {
@@ -2439,7 +2447,7 @@
         "y": 4043,
         "z": 0,
         "label": "Localization Spell",
-        "description": null,
+        "description": "This quest rewards you with two Potions of the Mentor.",
         "isFromExpansion": true
       },
       {
@@ -2843,7 +2851,7 @@
         "x": 11425,
         "y": 12850,
         "z": 0,
-        "label": "Alkazaba Noc Draco Personal Stash",
+        "label": "Alkazaba noc Draco Personal Stash",
         "description": null
       }
     ]
@@ -2945,7 +2953,7 @@
         "x": 32875,
         "y": 9693,
         "z": 0,
-        "label": "Hatuni, Troll",
+        "label": "Hatuni, Cook from Hell (Supplier), Troll",
         "description": null
       },
       {
@@ -3262,7 +3270,7 @@
         "y": 4717,
         "z": 0,
         "label": "Cave Entrance",
-        "description": "You can very easily do a region boss here in multi player (you can use self hosted LAN server). By going in and out tenths of times, the ghosts outside of the cave will multiply. They will always have lvl1 so you can easily kill them (AoE damage helps a lot). It is also a good place to farm items for low level characters.",
+        "description": "You can very easily do a region boss here in multi player (you can use self hosted LAN server). By going in and out tenths of times, the ghosts outside of the cave will multiply. They will always have level 1 so you can easily kill them (AoE damage helps a lot). It is also a good place to farm items for low level characters.",
         "linkedMarkerId": "cave-dryad-2-inside"
       },
       {
@@ -4526,7 +4534,7 @@
         "x": 17551,
         "y": 12284,
         "z": 0,
-        "label": "Alkazaba Noc Draco Cave Entrance",
+        "label": "Alkazaba noc Draco Cave Entrance",
         "description": null,
         "linkedMarkerId": "cave-lava-1-inside"
       },
@@ -6453,7 +6461,7 @@
         "y": 9798,
         "z": 0,
         "label": "Verag-Nar Cave Entrance",
-        "description": "In the campaign, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
+        "description": "In the campaign, you need to activate the mechanism in the last level of Gnarlstat to be able to enter the cave.",
         "linkedMarkerId": "cave-zhurag-7-inside-1"
       },
       {
@@ -6570,7 +6578,7 @@
         "y": 9213,
         "z": 0,
         "label": "Cave Entrance",
-        "description": "In the campaign, you need to complete the main quest \"The Dams of the Dwarves of Gnarlstat\" to be able to enter the cave.",
+        "description": "In the campaign, you need to activate the mechanism in the last level of Gnarlstat to be able to enter the cave.",
         "linkedMarkerId": "cave-zhurag-11-inside"
       },
       {
